@@ -7,7 +7,7 @@ Corvin Dhali hereby grants to USER to access source files contained within the N
 Corvin Dhali reserves for all other rights and interests not explicitly granted under this agreement. Permitted uses granted to USER to access source files contained within the NAMED folder : ANGULAR MOMENTUM Includes the installation within their personal google drive directory. A copy of the core files included within the directory named : Angular Momentum . Solely for personal and non-commercial use. All other internal business use case scenarios are to be discussed between Corvin Dhali and USER to access source files contained within the NAMED folder : ANGULAR MOMENTUM. And agreed upon within a separate service agreement.
 
 # Restricted Uses.
-USER to access source files contained within the NAMED folder : ANGULAR MOMENTUM. may not distribute, license, loan, or sell data files or any other related content contained or displayed in it. Modify, alter, or create any derivative works, reverse engineer, decompile, decode, decrypt, disassemble, or derive any source code from the Licensed folder. ,Or remove, alter, or obscure any copyright, trademark, or other proprietary rights notice on or in the Licensed folder Angular Momentum.
+USER to access source files contained within the NAMED folder : ANGULAR MOMENTUM may not distribute, license, loan, or sell data files or any other related content contained or displayed in it. Modify, alter, or create any derivative works, reverse engineer, decompile, decode, decrypt, disassemble, or derive any source code from the Licensed folder. ,Or remove, alter, or obscure any copyright, trademark, or other proprietary rights notice on or in the Licensed folder Angular Momentum.
 
 # Updates Right to Updates.
 Subject to paragraph [RIGHT TO CHARGE FOR UPDATES],
@@ -16,7 +16,7 @@ USER to access source files contained within the NAMED folder : ANGULAR MOMENTUM
 # License to Updates.
 Unless Corvin Dhali provides other terms in writing, USER to access source files contained within the NAMED folder : ANGULAR MOMENTUM installation and use of any update will be subject to this agreement.
 Right to Charge for Updates.
-If USER to access source files contained within the NAMED folder : ANGULAR MOMENTUM chooses to use an Update, Corvin Dhali may charge Google Drive Document Viewer. Using web URL https://drive.google.com/drive/folders/1tEAfwFZruVfow0rEshujMZ9VMcIQFNqI to access source files contained within. NAMED folder : ANGULAR MOMENTUM for the use and installation of that Update.
+If USER to access source files contained within the NAMED folder : ANGULAR MOMENTUM chooses to use an Update, Corvin Dhali may charge USER to access source files contained within the NAMED folder : ANGULAR MOMENTUM.to access source files contained within. NAMED folder : ANGULAR MOMENTUM for the use and installation of that Update.
 
 # Use of Previous Versions.
 USER to access source files contained within the NAMED folder : ANGULAR MOMENTUM may continue to use the previous versions of the Licensed folder Angular Momentum. Subject to the terms of this agreement, provided that the Update and the previous version are installed on the same computers.
