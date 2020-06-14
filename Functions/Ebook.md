@@ -13,10 +13,10 @@ So whether your { UNIT_OF_ENERGY } be a ;
 You will only need the original numeric. In order to calculate the differential and the end state of the original value.
 So value A, will close at value B.
 
-And if you care about the mechanism's. The instructional guide will unfold ... {it's a W.I.P}
+And if you care about the mechanism's. The instructional guide will unfold ... { it's a W.I.P }
 
 
 
-# Instructional Guide
+# Instructional Guide 
 
 Data Analysis Tool : Ebook https://play.google.com/store/books/details?id=VULqDwAAQBAJ
