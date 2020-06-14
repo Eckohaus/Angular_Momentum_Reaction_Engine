@@ -3,7 +3,7 @@
 For the common good {The individual}. The raw equations are provided without charge, and are fully useable without restriction. 
 The forecasting tools are established within both Googlesheet and XLS format. It will take some backengineering no doubt. To capture and understand the mechanics. 
 
-The aim is simplicity when in calculation and precision in forecast. 
+The aim is simplicity when in calculation, and precision in forecast. 
 So whether your { UNIT_OF_ENERGY } be a ;
 
 * Product
