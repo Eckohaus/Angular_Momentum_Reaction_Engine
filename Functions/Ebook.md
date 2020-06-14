@@ -1,3 +1,22 @@
-# instructional Guide
+# Toolsets
 
-Data Analysis Tool : Ebook https://play.google.com/store/books/details/Corvin_Dhali_Angular_Momentum?id=VULqDwAAQBAJ
+For the common good {The individual}. The raw equations are provided without charge, and are fully useable without restriction. 
+The forecasting tools are established within both Googlesheet and XLS format. It will take some backengineering no doubt. To capture and understand the mechanics. 
+
+But the aim is simplicity not dashboards, and whirlybuttons. 
+So whether your { UNIT_OF_ENERGY } be a ;
+
+* Product
+* Pixel or
+* Cell
+
+You will only need the original numeric. In order to calculate the differential and the end state of the original value.
+So A will become B. 
+
+And if you care about the mechanism's. The instructional guide will unfold ... {it's a W.I.P}
+
+
+
+# Instructional Guide
+
+Data Analysis Tool : Ebook https://play.google.com/store/books/details?id=VULqDwAAQBAJ
