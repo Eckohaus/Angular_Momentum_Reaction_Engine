@@ -1,21 +1,28 @@
 # Toolsets
 
-Non-Commercial Licence
+# The Lambda Base Equation
 
-For the common good {The individual}. The raw equations are provided without charge, and are fully useable without restriction. 
-The forecasting tools are established within both Googlesheet and XLS format. It will take some backengineering no doubt. To capture and understand the mechanics. 
+The components of this field equation;
 
-The aim is simplicity when in calculation, and precision in forecast. 
+* Differential {the value between two number sets}
+* Power ratio {1.14}
+
+The equation applied generates forecasted levels of ;
+
+* Amplitude {End Value}
+* Direction {Negative or Positive}
+
+
+The aim here is simplicity when in calculation. And precision in forecast. 
+
 So whether your { UNIT_OF_ENERGY } be a ;
 
 * Product
 * Pixel or
 * Cell
 
-You will only need the original numeric. In order to calculate the differential and the end state of the original value.
-So value A, will close at value B.
-
-And if you care about the mechanism's. Notation will unfold ... {IT'S A WIP}
+You will only need two data points,  To generate the statistical outlook.
+And if you care about the mechanism's. Notation will slowly unfold ... {it's a work in progress}
 
 
 
