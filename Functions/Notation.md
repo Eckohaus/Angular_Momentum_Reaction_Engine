@@ -27,5 +27,5 @@ And if you care about the mechanism's. Notation will slowly unfold ... {it's a w
 # Links are 
 
 * Google play : https://play.google.com/store/books/details?id=VULqDwAAQBAJ
-* Google Drive {Source files in GSheet} : https://drive.google.com/drive/folders/1yPVlhx34s95uG4y5z6c3FQxMdpWVYFeI
+* Google Drive {Source files} : https://drive.google.com/drive/folders/1yPVlhx34s95uG4y5z6c3FQxMdpWVYFeI
 
