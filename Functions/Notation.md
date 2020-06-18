@@ -14,7 +14,6 @@ The equation applied generates forecasted levels of ;
 
 
 The aim here is simplicity when in calculation. And precision in forecast. 
-
 So whether your { UNIT_OF_ENERGY } be a ;
 
 * Product
@@ -22,9 +21,8 @@ So whether your { UNIT_OF_ENERGY } be a ;
 * Cell
 
 You will only need two data points,  To generate the statistical outlook.
+
 And if you care about the mechanism's. Notation will slowly unfold ... {it's a work in progress}
-
-
 
 # Links are 
 
