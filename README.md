@@ -1,4 +1,4 @@
-# Angular Momentum When im not doing this ... I love wanking
+# Angular Momentum
 Depicts the boundary of momentum for any energy related input. Defined within a framework of ‘ single variable calculus’. And charted to visualise the mapping of coordinates.
 
 # Functions : Lambda Analysis
