@@ -46,7 +46,7 @@ When handling higher VALUES_OF_ENERGY , as this is often the area which becomes 
 
 # Unit_(AC)_Deposition_within_Decimalisation.
 
-The equation depicts a {Probabability of} a cancellation channel within 'Nucleaur Resonance'. Which establishes the attenuation cycle. And this becomes an equation to experiment against. It is unclear whether the calculation holds within both MhZ Frequency Bands and AC alternating Currents. Tho if accurate this would establish, the redox potential within metalic structures. As well as calcification deposits within cellular organisims. 
+The equation depicts a {Probabability of} a cancellation channel within 'Nuclear Resonance'. Which establishes the attenuation cycle. And this becomes an equation to experiment against. It is unclear whether the calculation holds within both MhZ Frequency Bands and AC alternating Currents. Tho if accurate this would establish, the redox potential within metalic structures. As well as calcification deposits within cellular organisims. 
 
 0.0012000000000000000 - 0.0012500000000000000 = -0.0000500000000000001
 
