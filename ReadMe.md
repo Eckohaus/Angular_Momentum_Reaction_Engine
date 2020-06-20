@@ -56,12 +56,12 @@ Redox Depiction = .0000000000000000001
 
 # Unit_Currency (Differential_Inversions)
 
-A tool useful for describing the current state of transaction potential, when transacting between two countries. The calculation sheet uses currency differentials to incorporate the variance within a Lambda field equation. And depending on the RATEABLE VALUE of PRODUCT. Will return ;
+A tool useful for describing the current state of transaction potential, when transacting between two countries. The calculation sheet uses currency differentials to incorporate the variance within a Lambda field equation. To use the tool ; 
 
 INPUT : 
-
 * Pricing : PRODUCT
 
+Will return ;
 OUTPUT : 
 
 * ROI : Margin 
