@@ -4,7 +4,7 @@ Data Tools' are available within both Googlesheet and XLS format.
 
 # Lambda_Sequencer_in_Multiplication : Base Equation 
 
-Using the nuclear resonance and therefore 'Base power ratio (^1.14)' 
+Using the 'Nuclear Ratio' and therefore 'Base Power Ratio (^1.14)' 
 Which is cross referenced within the following folder 
 
 * Infinties 
