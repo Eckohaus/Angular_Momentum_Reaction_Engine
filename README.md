@@ -50,4 +50,4 @@ The equation depicts a {Probabability of} a cancellation channel within 'Nucleau
 
 0.0012000000000000000 - 0.0012500000000000000 = -0.0000500000000000001
 
-Redoc Depiction = .0000000000000000001
+Redox Depiction = .0000000000000000001
