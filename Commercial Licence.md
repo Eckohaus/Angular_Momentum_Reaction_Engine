@@ -2,7 +2,7 @@
 
 
 # License Grant.
-Corvin Dhali hereby grants to USER to access source files contained within the NAMED folder : 2020_Angular_Momentum_Reaction_Engine. A non-exclusive, revocable, no derivative. Non commercial license to view and discuss. The source files held within the Licensed folder 2020_Angular_Momentum_Reaction_Engine. With no other rights to be associated or discerned from the folder 2020_Angular_Momentum_Reaction_Engine, and it’s contents.
+Corvin Dhali hereby grants the USER to access source files contained within the NAMED folder : 2020_Angular_Momentum_Reaction_Engine. A non-exclusive; revocable; no derivative; non-commercial license. To view the source files held within the Licensed folder 2020_Angular_Momentum_Reaction_Engine. With no other rights to be associated or discerned from the folder 2020_Angular_Momentum_Reaction_Engine, and it’s contents.
 
 Corvin Dhali reserves for all other rights and interests not explicitly granted under this agreement. Permitted uses granted to USER to access source files contained within the NAMED folder : 2020_Angular_Momentum_Reaction_Engine Includes the installation within their personal google drive directory. A copy of the core files included within the directory named : 2020_Angular_Momentum_Reaction_Engine . Solely for personal and non-commercial use. All other internal business use case scenarios are to be discussed between Corvin Dhali and USER to access source files contained within the NAMED folder : 2020_Angular_Momentum_Reaction_Engine. And agreed upon within a separate service agreement.
 
