@@ -16,7 +16,7 @@ So whether your { UNIT_OF_ENERGY } be a ;
 * Pixel or
 * Cell
 
-You will require two values in order to calculate both :
+You will only require two values in order to calculate both :
 
 * Amplitude
 * Direction 
@@ -24,7 +24,7 @@ You will require two values in order to calculate both :
 The 'Base Power Ratio (^1.14). Can also be incorporated into other statistical toolsets provided :
 
 
-# Boundary Momentum_Suquencer_In_Divsion : Unit_(Sequencing_Alternate_Divisional_Complex)
+# Boundary Momentum_Sequencer_In_Divsion : Unit_(Sequencing_Alternate_Divisional_Complex)
 
 Deceptive in name, the toolset infers growth in division of an arbitrary SUM_VALUE_OF_ENERGY, 
 between three equal ratio's. And will as long as {DECIMILISATION} remains intact, much like a plant continue to refresh. 
