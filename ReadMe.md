@@ -54,3 +54,5 @@ The equation depicts a {Probability of} a cancellation channel within 'Nuclear R
 
 Redox Depiction = .0000000000000000001
 
+# Unit_Currency (Differential_Inversions)
+
