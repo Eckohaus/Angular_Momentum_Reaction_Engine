@@ -1,6 +1,8 @@
-# 2020_Angular_Momentum_Reaction_Engine : Unit Functions : Statistical Modelling Tools For Data.
+# 2020_Angular_Momentum_Reaction_Engine 
 
 Data Tools' are available within both Googlesheet and XLS format. 
+
+# Unit Functions : Statistical Modelling Tools For Data.
 
 Defined within a framework of both 'Multi-Variable' and ‘ Single Variable Calculus'. 
 And charted to visualise the mapping of coordinates.
