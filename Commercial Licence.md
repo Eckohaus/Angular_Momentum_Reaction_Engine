@@ -12,7 +12,7 @@ Permission is not granted to distribute, license, loan, or sell data files or an
 # Use of Previous Versions.
 All other previous versions of the folder 2020_Angular_Momentum_Reaction_Engine, are held within the same non-commercial bounds. As this commercial licence. 
 
-# Non-License.
+# Non-Commercial License.
 All NON-Commercial USERS are able to access the source files, contained within the NAMED folder : 2020_Angular_Momentum_Reaction_Engine. 
 
 # Term.
