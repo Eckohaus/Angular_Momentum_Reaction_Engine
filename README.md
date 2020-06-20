@@ -11,7 +11,7 @@ And charted to visualise the mapping of coordinates.
 
 Most of the equation sets describe projected vectors or {Eigenvalues} as ENERGY_AS_A_UNIT. When determining ‘Reaction complexes’, which denote energetic conversions towards a single frame of reference I:E ‘Single variable calculus’.
 
-Wave function instabilities often arise within Lambda propagation at what is called 'wave 6'. Due to energetic field inversions which is often termed as 'Attenuation'.  This becomes a representation of the compounding of relativistic effects. and these aspects are incorporated into the calculation sheets. And statistical probabilities surrounding Lambda analysis should always be recalibrated, when attenuation occurs. This should generate a non-deformed wave function, and zero out attenuation at wave 6.
+Wave function instabilities often arise within Lambda propagation at what is called 'wave 6'. Due to field inversions which is often termed as 'Attenuation'.  It becomes a representation of the compounding of relativistic effects, and these aspects are incorporated into the calculation sheets. Statistical probabilities surrounding Lambda analysis should always be recalibrated, when attenuation occurs. This should generate a non-deformed wave function, and zero out attenuation at wave 6.
 
 
 # Lambda_Sequencer_in_Multiplication : Base Equation 
