@@ -15,8 +15,8 @@ All other previous versions of the folder 2020_Angular_Momentum_Reaction_Engine,
 # Non-Commercial License.
 All NON-Commercial USERS are able to access the source files, contained within the NAMED folder : 2020_Angular_Momentum_Reaction_Engine. 
 
-# Term.
-This agreement begins on the Effective Date May 27th 2020 and will continue until terminated (the "Term").
+# Terms
+This agreement begins on the Effective Date May 27th 2020 and will continue in perpetuity whilst in development.  
 
 # Product updates.
 Corvin Dhali may collect and use technical information gathered as part of its maintenance, support, and continuous development of the folder 2020_Angular_Momentum_Reaction_Engine. For the purpose of improving its products and services.
