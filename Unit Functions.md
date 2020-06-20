@@ -9,7 +9,7 @@ Which is cross referenced within the following folder
 
 * Infinties 
 
-The aim here is simplicity when in calculation, and a more precision in forecast. 
+The aim here is simplicity when in calculation, and precision in forecast. 
 So whether your { UNIT_OF_ENERGY } be a ;
 
 * Product
