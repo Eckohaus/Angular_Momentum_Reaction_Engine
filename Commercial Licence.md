@@ -4,22 +4,13 @@
 # License Grant.
 Corvin Dhali hereby grants the USER to access source files contained within the NAMED folder : 2020_Angular_Momentum_Reaction_Engine. A non-exclusive; revocable; no derivative; non-commercial license. To view the source files held within the Licensed folder 2020_Angular_Momentum_Reaction_Engine. With no other rights to be associated or discerned from the folder 2020_Angular_Momentum_Reaction_Engine, and it’s contents.
 
-Corvin Dhali reserves for all other rights and interests not explicitly granted under this agreement. Permitted uses granted to USER to access source files contained within the NAMED folder : 2020_Angular_Momentum_Reaction_Engine Includes the installation within their personal google drive directory. A copy of the core files included within the directory named : 2020_Angular_Momentum_Reaction_Engine . Solely for personal and non-commercial use. All other internal business use case scenarios are to be discussed between Corvin Dhali and USER. And agreed upon within a separate service agreement.
+Corvin Dhali reserves all other rights and interests not explicitly granted under this agreement. Permitted uses granted to USER to access source files contained within the NAMED folder : 2020_Angular_Momentum_Reaction_Engine Includes the installation within their personal google drive directory. A copy of the core files included within the directory named : 2020_Angular_Momentum_Reaction_Engine . Solely for personal and non-commercial use. All other internal business use case scenarios are to be discussed between Corvin Dhali and USER. And agreed upon within a separate service agreement.
 
 # Restricted Uses.
-The Licensed folder 2020_Angular_Momentum_Reaction_Engine each USER is not permitted to distribute, license, loan, or sell data files or any other related content contained or displayed in it. Modify, alter, or create any derivative works, reverse engineer, decompile, decode, decrypt, disassemble, or derive any source code from the Licensed folder. the Licensed folder 2020_Angular_Momentum_Reaction_Engine. Or remove, alter, or obscure any copyright, trademark, or other proprietary rights notice on or in the Licensed folder 2020_Angular_Momentum_Reaction_Engine.
-
-# Updates Right to Updates.
-Subject to paragraph [RIGHT TO CHARGE FOR UPDATES],
-USER to access source files contained within the NAMED folder : 2020_Angular_Momentum_Reaction_Engine may choose to use any updates or upgrades (collectively, "Updates") Corvin Dhali provides to the Licensed folder 2020_Angular_Momentum_Reaction_Engine, but only if they have a license to use the previous version of the Licensed folder and derivative works contained within.
-
-# License to Updates.
-Unless Corvin Dhali provides other terms in writing, USER to access source files contained within the NAMED folder : 2020_Angular_Momentum_Reaction_Engine installation and use of any update will be subject to this agreement.
-Right to Charge for Updates.
-If USER to access source files contained within the NAMED folder : 2020_Angular_Momentum_Reaction_Engine chooses to use an Update, Corvin Dhali may charge USER to access source files contained within the NAMED folder : 2020_Angular_Momentum_Reaction_Engine to access source files contained within. NAMED folder : 2020_Angular_Momentum_Reaction_Engine for the use and installation of that Update.
+Permission is not granted to distribute, license, loan, or sell data files or any other related content contained or displayed within the folder 2020_Angular_Momentum_Reaction_Engine. Modify, alter, or create any derivative works, reverse engineer, decompile, decode, decrypt, disassemble, or derive any source code from the Licensed folder. the Licensed folder 2020_Angular_Momentum_Reaction_Engine. Or remove, alter, or obscure any copyright, trademark, or other proprietary rights notice on or in the Licensed folder 2020_Angular_Momentum_Reaction_Engine.
 
 # Use of Previous Versions.
-USER to access source files contained within the NAMED folder : 2020_Angular_Momentum_Reaction_Engine may continue to use the previous versions of the Licensed folder Angular Momentum. Subject to the terms of this agreement, provided that the Update and the previous version are installed on the same computers.
+All other previous versions of the folder 2020_Angular_Momentum_Reaction_Engine, are held within the same non-commercial bounds. As this commercial licence. 
 
 # No Transfer of Previous Versions.
 USER to access source files contained within the NAMED folder : 2020_Angular_Momentum_Reaction_Engine may not transfer the previous version to a third party.
