@@ -1,7 +1,6 @@
 # Unit Functions are statistical modelling tools for data.
 
 Data Tools' are available within both Googlesheet and XLS format. 
-It will take some backengineering no doubt. To capture and understand the true mechanics. 
 
 # Lambda Base Equation
 
