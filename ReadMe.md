@@ -1,13 +1,13 @@
 # 2020_Angular_Momentum_Reaction_Engine 
 
-Data Tools' are available within XLS format and can be reimported into Googlesheets. Note that the original files are produced within Google sheets and drop stylesheet formatting when exported into XLS format.
+Data Tools' are available within XLS format and can be reimported into Googlesheets. 
 
 # Folder : Unit Functions : Statistical Modelling Tools For Data.
 
 Defined within a framework of both 'Multi-Variable' and ‘ Single Variable Calculus'. 
-And charted to visualise the mapping of coordinates. Within XLS format, you will need to re-select 'Log Scaling' for charts. 
+And charted to visualise the mapping of coordinates. Within XLS, you will need to re-select 'Log Scaling' for charts. 
 
-* Lambda Equations
+* Lambda Based Equations
 
 # Important Note : When creating projections within Lambda.
 
