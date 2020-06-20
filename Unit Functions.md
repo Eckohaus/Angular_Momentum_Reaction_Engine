@@ -9,25 +9,27 @@ Which is cross referenced within the following folder
 
 * Infinties 
 
-The aim here is simplicity when in calculation, and a stronger line of precision in forecast. 
+The aim here is simplicity when in calculation, and a more precision in forecast. 
 So whether your { UNIT_OF_ENERGY } be a ;
 
 * Product
 * Pixel or
 * Cell
 
-In order to obtain the first the differential, to enact Lambda. You will require two values. The calculation sheet will project both 
+You will require two values in order to calculate both :
 
 * Amplitude
 * Direction 
 
-The resonant cycle {'Base power ratio (^1.14)'} Can also be incorporated into all other toolsets provided
+The 'Base Power Ratio (^1.14). Can also be incorporated into other statistical toolsets provided :
 
 
-# Toolset {Boundary Momentum_Suquencer_In_Divsion}.
+# Boundary Momentum_Suquencer_In_Divsion : Unit_(Sequencing_Alternate_Divisional_Complex
 
 Deceptive in name, the toolset infers growth in division of an arbitrary SUM_VALUE_OF_ENERGY, 
 between three equal ratio's. And will as long as {DECIMILISATION} remains intact, much like a plant continue to refresh. 
 
 This becomes therefore an important cross referecing tool. 
 When handling higher VALUES_OF_ENERGY , as this is often the area which becomes De-Decimalised.
+
+# Unit_(AC)_Deposition_within_Decimalisation
