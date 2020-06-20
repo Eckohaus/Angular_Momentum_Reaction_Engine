@@ -26,7 +26,8 @@ The resonant cycle {'Base power ratio (^1.14)'} Can also be incorporated into al
 
 # Toolset {Boundary Momentum_Suquencer_In_Divsion}.
 
-Deceptive in name, the toolset infers growth in division of an arbitrary SUM_VALUE_OF_ENERGY, between three equal ratio's.
-And will as long as {DECIMILISATION} remains intact, much like a plant continue to refresh. 
+Deceptive in name, the toolset infers growth in division of an arbitrary SUM_VALUE_OF_ENERGY, 
+between three equal ratio's.And will as long as {DECIMILISATION} remains intact, much like a plant continue to refresh. 
 
-This becomes therefore an important cross referecing tool. When handling higher VALUES_OF_ENERGY this is often the area which becomes De-Decimilised.
+This becomes therefore an important cross referecing tool. 
+When handling higher VALUES_OF_ENERGY , as this is often the area which becomes De-Decimalised.
