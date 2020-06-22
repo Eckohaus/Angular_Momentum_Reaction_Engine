@@ -46,7 +46,7 @@ between three equal ratios. And will as long as {DECIMALISATION} remains intact,
 This becomes therefore an important cross referencing tool. 
 When handling higher VALUES_OF_ENERGY , as this is often the area which becomes De-Decimalised.
 
-# Unit_(AC)_Deposition_within_Decimalisation.
+# Electrical Resistance : Unit_(AC)_Deposition_within_Decimalisation.
 
 The equation depicts a {Probability of} a cancellation channel within 'Nuclear Resonance'. Which establishes the attenuation cycle. And this becomes an equation to experiment against. It is unclear whether the calculation holds within both MhZ Frequency Bands and AC Alternating Currents. Tho if accurate this would establish the redox potential within metallic structures, as well as calcification deposits within cellular organisms. 
 
@@ -66,3 +66,6 @@ OUTPUT :
 
 * ROI : Margin 
 * Designated to which market
+
+# Infinities
+
