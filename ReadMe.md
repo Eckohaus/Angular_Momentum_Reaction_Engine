@@ -70,4 +70,4 @@ OUTPUT :
 # Infinities
 
 If we move away from the idea of 'Infinite' being an etheral aspect. And instead understand it as an attribute of something. 
-We can begin to use this as a 'calculation complex' The attributes derived In the Inifinities XLS, are used to generate the Negative or Positive attributes of Power ratio's. With those power ratio's, we can then assign them to Lambda based equations.
+We can begin to use this as a 'calculation complex' The attributes derived In the Inifinities XLS, are used to generate ' Negative or Positive' Power ratio's. Which can be assigned to Lambda based equations.
