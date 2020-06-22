@@ -16,7 +16,7 @@ Most of the equation sets describe projected vectors or {Eigenvalues} as ENERGY_
 Wave function instabilities often arise within Lambda propagation at what is called 'wave 6'. Due to field inversions which is often termed as 'Attenuation'.  It becomes a representation of the compounding of relativistic effects, and these aspects are incorporated into the calculation sheets. Statistical probabilities surrounding Lambda analysis should always be recalibrated, when attenuation occurs. This should generate a non-deformed wave function, and zero out attenuation at wave 6.
 
 
-# Top_Buzz : Infinities.
+# Infinities.
 
 If we move away from the idea of 'Infinite' being an etheral aspect. And instead understand it as an attribute of something. 
 We can begin to use this as a 'calculation complex' The attributes derived In the Inifinities XLS are used to generate, ' Negative or Positive' Power ratio's. Which we can then assign to Lambda based equations.
