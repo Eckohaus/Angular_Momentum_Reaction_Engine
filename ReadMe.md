@@ -23,7 +23,7 @@ Ratios
 
 Approaching Infinity
 * If we move away from the idea of 'Inifinity' being an etheral aspect. And instead understand it as an attribute of something. 
-We can begin to use infinitie, as a 'calculation complex'. Leading to the attributues created within the 'Inifinities XLS'. Which are  functions of either ' Negative or Positive' Power ratio's, which we can then assign to Lambda based equations.
+We can begin to use infinitie, as a 'calculation complex'. The attributues created within 'Inifinities XLS' are functions of 'Negative and Positive' Power ratio's, which can then be assigned to Lambda based equations.
 
 
 # Lambda_Sequencer_in_Multiplication : Base Equation.
