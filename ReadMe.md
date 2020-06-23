@@ -18,6 +18,10 @@ Wave function instabilities often arise within Lambda propagation at what is cal
 
 # Infinities.
 
+* Ratios :
+Sequence =(SUM(A:C)) is derived upon the calculation {(((1.5578+0.102414319819447)*0.95)+1.5578)}. And is a fixed aspect. Which should not be adjusted.
+
+* Approaching Inifinities :
 If we move away from the idea of 'Infinite' being an etheral aspect. And instead understand it as an attribute of something. 
 We can begin to use this as a 'calculation complex' The attributes derived In the Inifinities XLS are used to generate, ' Negative or Positive' Power ratio's. Which we can then assign to Lambda based equations.
 
