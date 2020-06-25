@@ -1,6 +1,6 @@
 # Consultancy Services :
 
-In the application of these equations into product development streams. rendered can be rendered for a a quid and a packet of monsta munch. FIZZY POP.
+In the application of these equations into product development streams. Services can be rendered for a a quid and a packet of monsta munch. FIZZY POP.
 
 
 *  Advertising & Marketing : 
