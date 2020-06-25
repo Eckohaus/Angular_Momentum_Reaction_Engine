@@ -10,3 +10,7 @@ The of compilation of equations into a designated programming language, does not
 # Bio-Technologies : Applied Base Rate : 0.0028% of RRP
 
 In relation to the high level of differential extrapolations required. In order to generate cellular based targeting therapies, based upon these equations. Including the overall development time of related technologies. The current rate is set at a minimum, in order to establish a channel of viability. And is applied to the first year of product distribution. 
+
+# Consultancy Services :
+
+It becomes an important facet to retain the core logic of these equations, as open. Nevertheless in this memorandum of understanding, services can be rendered to provide ROI or statistical resolutions.
