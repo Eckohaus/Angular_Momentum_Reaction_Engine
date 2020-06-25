@@ -11,6 +11,12 @@ The of compilation of equations into a designated programming language, does not
 
 In relation to the high level of differential extrapolations required. In order to generate cellular based targeting therapies, based upon these equations. Including the overall development time of related technologies. The current rate is set at a minimum, in order to establish a channel of viability. And is applied to the first year of product distribution. 
 
-# Consultancy Services :
+# Service Industries :
 
-It becomes an important facet to retain the core logic of these equations, as open. Nevertheless in this memorandum of understanding, services can be rendered to provide ROI or statistical resolutions.
+There are a broad scope of services which the statistical analysis tools can be applied too. Namely fields such as ; 
+
+* Advertising
+* Marketing 
+* Financial
+
+With this in mind it becomes an important facet to retain the core logic of these equations, as open. In order to assist in the proliferation of ideas. Nevertheless in this memorandum of understanding, services can be rendered to provide ROI or statistical resolutions. Which are tailored in accordance with client requirements. 
