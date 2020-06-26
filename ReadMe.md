@@ -6,9 +6,9 @@ Data Tools are available within XLS format
 #### Folder : Unit Functions : Statistical Modelling Tools For Data.
 
 Defined within a framework of both 'Multi-Variable' and ‘ Single Variable Calculus'. 
-And charted to visualise the mapping of coordinates. Within XLS, you will need to re-select 'Log Scaling' for charts. 
+And charted to visualise the mapping of coordinates. 
 
-* Lambda Based Equations
+* Note : Do ensure that 'Log Scaling' is selected upon the re-import of XLS files. 
 
 #### Important Note : When creating projections within Lambda.
 
