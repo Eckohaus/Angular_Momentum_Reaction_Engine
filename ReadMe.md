@@ -1,9 +1,8 @@
 # 2020_Angular_Momentum_Reaction_Engine 
+Data Tools' are available within XLS format
 
 ---
  
-Data Tools' are available within XLS format and can be reimported into Googlesheets. 
-
 #### Folder : Unit Functions : Statistical Modelling Tools For Data.
 
 Defined within a framework of both 'Multi-Variable' and ‘ Single Variable Calculus'. 
