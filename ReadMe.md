@@ -1,8 +1,8 @@
 # 2020_Angular_Momentum_Reaction_Engine 
 
 ---
-
-* Data Tools' are available within XLS format and can be reimported into Googlesheets. 
+ 
+Data Tools' are available within XLS format and can be reimported into Googlesheets. 
 
 #### Folder : Unit Functions : Statistical Modelling Tools For Data.
 
