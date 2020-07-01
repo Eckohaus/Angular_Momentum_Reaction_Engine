@@ -8,7 +8,7 @@ Data Tools are available within XLS format
 Defined within a framework of both 'Multi-Variable' and ‘ Single Variable Calculus'. 
 And charted to visualise the mapping of coordinates. 
 
-* Note : Do ensure that 'Log Scaling' is selected upon the re-import of XLS files. 
+* Note : Ensure that 'Log Scaling' is selected upon the re-import of XLS files. 
 
 #### Important Note : When creating projections within Lambda.
 
