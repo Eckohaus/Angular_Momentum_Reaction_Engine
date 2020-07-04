@@ -26,7 +26,7 @@ There are two formats within the inifinities folder, which encode a topological 
 - Infinities_Transport : This is an example of infinity when it is assigned. And in terminology this implies that infinity will draw to a close when a certain condition is met.
 Infinities_transport, assigns electron transport as a key function to energetic distribution. And therefore create loss/gain vectors within that movement. 
 
-- Inifinities_Continuous : Encapsulates the context of infinity frozen in time. Let's imagine. There are no loss/gain vectors included. And instead just a description of the nuclear ratio's which are to be used, assigned. In order to approach infinity. 
+- Inifinities_Continuous : Encapsulates the context of infinity frozen in time. Let's imagine. There are no loss/gain vectors included. And instead just a description of the nuclear ratio's which are to be assigned. In order to approach infinity. 
 
 Infinities_Transport : Ratios
 * Sequence =(SUM(A:C)) is derived upon the calculation (((1.5578+0.102414319819447)*0.95)+1.5578). Recall this is an aspect which includes the assignment of electron transportation. It's fixed aspect within this calculation and should not be adjusted.
