@@ -26,13 +26,13 @@ We can begin to use infinitie, as a 'calculation complex'. The attributues creat
 
 There are two formats within the inifinities folder, which encode a topological description of energetic distribution. 
 
-- Infinities_Transport : This is an example of infinity when it is assigned. And in terminology this implies that infinity will draw to a close when a certain condition is met.
-Infinities_transport, assigns electron transport as a key function to energetic distribution. And therefore create loss/gain vectors within that movement. 
+- Infinities_Transport : Is an example of infinity when it becomes assigned. In terminology this implies that infinity will draw to a close when a certain condition is met.
+Infinities_transport, assigns electron transport as a key function to energetic distribution. And therefore create energetic loss/gain vectors within that movement. 
 
 Infinities_Transport : Ratios
 * Sequence =(SUM(A:C)) is derived upon the calculation (((1.5578+0.102414319819447)*0.95)+1.5578). Recall this is an aspect which includes the assignment of electron transportation. It's fixed aspect within this calculation and should not be adjusted.
 
-- Inifinities_Continuous : Encapsulates the context of infinity frozen in time. Let's imagine. There are no loss/gain vectors included. And instead just a description of the nuclear ratio's which are to be assigned. In order to approach infinity. 
+- Inifinities_Continuous : Encapsulates the context of infinity frozen in time, let's imagine. There are no loss/gain vectors within the energetic distribution. And instead just a description of the nuclear ratio's which are to be assigned. In order to approach infinity. 
 
 ---
 
