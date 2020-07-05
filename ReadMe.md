@@ -38,9 +38,23 @@ Infinities_transport, assigns electron transport as a key function to energetic 
 * Recall this is an aspect which includes the assignment of electron transportation, we must show how that variance is assembled. And how the structural transformation looks, within a sequence.
 
 #### Inifinities_Continuous 
+
 * Encapsulates the context of infinity frozen in time, let's imagine. There are no loss/gain vectors within the energetic distribution. And instead just a description of the nuclear ratio's which are to be assigned. In order to approach infinity. 
 
 ---
+
+#### The Base Power Ratio's : Created within Infinities
+
+Describe the relationship between nuclear resonance and mathematics. And this enables us to establish procedural methods when aiming to discern the trajectories of ENERGY_AS_A_UNIT. The primary base power used within the Lambda equations presented incorporates the ratio (^1.14). As statistically when calculated against the average, will give the most precise forecast within a designated framework. 
+
+* (^1.14)
+* (^1.15)
+* (^1.16)
+* (^1.18)
+
+
+The ratio's can also be incorporated into other statistical tools, which are provided.
+
 
 ### Lambda_Sequencer_in_Multiplication : Base Equation.
 
@@ -61,17 +75,6 @@ You will only require two values in order to calculate both :
 * Amplitude
 * Direction 
 
-#### The Base Power Ratio's :
-
-Created in the infinities folder. Describe the relationship between nuclear resonance and mathematics. And this enables us to establish procedural methods when aiming to discern the trajectories of ENERGY_AS_A_UNIT. The primary base power used within the Lambda equations presented incorporates the ratio (^1.14). As statistically when calculated against an average, will give the most precise forecast. 
-
-* (^1.14)
-* (^1.15)
-* (^1.16)
-* (^1.18)
-
-
-These ratio's can also be incorporated into other statistical tool which are provided.
 
 ---
 
