@@ -101,7 +101,7 @@ The equation depicts a {Probability of} a cancellation channel within 'Nuclear R
 ### Unit_Currency (Differential_Inversions)
 
 A tool useful for describing the current state of transaction potential, when transacting between two countries. 
-It's very important to understand, when usuing this tool, you are visualizing vacuum potentials, which equate to attenuation spikes. Also known as wave 6. 
+It's very important to understand when using this tool, you are visualizing a vacuum potentials. Which equates to attenuation within a particular spectrum.. 
 The calculation sheet uses currency differentials to incorporate the variance within a Lambda field equation. To use the tool ; 
 
 INPUT : 
