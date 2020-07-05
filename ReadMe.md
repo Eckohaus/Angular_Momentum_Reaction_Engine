@@ -20,23 +20,24 @@ Wave function instabilities often arise within Lambda propagation at what is cal
 
 ### Infinities.
 
-Approaching Infinity
+#### Approaching Infinity
+
 * If we move away from the idea of 'Inifinity' being an etheral aspect. And instead understand it as an attribute of something. 
 We can begin to use infinitie, as a 'calculation complex'. The attributues created within the 'Inifinities folder' are functions of 'Negative and Positive' Power ratio's, which can  be assigned to Lambda based equations.
 
-There are two formats within the inifinities folder, which encode a topological description of energetic distribution. 
+#### There are two formats within the inifinities folder, which encode a topological description of energetic distribution. 
 
 - Infinities_Transport : Is an example of infinity when it becomes assigned. In terminology this implies that infinity will draw to a close when a certain condition is met.
 Infinities_transport, assigns electron transport as a key function to energetic distribution. And therefore create energetic loss/gain vectors within that movement. 
 
-Infinities_Transport : Ratio's
+#### Infinities_Transport : Ratio's
 
 * Single Variable : ((1.5578/0.102414319819447)*0.05)
 * Multi Variable : ((1.5578*0.102414319819447)/0.95)
 
 * Recall this is an aspect which includes the assignment of electron transportation, we must show how that variance is assembled. And how the structural transformation looks, within a sequence.
 
-Inifinities_Continuous 
+#### Inifinities_Continuous 
 * Encapsulates the context of infinity frozen in time, let's imagine. There are no loss/gain vectors within the energetic distribution. And instead just a description of the nuclear ratio's which are to be assigned. In order to approach infinity. 
 
 ---
