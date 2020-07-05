@@ -37,7 +37,7 @@ Infinities_Transport : Ratio's
 * Recall this is an aspect which includes the assignment of electron transportation, we must show how that variance is assembled. And how the structural transformqation looks, within a sequence.
 
 Inifinities_Continuous 
-* Encapsulates the context of infinity frozen in time, let's imagine. There are no loss/gain vectors within the energetic distribution. And instead just a description of the nuclear ratio's which are to be assigned. In order to approach infinity. {The latter comment will not make clear sense, at this stage. When viewing the XLS. It's a contradictory statement which will need to be depicted}
+* Encapsulates the context of infinity frozen in time, let's imagine. There are no loss/gain vectors within the energetic distribution. And instead just a description of the nuclear ratio's which are to be assigned. In order to approach infinity. 
 
 ---
 
