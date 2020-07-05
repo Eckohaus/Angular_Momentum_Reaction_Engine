@@ -53,7 +53,7 @@ Describe the relationship between nuclear resonance and mathematics. And this en
 * (^1.18)
 
 
-The ratio's can also be incorporated into other statistical tools, which are provided.
+These ratio's can also be incorporated into other statistical tools, which are provided.
 
 
 ### Lambda_Sequencer_in_Multiplication : Base Equation.
