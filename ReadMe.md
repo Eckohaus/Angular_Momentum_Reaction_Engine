@@ -61,7 +61,17 @@ You will only require two values in order to calculate both :
 * Amplitude
 * Direction 
 
-The 'Base Power Ratio (^1.14). Can also be incorporated into other statistical tool sets provided :
+#### The Base Power Ratio's :
+
+Created in the infinities folder. Describe the relationship between nuclear resonance and mathematics. And this enables us to establish procedural methods when aiming to discern the trajectories of ENERGY_AS_A_UNIT. The primary base power used within the Lambda equations presented incorporates the ratio (^1.14). As statistically when calculated against an average, will give the most precise forecast. 
+
+* (^1.14)
+* (^1.15)
+* (^1.16)
+* (^1.18)
+
+
+These ratio's can also be incorporated into other statistical tool which are provided.
 
 ---
 
