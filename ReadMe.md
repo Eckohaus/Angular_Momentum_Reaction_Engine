@@ -29,12 +29,12 @@ There are two formats within the inifinities folder, which encode a topological 
 - Infinities_Transport : Is an example of infinity when it becomes assigned. In terminology this implies that infinity will draw to a close when a certain condition is met.
 Infinities_transport, assigns electron transport as a key function to energetic distribution. And therefore create energetic loss/gain vectors within that movement. 
 
-- Infinities_Transport : Ratios
-The two base field equations relate to the following : 
+Infinities_Transport : Ratio's
+
 * Single Variable : ((1.5578/0.102414319819447)*0.05)
 * Multi Variable : ((1.5578*0.102414319819447)/0.95)
 
-* Recall this is an aspect which includes the assignment of electron transportation. We must show how that variance is assembled, and how that structural transformqation within a sequence. 
+* Recall this is an aspect which includes the assignment of electron transportation, we must show how that variance is assembled. And how the structural transformqation looks, within a sequence.
 
 - Inifinities_Continuous : Encapsulates the context of infinity frozen in time, let's imagine. There are no loss/gain vectors within the energetic distribution. And instead just a description of the nuclear ratio's which are to be assigned. In order to approach infinity. 
 
