@@ -52,6 +52,7 @@ Describe the relationship between nuclear resonance and mathematics. And this en
 * (^1.16)
 * (^1.18)
 
+---
 
 These ratio's can also be incorporated into other statistical tools, which are provided.
 
