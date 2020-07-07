@@ -51,6 +51,6 @@ There are a broad array of applications and economic areas, to which these tools
 
 With this in mind it becomes an important facet to retain the core logic of these equations, as open. In order to assist in the proliferation of ideas. Nevertheless in this memorandum of understanding. And as the world is littered with twats, all services which are rendered to provide tailored soloutions, i.e derivative works based upon these equations. Will be published, inclusive of a detailed summary of delivery. Which inturn becomes a public record and therefore reference of all core logic assigned to that particular project. This structure is created in order to lower the threshold and mitigate against IP or data theft. And that is all. 
 
-All corporate and commercial framing of products or works, derived from these equations. Will require a NDA agreements and a secure development enviroment when related to the inclusion of web technologies. And this implies the transmission of infromation.
+All corporate and commercial framing of products or works, derived from these equations. Will require a NDA agreements and a secure development enviroment, when related to the inclusion of web technologies. And this implies the transmission of infromation.
 
 ---
