@@ -11,7 +11,8 @@ In order to simplify the costing structures for commercial licences. An outline 
 
 * Base Currency : (£ = GBP) Great British Pound
 * Base Percents : (%) The applicable rates are designated to the base currency {£ = GBP}  
-* Regular Retail Price : (RRP) Licencing fees are applied as a percent of product RRP, with each contract and therefore product licence being valid for 3 years. 
+* Regular Retail Price : (RRP) Licencing fees are applied as a percent of product RRP
+* Contract Duration : Each individual licence is valid for 3 years. 
 
 Within the folder ;
 
