@@ -43,7 +43,7 @@ In relation to the high level of differential extrapolations required. In order 
 
 # Industries :
 
-There are a broad array of applications and economic areas, to which these tools can be applied. Namely fields such as ; 
+There are an array of applications and economic areas, to which these tools can be applied. Namely fields such as ; 
 
 * Advertising
 * Marketing 
