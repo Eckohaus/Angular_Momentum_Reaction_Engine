@@ -23,7 +23,7 @@ Wave function instabilities often arise within Lambda propagation at what is cal
 #### Approaching Infinity
 
 * If we move away from the idea of 'Inifinity' being an etheral aspect. And instead understand it as an attribute of something. 
-We can begin to use infinitie, as a 'calculation complex'. The attributues created within the 'Inifinities folder' are functions of 'Negative and Positive' Power ratio's, which can  be assigned to Lambda based equations.
+We can begin to use infinities, as the basis of a 'calculation complex'. The attributues created within the 'Inifinities folder' are functions of 'Negative and Positive' Power ratio's, which can  be assigned to Lambda based equations.
 
 #### There are two formats within the inifinities folder, which encode a topological description of energetic distribution. 
 
