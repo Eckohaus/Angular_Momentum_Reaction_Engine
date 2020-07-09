@@ -20,7 +20,7 @@
 
 ##### Rindia Ayuning Cundari
 ##### RindiaCundari@Gmail.Com
-##### Under the condition that she admits under oath, that she resold this work.
+##### Under the condition that she lives in Papua New Guinea, for a period of 30 years.
 
 ---
 
