@@ -20,7 +20,7 @@ Within the folder ;
 
 * Unit Functions
 
-All subfolders ; are assigned with the following tariff rates. 
+All subfolders are assigned with the following tariff rates. Which are applied to both commercial RRP structures and grouped licencing.  
 
 * Currency : (0.03% in £) : (0.3675% in $) 
 * Electrical_Resistance : Applied Base Rate : (0.006% in £) : (0.0735% in $) 
