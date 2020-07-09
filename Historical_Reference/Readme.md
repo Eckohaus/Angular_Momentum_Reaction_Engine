@@ -3,11 +3,11 @@
 
 ---
 
-##### A reference to a deviation on the original equation, wherby IP is currently in question : 10% would be akin to a modification on electron transport.
-##### Which would be a similar in notion, to what is highlighted within the infinities folder.
+##### A reference to a deviation on the original equation, wherby IP is currently in question : 11.5% would be akin to a modification on electron transport.
+##### Which would be similar in notion, to what is highlighted within the infinities folder.
 
 ##### {Be aware the precise equation currently in use}
-##### Angular_Momentum_Reaction_Engine Root Equation : With a 10% applied deviation 
+##### Angular_Momentum_Reaction_Engine Root Equation : With a 11.5% applied deviation 
 ##### (differential * 1.13^11) End Equation {i.e Wave 5} : (differential * 1.13^1.1) When decimalised {i.e Wave 2} 
 
 ----
