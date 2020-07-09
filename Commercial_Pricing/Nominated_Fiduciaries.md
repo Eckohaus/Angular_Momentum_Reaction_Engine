@@ -29,3 +29,8 @@
 
 ##### Chris Morris 
 ##### Morrisillustration@Yahoo.Co.Uk
+
+---
+
+##### Nick Kingan
+##### NickKingan@Gmail.Com
