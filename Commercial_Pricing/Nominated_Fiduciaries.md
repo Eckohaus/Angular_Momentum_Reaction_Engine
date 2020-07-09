@@ -18,6 +18,12 @@
 
 ---
 
+##### Rindia Ayuning Cundari
+##### RindiaCundari@Gmail.Com
+##### Under the condition that she admits under oath, that she resold this work.
+
+---
+
 ##### Felipe Rojas LLanos
 ##### FelipeRojasLlanos@Gmail.Com
 ##### Under the condition that he Rugby Tackles Rui Sarashina 
