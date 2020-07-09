@@ -4,9 +4,11 @@
 ---
 
 ##### A reference to a 10% deviation on the original equation, wherby IP is currently in question : 10% Would be akin to a modification on Electron transport.
+##### Which would be a similar notion to what is highlighted within the infinities folder.
 ##### {Be aware the precise equation currently in use, is unconfirmed. Only in view of the outputs in C#, Fortran do I discern this to be the equation set in use.}
 
-##### Intel : Root Equation : (differential * 1.139040^11) End Equation {i.e Wave 5} : (differential * 1.139040^1.1) When decimalised {i.e Wave 2} 
+##### Angular_Momentum_Reaction_Engine Root Equation : With a 10% applied deviation 
+##### (differential * 1.139040^11) End Equation {i.e Wave 5} : (differential * 1.139040^1.1) When decimalised {i.e Wave 2} 
 
 ----
 
