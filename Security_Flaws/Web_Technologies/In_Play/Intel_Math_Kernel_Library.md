@@ -44,14 +44,10 @@
 
 ###### <a href="https://www.youtube.com/watch?v=jh8ktNsie0I" target="_blank">Politics </a>
 
-
-
 ---
 
-
 ##### [Intel® Math Kernel Library LAPACK Examples : Intel Website](https://software.intel.com/sites/products/documentation/doclib/mkl_sa/11/mkl_lapack_examples/singular_driver.htm)
-##### [Intel® Math Kernel Library LAPACK Examples : Github repository](https://github.com/eckohaus/2020_Security_Flaws/edit/master/Web_Technologies/In_Play/Intel_Math_Kernel_Library.md)
-
+##### [Intel® Math Kernel Library LAPACK Examples : Github repository](https://github.com/eckohaus/2020_Security_Flaws/blob/master/Web_Technologies/In_Play/Intel_Math_Kernel_Library.md)
 
 #####  Type : Multi-Variable 
 #####  Algorithm Name : Divide & Conquer
