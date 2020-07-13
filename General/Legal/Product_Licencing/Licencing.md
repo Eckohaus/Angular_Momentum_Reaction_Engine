@@ -22,10 +22,10 @@ Within the folder ;
 
 All subfolders are assigned with the following tariff rates. Which are applied to both commercial RRP structures and grouped licencing.  
 
-* Currency : (0.03% in £) : (0.3675% in $) 
-* Electrical_Resistance : Applied Base Rate : (0.006% in £) : (0.0735% in $) 
-* Infinities : Applied Base Rate : (0.01% in £) : (0.1225% in $) 
-* Lambda_Sequencer_In_Multiplication : Applied Base Rate : (0.08% in £) : (0.98% in $) 
+* Currency : (0.22% in £) : (0.27% in $) 
+* Electrical_Resistance : Applied Base Rate : (0.88% in £) : (1.08% in $) 
+* Infinities : Applied Base Rate : (0.44% in £) : (0.54% in $) 
+* Lambda_Sequencer_In_Multiplication : Applied Base Rate : (0.11% in £) : (4.92% in $) 
 
 ---
 
