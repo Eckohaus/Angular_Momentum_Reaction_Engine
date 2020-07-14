@@ -16,6 +16,6 @@ These are divisional matrices of a combination equation.
 ##### When all are assigned, the constructs define attributes of ((QVe^LE)/N)=(M). Unassigned complexes within these sequences. Equate to reductive processes, which can be used to define cellular respiration. 
 
 ###### (N/(Le^-QvE))
-###### Sequence Three : (4.92/(9.69^-1010))=(^10)
+###### Sequence Three : (4.92/(9.69^((-1010)=(2/5)/5))
 
 
