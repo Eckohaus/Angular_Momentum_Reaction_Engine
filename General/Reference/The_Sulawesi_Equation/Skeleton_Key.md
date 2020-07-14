@@ -1,8 +1,7 @@
 ### Skeleton_Key
 
 
-##### A series of unassigned infinite’s, which when assigned. 
-##### Become the primary drivers behind AC. Also known as an alternating current. These are divisional matrices of a combination equation.
+##### A series of unassigned infinite’s, which when assigned. Become the primary drivers behind AC. Also known as an alternating current. These are divisional matrices of a combination equation.
 
 ###### ((Qve/LE)=(N))
 ###### Sequence One : 0.11,0.22,0.44,0.88,1.76
