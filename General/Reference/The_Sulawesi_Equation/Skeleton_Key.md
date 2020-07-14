@@ -1,4 +1,4 @@
-### Skeleton_Key also known as ‘the fanni’
+### Skeleton_Key
 
 
 ##### A series of unassigned infinite’s, which when assigned. 
@@ -11,8 +11,7 @@ These are divisional matrices of a combination equation.
 
 
 ##### In Part the attributes of the next set. Are due to the divisional complex reaching a limitation within boundary momentum. The reaction complex which occurs, consumes both sequence 1 and 2. Creating what will become a new infinity. It’s important to note that all preceding infinity complexes, will alternate within a topological plane. 
-##### When all are assigned both logical constructs define attributes of (M). Unassigned complexes within these sequences. Equate to reductive processes, which can be used to define cellular respiration. 
-Which becomes 1.5578.
+##### When all are assigned, the constructs define attributes of ((QV^L)/N)=(M). Unassigned complexes within these sequences. Equate to reductive processes, which can be used to define cellular respiration. 
 
 ###### Sequence Three : 4.92, 9.69, 1010, ^10.
 
