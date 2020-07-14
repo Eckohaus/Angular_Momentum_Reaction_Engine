@@ -15,4 +15,6 @@
 ###### (N/(Le^-QvE))
 ###### Sequence Three : (4.92/(9.69^((-1010)=(2/5)/5))
 
+# These equations are byproducts of multi-variable calculus.
+
 
