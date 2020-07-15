@@ -9,10 +9,9 @@ This enables users to explore the root equations without restriction, when asses
 
 In order to simplify the costing structures for commercial licences. An outline is given ; 
 
-* Base Currencies : (£ = GBP) Great British Pound : ($ = USD) United States Dollar
-* Base Percents : (%) The applicable rates are designated to the base currencies (% in £) : (% in $)
+* Base Percent : (%) Applied rates are designated, to the currency of the end user.
 * Regular Retail Price : (RRP) Licencing fees are applied as a percent of product RRP
-* Contract Duration : Each individual licence is valid for 3 years. 
+* Contract Duration : Each individual licence is valid for 2.5 years. 
 
 ---
 
@@ -20,12 +19,13 @@ Within the folder ;
 
 * Unit Functions
 
-All subfolders are assigned with the following tariff rates. Which are applied to both commercial RRP structures and grouped licencing.  
+Applicable rates are 0.25%. 
+Which is applied to both commercial RRP, and grouped licencing structures.
 
-* Currency : (0.22% in £) : (0.27% in $) 
-* Electrical_Resistance : Applied Base Rate : (0.88% in £) : (1.08% in $) 
-* Infinities : Applied Base Rate : (0.44% in £) : (0.54% in $) 
-* Lambda_Sequencer_In_Multiplication : Applied Base Rate : (0.11% in £) : (4.92% in $) 
+* Currency
+* Electrical_Resistance
+* Infinities
+* Lambda_Sequencer_In_Multiplication.
 
 ---
 
