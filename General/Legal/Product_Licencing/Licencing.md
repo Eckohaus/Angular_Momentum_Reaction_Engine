@@ -14,9 +14,10 @@ In order to simplify the costing structures for commercial licences. An outline 
 
 ---
 
-Within the folder ;
+Within the folders ;
 
 * Unit Functions
+* General 
 
 Applicable rates are 0.25%. 
 Which is applied to both commercial RRP, and grouped licencing structures.
@@ -25,6 +26,8 @@ Which is applied to both commercial RRP, and grouped licencing structures.
 * Electrical_Resistance
 * Infinities
 * Lambda_Sequencer_In_Multiplication.
+* The_Sulawesi_Equation : Skeleton Key
+
 
 ---
 
