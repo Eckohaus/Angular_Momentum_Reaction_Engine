@@ -9,9 +9,8 @@ This enables users to explore the root equations without restriction, when asses
 
 In order to simplify the costing structures for commercial licences. An outline is given ; 
 
-* Base Percent : (%) Applied rates are designated, to the currency of the end user.
+* Base Percent : (%) Applied rate is designated, to the currency of the end user.
 * Regular Retail Price : (RRP) Licencing fees are applied as a percent of product RRP
-* Contract Duration : Each individual licence is valid for 2.5 years. 
 
 ---
 
