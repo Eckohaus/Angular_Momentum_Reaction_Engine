@@ -62,4 +62,4 @@
 
 ##### Nick Kingan
 ##### NickKingan@Gmail.Com
-##### Under the condition that Nick Kingan has an arm wrestle with Corvin Nehal Dhali.
+##### Under the condition that Nick Kingan has masturbates on a public bus.
