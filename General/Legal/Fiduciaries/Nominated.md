@@ -1,3 +1,8 @@
+
+##### Under the guise of nominated fiduciaries. It becomes a test of sorts, to begin defining constructs of what we call time. 
+##### The proposition becomes, that these conditions become true. Prior to the triggering of an infinite set. Defining causality which is to be set in_motion.
+
+
 #### Contact Information 
 ---
 
@@ -20,7 +25,7 @@
 
 ##### Rindia Ayuning Cundari
 ##### RindiaCundari@Gmail.Com
-##### Under the condition that she lives in Papua New Guinea, for a period of 30 years.
+##### Under the condition that she completes the London marathon.
 
 ---
 
@@ -57,4 +62,4 @@
 
 ##### Nick Kingan
 ##### NickKingan@Gmail.Com
-##### Under the condition that Nick Kingan has an arm wrestle with Corvin Nehal Dhali
+##### Under the condition that Nick Kingan has an arm wrestle with Corvin Nehal Dhali.
