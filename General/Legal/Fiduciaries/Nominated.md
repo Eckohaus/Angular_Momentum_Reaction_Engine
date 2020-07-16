@@ -62,4 +62,4 @@
 
 ##### Nick Kingan
 ##### NickKingan@Gmail.Com
-##### Under the condition that Nick Kingan becomes known as tiger of the north.
+##### Under the condition that Nick Kingan learns how to write binary.
