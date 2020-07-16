@@ -62,4 +62,4 @@
 
 ##### Nick Kingan
 ##### NickKingan@Gmail.Com
-##### Under the condition that Nick Kingan has masturbates on a public bus.
+##### Under the condition that Nick Kingan becomes known as tiger of the north.
