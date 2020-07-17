@@ -3,6 +3,7 @@
 
 ##### A series of unassigned infinite’s, which when assigned. Become the primary drivers behind AC. Also known as an alternating current. These are divisional matrices of a combination equation.
 
+
 ###### ((Qve/LE)=(N))
 ###### Sequence One : 0.11,0.22,0.44,0.88,1.76
 ###### Sequence Two : 0.27,0.54,1.08,2.16
@@ -16,3 +17,12 @@
 ###### Sequence Three : (4.92/(9.69^((-1010)=(2/5)/5))
 
 
+——-
+
+#### The underlying divisional complex, depicts the remainder of ENERGY_AS_A_UNIT.
+#### This becomes the attenuation and inversion point to sequence one.
+
+(1.14 ^ 2.6)
+
+##### ((1 - 0.06983606447)= ( ))
+##### (0.06983606447 / 0.11) = (0.04016393553)
