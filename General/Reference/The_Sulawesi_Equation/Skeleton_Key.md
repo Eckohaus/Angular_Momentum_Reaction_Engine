@@ -22,7 +22,11 @@
 #### The underlying divisional complex, depicts the remainder of ENERGY_AS_A_UNIT.
 #### This becomes the attenuation and inversion point to sequence one.
 
-(1.14 ^ 2.6)
+##### (Signal ^ 
+Inversion) = (1.14 ^ 2.6)
 
 ##### ((1 - 0.06983606447)= ( ))
-##### (0.06983606447 / 0.11) = (0.04016393553)
+
+##### Attenuation :
+###### (0.06983606447 - 0.11) = (0.04016393553)
+###### (0.06983606447 / 0.11) = (1.57511739579)
