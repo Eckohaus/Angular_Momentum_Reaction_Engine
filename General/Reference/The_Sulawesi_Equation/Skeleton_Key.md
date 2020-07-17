@@ -29,3 +29,5 @@
 ##### Attenuation :
 ###### (0.06983606447 - 0.11) = (0.04016393553)
 ###### (0.06983606447 / 0.11) = (1.57511739579)
+
+#### The inversion is created using 1 Binary UNIT_OF_ENERGY. From sequence 2, (2.16 will become the inversion 2.6)
