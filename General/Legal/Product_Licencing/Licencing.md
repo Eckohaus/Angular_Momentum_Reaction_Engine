@@ -51,8 +51,8 @@ There are an array of applications and economic areas, to which these tools can 
 * Marketing 
 * Financial
 
-With this in mind it becomes an important facet to retain the core logic of these equations, as open. In order to assist in the proliferation of ideas. Nevertheless in this memorandum of understanding. And as the world is littered with twats, all services which are rendered to provide tailored solutions, i.e derivative works based upon these equations. Will be published, inclusive of a detailed summary of delivery. Which inturn becomes a public record and therefore reference of all core logic assigned to that particular project. This structure is created in order to lower the threshold and mitigate against IP or data theft. And that is all. 
+With this in mind it becomes an important facet to retain the core logic of these equations, as open. In order to assist in the proliferation of ideas. Nevertheless in this memorandum of understanding , the current web is a world littered with twats. Therefore services which are rendered to provide tailored solutions, i.e derivative works based upon these equations. Will be published, inclusive of a detailed summary of delivery. In order to create a public record of reference and core logic. This structure is created in order to lower the threshold and mitigate against IP or data theft. And that is all. 
 
-All corporate and commercial framing of products or works, derived from these equations. Will require a NDA agreement and a secure development environment, when related to the inclusion of web technologies. And this implies the transmission of information.
+All commercial works derived from these equations. Due to the above constraints, NDA agreements are unassignable.
 
 ---
