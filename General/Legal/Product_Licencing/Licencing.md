@@ -55,6 +55,6 @@ With this in mind it becomes an important facet to retain the core logic of thes
 #### Memorandum of understanding
 Derivative works based upon these equations , will be published. In order to create a public record of reference and core logic. This structure is created in order to lower the threshold and mitigate against IP or data theft. 
 
-All commercial works derived from these equations. Due to the above constraints, NDA agreements are unassignable.
+All commercial works derived from these equations. Due to the above constraints. NDA agreements are unassignable.
 
 ---
