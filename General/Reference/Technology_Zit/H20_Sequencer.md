@@ -1,1 +1,1 @@
-#### The Hydrogen Equation In Bunary
+#### The Hydrogen Equation In Binary.
