@@ -57,4 +57,4 @@ Derivative works based upon these equations , will be published. In order to cre
 
 All commercial works derived from these equations. Due to the above constraints. NDA agreements are unassignable.
 
----
+1111
