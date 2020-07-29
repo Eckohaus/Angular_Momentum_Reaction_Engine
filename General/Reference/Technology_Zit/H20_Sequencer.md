@@ -6,3 +6,8 @@
 
 ###### Within this singular event becomes an analogy of bias within choice. And it becomes this. “ within the field lines of assembly. Z becomes Q and a spectre unfolds it’s hand. And there arrives two superpositions, one held in each. One represents life, and the other death. It returns the equation as 10003. It redefines energetic distribution in order to support both. And in doing so , creates a new infinity.”  
 
+
+
+
+1111
+
