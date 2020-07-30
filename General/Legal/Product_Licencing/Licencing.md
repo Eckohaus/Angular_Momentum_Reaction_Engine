@@ -20,7 +20,7 @@ Within the folders ;
 * General 
 
 Applicable rates : 0.0404% 
-Which is applied to both commercial RRP, and grouped licencing structures.
+Which is applied to both commercial RRP, and grouped licencing structures....
 
 * Currency
 * Electrical_Resistance
