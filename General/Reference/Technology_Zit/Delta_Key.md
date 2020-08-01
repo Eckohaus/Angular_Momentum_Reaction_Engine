@@ -17,3 +17,7 @@ The equation has two key handlers and is described as both :
 ##### Binary = 1
 ##### ((Vp/Q)/D) = ( Virtual particles / Quanta) / Dimension )
 ##### (E assigned)
+
+##### Ingredients
+
+###### A potato , a hairdryer and a torch.
