@@ -7,9 +7,9 @@
 
 ——
 #### Negative Delta
-##### -X/-Y
+##### -X|-Y|(-Z)
 ##### Planar determines (Ionisation|Conductance) using metallic ions to distribute the nuclear force. (e/(E^c))=(-D). This will establish lambda along an electromagnetic spectrum.
 
 #### Positive Delta 
-##### X/Y
+##### X|Y|(Z+)
 ##### Planar determines (binary|mathematical) constructs within ((D^(e^c)). Which can be assigned to the following formats :
