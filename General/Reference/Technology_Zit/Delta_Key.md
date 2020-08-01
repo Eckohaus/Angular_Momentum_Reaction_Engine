@@ -15,7 +15,7 @@ The equation has two key handlers and is described as both :
 #### ENERGY_AS_A_UNIT
 
 ##### Binary = ( 1|000|O )
-##### ((Vp/Q)/D) = (( Virtual particles / Quanta) / Dimension )
+##### ((Vp|Q)|D) = (( Virtual particles | Quanta) | Dimension )
 ##### (E = Energy Constant)
 
 ——- 
