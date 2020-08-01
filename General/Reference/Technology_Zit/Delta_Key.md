@@ -9,7 +9,7 @@ The equation has two key handlers and is described as both :
 ——
 #### Frequency Composition 
 
-##### Along a nucleated path, which will define (Conductance Inductance). This is our atomic assembler which assigns field inversions to both boundary planes.
+##### Along a nucleated path, which will define (Conductance Inductance). This is our atomic assembler which assigns field inversions to both boundary planes. It will either create or deconstruct binary and mathematical planes.
 
-#### ((Vp/Q)/D)= (E assigned)
+#### ((Vp/Q)/D)=(E assigned)
 
