@@ -3,3 +3,11 @@
 ##### Binary = ( 1|000|O )
 ##### ((Vp|Q)|D) = (( Virtual particles | Quanta) | Dimension )
 ##### (E = Energy Constant)
+
+#### Negative Delta
+##### -X/-Y
+##### Planar determined by metallic ionisation. (e/(E^c))=(-D). 
+
+#### Positive Delta 
+##### X/Y
+##### Planar determines (binary|mathematical) constructs within ((D^(e^c))
