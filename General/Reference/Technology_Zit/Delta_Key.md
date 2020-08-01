@@ -4,4 +4,4 @@
 
 ##### The delta key becomes a logic assembler for the quantum domain. Which becomes the notation fields for virtual particles within the assembly of the holographic principle.
 
-## It was chubby rick with a hula hoop.
+# It was chubby rick with a hula hoop.
