@@ -3,12 +3,14 @@
 
 ###### This equation establishes a negative Z field of eigenvalues. And therefore it is a subtractive differential. It creates a multi variable matrix where 1 unit of energy becomes divided across the electromagnetic spectrum. In binary the energetic values are divided over a spectral plane. The values assigned within this field equation are represented as :
 
- (1)
-0(0)1
-1(0)0
-0(1)0
-1(0)1
-(0.5)
+# (1)
+
+# 0(0)1
+# 1(0)0
+# 0(1)0
+# 1(0)1
+
+# (0.5)
 
 ###### When we introduce Negative Delta (-D/t). Where Delta is inductance within a lambda field. And (t) is equal to time. Binary handlers will construct 404 sequences
 
