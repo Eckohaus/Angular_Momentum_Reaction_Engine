@@ -6,16 +6,7 @@ The equation has two key handlers and is described as both :
 
 #### Composition Frequency 
 ——
-#### Frequency Composition 
-
-##### Along a nucleated path which is triangulated. This determines (Conductance|Inductance). This is our atomic assembler, which will assign the energetic values of field inversions. It will either create or deconstruct, both binary and mathematical planes.
-
-——
-#### ENERGY_AS_A_UNIT
-
-##### Binary = ( 1|000|O )
-##### ((Vp|Q)|D) = (( Virtual particles | Quanta) | Dimension )
-##### (E = Energy Constant)
+#### Frequency Composition
 
 ——- 
 
