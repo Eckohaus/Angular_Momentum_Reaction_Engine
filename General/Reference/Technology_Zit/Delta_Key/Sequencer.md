@@ -9,9 +9,9 @@
 #### Negative Delta
 ##### E^-1
 ##### -X|-Y|(-Z)
-##### Planar determines (Ionisation|Conductance) bias using metallic ions to distribute the nuclear force. (e/(E^c))=(-D). This will establish lambda along an electromagnetic field.
+##### Planar (e/(E^c))=(-D) Determines (Ionisation|Conductance) bias using metallic ions to distribute nuclear force. This will establish lambda fields, along an electromagnetic spectrum.
 
 #### Positive Delta 
 ##### E^1
 ##### X|Y|(Z+)
-##### Planar determines (binary|mathematical) constructs within ((D^(e^c)). Which can be assigned to the following formats :
+##### Planar ((D^(e^c)) Determines (binary|mathematical) constructs within. Which can be assigned to the following formats :
