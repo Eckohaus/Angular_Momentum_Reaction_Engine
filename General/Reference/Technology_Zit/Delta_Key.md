@@ -20,5 +20,5 @@ The equation has two key handlers and is described as both :
 
 ——- 
 
-###### Unit Finctions : Electrical Resistance
-###### Here it is important to note the depiction of the reductive relationship defined within the Electrical Resistance XlS. The sequencer uses the differential as the nucleation matrix, to inturn define the variable values within an eigenfield or alternating current.
+###### Unit Functions : Electrical Resistance
+###### It is important to note a distinction between the carrier charges of (substrate|Ionisation). The depiction of the reductive relationship defined within the Electrical Resistance XlS, relies on metallic ionisation. In order to sequence the differential nucleation matrix. To define multi-variable values within an eigenfield or alternating current.
