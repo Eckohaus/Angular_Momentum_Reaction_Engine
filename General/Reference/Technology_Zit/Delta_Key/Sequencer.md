@@ -11,4 +11,4 @@
 
 #### Positive Delta 
 ##### X/Y
-##### Planar determines (binary|mathematical) constructs within ((D^(e^c))
+##### Planar determines (binary|mathematical) constructs within ((D^(e^c)). Which can be assigned to the following formats :
