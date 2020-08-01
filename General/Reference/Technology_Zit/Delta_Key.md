@@ -20,6 +20,5 @@ The equation has two key handlers and is described as both :
 
 ——- 
 
-#### Lambda Sequencer
-
-#### Here it is important to note the depiction of the reductive relationship defined within the Lambda XlS. The sequencer uses the differential as the nucleation matrix to inturn define the variable values within an eigenfield.
+###### Unit Finctions : Electrical Resistance
+###### Here it is important to note the depiction of the reductive relationship defined within the Electrical Resistance XlS. The sequencer uses the differential as the nucleation matrix, to inturn define the variable values within an eigenfield or alternating current.
