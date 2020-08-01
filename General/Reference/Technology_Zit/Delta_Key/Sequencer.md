@@ -14,4 +14,4 @@
 #### Positive Delta 
 ##### E^1
 ##### X|Y|(Z+)
-##### Planar ((D^(e^c)) Determines dimension resolved within (binary|mathematical) constructs. The assignment of ENERGY_AS_A_UNIT. Is to be encoded by wave variance and is a cumulative force within the following formats :
+##### Planar ((D^(e^c)) Determines dimension resolved within (binary|mathematical) constructs. The assignment of ENERGY_AS_A_UNIT , is to be encoded by wave variance and is a cumulative force within (Chemistry|Biology).
