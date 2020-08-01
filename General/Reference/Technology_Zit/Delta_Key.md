@@ -11,5 +11,10 @@ The equation has two key handlers and is described as both :
 
 ##### Along a nucleated path, which will define (Conductance Inductance). This is our atomic assembler which assigns the energetic values of field inversions. It will either create or deconstruct, both binary and mathematical planes.
 
-#### ((Vp/Q)/D)=(E assigned)
+——-
+#### ENERGY_AS_A_UNIT
+
+##### Binary = 1
+##### ((Vp/Q)/D)
+##### (E assigned)
 
