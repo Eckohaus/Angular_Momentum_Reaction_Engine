@@ -1,6 +1,6 @@
 ### Lambda Field Generation
 
-#### Here we determine the relativistic effects of lambda fields within delta.
+#### Here we determine the relativistic effects of lambda fields within delta. Understand that (Total System Energy) is assigned over a squared constant.
 
 ——-
 
