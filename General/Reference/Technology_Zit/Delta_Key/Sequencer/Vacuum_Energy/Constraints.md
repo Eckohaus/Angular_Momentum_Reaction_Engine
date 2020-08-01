@@ -1,4 +1,4 @@
-#### Lambda Field : Vacuum Potentials 
+#### Lambda Field Encoding : Using Negative Delta
 
 ##### The aim here is to establish the causal effects, within relativistic behaviours. 
 ##### Whereby an encoding channel is created within a Lambda Field, using wave variance to assign atomic spin assemblies of (Total System Energy).
