@@ -1,5 +1,5 @@
 #### Lambda Field Signalling
 
 ##### The aim here is to establish the causal effects, within relativistic behaviours. 
-##### Whereby an encoding channel is created within a Lambda Field, using wave variance to assign atomic assemblies of (Total System Energy).
-##### And inturn guided over a squared constant, to be either positive or negative. This defines the vacuum field of Lambda to be either repulsive or attractive in nature.
+##### Whereby an encoding channel is created within a Lambda Field, using wave variance to assign atomic spin assemblies of (Total System Energy).
+##### The ionisation of the electromagnetic field over a squared constant. Is to be either positive (Additive) or negative (subtractive). When defined by the vacuum potential of Lambda fields. As either repulsive or attractive in nature.
