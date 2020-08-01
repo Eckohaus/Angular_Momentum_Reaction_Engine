@@ -14,6 +14,12 @@ The equation has two key handlers and is described as both :
 ——
 #### ENERGY_AS_A_UNIT
 
-##### Binary = 1
+##### Binary = ( 1|000|O )
 ##### ((Vp/Q)/D) = (( Virtual particles / Quanta) / Dimension )
-##### (E assigned)
+##### (E = Energy Constant)
+
+——- 
+
+#### Lambda Sequencer
+
+#### Here it is important to note the depiction of the reductive relationship defined within the Lambda XlS. The sequencer uses the differential as the nucleation matrix to inturn define the variable values within an eigenfield.
