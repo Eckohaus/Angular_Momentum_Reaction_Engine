@@ -15,9 +15,5 @@ The equation has two key handlers and is described as both :
 #### ENERGY_AS_A_UNIT
 
 ##### Binary = 1
-##### ((Vp/Q)/D) = ( Virtual particles / Quanta) / Dimension )
+##### ((Vp/Q)/D) = (( Virtual particles / Quanta) / Dimension )
 ##### (E assigned)
-
-##### Ingredients
-
-###### A potato , a hairdryer and a torch.
