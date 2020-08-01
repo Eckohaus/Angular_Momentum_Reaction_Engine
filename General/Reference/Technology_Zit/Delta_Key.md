@@ -21,4 +21,4 @@ The equation has two key handlers and is described as both :
 ——- 
 
 ###### Unit Functions : Electrical Resistance
-###### It is important to note a distinction between the carrier charges of (substrate|Ionisation). The depiction of the reductive relationship defined within the Electrical Resistance XlS, relies on metallic ionisation. In order to sequence the differential nucleation matrix. To define multi-variable values within an eigenfield or alternating current.
+###### Describes the polarity of carrier charges within a 3Dimensional plane. Defining (substrate|Ionisation) depicts the energetic transmission into a nucleated field. It is reductive by nature relationship defined and relies on metallic ionisation. In order to sequence the differential to define multi-variable values within an eigenfield or alternating current.
