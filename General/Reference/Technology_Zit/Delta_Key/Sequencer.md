@@ -7,7 +7,7 @@
 ——
 #### Negative Delta
 ##### -X/-Y
-##### Planar determined by metallic ionisation. (e/(E^c))=(-D). 
+##### Planar determines (Ionisation|Conductance) using metallic ions to distribute the nuclear force. (e/(E^c))=(-D). 
 
 #### Positive Delta 
 ##### X/Y
