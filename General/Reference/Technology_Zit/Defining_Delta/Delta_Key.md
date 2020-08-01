@@ -1,4 +1,3 @@
-#### Defining Delta 
 
 ##### Delta is defined as an energetic distribution along a nucleated path, within this construct it can not be assigned. To either a binary or mathematical plane. 
 
