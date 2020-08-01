@@ -9,7 +9,7 @@ The equation has two key handlers and is described as both :
 ——
 #### Frequency Composition 
 
-##### Along a nucleated path, which will define (Conductance Inductance). This is our atomic assembler which assigns the energetic values of field inversions. It will either create or deconstruct, both binary and mathematical planes.
+##### Along a nucleated path which is triangulated. This determines (Conductance|Inductance). This is our atomic assembler, which will assign the energetic values of field inversions. It will either create or deconstruct, both binary and mathematical planes.
 
 ——
 #### ENERGY_AS_A_UNIT
