@@ -1,7 +1,4 @@
-#### Differential behaviours within binary constructs.
-
-
-Multiplexed : Creates Negative Delta
+#### Differential behaviours (Nuclear Resonance|Ionisation) multiplexed : Creates Negative Delta
 - [( SVD Script | CPU )](https://github.com/eckohaus/2020_Angular_Momentum_Reaction_Engine/blob/master/General/Legal/Intellectual_Property/Current_Questions/Intel/SVD_Script.md)
-- ( Device Resonance | Metalic Composition)
+- ( Device | Metallic Composition)
 - ( Ionisation | Lithium Ions )
