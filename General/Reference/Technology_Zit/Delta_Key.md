@@ -21,4 +21,5 @@ The equation has two key handlers and is described as both :
 ——- 
 
 ###### Unit Functions : Electrical Resistance
-###### Describes the polarity of carrier charges within a 3Dimensional plane. Defining (substrate|Ionisation) depicts the energetic transmission into a nucleated field. It is reductive by nature relationship defined and relies on metallic ionisation. In order to sequence the differential to define multi-variable values within an eigenfield or alternating current.
+###### Describes the polarity of carrier charges within a 3Dimensional plane. Defining (substrate|Ionisation) 
+###### This depicts the energetic transmission into a nucleated field. It is reductive and relies on metallic ionisation, in order to sequence multi-variable values within an eigenfield or alternating current.
