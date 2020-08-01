@@ -1,7 +1,7 @@
 ##### Single Value Decomposition (SVD)
 ##### (SVD) = (-Z)
 
-###### This equation establishes a negative Z field of eigenvslues. And therefore it is a subtractive differential. It creates a multi variable matrix where 1 unit of energy becomes divided across the electromagnetic spectrum. 
+###### This equation establishes a negative Z field of eigenvalues. And therefore it is a subtractive differential. It creates a multi variable matrix where 1 unit of energy becomes divided across the electromagnetic spectrum. 
 
 ###### In a binary stack within a spectral plane. The values assigned within this field equation are represented as :
 
