@@ -1,8 +1,10 @@
-#### Lambda Field Generation
+### Lambda Field Generation
 
-##### Here we determine the relativistic effects of lambda fields within delta.
+#### Here we determine the relativistic effects of lambda fields within delta.
 
-### ENERGY_AS_A_UNIT
+——-
+
+## ENERGY_AS_A_UNIT
 
 ##### Binary = ( 1|000|O )
 ##### X|(-Z)(Z)(Z+)|Y
