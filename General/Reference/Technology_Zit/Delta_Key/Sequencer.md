@@ -4,6 +4,7 @@
 ##### ((Vp|Q)|D) = (( Virtual particles | Quanta) | Dimension )
 ##### (E = Energy Constant)
 
+——
 #### Negative Delta
 ##### -X/-Y
 ##### Planar determined by metallic ionisation. (e/(E^c))=(-D). 
