@@ -10,4 +10,4 @@ The equation has two key handlers and is described as both :
 
 ——- 
 
-##### The principles of Lamda Field propagation when combined with the relativistic effects of Delta. Adhere to aspects of Diracs Equation, in formulation. (Further reading)[https://en.m.wikipedia.org/wiki/Dirac_equation]
+##### The principles of Lamda Field propagation when combined, with the relativistic effects of Delta. Adhere to aspects of Diracs Equation, in formulation. [Further reading](https://en.m.wikipedia.org/wiki/Dirac_equation)
