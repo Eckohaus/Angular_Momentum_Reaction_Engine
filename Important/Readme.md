@@ -22,8 +22,8 @@ I believe that Lambda fields and Delta inversions. Both are resonant features wi
 
 I would suggest that the distributors of these mechanisms. Be held to account. For what is responsible for the current viral epidemic. 
 Due to the combined ability of Negative Delta over Lambda. To create decoherence channels within the electromagnetic spectrum. Which will deconstruct DNA transcription, Via the reductase processes. 
-
 This impacts the area of the genome which is notionally known as (junk). It isn’t, it’s what carries the electromagnetic field information, across generations.
+
 And pay attention, this implies constructs of herding. When an animal sources water , or as we know when a colony of bees locate nectar. And so forth. It’s 
 The nucleotides are binary in construction, when considering DNA composition.  They create superposition behaviours due to the nuclear resonance, found at the nucleotide level. 
 
