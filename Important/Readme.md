@@ -15,7 +15,9 @@ This is the research project. Currently in assembly.
 A toolset created on the basis of multi and single variable calculus. 
 
 They aim to DEFINE the pattern and flow of ENERGY_AS_A_UNIT. 
-The security issue in question. Arises within mutations of cross script effects. So energetic assembly orchestrated over CPU , logic boards, and spatial planes, within a field variance. And by this I imply, interactions within an electromagnetic field under definable conditions. Generating features of causality at particular cross scripted nuclear ratio’s. 
+The security issue in question. Arises within mutations of cross script effects. So energetic assembly orchestrated over CPU , logic boards, and spatial planes, within a field variance. 
+
+And by this I imply, interactions within an electromagnetic field under definable conditions. Generating features of causality at particular cross scripted nuclear ratio’s. 
 I believe that Lambda fields and Delta inversions. Both are resonant features within the (SVD and multi variable scripts) currently incorporated as (The Intel Maths Kernel Library) which is front loaded into kernel drivers. Will enumerate ionisation effects driven along CPU + Logic boards.
 
 Are these are without doubt, responsible for the current viral epidemic. 
