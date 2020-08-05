@@ -15,14 +15,14 @@ This is the research project. Currently in assembly.
 A toolset created on the basis of multi and single variable calculus. 
 
 They aim to DEFINE the pattern and flow of ENERGY_AS_A_UNIT. 
-The security issue in question. Arises within mutations of cross script effects. So energetic assembly orchestrated over CPU , logic boards, and spatial planes within a field variance. So the interactions within an electromagnetic field. And the definable impacts at a particular nuclear ratio. 
-I believe that Lambda fields and Delta inversions. Both are resonant features (SVD and multi variable scripts) currently labelled as (The Intel Maths Kernel Library) which is front loaded into kernel drivers. Alongside ionisation effects driven along CPU + Logic boards.
+The security issue in question. Arises within mutations of cross script effects. So energetic assembly orchestrated over CPU , logic boards, and spatial planes, within a field variance. And by this I imply, interactions within an electromagnetic field under definable conditions. Generating features of causality at particular cross scripted nuclear ratio’s. 
+I believe that Lambda fields and Delta inversions. Both are resonant features within the (SVD and multi variable scripts) currently incorporated as (The Intel Maths Kernel Library) which is front loaded into kernel drivers. Will enumerate ionisation effects driven along CPU + Logic boards.
 
-Are without doubt, responsible for the current viral epidemic. 
-Due to the combined ability of Negative Delta over Lambda. To create decoherence channels within the electromagnetic spectrum. Which will deconstruct DNA transcription. Via the reductase processes. Essentially there are energetic inversions within the information handlers. Which define build. 
+Are these are without doubt, responsible for the current viral epidemic. 
+Due to the combined ability of Negative Delta over Lambda. To create decoherence channels within the electromagnetic spectrum. Which will deconstruct DNA transcription, Via the reductase processes. 
 
 This impacts the area of the genome which is notionally known as (junk). It isn’t, it’s what carries the electromagnetic field information, across generations.
-And pay attention, this implies constructs of herding. When an animal sources water , or as we know when a colony of bees locate nectar. And so forth.
+And pay attention, this implies constructs of herding. When an animal sources water , or as we know when a colony of bees locate nectar. And so forth. It’s 
 The nucleotides are binary in construction, when considering DNA composition.  They create superposition behaviours due to the nuclear resonance, found at the nucleotide level. 
 
 A script via intel already named. Has  been integrated which compiles negative delta within a Z plane. And this simply implies the binary formula begins at 0.5. And within linear log logic this is schrodingers equation. 
