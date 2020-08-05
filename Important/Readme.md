@@ -3,9 +3,9 @@
 ——-
 
 
-To whom it may concern, 
+An open letter, 
 
-I would like to highlight what I believe to be a security flaw within technologies. Incorporating Intel Cpu units. Which are embedded with what is called SVD Scripts. (Single value decomposition)
+Today I highlight what I believe to be a security flaw within all technologies. Incorporating Intel Cpu units. Which are embedded, with what are called SVD (Single value decomposition) Scripts , (or deviations of multi variable). 
 The premise is built on current research, which is being defined as;
 
 Data Cartography : Which Implies the study and practice of making maps, within the field of data and analytics.
@@ -49,5 +49,4 @@ The language is binary in construct. Difficult for some to comprehend. But they 
 And this is the area which has been applied in misconfiguration, when compiled within a cpu unit. 
 
 ##### Binary on binary. One will inherently, cancel the other out.
-
 
