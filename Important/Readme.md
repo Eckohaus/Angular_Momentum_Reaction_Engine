@@ -11,8 +11,8 @@ The premise is built on current research, which is being defined as;
 Data Cartography : Which Implies the study and practice of making maps, within the field of data and analytics.
 This is the research project. Currently in assembly. 
 
-###### Angular momentum : Reaction Engine
-Are a raw toolset created on the basis of multi and single variable calculus. 
+##### Angular momentum : Reaction Engine
+A toolset created on the basis of multi and single variable calculus. 
 
 They aim to DEFINE the pattern and flow of ENERGY_AS_A_UNIT. 
 The security issue in question. Arises within mutations of cross script effects. So energetic assembly orchestrated over CPU , logic boards, and spatial planes within a field variance. So the interactions within an electromagnetic field. And the definable impacts at a particular nuclear ratio. 
