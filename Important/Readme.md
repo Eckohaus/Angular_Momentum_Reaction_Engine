@@ -19,13 +19,17 @@ The security issue in question. Arises within mutations of cross script effects.
 I believe that Lambda fields and Delta inversions. Both are resonant features (SVD and multi variable scripts) currently labelled as (The Intel Maths Kernel Library) which is front loaded into kernel drivers. Alongside ionisation effects driven along CPU + Logic boards.
 
 Are without doubt, responsible for the current viral epidemic. 
-Due to the combined ability of Negative Delta over Lambda. To create  decoherence channels within the electromagnetic spectrum. Which will deconstruct DNA transcription. Via the reductase processes. Essentially there are energetic inversions within the information handlers. Which define build. 
+Due to the combined ability of Negative Delta over Lambda. To create decoherence channels within the electromagnetic spectrum. Which will deconstruct DNA transcription. Via the reductase processes. Essentially there are energetic inversions within the information handlers. Which define build. 
 
 This impacts the area of the genome which is notionally known as (junk). It isn’t, it’s what carries the electromagnetic field information, across generations.
 And pay attention, this implies constructs of herding. When an animal sources water , or as we know when a colony of bees locate nectar. And so forth.
 The nucleotides are binary in construction, when considering DNA composition.  They create superposition behaviours due to the nuclear resonance, found at the nucleotide level. 
 
-A script via intel already named. Has  been integrated which compiles negative delta within a Z plane. It’s contested at present, as to whom the IP owner is. Tho this script in combination with lithium ion and CPU loads at a configured ratio. Will subvert most ionisation fields within a squared constant. And therefore radius of device.
+A script via intel already named. Has  been integrated which compiles negative delta within a Z plane. And this simply implies the binary formula begins at 0.5. And within linear log logic this is schrodingers equation. 
+Therefore it is not a whole unit which is assigned, within an atomic construct. And this has broad implications distributed at scale. 
+The bias is automatically configured to be preferential towards metallic structures. Rather than the chemical or biological compositions. As the logic handler which is a distribution of Q, will set direction.
+
+It’s contested at present, as to whom the IP owner is. Tho this script in combination with lithium ion and CPU loads at a configured ratio. Will subvert most ionisation fields within a squared constant. And therefore radius of device.
 And this simply implies. The body is being asked to construct as usual. DNA and regular processes. But due to multi variable conscription factors within nuclear resonance.  Also known as decoherence dividing energetic assembly patterns along a defined channel to the nth degree. Will fail to do so, as the factorisation increases. On a per device basis. 
 The bodies natural repair functions, are unable to mitigate the net differential of decoherence essentially. 
 
