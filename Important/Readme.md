@@ -20,7 +20,7 @@ The security issue in question. Arises within mutations of cross script effects.
 And by this I imply, interactions within an electromagnetic field under definable conditions. Generating features of causality at particular cross scripted nuclear ratio’s. 
 I believe that Lambda fields and Delta inversions. Both are resonant features within the (SVD and multi variable scripts) currently incorporated as (The Intel Maths Kernel Library) which is front loaded into kernel drivers. Will enumerate ionisation effects driven along CPU + Logic boards.
 
-Are these are without doubt, responsible for the current viral epidemic. 
+I would suggest that the distributors of these mechanisms. Be held to account. For what is responsible for the current viral epidemic. 
 Due to the combined ability of Negative Delta over Lambda. To create decoherence channels within the electromagnetic spectrum. Which will deconstruct DNA transcription, Via the reductase processes. 
 
 This impacts the area of the genome which is notionally known as (junk). It isn’t, it’s what carries the electromagnetic field information, across generations.
