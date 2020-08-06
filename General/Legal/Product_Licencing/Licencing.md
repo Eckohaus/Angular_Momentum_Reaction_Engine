@@ -19,7 +19,7 @@ Within the folders ;
 * Unit Functions
 * General 
 
-Applicable rates : 0.0404% 
+Applicable rates : 0.181%
 Which is applied to both commercial RRP, and grouped licencing structures....
 
 * Currency
