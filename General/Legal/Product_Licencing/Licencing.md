@@ -9,18 +9,10 @@ This enables users to explore the root equations without restriction, when asses
 
 In order to simplify the costing structures for commercial licences. An outline is given ; 
 
-* Applied Base Currency : Yen (¥)
-* Regular Retail Price : (RRP) Licencing fees are applied as a unit of product RRP
-
----
-
-Within the folders ;
-
-* Unit Functions
-* General 
+* Licensing fees are denoted as a percent.
 
 Applicable rates : 0.0869%
-Which is applied to both commercial RRP, and grouped licencing structures.
+Which is applied to both commercial, and grouped licencing structures.
 
 * Currency
 * Electrical_Resistance
