@@ -11,7 +11,7 @@ In order to simplify the costing structures for commercial licences. An outline 
 
 * Licensing fees are denoted as a percent.
 
-Applicable rate : 0.0869% .
+Applicable rate : 0.02% .
 Which is applied to both commercial, and grouped licencing structures.
 
 * Currency
