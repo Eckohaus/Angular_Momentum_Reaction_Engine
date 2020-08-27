@@ -9,9 +9,9 @@ This enables users to explore the root equations without restriction, when asses
 
 In order to simplify the costing structures for commercial licences. An outline is given ; 
 
-* Licensing fees are denoted as a percent.
+* Licensing fees are denoted as a percent of product RRP. And is defined by the unit of currency, within target market.
 
-Applicable rate : Inlined to interest rates. And established at -9.3524% .
+Applicable rate : 1.64% of product RRP denoted to localised currency
 Which is applied to both commercial, and grouped licencing structures.
 
 * Currency
