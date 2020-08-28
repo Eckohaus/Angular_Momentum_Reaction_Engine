@@ -22,7 +22,7 @@
 ##### Under the condition that Maureen Harvey takes Oskar Balthazaar Dhali to Graceland
 
 ---
-# 542
+# 523
 ##### Rindia Ayuning Cundari
 ##### RindiaCundari@Gmail.Com
 ##### Under the condition that she completes the London marathon.
@@ -47,7 +47,7 @@
 ##### Under the condition that he has a family photo with Maureen Harvey
 
 ---
-# 6446
+# 251
 ##### Rui Sarashina
 ##### Rui1935@Hotmail.Co.Uk
 ##### Under the condition that Rui Sarashina teaches Christopher Morris to dance
