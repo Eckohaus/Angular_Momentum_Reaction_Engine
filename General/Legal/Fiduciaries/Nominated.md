@@ -17,7 +17,7 @@
 ##### Under the condition that Oskar Balthazaar Dhali lives within the United Kingdom
 
 ---
-# 837
+# 0.837
 ##### Maureen Harvey
 ##### MorinaRocknRoll@Gmail.Com
 ##### Under the condition that Maureen Harvey takes Oskar Balthazaar Dhali to Graceland
@@ -29,26 +29,26 @@
 ##### Under the condition that she completes the London marathon.
 
 ---
-# 356
+# 0.951
 ##### Felipe Rojas LLanos
 ##### FelipeRojasLlanos@Gmail.Com
 ##### Under the condition that he Rugby Tackles Rui Sarashina 
 
 
 ---
-# 448
+# 0.034
 ##### Anita Harvey
 ##### Anita.harvey32@Gmail.Com
 ##### Under the condition that Anita Harvey acts as godparent to Oskar Balthazaar Dhali
 
 ---
 
-# 556
+# 0.159
 ##### Kevin Christopher Mooney
 ##### Under the condition that he has a family photo with Maureen Harvey
 
 ---
-# 10
+# 0.10
 ##### Rui Sarashina
 ##### Rui1935@Hotmail.co.uk
 ##### Under the condition that Rui Sarashina teaches Christopher Morris to dance
