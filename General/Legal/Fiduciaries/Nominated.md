@@ -11,8 +11,9 @@
 ##### Under the condition that this work becomes licenced
 
 ---
-# 000
+# 5.32
 ##### Oskar Balthazaar Dhali
+##### 812oBD@gmail.com
 ##### Under the condition that Oskar Balthazaar Dhali lives within the United Kingdom
 
 ---
@@ -22,9 +23,9 @@
 ##### Under the condition that Maureen Harvey takes Oskar Balthazaar Dhali to Graceland
 
 ---
-# 523
+# 0.901
 ##### Rindia Ayuning Cundari
-##### RindiaCundari@Gmail.Com
+##### E13RAC@Gmail.com
 ##### Under the condition that she completes the London marathon.
 
 ---
