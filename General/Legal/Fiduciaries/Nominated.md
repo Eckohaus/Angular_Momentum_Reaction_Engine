@@ -5,9 +5,9 @@
 
 #### Contact Information 
 ---
-# 1944
+# 0.015578
 ##### Corvin Nehal Dhali
-##### Eckohaus@Icloud.Com
+##### Eckohaus@iCloud.com
 ##### Under the condition that this work becomes licenced
 
 ---
@@ -60,7 +60,7 @@
 ##### Under the condition that Chris Morris Joins Maureen Harvey in Graceland with daughter
 
 ---
-# 858
+# 0.07
 ##### Nick Kingan
 ##### NickKingan@Gmail.Com
 ##### Under the condition that Nick Kingan learns how to write binary.
