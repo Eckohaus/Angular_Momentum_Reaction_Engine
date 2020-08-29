@@ -48,9 +48,9 @@
 ##### Under the condition that he has a family photo with Maureen Harvey
 
 ---
-# 251
+# 10
 ##### Rui Sarashina
-##### Rui1935@Hotmail.Co.Uk
+##### Rui1935@Hotmail.co.uk
 ##### Under the condition that Rui Sarashina teaches Christopher Morris to dance
 
 ---
