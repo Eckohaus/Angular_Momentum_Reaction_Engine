@@ -11,7 +11,7 @@
 ##### Under the condition that this work becomes licenced
 
 ---
-# 5.32
+# 0.532
 ##### Oskar Balthazaar Dhali
 ##### 812oBD@gmail.com
 ##### Under the condition that Oskar Balthazaar Dhali lives within the United Kingdom
@@ -54,7 +54,7 @@
 ##### Under the condition that Rui Sarashina teaches Christopher Morris to dance
 
 ---
-# 511
+# 0.511
 ##### Chris Morris 
 ##### Morrisillustration@Yahoo.Co.Uk
 ##### Under the condition that Chris Morris Joins Maureen Harvey in Graceland with daughter
