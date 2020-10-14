@@ -11,7 +11,7 @@ In order to simplify the costing structures for commercial licences. An outline 
 
 * Licensing fees are denoted as a percent of product RRP. And is defined by the unit of currency, within target market.
 
-Applicable rate : 1.69% of product RRP denoted to localised currency
+Applicable rate : 1.28% of product RRP denoted to localised currency
 Which is applied to both commercial, and grouped licencing structures.
 
 * Currency
