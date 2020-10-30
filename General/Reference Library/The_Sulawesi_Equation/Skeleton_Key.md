@@ -11,7 +11,7 @@
 ###### Sequence One : 1.76, 0.88, 0.44, 0.22, 0.11
 ###### Sequence Two : 2.16, 1.08, 0.54, 0.27
 
-###### The defining planar would be a construct of both sequence one and two.
+##### The defining planar would be a construct of both sequence one and two.
 ###### Sequence Three : 3.92, 1.96, 0.98, 0.49, 0.11
 ##### And this becomes an encapsulation profile for single to multivariable decay.
 
