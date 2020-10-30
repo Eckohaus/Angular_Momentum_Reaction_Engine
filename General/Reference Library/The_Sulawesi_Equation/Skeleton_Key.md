@@ -18,11 +18,7 @@
 ##### In Part the attributes of the next set. Are due to the divisional complex reaching a limitation within boundary momentum. The reaction complex which occurs consumes, both sequence 1 and 2. Creating what will become a new infinity. It’s important to note that all preceding infinity complexes, will alternate within a topological plane. 
 ##### When all are assigned, the constructs define attributes of ((QVe^LE)/N)=(M), which inturn defines cellular respiration. 
 
-——
-
 ##### The underlying divisional complex, depicts the remainder of ENERGY_AS_A_UNIT.
-##### This becomes the attenuation and inversion point to sequence one, whereby the "Induction Ratio" becomes the primary scalar function.
+##### This becomes the attenuation and inversion point to sequence one, whereby the "Induction Ratio" becomes the primary scalar function, for either inflation or deflation.
 
-##### (Nucleotide Channel ^ Induction Ratio) = (1.14 ^ 2.6)
-
-##### The inversion is created using 1 Binary UNIT_OF_ENERGY. From sequence 2, (2.16 when inducted, will become the inversion 2.6 or 2(.)6).This is now defined as a negative power ratio ^2.6. As the original unit was classified as 2.16. When a binary unit is reduced. Within mathamatical terms, it equates to a superposition within an eigenmatrix. And are definable as an aspect of the original integer sequences.
+##### (Nucleotide Channel ^ Induction Ratio) = (1.14 ^ (0.11*or/))
