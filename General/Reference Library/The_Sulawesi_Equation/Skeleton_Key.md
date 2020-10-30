@@ -22,8 +22,7 @@
 ##### The underlying divisional complex, depicts the remainder of ENERGY_AS_A_UNIT.
 ##### This becomes the attenuation and inversion point to sequence one.
 
-##### (Signal ^ Inversion) = (1.14 ^ 2.6)
-
+##### (Nucleotide Channel ^ Induction Ratio) = (1.14 ^ 2.6)
 ##### ((1 - 0.06983606447)= ( ))
 
 ##### Attenuation :
@@ -31,6 +30,3 @@
 ###### (0.06983606447 / 0.11) = (1.57511739579)
 
 ##### The inversion is created using 1 Binary UNIT_OF_ENERGY. From sequence 2, (2.16 will become the inversion 2.6) This is now defined as a power ratio ^2.6. As the original unit was classified as 2.16, when a binary unit is removed, it equates to a superposition within an eigenmatrix. Definable as an aspect of the integer sequence , ( (2.06, 2.16,) = ^2.6)) This ratio uses 0.04016393553 to create the superposition within time.
-
-
-1111
