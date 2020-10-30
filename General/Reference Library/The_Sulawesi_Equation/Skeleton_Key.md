@@ -21,4 +21,4 @@
 ##### The underlying divisional complex, depicts the remainder of ENERGY_AS_A_UNIT.
 ##### This becomes the attenuation and inversion point to sequence one, whereby the "Induction Ratio" becomes the primary scalar function, for either inflation or deflation.
 
-##### (Nucleotide Channel ^ Induction Ratio) = (1.14 ^ (0.11*or/))
+##### (Induction Ratio = Differential * Nucleotide Channel) = (Differential * 1.14 )
