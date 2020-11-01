@@ -1,5 +1,6 @@
 # Angular Momentum Reaction Engine : 
 
+
 #### The Data Cartography Tools are available to download within XLS format. [Video Guide](https://www.youtube.com/channel/UCHGtmfjIICpuETvXsRd2eww/playlists)
 
 ---
@@ -115,12 +116,4 @@ OUTPUT :
 * Designated to which market
 
 ---
-
-####  The areas I am looking to contribute towards are the following :
-
-- Algorithm Design : As Angular Momentum at this point time, works to resolve floating point calculations. Which is usually what defines core inflation within economics. When scripted into a programming language. The core aim would be to define a higher statistical accuracy, depending on what the input data is.
-
-- Data Science and Analysis : The last statistical documents were produced in 2012. And used financial toolsets to create predictive curvatures. They were fundamentally flawed. Due to the output being tied to a multivariable state. These documents pointed the direction for Angular Momentum. In order to Multivariable mechanics into Single variable logic. So in essence we begin to reduce the principality of statistical errors.
-
-
 
