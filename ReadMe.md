@@ -1,9 +1,11 @@
-# Angular Momentum Reaction Engine 
+# Angular Momentum Reaction Engine : 
 
-#### Data Cartography Tools are available within XLS format. And to simplify >> [A Video Guide](https://www.youtube.com/channel/UCHGtmfjIICpuETvXsRd2eww/playlists)
+
+#### The Data Cartography Tools are available to download within XLS format. [Video Guide](https://www.youtube.com/channel/UCHGtmfjIICpuETvXsRd2eww/playlists)
 
 ---
- 
+
+
 #### Folder : Unit Functions : Statistical Modelling Tools For Data.
 
 Defined within a framework of both 'Multi-Variable' and ‘ Single Variable Calculus'. 
