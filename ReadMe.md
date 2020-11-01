@@ -4,18 +4,13 @@
 
 ---
 
-#### Folder : Unit Functions : Statistical Modelling Tools For Data.
-
-Defined within a framework of both 'Multi-Variable' and ‘ Single Variable Calculus'. 
+The statistical modelling tools for 'Data' are defined within a framework of both 'Multi-Variable' and ‘ Single Variable Calculus'. 
 And charted to visualise the mapping of coordinates. 
 
-* Note : Ensure that 'Log Scaling' is selected upon the re-import of XLS files. 
+#### Note : When creating projections within Lambda.
 
-#### Important Note : When creating projections within Lambda.
-
-The equation sets describe projected vectors or {Eigenvalues} as ENERGY_AS_A_UNIT. When determining ‘Reaction complexes’, which denote energetic conversions towards a single frame of reference I.E. ‘Single Variable Calculus’.
-
-Wave function instabilities often arise within Lambda propagation at what is called 'wave 6'. Due to field inversions which can be termed as 'Attenuation'. It becomes a representation of the compounding of relativistic effects. And these aspects are incorporated into the calculation sheets. 
+The field equations define ENERGY_AS_A_UNIT. And determine ‘Reaction complexes’. This denotes energetic conversions towards either a single or multivariable frame of reference.
+Wave function instabilities often arise within Lambda propagation, at what is called 'wave 6'. Due to field inversions which can be termed as 'Attenuation'. It becomes a representation of the compounding of relativistic effects. And these aspects are incorporated into the calculation sheets. 
 
 ---
 
