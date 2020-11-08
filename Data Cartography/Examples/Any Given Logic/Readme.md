@@ -1,2 +1,0 @@
-#### Any Given Logic :
-##### In this example the data used is based upon currency data. Financial data is one of the most continuous types, with a scale down to the second and further. Which means there's a lot of data to work with. The name of this example 'Any given logic', simply implies that any dataset with a continuous form {It does not need to be 'to the second'} can be incorporated, and use the same methodology of forecast and navigation technique.
