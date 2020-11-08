@@ -1,4 +1,4 @@
-# Angular Momentum Reaction Engine : 
+# Angular Momentum Reaction Engine
 
 
 #### Statistical modelling tools, defined within a framework of Multi and Single Variable Calculus. 
