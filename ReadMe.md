@@ -104,8 +104,3 @@ Available to download within XLS format [Data Cartography : Video Guide](https:/
 
 
 
-
-
-And like a fucking fart, she kept talking. Bindi Bandy BOO ! Here she was again on the trollop, as some would politely say.
-
-
