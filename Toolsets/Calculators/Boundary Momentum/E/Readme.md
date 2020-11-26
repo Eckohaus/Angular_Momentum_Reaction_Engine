@@ -21,3 +21,5 @@
 ##### 1.1^.77 = 0.92923943574
 
 ##### 1.1^.77 = 1.07614890364
+
+#### Understanding the Persistence plane within a vector [Refractive Index ](https://en.wikipedia.org/wiki/Refractive_index) [Tangential Functions ](https://en.wikipedia.org/wiki/Trigonometric_functions) 
