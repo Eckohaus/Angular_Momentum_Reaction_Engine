@@ -1,2 +1,2 @@
 # Angular Momentum Reaction Engine
-#### Ensure Logarithmic scaling is selected.
+#### Refer to the video guide for chart based settings. Such as ; Logarithmic scaling or similar.
