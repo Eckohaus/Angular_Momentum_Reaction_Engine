@@ -22,4 +22,4 @@
 
 ##### 1.1^.77 = 1.07614890364
 
-#### Understanding the Persistence plane within a vector [Refractive Index ](https://en.wikipedia.org/wiki/Refractive_index) [Tangential Functions ](https://en.wikipedia.org/wiki/Trigonometric_functions) 
+##### Understanding the Persistence plane of binary state {1} within a [tangential vector]. When co-assigned with Binary state {0}(https://en.wikipedia.org/wiki/Trigonometric_functions) [Refractive Index ](https://en.wikipedia.org/wiki/Refractive_index) 
