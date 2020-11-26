@@ -1,4 +1,4 @@
-#### E/e SQ
+#### E/e SQ : The Hydrogen Equation in Binary
 
 [Data Cartography : Video Guide](https://www.youtube.com/playlist?list=PLBx_-O2xTMh73vurWagwrFdKhBCktEPLK)
 
