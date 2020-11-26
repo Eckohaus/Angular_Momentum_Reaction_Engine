@@ -6,7 +6,7 @@
 
 #### Ascertaining the root metric of Binary state {1}
 
-##### We first determine the nature of the orbital plane, withinin the Zeta Function  [We first determine the nature of the orbital plane, withinin the Zeta Function ](https://en.wikipedia.org/wiki/Riemann_zeta_function)
+##### We first determine the nature of the orbital plane, withinin the [Zeta Function ](https://en.wikipedia.org/wiki/Riemann_zeta_function)
 
 #### Spin Polarities
 
