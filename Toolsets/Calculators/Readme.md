@@ -2,8 +2,9 @@
 
 ##### Boundary Momentum : 
 
-###### - Calculates statistics, reducing statistical paradoxes to a zero bound state.
-###### - Defines key vectors within a tangential target
+###### A square root calculator, of the "ENERGY AS A UNIT".
+###### Calculates eigenvalues and root metrics, within a zero one bound state.
+###### Defines the principle state of inflation, in order to define key vectors within a tangential target.
 
 
 ##### Lambda : 
