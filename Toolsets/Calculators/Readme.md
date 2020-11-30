@@ -17,4 +17,5 @@
 #### Lambda : 
 
 ###### Incorporates the core metrics from Boundary Momentum, 
-###### Calculates the volatility of eigenvalues.
+###### Calculates the volatility metrics for eigenvalues. 
+###### Defines the statistical curvature or wave structure.
