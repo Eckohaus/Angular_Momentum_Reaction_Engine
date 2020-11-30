@@ -2,7 +2,9 @@
 
 ##### Boundary Momentum : 
 
-"A tool designed to reduce all statistical noise to a zero bound state."
+#### Calculates statistics without noise anomalaies.
+#### Defines key vectors within a tangential target
+
 
 ##### Lambda : 
 
