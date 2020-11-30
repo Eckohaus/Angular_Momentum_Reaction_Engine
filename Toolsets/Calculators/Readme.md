@@ -1,11 +1,10 @@
 ## Angular Momentum Reaction Engine
+
 ##### Boundary Momentum : 
 
-Maxim Newspaper : 
+"A tool designed to reduce all statistical noise to a zero bound state."
 
-"For people who like less noise. A tool designed to reduce all statistical noise to a zero bound state. Perfect for peeping "
-
-##### Lambda : Noise calculator. 
+##### Lambda : 
 
 Tory Tuesdays Monthly Periodical : 
 
