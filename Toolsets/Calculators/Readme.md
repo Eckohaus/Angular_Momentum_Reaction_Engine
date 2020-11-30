@@ -1,6 +1,8 @@
-### Angular Momentum Reaction Engine
+### Angular Momentum : Reaction Engine
+
 
  ---
+
 
 #### Boundary Momentum : 
 
@@ -12,7 +14,7 @@
 ---
 
 
-##### Lambda : 
+#### Lambda : 
 
 ###### Incorporates the core metrics from Boundary Momentum, 
 ###### Calculates the volatility of eigenvalues.
