@@ -2,9 +2,9 @@
 
 ##### Boundary Momentum : 
 
-####### A square root calculator for definitions of binary or "ENERGY AS A UNIT". 
-####### Calculates the root metrics for eigenvalues.
-####### Defines the principle state of inflation, in order to identify key targets within a tangential vector.
+###### A square root calculator for definitions of binary or "ENERGY AS A UNIT". 
+###### Calculates the root metrics for eigenvalues.
+###### Defines the principle state of inflation, in order to identify key targets within a tangential vector.
 
 
 ##### Lambda : 
