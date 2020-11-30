@@ -1,8 +1,8 @@
 ## Angular Momentum Reaction Engine
 
-#### Boundary Momentum : 
+### Boundary Momentum : 
 
-###### A square root calculator for definitions of binary or "ENERGY AS A UNIT". 
+###### A square root calculator for definitions of binary, or "ENERGY AS A UNIT". 
 ###### Calculates the root metrics for eigenvalues.
 ###### Defines the principle state of inflation or deflation. 
 ###### Generates the core metrics within a tangential vector.
