@@ -7,7 +7,7 @@
 
 ###### The root matrice // Defined as '1.5578' Equals a combination equation based upon 'Plancks Length' and 'Plancks Constant'.
 
-###### Nucleotide Ratio's // Are defined as an inference point within metalics. When defined as a numeral, the representaion becomes the following whereby:
+###### Nucleotide Ratio's // Are defined as an inference point within hydrogen based equations. When creating lambda based equations. The representaion becomes the following :
 
 ---
  
