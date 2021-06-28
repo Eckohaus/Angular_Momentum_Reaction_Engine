@@ -1,20 +1,22 @@
-##### A reference to the original equation which was created : Angular_Momentum_Reaction_Engine
-###### (differential * 1.14^11) End Equation {i.e Wave 5} : (differential * 1.14^1.1) When decimalised {i.e Wave 2}
 
 ---
 
-##### A reference to a deviation on the original equation, wherby IP is currently in question : 11.5% would be akin to a modification on electron transport.
-##### Which would be similar in notion, to what is highlighted within the infinities folder.
+##### Core References created for : Angular_Momentum_Reaction_Engine
 
-##### Angular_Momentum_Reaction_Engine Root Equation : With a 11.5% applied deviation 
-##### (differential * 1.13^11) End Equation {i.e Wave 5} : (differential * 1.13^1.1) When decimalised {i.e Wave 2} 
+---
 
-----
-
-##### The origin of '1.5578'
-
-###### Equals a combination equation based upon 'Plancks Length' and 'Plancks Constant'.
+##### The root matrice, is defined as '1.5578'. This Equals a combination equation based upon 'Plancks Length' and 'Plancks Constant'.
 
 
+---
 
-1111
+###### Nucleotide Ratio's // Are defined as an inference point within metalics. When defined as a numeral, the representaion becomes the following whereby:
+
+---
+
+ 
+###### (1.14 = Nucleotide Ratio
+###### (x^1.1 = Equals : Termination Point // Within a wave structure
+###### (1.14^1.1 = Equals : Calculation Set
+
+---
