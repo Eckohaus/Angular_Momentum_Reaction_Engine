@@ -38,10 +38,11 @@ Delta Key
 
 ###### So representations of numbers. In simple terms. Become invisible or indivisible, within CPU central processing Units. 
 ###### Wow ! How'd you get so big ... You big ... greedy ... fuck ... You. 
+###### Bank said to Tech, and with the wink of a wonky and yet goverment orientated eye.  
 
-#### Bank said to Tech, and with the wink of a wonky eye, Tech turned around and said "now lets vectorize that shit". 
+#### Tech turned around and said "now lets vectorize that shit"... And so they did.
 
-###### A vector statement is equal to infinite. What problems could ever possibly occur.
+###### A vector statement is equal to infinite. A series of non-destcructive subdivsional calculations, which can propagate forever. What problems could ever possibly occur.
 
 ###### Technology is not chemistry
 ###### And Banks are not time
