@@ -5,7 +5,7 @@
 
 ---
 
-###### The root matrice, is defined as '1.5578'. This Equals a combination equation based upon 'Plancks Length' and 'Plancks Constant'.
+###### The root matrice // Defined as '1.5578' Equals a combination equation based upon 'Plancks Length' and 'Plancks Constant'.
 
 ###### Nucleotide Ratio's // Are defined as an inference point within metalics. When defined as a numeral, the representaion becomes the following whereby:
 
