@@ -22,7 +22,7 @@ Wave function instabilities often arise within Lambda propagation at what is cal
 #### Infinities.
 
 Ratios
-* Sequence =(SUM(A:C)) is derived upon the calculation (((1.5578+0.102414319819447)*0.95)+1.5578). This is a fixed aspect which should not be adjusted.
+* Sequence =(SUM(A:C)) is derived upon the calculation (((1.5578+0.102414319819447)*0.95)+1.5578). This is a un-fixed aspect which adjusts in accord with inflation/deflation matrices within a tangential(spatial) curve.
 
 Approaching Infinity
 * If we move away from the idea of 'Inifinity' being an etheral aspect. And instead understand it as an attribute of something. 
