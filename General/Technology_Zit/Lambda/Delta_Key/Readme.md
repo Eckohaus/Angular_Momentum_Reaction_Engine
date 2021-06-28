@@ -50,4 +50,8 @@ Delta Key
 ###### But I do have a timed deposit. But in NO WAY is it connected to me. 
 ---
 ###### "Today, I was Sanchezed" #Metoo #Metoo #Metoo #Metoo #Metoo #Metoo #Metoo #Metoo #Metoo #Metoo #Metoo #Metoo #Metoo #Metoo 
-###### "You can NOT do that" #BLM #BLM #BLM #BLM #BLM #BLM #BLM #BLM #BLM #BLM #BLM #BLM #BLM #BLM #BLM #BLM #BLM #BLM #BLM 
+###### "You can NOT do that" #BLM #BLM #BLM #BLM #BLM #BLM #BLM #BLM #BLM #BLM #BLM #BLM #BLM #BLM #BLM #BLM #BLM 
+---
+##### Until of course, the defining planars of information,overlapped.
+---
+#### A short story by Keith Doom
