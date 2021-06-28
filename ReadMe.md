@@ -19,7 +19,7 @@
 ###### Wave function instabilities often arise within Lambda propagation at what is called 'wave 6'. Due to field inversions which can be termed as 'Attenuation'. It becomes a representation of the compounding of relativistic effects. And these aspects are incorporated into the calculation sheets. 
 
 
-#### Lambda_Sequencer : Base Equation.
+#### Lambda Sequencer : Base Equation.
 
 ###### Using the 'Nuclear Ratio' and therefore 'Base Power Ratio (^1.14)' Which is cross referenced within the following folder 
 
@@ -70,7 +70,7 @@
 
 ---
 
-#### Unit_Currency // Differential_Inversions : Highlighting ZPE Inductance within substrates)
+#### Currency // Differential_Inversions : Highlighting ZPE Inductance within substrates)
 
 ###### A tool useful for describing the current state of transaction potential, when transacting between two countries. The calculation sheet uses currency differentials to incorporate the variance within a Lambda field equation. To use the tool ; 
 
