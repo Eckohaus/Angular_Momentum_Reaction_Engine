@@ -32,7 +32,7 @@ Delta Key
 #### "We did the research, this technology can outgrow the cancerous impacts, keep the media tight. And sell that shit"
 
 
-###### Within the media today, no one will simply state. That the current web is hard encoded, to defer principal numerical states {or representations of value}. An aspect which begun it's integration as early as the 2000's, in the fomratting of today's web standards. Due to the partial hiccup, in and around the time. 
+###### Within the media today, no one will simply state. That the current web is hard encoded, to defer principal numerical states {or representations of value}. An aspect which begun it's integration as early as the 2000's, in the formatting of today's web standards. Due to the partial hiccup, in and around the time. 
 
 #### We lost fucking money, do not do that again. Or so goes the verse. Lock that shit down. 
 
