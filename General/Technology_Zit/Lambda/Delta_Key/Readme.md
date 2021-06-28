@@ -21,8 +21,11 @@ Delta Key
 
 ---
 
-###### Byproducts // Bylines and Bullshit // 
+##### Byproducts // Bylines and Bullshit // 
 
+---
+
+#### "Once upon a time, a potatoe in a skirt once said"
 
 ###### Within the media today, no one will simply state. That the telephony technology technology which grew zits into the size of cancerous bits, in and around 1992. Has very possibly reached a termination point within moore's law. And peripheral byproducts becomes, effect precedes cause. "We did the research, this technology can outgrow the cancerous impacts, keep the media tight. And sell that shit"
 
