@@ -19,7 +19,7 @@ Wave function instabilities often arise within Lambda propagation at what is cal
 
 ---
 
-### Infinities.
+#### Infinities.
 
 Ratios
 * Sequence =(SUM(A:C)) is derived upon the calculation (((1.5578+0.102414319819447)*0.95)+1.5578). This is a fixed aspect which should not be adjusted.
@@ -30,7 +30,7 @@ We can begin to use infinitie, as a 'calculation complex'. The attributues creat
 
 ---
 
-### Lambda_Sequencer_in_Multiplication : Base Equation.
+#### Lambda_Sequencer_in_Multiplication : Base Equation.
 
 Using the 'Nuclear Ratio' and therefore 'Base Power Ratio (^1.14)' 
 Which is cross referenced within the following folder 
@@ -53,7 +53,7 @@ The 'Base Power Ratio (^1.14). Can also be incorporated into other statistical t
 
 ---
 
-### Boundary Momentum_Sequencer_In_Division : Unit_(Sequencing_Alternate_Divisional_Complex).
+#### Boundary Momentum_Sequencer_In_Division : Unit_(Sequencing_Alternate_Divisional_Complex).
 
 Deceptive in name, the toolset infers growth in division of an arbitrary SUM_VALUE_OF_ENERGY, 
 between three equal ratios. And will as long as {DECIMALISATION} remains intact, much like a plant continues to refresh. 
@@ -63,7 +63,7 @@ When handling higher VALUES_OF_ENERGY , as this is often the area which becomes 
 
 ---
 
-### Electrical Resistance : Unit_(AC)_Deposition_within_Decimalisation.
+#### Electrical Resistance : Unit_(AC)_Deposition_within_Decimalisation.
 
 The equation depicts a {Probability of} a cancellation channel within 'Nuclear Resonance'. Which establishes the attenuation cycle. And this becomes an equation to experiment against. It is unclear whether the calculation holds within both MhZ Frequency Bands and AC Alternating Currents. Tho if accurate this would establish the redox potential within metallic structures, as well as calcification deposits within cellular organisms. 
 
@@ -73,7 +73,7 @@ The equation depicts a {Probability of} a cancellation channel within 'Nuclear R
 
 ---
 
-### Unit_Currency (Differential_Inversions)
+#### Unit_Currency (Differential_Inversions)
 
 A tool useful for describing the current state of transaction potential, when transacting between two countries. The calculation sheet uses currency differentials to incorporate the variance within a Lambda field equation. To use the tool ; 
 
