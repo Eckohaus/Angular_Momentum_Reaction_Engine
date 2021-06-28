@@ -22,3 +22,18 @@ Delta Key
 ---
 
 ###### Byproducts // Bylines and Bullshit // 
+
+
+###### Within the media today, no one will simply state. That the telephony technology technology which grew zits into the size of cancerous bits, in and around 1992. Has very possibly reached a termination point within moore's law. And peripheral byproducts becomes, effect precedes cause. "We did the research, this technology can outgrow the cancerous impacts, keep the media tight. And sell that shit"
+
+
+###### Within the media today, no one will simply state. That the current web is hard encoded, to defer principal numerical states {or representations of value}. An aspect which begun it's integration as early as the 2000's, in the fomratting of today's web standards. Due to the partial hiccup, in and around the time. We lost fucking money, do not do that again. Or so goes the verse. Lock that shit down. 
+
+###### So representations of numbers. In simple terms. Become invisible or indivisible, within CPU central processing Units. Wow how'd you get so big. You big greedy fuck you. Bank said to Tech, and then Tech said, now lets vectorize that shit. And so they did.
+
+###### A vector statement is equal to infinite. What problems could ever possibly occur.
+
+###### Technology is not chemistry
+###### And Banks are not time
+
+###### But I do have a timed deposit. But in NO WAY is it connected to me.
