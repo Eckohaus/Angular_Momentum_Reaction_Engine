@@ -56,7 +56,7 @@
 #### Infinities.
 
 ###### Approaching Infinity
-###### * If we move away from the idea of 'Inifinity' being an etheral aspect. And instead understand it as an attribute of something. We can begin to use infinitie, as a 'calculation complex'. The attributues created within 'Inifinities XLS' are functions of 'Negative and Positive' Power ratio's, which can then be assigned to Lambda based equations.
+###### * If we move away from the idea of 'Inifinity' being an etheral aspect. And instead understand it as an attribute of something. We can begin to use infinitie, as a 'calculation complex'. The attributues created within 'Inifinities XLS' are functions of 'Negative and Positive' Integers. Which are determined through the Nucleotide constants, we can then assign the formulation to Lambda based equations.
 
 ###### Ratios
 ###### * Sequence =(SUM(A:C)) is derived upon the calculation. (((1.5578+0.102414319819447)*0.95)+1.5578). This is a un-fixed aspect which adjusts in accord with inflation/deflation matrices within a tangential(spatial) curve, and within the XLS serves as an example.
