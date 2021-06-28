@@ -65,7 +65,7 @@
 
 ---
 
-#### Electrical Resistance : Unit_(AC)_Deposition_within_Decimalisation.
+#### Electrical Resistance // Alternating Currents : Deposition_within_Decimalisation.
 
 ###### The equation depicts a {Probability of} a cancellation channel within 'Nuclear Resonance'. Which establishes the attenuation cycle. And this becomes an equation to experiment against. It is unclear whether the calculation holds within both MhZ Frequency Bands and AC Alternating Currents. Tho if accurate this would establish the redox potential within metallic structures, as well as calcification deposits within cellular organisms. 
 
@@ -75,7 +75,7 @@
 
 ---
 
-#### Unit_Currency (Differential_Inversions : Highlighting ZPE Inductance within substrates)
+#### Unit_Currency // Differential_Inversions : Highlighting ZPE Inductance within substrates)
 
 ###### A tool useful for describing the current state of transaction potential, when transacting between two countries. The calculation sheet uses currency differentials to incorporate the variance within a Lambda field equation. To use the tool ; 
 
