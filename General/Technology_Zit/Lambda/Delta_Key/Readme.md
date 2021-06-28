@@ -19,5 +19,6 @@ Delta Key
 
 ##### The principles of Lamda Field propagation when combined, with the relativistic effects of Delta. Adhere to aspects of Diracs Equation, in formulation. [Further reading](https://en.m.wikipedia.org/wiki/Dirac_equation)
 
+---
 
-##### ... Dear CDS Desk ... So what did you do today ....
+#### Byproducts // Bylines and Bullshit // 
