@@ -42,9 +42,9 @@ Delta Key
 
 #### Tech turned around and said "now lets vectorize that shit"... And so they did.
 
-###### A vector statement is equal to infinite. A series of non-destcructive subdivsional calculations, which can propagate forever. What problems could ever possibly occur.
+###### A vector statement is equal to infinite. A series of non-destcructive subdivsional calculations, which can propagate forever. In a wet bed of ones and zero's. What problems could ever, possibly occur.
 
 ###### Technology is not chemistry
 ###### And Banks are not time
 
-###### But I do have a timed deposit. But in NO WAY is it connected to me.
+###### But I do have a timed deposit. But in NO WAY is it connected to me. 
