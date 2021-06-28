@@ -36,7 +36,8 @@ Delta Key
 
 #### We lost fucking money, do not do that again. Or so goes the verse. Lock that shit down. 
 
-###### So representations of numbers. In simple terms. Become invisible or indivisible, within CPU central processing Units. Wow how'd you get so big. You big greedy fuck you. 
+###### So representations of numbers. In simple terms. Become invisible or indivisible, within CPU central processing Units. 
+###### Wow ! How'd you get so big ... You big ... greedy ... fuck ... You. 
 
 #### Bank said to Tech, and Tech turned around and said, "now lets vectorize that shit". And so they did.
 
