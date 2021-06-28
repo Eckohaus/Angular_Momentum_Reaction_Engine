@@ -1,7 +1,8 @@
+---
 ### Skeleton_Key
+---
 
-
-##### A series of unassigned infinite’s, which when assigned. Become the primary drivers behind AC. Also known as an alternating current. These are divisional matrices of a combination equation. It's also important to understand that these matrices are defined within biological binary. So the ratio's define 'action potentials'. As energy as a unit is transmuted from one binary construct to another. The differential loss is often the transportation mechanism and the reaction profile, so the following sequences are the wave structures which can be visualised and therefore calculated.
+###### A series of unassigned infinite’s, which when assigned. Become the primary drivers behind AC. Also known as an alternating current. These are divisional matrices of a combination equation. It's also important to understand that these matrices are defined within biological binary. So the ratio's define 'action potentials'. As energy as a unit is transmuted from one binary construct to another. The differential loss is often the transportation mechanism and the reaction profile, so the following sequences are the wave structures which can be visualised and therefore calculated.
  
 ##### ((Qve/LE)=(N)): The equation depicts two wave sequences or structures :
 ###### Sequence One : 0.11,0.22,0.44,0.88,1.76
