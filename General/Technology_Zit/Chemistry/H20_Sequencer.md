@@ -1,3 +1,7 @@
+---
+###### [Data Cartography : Video Guide](https://www.youtube.com/channel/UCHGtmfjIICpuETvXsRd2eww/playlists) 
+---
+
 #### The Hydrogen Equation In Binary.
 
 ###### Chemical signatures are created through nucleated bridges. Which combine both narrow and long waves of electromagnetic fields, within a particular boundary space of nuclear resonance.
