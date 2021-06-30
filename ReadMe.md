@@ -3,7 +3,7 @@
 ---
 
 ###### Statistical modelling tools, defined within a framework of Multi and Single Variable Calculus. And charted to visualise the mapping of coordinates. Ensure 'Log Scaling' is selected upon re-import of XLS'. 
-###### <a href="https://www.youtube.com/channel/UCHGtmfjIICpuETvXsRd2eww/playlists" target="_blank">Data Cartography : Video Guide</a>  
+###### [Data Cartography : Video Guide](https://www.youtube.com/channel/UCHGtmfjIICpuETvXsRd2eww/playlists) 
 
 ---
 
