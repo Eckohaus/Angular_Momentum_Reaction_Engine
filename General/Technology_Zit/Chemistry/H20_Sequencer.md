@@ -1,5 +1,5 @@
 ---
-###### [Data Cartography : Video Guide](https://www.youtube.com/channel/UCHGtmfjIICpuETvXsRd2eww/playlists) 
+###### [Data Cartography : Video Guide](https://www.youtube.com/watch?v=BrMLuMB0t8s) 
 ---
 
 #### The Hydrogen Equation In Binary.
