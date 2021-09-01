@@ -19,8 +19,8 @@
 
 ###### Wave Function + Angle of Momentum {Light Constant}
 
-##### 1.1^.77 = 0.92923943574
-
+##### 1.1^.-77 = 0.92923943574
+                 
 ##### 1.1^.77 = 1.07614890364
 
 ###### Understanding the Persistence plane of binary state {1} within a [tangential vector](https://en.wikipedia.org/wiki/Trigonometric_functions) When co-assigned with Binary state {0} [Refractive Index. ](https://en.wikipedia.org/wiki/Refractive_index) 
