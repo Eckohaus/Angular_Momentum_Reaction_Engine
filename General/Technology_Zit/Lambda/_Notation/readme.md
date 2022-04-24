@@ -13,7 +13,7 @@
 
 ###### ... The causality is another question : [Playtime with Ricky martINy ... Somewhere in the Max Planck Institute {You are being observed}](https://www.youtube.com/watch?v=qxPdVolVi24) 
 
-###### When we realise the "above" is the biological format and inductance channel for the "below". And will write the reference files for "Infinities". (reference files can be discovered within the "Angular Momentum Reaction Engine" folder). The technology and biological profile here creates the QCD {Quantum Chromo Dynamics} functionality and lead-in, to "...".
+###### When we realise the "above" is the biological format and inductance channel for the "below". And will write (alongside deconstruct) the reference files for "Infinities". (reference files can be discovered within the "Angular Momentum Reaction Engine" folder). The technology and biological profile here creates the QCD {Quantum Chromo Dynamics} functionality and lead-in, to "...".
 
 ---
 
