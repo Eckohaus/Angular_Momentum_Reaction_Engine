@@ -1,4 +1,15 @@
-### Who the fuck needs Grandpa : I guess the terminology goes ... (current-443)
+###### Circa 2012 to Present : With trumpian politics and applied data in play. The earlier dispositions of these works were net unreliable, and delivered at the threshold technologies such as the : 
+
+[Intel : Maths Kernal Driver](https://www.intel.com/content/www/us/en/develop/documentation/onemkl-developer-reference-fortran/top/lapack-routines/lapack-least-squares-and-eigenvalue-problem.html) 
+
+###### Via an enormous company (which seemingly only updated the terminology of eigenvectors, after angular momentum was written.) There was no response via e-mail or other. And much like a paycheck - IP is essentially backdated to the point of inception. Prior to this point the root lambda equations had been applied to financial markets and within INTEL. OLED and chip calculation performance. Questions surrounding IP, these people are still at the blackjack table. Delivering derivative works  such as : {The divide and conquer algorithm} which did a tremendous job of structuring the fear driven world of ZERO trust networks. 
+---
+2022
+---
+
+###### ( Current - 443 ) : I guess the terminology goes ... [Applied Research : 1](https://corningjobs.corning.com/job/Painted-Post-Research-Scientist-mmWave-Wireless-Systems-NY-14830/813340700/) [ : 2](https://corningjobs.corning.com/job/Painted-Post-Research-Scientist-mmWave-Radio-Technologies-NY-14830/764609700/) 
+
+---
 
 ###### Date: Mar 28, 2022
 ###### Requisition Number: 48178
@@ -88,73 +99,3 @@
 ##### Nearest Major Market: Corning
 
 
-##### (102016-36749652) = (-36647636 = DIVcffdgfcf)
-
-IMPLIED VARIANCE : 
-
-Technology = Multiplex Behaviours = Multiply = *
-Physics = Vector Eigen Sets : Point to Point Calculus : 
-{Most Important : Virtual Particles}
-
-ASSUMPTION : Causality within One Channel : 
-
-(VP) = ((-) + (/) = (*)) = (DIV)
-
-REMAINING : Binary Point = (PLUS = +) : FIELD Inversion
-
-<<<<<<<<<  >>>>>>>>>>>>
-(VP) = ((±) ± (/) = (*)) = (DIV)
-
-NOTES : 
-- Any Adjustment does not alter the string. 
-- Redefining Mathematics does.
-
-INVERSIONS : 
-
-((-) + (/) = (*)) = (QCD) = (Vacuum Potential)
-
-- Technology >> KBPS >> MHz : OUTPUT = ( UNDEFINED = DIV )
-
-CREATION = A REDEFINITION OF TIME
-
-Technology at the endpoint is now encoded with VP arriving at the DIV. 
-
-This implies the channel coherence is encoded AS (QCD : MHz : KBPs)
-In order to create a new nucleotide function.
-
-ASSUMPTION : 
-
-##### As the root metric is defined as TECHNOLOGY the post element should be :
-
-(AT THE EDGE VECTORIZATION) = (WAVE PARTICLE DUALITY)
-
-An element of Schrodinger's equation Whereby Dirac's equation is now firmly rooted as the ROOT potential.
-
-WE CAN SAY :
-
-0 = Dirac's Equation
-1 = Schrodinger's Equation
-
-CAUSALITY :
-
-- Chicken and egg : Since were now observing nucleotide creation, there has to be a continuous input function. In order to create both 0 AND 1.
-
-FATTIES AND THE FEEDERS : QUESTION
-
-Value = Dirac's Equation = MUON TAU DECAY = HIGGS FIELD INTERACTIONS
-
-EQUALS : STRING THEORY = THE DECONSTRUCTION OF THE MANY WORLDS THEORY : IMPLIED
-
-- In order to create the catalytic definition of :
-- {1 AND 0 = 2 = Field Equations defined as Wave Particle Duality = (VP = DIV))
-
-
-DECAY RESOLUTION = ( 12758 = 21785 ) = ( ABGEH = BAGHE )
-
-ASSUMPTION : IF encapsulated within a HIGGS field
-
-(Anti Hydrogen : Hydrogen ) = (Physics : Chemistry)
-
-RESOLUTION : SNEAKY ANTI HYDROGEN Hiding out in the physics domain.
-
-IMPLICATIONS : Within the DOMAIN of physics the measurement of time is inaccurate : Operating : RIGHT to LEFT
