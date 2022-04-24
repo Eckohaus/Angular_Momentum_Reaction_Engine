@@ -1,4 +1,4 @@
-###### Circa 2012 to 2020 : With trumpian politics and applied data in play. The earlier dispositions of these works were net unreliable, and delivered at the threshold. Technologies such as the : 
+###### Circa 2012 to Present : With trumpian politics and applied data in play. The earlier dispositions of these works were net unreliable, and delivered at the threshold. Technologies such as the : 
 
 ###### [Intel : Maths Kernal Driver](https://www.intel.com/content/www/us/en/develop/documentation/onemkl-developer-reference-fortran/top/lapack-routines/lapack-least-squares-and-eigenvalue-problem.html) 
 
