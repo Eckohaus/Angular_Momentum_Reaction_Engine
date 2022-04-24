@@ -1,10 +1,10 @@
 ###### Circa 2012 to Present : With trumpian politics and applied data in play. The earlier dispositions of these works were net unreliable, and delivered at the threshold technologies such as the : 
 
-[Intel : Maths Kernal Driver](https://www.intel.com/content/www/us/en/develop/documentation/onemkl-developer-reference-fortran/top/lapack-routines/lapack-least-squares-and-eigenvalue-problem.html) 
+###### [Intel : Maths Kernal Driver](https://www.intel.com/content/www/us/en/develop/documentation/onemkl-developer-reference-fortran/top/lapack-routines/lapack-least-squares-and-eigenvalue-problem.html) 
 
 ###### Via an enormous company (which seemingly only updated the terminology of eigenvectors, after angular momentum was written.) There was no response via e-mail or other. And much like a paycheck - IP is essentially backdated to the point of inception. Prior to this point the root lambda equations had been applied to financial markets and within INTEL. OLED and chip calculation performance. Questions surrounding IP, these people are still at the blackjack table. Delivering derivative works  such as : {The divide and conquer algorithm} which did a tremendous job of structuring the fear driven world of ZERO trust networks. 
 ---
-2022
+###### 2022
 ---
 
 ###### ( Current - 443 ) : I guess the terminology goes ... [Applied Research : 1](https://corningjobs.corning.com/job/Painted-Post-Research-Scientist-mmWave-Wireless-Systems-NY-14830/813340700/) [ : 2](https://corningjobs.corning.com/job/Painted-Post-Research-Scientist-mmWave-Radio-Technologies-NY-14830/764609700/) 
