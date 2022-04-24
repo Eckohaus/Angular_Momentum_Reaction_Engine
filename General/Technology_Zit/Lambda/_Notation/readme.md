@@ -9,11 +9,11 @@
 
 ###### ( Current - 443 ) : I guess the terminology goes ... [Applied Research : 1](https://corningjobs.corning.com/job/Painted-Post-Research-Scientist-mmWave-Wireless-Systems-NY-14830/813340700/) [ : 2](https://corningjobs.corning.com/job/Painted-Post-Research-Scientist-mmWave-Radio-Technologies-NY-14830/764609700/) 
 
-##### It becomes clear today, with the current R&D cycle. The potential to generate tectonic societal shifts, is real. When the capability of "physics" becomes that where "elemental chemistry" is derived simply from a frequency.
+###### It becomes clear today, with the current R&D cycle. The potential to generate tectonic societal shifts, is real. When the capability of "physics" becomes that where "elemental chemistry" is derived simply from a frequency.
 
-##### ... The causality is another question : [Playtime with Ricky martINy ... Somewhere in the Max Planck Institute {You are being observed}](https://www.youtube.com/watch?v=qxPdVolVi24) 
+###### ... The causality is another question : [Playtime with Ricky martINy ... Somewhere in the Max Planck Institute {You are being observed}](https://www.youtube.com/watch?v=qxPdVolVi24) 
 
-##### ... When we realise the "above" is the biological format and inductance channel for the "below". And will write the reference files for "Infinities". Which is to be found within the Angular Momentum Reaction Engine CORE files. The QCD {Quantum Chromo Dynamics} lead-in, to the "Many world theories".
+###### When we realise the "above" is the biological format and inductance channel for the "below". And will write the reference files for "Infinities". (reference files can be discovered the "Angular Momentum Reaction Engine" folder). The technology and biological profile creates the QCD {Quantum Chromo Dynamics} functionality and lead-in, to the "Many world theories".
 
 ---
 
