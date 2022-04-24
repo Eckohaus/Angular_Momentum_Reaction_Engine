@@ -13,6 +13,8 @@
 
 ##### ... The causality is another question : [Playtime with Ricky martINy ... Somewhere in the Max Planck Institute {You are being observed}](https://www.youtube.com/watch?v=qxPdVolVi24) 
 
+##### ... When we realise the "above" is the biological format and inductance channel for the "below". And will write the reference files for "Infinities". Which is to be found within the Angular Momentum Reaction Engine CORE files. The QCD {Quantum Chromo Dynamics} lead-in, to the "Many world theories".
+
 ---
 
 ###### Date: Mar 28, 2022
