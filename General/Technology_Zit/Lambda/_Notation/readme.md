@@ -7,7 +7,7 @@
 ###### 2022
 ---
 
-###### ( Current - 443 ) : I guess the terminology goes ... [Applied Research : 1](https://corningjobs.corning.com/job/Painted-Post-Research-Scientist-mmWave-Wireless-Systems-NY-14830/813340700/) [ : 2](https://corningjobs.corning.com/job/Painted-Post-Research-Scientist-mmWave-Radio-Technologies-NY-14830/764609700/) 
+###### ( Current - 443 ) : I guess the terminology goes ... [Applied Research : 1](https://corningjobs.corning.com/job/Painted-Post-Research-Scientist-mmWave-Wireless-Systems-NY-14830/813340700/) [ : 2](https://corningjobs.corning.com/job/Painted-Post-Research-Scientist-mmWave-Radio-Technologies-NY-14830/764609700/) It becomes clear today with the current R&D cycle, becomes the potential to upend genuine structural change. When we remove the 'notion' of what value is. Gold being derived from a frequency, is no longer that which is mined.
 
 ---
 
