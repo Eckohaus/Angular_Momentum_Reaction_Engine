@@ -11,7 +11,7 @@
 
 ##### It becomes clear today, with the current R&D cycle. The potential to generate tectonic societal shifts, is real. When the capability of "physics" becomes that where "elemental chemistry" is derived simply from a frequency.
 
-##### ... The causality is another question : [Playtime with ricky marty](https://www.youtube.com/watch?v=qxPdVolVi24) 
+##### ... The causality is another question : [Playtime with Ricky martINy ... Somewhere in the Max Planck Institute {You are being observed}](https://www.youtube.com/watch?v=qxPdVolVi24) 
 
 ---
 
