@@ -5,7 +5,7 @@ This enables users to explore the root equations without restriction, when asses
 
 ---
 
-##### Pricing Guidance ;
+## Pricing Guidance ;
 
 In order to simplify the costing structures for commercial licences. An outline is given ; 
 
@@ -23,19 +23,19 @@ Which is applied to both commercial, and grouped licencing structures.
 
 ---
 
-# Web Technologies
+## Web Technologies
 
 The compilation of equations into a designated programming language does not carry a licence surcharge. In order to allow for the testing and development of software and applications. The surcharge becomes applied upon product publishing, marketing or sale. For an updated list of applicable languages : [Wiki](https://en.wikipedia.org/wiki/List_of_programming_languages)
 
 ---
 
-# Bio-Technologies
+## Bio-Technologies
 
 In relation to the high level of differential extrapolations required. In order to generate cellular based targeting therapies, based upon these equations. Including the overall development time of related technologies. The rate is to be set, at a minimum. In order to establish a channel of viability, and is applied to the first year of product distribution, being negotiable thereafter.
 
 ---
 
-# Industries :
+## Industries :
 
 There are an array of applications and economic areas, to which these tools can be applied. Namely fields such as ; 
 
@@ -44,9 +44,13 @@ There are an array of applications and economic areas, to which these tools can 
 * Financial
 
 With this in mind it becomes an important facet to retain the core logic of these equations, as open. In order to assist in the proliferation of ideas. 
-#### Memorandum of understanding
+
+## Memorandum of understanding
+
 Derivative works based upon these equations , will be published. In order to create a public record of reference and core logic. This structure is created in order to lower the threshold and mitigate against IP or data theft. 
 
 All commercial works derived from these equations. Due to the above constraints. NDA agreements are unassignable.
+
 ---
+
 ##### JS674965B : TG434145Y : TG6S616SY : TGFCGFFAFCSY : TG232125Y : TGBCBABEY
