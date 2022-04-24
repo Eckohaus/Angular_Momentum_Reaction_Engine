@@ -7,7 +7,11 @@
 ###### 2022
 ---
 
-###### ( Current - 443 ) : I guess the terminology goes ... [Applied Research : 1](https://corningjobs.corning.com/job/Painted-Post-Research-Scientist-mmWave-Wireless-Systems-NY-14830/813340700/) [ : 2](https://corningjobs.corning.com/job/Painted-Post-Research-Scientist-mmWave-Radio-Technologies-NY-14830/764609700/) It becomes clear today with the current R&D cycle, becomes the potential to upend genuine structural change. When we remove the 'notion' of what value is. Gold being derived from a frequency, is no longer that which is mined.
+###### ( Current - 443 ) : I guess the terminology goes ... [Applied Research : 1](https://corningjobs.corning.com/job/Painted-Post-Research-Scientist-mmWave-Wireless-Systems-NY-14830/813340700/) [ : 2](https://corningjobs.corning.com/job/Painted-Post-Research-Scientist-mmWave-Radio-Technologies-NY-14830/764609700/) 
+
+##### It becomes clear today, with the current R&D cycle. The potential to generate tectonic societal shifts, is real. When the capability of "physics" becomes that where "elemental chemistry" is derived simply from a frequency.
+
+##### ... The causality is another question : [Playtime with ricky marty](https://www.youtube.com/watch?v=qxPdVolVi24) 
 
 ---
 
@@ -97,5 +101,3 @@
 ##### We will ensure that individuals with disabilities are provided reasonable accommodation to participate in the job application or interview process, to perform essential job functions, and to receive other benefits and privileges of employment. Please contact us to request accommodation.
 
 ##### Nearest Major Market: Corning
-
-
