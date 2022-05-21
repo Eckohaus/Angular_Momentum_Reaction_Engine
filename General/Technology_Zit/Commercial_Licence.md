@@ -25,8 +25,3 @@ This agreement begins on the Effective Date 10/15/2020 and will continue in perp
 
 ## Product updates.
 Corvin Dhali may collect and use technical information gathered as part of its maintenance, support, and continuous development of the folder Angular Momentum Reaction Engine. For the purpose of improving its products and services. 
-
----
-
-##### JS674965B : TG434145Y : TG6S616SY : TGFCGFFAFCSY : TG232125Y : TGBCBABEY
-
