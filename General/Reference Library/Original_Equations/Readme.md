@@ -14,4 +14,4 @@
  
 ###### (1.14) = (Nucleotide Ratio)
 ###### (1.1) = ( E=mc2, defined within a wave structure)
-###### (1.14^1.1) = (Nucleotide ratio to the power E=mc2)
+###### (1.14^1.1) = (Nucleotide ratio to the power of E=mc2)
