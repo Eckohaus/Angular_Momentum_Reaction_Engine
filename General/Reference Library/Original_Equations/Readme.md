@@ -12,8 +12,6 @@
 
 ---
  
-###### (1.14 = Nucleotide Ratio
-###### (x^1.1 = Equals : Termination Point // Within a wave structure
-###### (1.14^1.1 = Equals : Calculation Set
-
----
+###### (1.14) = (Nucleotide Ratio)
+###### (1.1) = ( Light constant, defined within a wave structure)
+###### (1.14^1.1) = (Nucleotide ratio to the power of the light constant)
