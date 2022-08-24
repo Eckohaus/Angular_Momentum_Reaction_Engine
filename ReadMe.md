@@ -64,9 +64,9 @@
 
 ###### The equation depicts a {Probability of} a cancellation channel within 'Nuclear Resonance'. Which establishes the attenuation cycle. And this becomes an equation to experiment against. It is unclear whether the calculation holds within both MhZ Frequency Bands and AC Alternating Currents. Tho if accurate this would establish the redox potential within metallic structures, as well as calcification deposits within cellular organisms. 
 
-###### * ( 0.0012000000000000000 - 0.0012500000000000000 ) = ( -0.0000500000000000001 )
+###### ( 0.0012000000000000000 - 0.0012500000000000000 ) = ( -0.0000500000000000001 )
 
-###### * ( Redox Depiction ) = ( 0.0000000000000000001 )
+###### ( Redox Depiction ) = ( 0.0000000000000000001 )
 
 ---
 
