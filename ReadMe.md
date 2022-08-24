@@ -19,7 +19,7 @@
 ###### Wave function instabilities often arise within Lambda propagation at what is called 'wave 6'. Due to field inversions which can be termed as 'Attenuation'. It becomes a representation of the compounding of relativistic effects. And these aspects are incorporated into the calculation sheets. 
 
 
-#### Lambda Sequencer : Base Equation.
+#### Lambda Sequencer : Base Equation
 
 ###### Using the 'Nuclear Ratio' and therefore 'Base Power Ratio (^1.14)' Which is cross referenced within the following folder 
 
@@ -41,7 +41,8 @@
 
 ---
 
-#### Boundary Momentum : Sequencing Divisional Complexes.
+#### Boundary Momentum : Sequencing Divisional Complexes
+
 ###### Deceptive in name, the toolset infers growth in division of an arbitrary SUM_VALUE_OF_ENERGY, between three equal ratios. And will as long as {DECIMALISATION} remains intact, much like a plant continues to refresh.
 
 ###### This becomes therefore an important cross referencing tool. When handling higher VALUES_OF_ENERGY , as this is often the area which becomes De-Decimalised.
@@ -53,14 +54,14 @@
 ---
 
 
-#### Infinities.
+#### Infinities
 
 ###### Approaching Infinity
 ###### If we move away from the idea of 'Inifinity' being an etheral aspect. And instead understand it as an attribute of something. We can begin to use infinitie, as a 'calculation complex'. The attributues created within 'Inifinities XLS' are functions of 'Negative and Positive' integers. Which are determined through the Nucleotide constants, we can then assign the formulation to Lambda based equations.
 
 ---
 
-#### Electrical Resistance : Alternating Currents : Deposition within Decimalisation.
+#### Electrical Resistance : Alternating Currents : Deposition within Decimalisation
 
 ###### The equation depicts a {Probability of} a cancellation channel within 'Nuclear Resonance'. Which establishes the attenuation cycle. And this becomes an equation to experiment against. It is unclear whether the calculation holds within both MhZ Frequency Bands and AC Alternating Currents. Tho if accurate this would establish the redox potential within metallic structures, as well as calcification deposits within cellular organisms. 
 
@@ -80,5 +81,5 @@
 ###### Will return ;
 ###### OUTPUT : 
 
-###### * ROI : Margin 
-###### * Designated to which market
+###### ROI : Margin 
+###### Designated to which market
