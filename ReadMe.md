@@ -78,8 +78,8 @@
 ###### INPUT : 
 ###### Pricing : PRODUCT
 
-###### Will return ;
-###### OUTPUT : 
+###### Will return 
+###### OUTPUT 
 
 ###### ROI : Margin 
 ###### Designated to which market
