@@ -70,7 +70,7 @@
 
 ---
 
-#### Currency // Differential_Inversions : Highlighting ZPE Inductance within substrates)
+#### Currency : Differential_Inversions : Highlighting ZPE Inductance within substrates
 
 ###### A tool useful for describing the current state of transaction potential, when transacting between two countries. The calculation sheet uses currency differentials to incorporate the variance within a Lambda field equation. To use the tool ; 
 
