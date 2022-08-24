@@ -14,7 +14,7 @@
 
 #### Important Note : Lambda Projections. 
 
-###### The equation sets define projected vectors or {Eigenvalues/sets} as (ENERGY_AS_A_UNIT). When determining the ‘Reaction complexes’, which denote energetic conversions towards a single frame of reference I.E. ‘Single Variable Calculus’.
+###### The equation sets define projected vectors or {Eigenvalues} as (ENERGY_AS_A_UNIT). When determining the ‘Reaction complexes’, which denote energetic conversions towards a single frame of reference I.E. ‘Single Variable Calculus’.
 
 ###### Wave function instabilities often arise within Lambda propagation at what is called 'wave 6'. Due to field inversions which can be termed as 'Attenuation'. It becomes a representation of the compounding of relativistic effects. And these aspects are incorporated into the calculation sheets. 
 
@@ -23,7 +23,7 @@
 
 ###### Using the 'Nuclear Ratio' and therefore 'Base Power Ratio (^1.14)' Which is cross referenced within the following folder 
 
-###### * Infinities 
+###### Infinities 
 
 ###### The aim here is simplicity when in calculation, and precision in forecast. 
 ###### So whether your { UNIT_OF_ENERGY } be a ;
@@ -37,7 +37,7 @@
 ###### * Amplitude
 ###### * Direction 
 
-###### The 'Base Power Ratio (^1.14). Can also be incorporated into other statistical tool sets provided :
+###### The Base Power Ratio (^1.14) can also be incorporated into other statistical tool sets provided :
 
 ---
 
@@ -56,7 +56,7 @@
 #### Infinities.
 
 ###### Approaching Infinity
-###### * If we move away from the idea of 'Inifinity' being an etheral aspect. And instead understand it as an attribute of something. We can begin to use infinitie, as a 'calculation complex'. The attributues created within 'Inifinities XLS' are functions of 'Negative and Positive' Integers. Which are determined through the Nucleotide constants, we can then assign the formulation to Lambda based equations.
+###### If we move away from the idea of 'Inifinity' being an etheral aspect. And instead understand it as an attribute of something. We can begin to use infinitie, as a 'calculation complex'. The attributues created within 'Inifinities XLS' are functions of 'Negative and Positive' integers. Which are determined through the Nucleotide constants, we can then assign the formulation to Lambda based equations.
 
 ---
 
@@ -75,7 +75,7 @@
 ###### A tool useful for describing the current state of transaction potential, when transacting between two countries. The calculation sheet uses currency differentials to incorporate the variance within a Lambda field equation. To use the tool ; 
 
 ###### INPUT : 
-###### * Pricing : PRODUCT
+###### Pricing : PRODUCT
 
 ###### Will return ;
 ###### OUTPUT : 
