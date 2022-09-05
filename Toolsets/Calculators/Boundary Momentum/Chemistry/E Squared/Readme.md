@@ -1,7 +1,7 @@
 ---
 ##### E/e SQ : The Hydrogen Equation in Binary
 ---
-###### [Data Cartography : Video Guide](https://shared-assets.adobe.com/link/c1181999-a9de-44c8-5345-a2eab33f6fc4) 
+###### [Data Cartography : Video Guide](https://shared-assets.adobe.com/link/4ea33324-07bc-47ec-40af-126db08089fd) 
 ---
 ###### The aim  was to define the underlying units of energy which underpin interest rates. A continuation study from the FTSE Historical A,B,C guide. Which looked more closely at what defines inflation/deflation. When in consideration of {E/e SQ} Within both eigenvalue sets and statistical volatility curves.
 
