@@ -43,7 +43,19 @@
 
 ---
 
-#### Lambda Sequencer : Base Equation
+##### The Base Power Ratios : Created within Infinities
+
+##### Describe the relationship between nuclear resonance and mathematics. And this enables us to establish procedural methods when aiming to discern the trajectories of ENERGY_AS_A_UNIT. The primary base power used within the Lambda equations presented incorporates the (^1.14). As statistically when calculated against the average, will give the most precise forecast within a designated framework.
+
+(1.14)
+(1.15)
+(1.16)
+(1.17)
+(1.18)
+
+##### These ratios can also be incorporated into other statistical tools, which are provided.
+
+#### Lambda_Sequencer_in_Multiplication : Base Equation
 
 ###### Using the 'Nuclear Ratio' and therefore 'Base Power Ratio (^1.14)' Which is cross referenced within the following folder 
 
@@ -65,7 +77,7 @@
 
 ---
 
-#### Boundary Momentum : Sequencing Divisional Complexes
+#### Boundary Momentum_Sequencer_In_Division : Unit_(Sequencing_Alternate_Divisional_Complexes)
 
 ###### Deceptive in name, the toolset infers growth in division of an arbitrary SUM_VALUE_OF_ENERGY, between three equal ratios. And will as long as {DECIMALISATION} remains intact, much like a plant continues to refresh.
 
@@ -73,11 +85,7 @@
 
 ---
 
-#### Toolsets : In Development : Infinities : Currency : Electrical Resistance
-
----
-
-#### Electrical Resistance : Alternating Currents : Deposition within Decimalisation
+#### Electrical Resistance : Unit_(AC)_Deposition_within_Decimalisation
 
 ###### The equation depicts a {Probability of} a cancellation channel within 'Nuclear Resonance'. Which establishes the attenuation cycle. And this becomes an equation to experiment against. It is unclear whether the calculation holds within both MhZ Frequency Bands and AC Alternating Currents. Tho if accurate this would establish the redox potential within metallic structures, as well as calcification deposits within cellular organisms. 
 
@@ -87,7 +95,7 @@
 
 ---
 
-#### Currency : Differential_Inversions : Highlighting ZPE Inductance within substrates
+#### Unit_Currency (Differential_Inversions)
 
 ###### A tool useful for describing the current state of transaction potential, when transacting between two countries. The calculation sheet uses currency differentials to incorporate the variance within a Lambda field equation. To use the tool ; 
 
