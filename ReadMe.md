@@ -19,6 +19,30 @@
 ###### Wave function instabilities often arise within Lambda propagation at what is called 'wave 6'. Due to field inversions which can be termed as 'Attenuation'. It becomes a representation of the compounding of relativistic effects. And these aspects are incorporated into the calculation sheets. 
 
 
+
+#### Infinities
+
+###### Approaching Infinity
+###### If we move away from the idea of 'Inifinity' being an etheral aspect. And instead understand it as an attribute of something. We can begin to use infinitie, as a 'calculation complex'. The attributues created within 'Inifinities folder' are functions of 'Negative and Positive' integers {or power ratio's}. Which are determined through the Nucleotide constants, we can then assign the formulation to Lambda based equations.
+
+###### There are two formats within the infinities folder, which encode a topological description of energetic distribution
+###### Infinities transport : Is an example of infinity when it becomes assigned. In terminology this implies that infinity will draw to a close when a certain condition is met. Infinities_transport assigns electron transport as a key function to energetic distribution. And therefore creates loss/gain vectors within that movement.
+
+###### Infinities_Transport : Ratio's
+
+###### Single Variable : ((1.5578/0.102414319819447)*0.05))
+
+###### Multi Variable : ((1.5578/0.102414319819447)/0.95))
+
+##### Recall this is an aspect which includes the assignment of electron transportation, we must show how that variance is assembled. And how the structural transformation looks, within a sequence.
+
+###### Infinities_Continuous
+
+##### Encapsulates the context of infinity frozen in time, let's imagine. There are no loss/gain vectors within the energetic distribution. And instead just a description of the nuclear ratios which are to be assigned. In order to approach infinity.
+
+
+---
+
 #### Lambda Sequencer : Base Equation
 
 ###### Using the 'Nuclear Ratio' and therefore 'Base Power Ratio (^1.14)' Which is cross referenced within the following folder 
@@ -50,14 +74,6 @@
 ---
 
 #### Toolsets : In Development : Infinities : Currency : Electrical Resistance
-
----
-
-
-#### Infinities
-
-###### Approaching Infinity
-###### If we move away from the idea of 'Inifinity' being an etheral aspect. And instead understand it as an attribute of something. We can begin to use infinitie, as a 'calculation complex'. The attributues created within 'Inifinities XLS' are functions of 'Negative and Positive' integers. Which are determined through the Nucleotide constants, we can then assign the formulation to Lambda based equations.
 
 ---
 
