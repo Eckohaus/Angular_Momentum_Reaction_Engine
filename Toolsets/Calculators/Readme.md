@@ -27,6 +27,10 @@
 
 #### Data Cartography : Chemistry {or Quantum Chromodynamics} Applications : Video Guide
 ###### [The Hydrogen Equation](https://shared-assets.adobe.com/link/4ea33324-07bc-47ec-40af-126db08089fd) 
+### Video Brief : 
+##### * Detail the binary channels in relation to volatility curvatures {E/e SQ}.
+##### * Data type : Indexes of refraction
+##### * Define the binary states in relation to the periodic table. {The Hydrogen Equation in Binary} 
 
 ---
 
