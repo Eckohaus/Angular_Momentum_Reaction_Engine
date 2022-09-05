@@ -47,11 +47,11 @@
 
 ##### Describe the relationship between nuclear resonance and mathematics. And this enables us to establish procedural methods when aiming to discern the trajectories of ENERGY_AS_A_UNIT. The primary base power used within the Lambda equations presented incorporates the (^1.14). As statistically when calculated against the average, will give the most precise forecast within a designated framework.
 
-(1.14)
-(1.15)
-(1.16)
-(1.17)
-(1.18)
+###### * (1.14)
+###### * (1.15)
+###### * (1.16)
+###### * (1.17)
+###### * (1.18)
 
 ##### These ratios can also be incorporated into other statistical tools, which are provided.
 
@@ -72,8 +72,6 @@
 
 ###### * Amplitude
 ###### * Direction 
-
-###### The Base Power Ratio (^1.14) can also be incorporated into other statistical tool sets provided :
 
 ---
 
