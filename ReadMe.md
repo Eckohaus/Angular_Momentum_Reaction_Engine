@@ -34,7 +34,7 @@
 
 ##### Infinities_Continuous
 
-###### Encapsulates the context of infinity frozen in time, let's imagine. There are no loss/gain vectors within the energetic distribution. And instead just a description of the nuclear ratios which are to be assigned. In order to approach infinity.
+###### Encapsulates the context of infinity frozen in time. Let's imagine, there are no loss/gain vectors within the energetic distribution. And instead just a description of the nuclear ratios which are yet to be assigned, in order to approach infinity.
 
 
 ---
