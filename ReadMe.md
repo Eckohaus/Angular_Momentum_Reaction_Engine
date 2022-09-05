@@ -98,10 +98,9 @@
 ###### A tool useful for describing the current state of transaction potential, when transacting between two countries. The calculation sheet uses currency differentials to incorporate the variance within a Lambda field equation. To use the tool ; 
 
 ###### INPUT : 
-###### Pricing : PRODUCT
+###### *  Pricing : PRODUCT
 
-###### Will return 
-###### OUTPUT 
+###### Will return : OUTPUT 
 
-###### ROI : Margin 
-###### Designated to which market
+###### *  ROI : Margin 
+###### *  Designated to which market
