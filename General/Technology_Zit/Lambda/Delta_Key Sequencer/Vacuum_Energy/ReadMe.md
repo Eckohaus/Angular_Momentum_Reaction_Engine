@@ -1,6 +1,4 @@
 ---
-###### [Data Cartography : Video Guide](https://www.youtube.com/channel/UCHGtmfjIICpuETvXsRd2eww/playlists) 
----
 ##### Lambda Field Encoding : Using Negative Delta
 
 ###### The aim here is to establish the causal effects, within relativistic behaviours. 
