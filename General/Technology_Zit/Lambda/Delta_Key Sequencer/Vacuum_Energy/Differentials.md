@@ -5,7 +5,7 @@
 
 ##### Differential behaviours (Nuclear Resonance|Ionisation) multiplexed : Creates Negative Delta
 
-##### - [( SVD Script | CPU )](https://github.com/eckohaus/2020_Angular_Momentum_Reaction_Engine/blob/master/General/Legal/Intellectual_Property/Current_Questions/Intel/SVD_Script.md)
+##### - [( SVD Script | CPU )](https://www.intel.com/content/www/us/en/docs/onemkl/developer-reference-fortran/2023-1/singular-value-decomposition-lapack-driver.html)
 ##### - ( Device | Metallic Composition)
 ##### - ( Ionisation | Lithium Ions )
 
