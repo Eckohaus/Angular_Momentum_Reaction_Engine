@@ -1,5 +1,5 @@
 ---
-###### [Data Cartography : Video Guide](https://shared-assets.adobe.com/link/43f5a708-080a-49ab-52bd-35b08f218aa0) 
+###### [Data Cartography : Video Guide](https://publicrecords.copyright.gov/detailed-record/siebel_PAu004252558) 
 ---
 
 ##### Core References created for : Angular_Momentum_Reaction_Engine
