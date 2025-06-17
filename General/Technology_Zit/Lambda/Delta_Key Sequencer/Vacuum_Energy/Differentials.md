@@ -1,5 +1,5 @@
 ---
-###### [Data Cartography : Video Guide](https://www.youtube.com/channel/UCHGtmfjIICpuETvXsRd2eww/playlists) 
+###### [Data Cartography : Video Guide](https://publicrecords.copyright.gov/detailed-record/voyager_38120086)
 ---
 
 
