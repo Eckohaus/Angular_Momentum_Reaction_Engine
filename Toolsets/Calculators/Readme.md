@@ -13,20 +13,20 @@
 ---
 
 #### Data Cartography : Financial {or variable data} Applications : Video Guide
-###### [Boundary Momentum _ FTSE Index Historical A](https://publicrecords.copyright.gov/detailed-record/siebel_PAu004252558)
-###### [Boundary Momentum _ FTSE Index Historical B](https://publicrecords.copyright.gov/detailed-record/siebel_PAu004252558)
-###### [Boundary Momentum _ FTSE Index Historical C](https://publicrecords.copyright.gov/detailed-record/siebel_PAu004252558)
+###### [Boundary Momentum _ FTSE Index Historical A](https://publicrecords.copyright.gov/detailed-record/voyager_38120086)
+###### [Boundary Momentum _ FTSE Index Historical B](https://publicrecords.copyright.gov/detailed-record/voyager_38120086)
+###### [Boundary Momentum _ FTSE Index Historical C](https://publicrecords.copyright.gov/detailed-record/voyager_38120086)
 
 ---
 
 #### Data Cartography : Financial {or variable data} Applications : Video Guide
-###### [Combined _ Bank Of England _ Historical Interest Rates _ A](https://publicrecords.copyright.gov/detailed-record/siebel_PAu004252558)
-###### [Combined _ Bank Of England _ Historical Interest Rates _ B](https://publicrecords.copyright.gov/detailed-record/siebel_PAu004252558) 
+###### [Combined _ Bank Of England _ Historical Interest Rates _ A](https://publicrecords.copyright.gov/detailed-record/voyager_38120086)
+###### [Combined _ Bank Of England _ Historical Interest Rates _ B](https://publicrecords.copyright.gov/detailed-record/voyager_38120086) 
 
 ---
 
 #### Data Cartography : Chemistry {or Quantum Chromodynamics} Applications : Video Guide
-###### [The Hydrogen Equation](https://publicrecords.copyright.gov/detailed-record/siebel_PAu004252558)
+###### [The Hydrogen Equation](https://publicrecords.copyright.gov/detailed-record/voyager_38120086)
 ### Video Brief : 
 ##### * Detail the binary channels in relation to volatility curvatures {E/e SQ}.
 ##### * Data type : Indexes of refraction
@@ -43,6 +43,6 @@
 ---
 
 #### Data Cartography : Financial {or variable data} Applications : Video Guide
-###### [Lambda Projections. _ Currency Data](https://publicrecords.copyright.gov/detailed-record/siebel_PAu004252558)
+###### [Lambda Projections. _ Currency Data](https://publicrecords.copyright.gov/detailed-record/voyager_38120086)
 
 ---
