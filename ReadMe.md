@@ -1,10 +1,6 @@
 
 # 2020 Angular Momentum Reaction Engine
 
-###### [Data Cartography : Video Overview](https://publicrecords.copyright.gov/detailed-record/voyager_38120086) 
-
-
-
 ##### Statistical modelling tools, defined within a framework of Multi and Single Variable Calculus. And charted to visualise the mapping of coordinates. Ensure 'Log Scaling' is selected upon re-import of XLS'. 
 
 ---
