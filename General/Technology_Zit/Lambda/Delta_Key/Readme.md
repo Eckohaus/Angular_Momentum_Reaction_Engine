@@ -33,10 +33,7 @@
   \boxed{\text{Dirac Equation} \supset \text{Delta Key Logic}}  
   ```  
 
----
-
-#### **Implementation Notes**  
-- **Data Input**: Eigenmatrices with Δ-bias tags.  
-- **Hardware**: Requires nucleated path oscillators (see [Sulawesi Array](https://eckohaus.com)).  
+#### **No Hardware Claims**  
+- *"Nucleated path oscillators" and other physical implementations are redacted pending empirical validation.*  
 
 ---
