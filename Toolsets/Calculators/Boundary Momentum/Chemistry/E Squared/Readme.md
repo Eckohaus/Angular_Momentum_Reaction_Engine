@@ -1,4 +1,3 @@
-```
 ### E/e SQ: The Hydrogen Equation in Binary  
 *A theoretical framework for periodic table-inspired eigenvalue analysis*
 
@@ -36,13 +35,3 @@ To establish fundamental energy relationships governing financial boundaries thr
 
 ```math 
 \text{Volatility Surface} ≡ \frac{\partial^2 E}{\partial e^2} \Big|_{e=1}
-```
-
----
-
-#### Implementation Notes  
-For computational analysis:  
-- CSV eigenvalue extraction  
-- Topological data methods  
-- Requires normalization of financial time series  
-```
