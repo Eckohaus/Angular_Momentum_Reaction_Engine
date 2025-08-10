@@ -1,6 +1,3 @@
----
-###### [Data Cartography : Video Guide](https://publicrecords.copyright.gov/detailed-record/voyager_38120086)
----
 
 #### The Hydrogen Equation In Binary.
 
