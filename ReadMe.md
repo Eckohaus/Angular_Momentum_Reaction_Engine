@@ -15,7 +15,7 @@ This repository provides computational tools for analyzing **energetic conversio
 
 ### **1. Lambda Projections**  
 - Models energy as discrete units (*Eigenvalues*) in relativistic frames.  
-- **Wave 6 Instability**: Field inversions causing attenuation (see `/docs/attenuation_models`).  
+- **Wave 6 Instability**: Field inversions causing attenuation.
 
 ### **2. Infinities Framework**  
 #### **A. Assigned Infinities**  
