@@ -1,6 +1,4 @@
----
-###### [Data Cartography : Video Guide](https://publicrecords.copyright.gov/detailed-record/siebel_PAu004252558) 
----
+
 
 ##### Core References created for : Angular_Momentum_Reaction_Engine
 
