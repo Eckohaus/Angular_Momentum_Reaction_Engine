@@ -1,15 +1,17 @@
+### **Core References: Angular Momentum Reaction Engine**  
+*Base concept for the database and its derivatives*  
 
+#### **Root Matrice**  
+```  
+‘1.5578’ ≡ Planck Length ⊗ Planck Constant  
+```  
+- *Derived through boundary convergence trials*  
 
-##### Core References created for : Angular_Momentum_Reaction_Engine
-
----
-
-###### The root matrice // Defined as '1.5578' Equals a combination equation based upon 'Plancks Length' and 'Plancks Constant'.
-
-###### Nucleotide Ratio's // Are defined as an inference point within hydrogen based equations. When creating lambda based equations. The representaion becomes the following :
-
----
- 
-###### (1.14) = (Nucleotide Ratio)
-###### (1.1) = ( E=mc2, defined within a wave structure)
-###### (1.14^1.1) = (Nucleotide ratio to the power of E=mc2)
+#### **Nucleotide Ratios**  
+Hydrogen-mediated inference points for λ-equations:  
+```  
+(1.14)     = Nucleotide Ratio  
+(1.1)      = Wave-defined E=mc²  
+(1.14^1.1) = Nucleotide-Energy Coupling  
+```  
+- *Observed via refractive index permutations*  
