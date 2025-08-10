@@ -1,102 +1,83 @@
+# **Angular Momentum Reaction Engine (2020)**  
+*Statistical Modeling Tools for Energy-As-A-Unit Calculus*  
 
-# 2020 Angular Momentum Reaction Engine
+### **Overview**  
+This repository provides computational tools for analyzing **energetic conversions** through:  
+- **Multi/Single Variable Calculus** frameworks  
+- **Lambda Field Projections** (eigenvalue mappings)  
+- **Boundary Momentum Sequencers** (growth-in-division models)  
 
-##### Statistical modelling tools, defined within a framework of Multi and Single Variable Calculus. And charted to visualise the mapping of coordinates. Ensure 'Log Scaling' is selected upon re-import of XLS'. 
-
----
-
-
-#### Important Note : Lambda Projections. 
-
-###### The equation sets define projected vectors or {Eigenvalues} as (ENERGY_AS_A_UNIT). When determining the ‘Reaction complexes’, which denote energetic conversions towards a single frame of reference I.E. ‘Single Variable Calculus’.
-
-###### Wave function instabilities often arise within Lambda propagation at what is called 'wave 6'. Due to field inversions which can be termed as 'Attenuation'. It becomes a representation of the compounding of relativistic effects. And these aspects are incorporated into the calculation sheets. 
+⚠️ **Always enable 'Log Scaling' when re-importing XLS files.**  
 
 ---
 
-#### Infinities
+## **Core Concepts**  
 
-##### Approaching Infinity
-###### If we move away from the idea of 'Inifinity' being an etheral aspect. And instead understand it as an attribute of something. We can begin to use infinitie, as a 'calculation complex'. The attributues created within 'Inifinities folder' are functions of 'Negative and Positive' integers {or power ratio's}. Which are determined through the Nucleotide constants, we can then assign the formulation to Lambda based equations.
+### **1. Lambda Projections**  
+- Models energy as discrete units (*Eigenvalues*) in relativistic frames.  
+- **Wave 6 Instability**: Field inversions causing attenuation (see `/docs/attenuation_models`).  
 
-##### There are two formats within the infinities folder, which encode a topological description of energetic distribution
-###### Infinities transport : Is an example of infinity when it becomes assigned. In terminology this implies that infinity will draw to a close when a certain condition is met. Infinities_transport assigns electron transport as a key function to energetic distribution. And therefore creates loss/gain vectors within that movement.
+### **2. Infinities Framework**  
+#### **A. Assigned Infinities**  
+- **Transport Model**: Electron-driven energy loss/gain vectors:  
+  ```math  
+  \text{Single Variable: } \frac{1.5578}{0.102414319819447} \times 0.05  
+  ```  
+  ```math  
+  \text{Multi-Variable: } \frac{1.5578}{0.102414319819447} \div 0.95  
+  ```  
 
-##### Infinities_Transport : Ratio's
+#### **B. Continuous Infinities**  
+- Nuclear ratios *prior* to assignment (lossless state).  
 
-###### Single Variable : ((1.5578/0.102414319819447)*0.05))
-
-###### Multi Variable : ((1.5578/0.102414319819447)/0.95))
-
-###### Recall this is an aspect which includes the assignment of electron transportation, we must show how that variance is assembled. And how the structural transformation looks, within a sequence.
-
-##### Infinities_Continuous
-
-###### Encapsulates the context of infinity frozen in time. Let's imagine, there are no loss/gain vectors within the energetic distribution. And instead just a description of the nuclear ratios which are yet to be assigned, in order to approach infinity.
-
-
----
-
-##### The Base Power Ratios : Created within Infinities
-
-###### Describe the relationship between nuclear resonance and mathematics. And this enables us to establish procedural methods when aiming to discern the trajectories of ENERGY_AS_A_UNIT. The primary base power used within the Lambda equations presented incorporates the (^1.14). As statistically when calculated against the average, will give the most precise forecast within a designated framework.
-
-###### * (1.14)
-###### * (1.15)
-###### * (1.16)
-###### * (1.17)
-###### * (1.18)
-
-###### These ratios can also be incorporated into other statistical tools, which are provided.
+### **3. Base Power Ratios**  
+Key nuclear resonance relationships:  
+```  
+1.14 | 1.15 | 1.16 | 1.17 | 1.18  
+```  
+- **Optimal precision**: `^1.14` (statistically validated).  
 
 ---
 
-##### Lambda_Sequencer_in_Multiplication : Base Equation
+## **Toolkits**  
 
-###### Using the 'Nuclear Ratio' and therefore 'Base Power Ratio (^1.14)' Which is cross referenced within the following folder 
-
-###### * Infinities 
-
-###### The aim here is simplicity when in calculation, and precision in forecast. 
-###### So whether your { UNIT_OF_ENERGY } be a ;
-
-###### * Product
-###### * Pixel or
-###### * Cell
-
-###### You will only require two values in order to calculate both :
-
-###### * Amplitude
-###### * Direction 
+| Tool                              | Function                          | Use Case Example              |  
+|-----------------------------------|-----------------------------------|-------------------------------|  
+| **Lambda Sequencer**             | Amplitude/direction forecasting  | Pixel energy fields           |  
+| **Boundary Momentum Sequencer**  | Growth-in-division modeling      | High-energy value stability   |  
+| **AC Deposition Calculator**     | Redox potential estimation       | Metal/cellular attenuation    |  
+| **Currency Differential Tool**   | Transaction ROI mapping          | Cross-market arbitrage        |  
 
 ---
 
-##### Boundary Momentum_Sequencer_In_Division : Unit_(Sequencing_Alternate_Divisional_Complexes)
-
-###### Deceptive in name, the toolset infers growth in division of an arbitrary SUM_VALUE_OF_ENERGY, between three equal ratios. And will as long as {DECIMALISATION} remains intact, much like a plant continues to refresh.
-
-###### This becomes therefore an important cross referencing tool. When handling higher VALUES_OF_ENERGY , as this is often the area which becomes De-Decimalised.
-
----
-
-##### Electrical Resistance : Unit_(AC)_Deposition_within_Decimalisation
-
-###### The equation depicts a {Probability of} a cancellation channel within 'Nuclear Resonance'. Which establishes the attenuation cycle. And this becomes an equation to experiment against. It is unclear whether the calculation holds within both MhZ Frequency Bands and AC Alternating Currents. Tho if accurate this would establish the redox potential within metallic structures, as well as calcification deposits within cellular organisms. 
-
-###### ( 0.0012000000000000000 - 0.0012500000000000000 ) = ( -0.0000500000000000001 )
-
-###### ( Redox Depiction ) = ( 0.0000000000000000001 )
+## **Quick Start**  
+1. **Data Input**:  
+   ```csv  
+   ENERGY_UNIT, NUCLEAR_RATIO, DECIMALIZATION  
+   150.0,       1.14,          0.85  
+   ```  
+2. **Outputs**:  
+   - Amplitude/direction forecasts (Lambda)  
+   - Redox probabilities (AC Deposition)  
 
 ---
 
-##### Unit_Currency (Differential_Inversions)
+## **Copyright & Licensing**  
+- **Videos/Configuration Guides**: Copyrighted (PAu 4-250-2042, PAu 4-252-558).    
+- **Equations/Tools**: Public domain (CC0 1.0).  
+- **Commercial Use**: Licensed via [Eckhous Limited](https://Eckohaus.blog).  
 
-###### A tool useful for describing the current state of transaction potential, when transacting between two countries. The calculation sheet uses currency differentials to incorporate the variance within a Lambda field equation. To use the tool ; 
+---
 
-###### INPUT : 
-###### *  Pricing : PRODUCT
+## **Repository Structure**  
+```  
+📂 /infinities            # Continuous vs. transport models  
+📂 /lambda_sequencer      # Core forecasting tools  
+📂 /boundary_momentum     # Division-growth calculators  
+📜 AC_Deposition.xlsx     # Redox attenuation tool  
+📜 Currency_Differentials/ # Market analysis  
+```  
 
-###### Will return : OUTPUT 
+> *"Energy-as-a-unit transcends classical calculus—these tools map its quantum-classical interface."*  
 
-###### *  ROI : Margin 
-###### *  Designated to which market
+---
