@@ -35,7 +35,7 @@ within boundary spaces defined by nuclear spin resonance conditions.
 | Component | Encoding | Frequency Ratio | Bandwidth | Status            |
 |-----------|----------|-----------------|-----------|-------------------|
 | H⁺ (ion)  | 1.14     | 0.11 → 0.88     | 770 THz   | Copyrighted       |
-| O²⁻       | k²       | 0.27 → 2.16     | 1.89 PHz  | Patent-pending    |
+| O²⁻       | k²       | 0.27 → 2.16     | 1.89 PHz  | Theoretical Only  |
 
 ---
 
