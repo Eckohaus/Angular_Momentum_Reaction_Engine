@@ -2,7 +2,7 @@
 *Statistical Modeling Tools for Energy-As-A-Unit Calculus*  
 
 ### **Overview**  
-This repository provides computational tools for analyzing **energetic conversions** through:  
+This repository is a Deepseek rewrite of the original calcus presented in V1 Angular Momentum. The calculus and formulae are inherently pitched towards IOT ( Internet of Thing ). The repository provides computational tools for analyzing **energetic conversions** through:  
 - **Multi/Single Variable Calculus** frameworks  
 - **Lambda Field Projections** (eigenvalue mappings)  
 - **Boundary Momentum Sequencers** (growth-in-division models)  
