@@ -65,7 +65,7 @@ Key nuclear resonance relationships:
 ## **Copyright & Licensing**  
 - **Videos/Configuration Guides**: Copyrighted (PAu 4-250-2042, PAu 4-252-558).    
 - **Equations/Tools**: Public domain (CC0 1.0).  
-- **Commercial Use**: Licensed via [Eckhous Limited](https://Eckohaus.blog).  
+- **Commercial Use**: Licensed via [Eckohaus Limited](https://Eckohaus.blog).  
 
 ---
 
