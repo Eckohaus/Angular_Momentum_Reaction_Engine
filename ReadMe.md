@@ -1,83 +1,97 @@
-# **Angular Momentum Reaction Engine (2020)**  
-*Statistical Modeling Tools for Energy-As-A-Unit Calculus*  
+# **Angular Momentum Reaction Engine (2020)**
 
-### **Overview**  
-This repository is a Deepseek rewrite of the original calcus presented in V1 Angular Momentum. The calculus and formulae are inherently pitched towards IOT ( Internet of Things ). The repository provides computational tools for analyzing **energetic conversions** through:  
-- **Multi/Single Variable Calculus** frameworks  
-- **Lambda Field Projections** (eigenvalue mappings)  
-- **Boundary Momentum Sequencers** (growth-in-division models)  
+*Alat Pemodelan Statistik untuk Kalkulus Energy-As-A-Unit*
 
-⚠️ **Always enable 'Log Scaling' when re-importing XLS files.**  
+### **Gambaran Umum**
 
----
+Repositori ini adalah penulisan ulang menggunakan Deepseek dari kalkulus asli yang disajikan dalam V1 Angular Momentum. Kalkulus dan rumusnya secara inheren diarahkan untuk IOT (Internet of Things). Repositori ini menyediakan alat komputasi untuk menganalisis **konversi energik** melalui:
 
-## **Core Concepts**  
+· Kerangka kerja **Kalkulus Variabel Tunggal/Majemuk**
+· **Proyeksi Medan Lambda** (eigenvalue mappings)
+· **Penganalisis Momentum Batas** (growth-in-division models)
 
-### **1. Lambda Projections**  
-- Models energy as discrete units (*Eigenvalues*) in relativistic frames.  
-- **Wave 6 Instability**: Field inversions causing attenuation.
-
-### **2. Infinities Framework**  
-#### **A. Assigned Infinities**  
-- **Transport Model**: Electron-driven energy loss/gain vectors:  
-  ```math  
-  \text{Single Variable: } \frac{1.5578}{0.102414319819447} \times 0.05  
-  ```  
-  ```math  
-  \text{Multi-Variable: } \frac{1.5578}{0.102414319819447} \div 0.95  
-  ```  
-
-#### **B. Continuous Infinities**  
-- Nuclear ratios *prior* to assignment (lossless state).  
-
-### **3. Base Power Ratios**  
-Key nuclear resonance relationships:  
-```  
-1.14 | 1.15 | 1.16 | 1.17 | 1.18  
-```  
-- **Optimal precision**: `^1.14` (statistically validated).  
+⚠️ Selalu aktifkan 'Log Scaling' saat mengimpor ulang file XLS.
 
 ---
 
-## **Toolkits**  
+Konsep Inti
 
-| Tool                              | Function                          | Use Case Example              |  
-|-----------------------------------|-----------------------------------|-------------------------------|  
-| **Lambda Sequencer**             | Amplitude/direction forecasting  | Pixel energy fields           |  
-| **Boundary Momentum Sequencer**  | Growth-in-division modeling      | High-energy value stability   |  
-| **AC Deposition Calculator**     | Redox potential estimation       | Metal/cellular attenuation    |  
-| **Currency Differential Tool**   | Transaction ROI mapping          | Cross-market arbitrage        |  
+1. Proyeksi Lambda
+
+· Memodelkan energi sebagai unit diskrit (Nilai Eigen) dalam kerangka relativistik.
+· Ketidakstabilan Gelombang 6: Pembalikan medan yang menyebabkan atenuasi (pelemahan).
+
+2. Kerangka Ketakterhinggaan
+
+A. Ketakterhinggaan yang Ditugaskan
+
+· Model Transport: Vektor gain/kehilangan energi yang digerakkan oleh elektron:
+  ```math
+  \text{Variabel Tunggal: } \frac{1.5578}{0.102414319819447} \times 0.05
+  ```
+  ```math
+  \text{Variabel Majemuk: } \frac{1.5578}{0.102414319819447} \div 0.95
+  ```
+
+B. Ketakterhinggaan Kontinu
+
+· Rasio nuklir sebelum penugasan (lossless state/keadaan tanpa kehilangan).
+
+3. Rasio Daya Dasar
+
+Hubungan resonansi nuklir utama:
+
+```
+1.14 | 1.15 | 1.16 | 1.17 | 1.18
+```
+
+· Presisi optimal: ^1.14 (telah divalidasi secara statistik).
+
+---
+
+Perangkat Alat (Toolkits)
+
+Alat Fungsi Contoh Penggunaan
+Lambda Sequencer Peramalan amplitudo/arah Medan energi piksel
+Boundary Momentum Sequencer Pemodelan pertumbuhan-dalam-pembagian Stabilitas nilai energi tinggi
+AC Deposition Calculator Estimasi potensial redoks Atenuasi logam/seluler
+Currency Differential Tool Pemetaan ROI transaksi Arbitrase lintas pasar
 
 ---
 
-## **Quick Start**  
-1. **Data Input**:  
-   ```csv  
-   ENERGY_UNIT, NUCLEAR_RATIO, DECIMALIZATION  
-   150.0,       1.14,          0.85  
-   ```  
-2. **Outputs**:  
-   - Amplitude/direction forecasts (Lambda)  
-   - Redox probabilities (AC Deposition)  
+Memulai Cepat
+
+1. Input Data:
+   ```csv
+   ENERGY_UNIT, NUCLEAR_RATIO, DECIMALIZATION
+   150.0,       1.14,          0.85
+   ```
+2. Keluaran:
+   · Peramalan amplitudo/arah (Lambda)
+   · Probabilitas redoks (AC Deposition)
 
 ---
 
-## **Copyright & Licensing**  
-- **Videos/Configuration Guides**: Copyrighted (PAu 4-250-2042, PAu 4-252-558).    
-- **Equations/Tools**: Public domain (CC0 1.0).  
-- **Commercial Use**: Licensed via [Eckohaus Limited](https://Eckohaus.blog).  
+Hak Cipta & Lisensi
+
+· Video/Guide Konfigurasi: Hak Cipta Dilindungi (PAu 4-250-2042, PAu 4-252-558).
+· Persamaan/Alat: Domain publik (CC0 1.0).
+· Penggunaan Komersial: Dilisensikan melalui Eckohaus Limited.
 
 ---
 
-## **Repository Structure**  
-```  
-📂 /infinities            # Continuous vs. transport models  
-📂 /lambda_sequencer      # Core forecasting tools  
-📂 /boundary_momentum     # Division-growth calculators  
-📜 AC_Deposition.xlsx     # Redox attenuation tool  
-📜 Currency_Differentials/ # Market analysis  
-```  
+Struktur Repositori
 
-> *"Energy-as-a-unit transcends classical calculus—these tools map its quantum-classical interface."*  
+```
+📂 /infinities            # Model kontinu vs. transport
+📂 /lambda_sequencer      # Alat inti peramalan
+📂 /boundary_momentum     # Kalkulator pertumbuhan-pembagian
+📜 AC_Deposition.xlsx     # Alat atenuasi redoks
+📜 Currency_Differentials/ # Analisis pasar
+```
+
+"Energy-as-a-unit melampaui kalkulus klasik—alat-alat ini memetakan antarmuka kuantum-klasiknya."
 
 ---
+
+
