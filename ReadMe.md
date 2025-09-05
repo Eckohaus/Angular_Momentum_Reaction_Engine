@@ -62,13 +62,6 @@ Key nuclear resonance relationships:
 
 ---
 
-## **Copyright & Licensing**  
-- **Videos/Configuration Guides**: Copyrighted (PAu 4-250-2042, PAu 4-252-558).    
-- **Equations/Tools**: Public domain (CC0 1.0).  
-- **Commercial Use**: Licensed via [Eckohaus Limited](https://Eckohaus.blog).  
-
----
-
 ## **Repository Structure**  
 ```  
 📂 /infinities            # Continuous vs. transport models  
@@ -79,5 +72,27 @@ Key nuclear resonance relationships:
 ```  
 
 > *"Energy-as-a-unit transcends classical calculus—these tools map its quantum-classical interface."*  
+
+---
+
+## **Copyright, Licensing & Roadmap**
+
+### **Current Copyright Status**
+- **Database Compilation (& .xlsx files):** © [Your Name/Company]. The unique selection, arrangement, and expression of data and formulae within these data sheets is an unpublished, original compilation.
+- **Underlying Formulae:** The abstract mathematical principles are not subject to copyright. Their specific implementation and documentation within this database are.
+- **Videos/Configuration Guides:** Copyright registered with the **U.S. Copyright Office** (Registration Numbers: PAu 4-250-2042, PAu 4-252-558). All rights reserved.
+
+### **Licensing Grant (During Validation Phase)**
+To foster research and collaboration during the validation phase, permission is hereby granted to:
+- Use, copy, and modify the data sheets for **non-commercial, research purposes only.**
+- Redistribute original or modified sheets **only if** full attribution is provided and this entire copyright notice is included.
+
+**Commercial-use licensing, distribution, or incorporation into products is not permitted at this time.** For commercial inquiries, please contact [Eckohaus Limited](https://Eckohaus.blog).
+
+### **Future Licensing Intent**
+Upon successful validation and copyright registration of the database as a literary work, the licensing terms for the formulae and data sheets are intended to be updated to a **permissive open-source license** (e.g., MIT or Apache 2.0) for all use cases, including commercial.
+
+### **Important Disclaimer**
+**The equations and tools are provided "as-is" for research and experimental purposes.** They represent theoretical models and may contain errors. **No warranty of any kind is expressed or implied,** including warranties of accuracy, fitness for a particular purpose, or non-infringement. **Formal, independent validation is strongly recommended before using these tools in any critical application.** By using this material, you agree that the authors and copyright holders are not liable for any claims or damages resulting from its use.
 
 ---
