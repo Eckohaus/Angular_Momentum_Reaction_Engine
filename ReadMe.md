@@ -74,3 +74,13 @@ Key nuclear resonance relationships:
 > *"Energy-as-a-unit transcends classical calculus—these tools map its quantum-classical interface."*  
 
 ---
+
+## Copyright & Licensing
+
+### Current Licensing
+- **Videos/Configuration Guides:** Copyright registered with the **U.S. Copyright Office** (PAu 4-250-2042, PAu 4-252-558). All rights reserved.
+- **Equations & Tools:** Dedicated to the public domain under **CC0 1.0 Universal**.
+- **Commercial Use:** For any commercial use of the above, a license is required from [Eckohaus Limited](https://eckohaus.blog).
+
+### License Roadmap
+*This initial release is under the MIT License to honor its academic inspiration. Future validated releases will transition to a more restrictive, non-commercial license. The permissions granted here apply only to this specific version.*
