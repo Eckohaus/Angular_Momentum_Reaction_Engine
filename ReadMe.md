@@ -78,9 +78,9 @@ Key nuclear resonance relationships:
 ## Copyright & Licensing
 
 ### Current Licensing
-- **This Repository (Code & Tools):** Licensed under the **MIT License**.
+- **This Database (Formulae & Spreadsheets):** This compilation is licensed under the **Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0)**.
 - **Videos/Configuration Guides:** Copyright registered with the **U.S. Copyright Office** (PAu 4-250-2042, PAu 4-252-558). All rights reserved.
-- **Commercial Use (for Videos/Guides):** A license is required from [Eckohaus Limited](https://eckohaus.blog).
+- **Commercial Use:** A license is required from [Eckohaus Limited](https://eckohaus.blog).
 
 ### License Roadmap
-*This initial release is under the MIT License to honor its academic inspiration. Future validated releases will transition to a more restrictive, non-commercial license. The permissions granted here apply only to this specific version.*
+*This initial release uses a permissive license to honor its academic inspiration. Future validated releases may transition to a different license structure.*
