@@ -40,6 +40,6 @@ are explicitly **not** covered by copyright and remain in the public domain.
 #### **License Statement**  
 > *Implementation of these concepts requires*  
 > *licensed access to the copyrighted video tutorials*  
-> *available through [Eckhous Limited](https://Eckohaus.blog).*  
+> *available through [Eckohaus Limited](https://Eckohaus.blog).*  
 
 ---
