@@ -24,33 +24,44 @@ jobs:
         run: |
           pip install pandas openpyxl
 
-      - name: Convert XLSX to HTML
+      - name: Convert changed XLSX to HTML
         run: |
           mkdir -p docs/previews
-          for file in $(find data/spreadsheets -name '*.xlsx'); do
-            base=$(basename "$file" .xlsx)
-            outfile="docs/previews/${base}.html"
-            FILE="$file" OUTFILE="$outfile" python << 'EOF'
-import pandas as pd, os
-file = os.environ["FILE"]
-outfile = os.environ["OUTFILE"]
-xls = pd.ExcelFile(file)
-with open(outfile, "w", encoding="utf-8") as f:
-    f.write(f"<h1>{os.path.basename(file)}</h1>")
-    for sheet in xls.sheet_names:
-        df = pd.read_excel(file, sheet_name=sheet)
-        f.write(f"<h2>Sheet: {sheet}</h2>")
-        f.write(df.to_html(index=False, escape=False))
-EOF
-          done
+          cat > convert.py << 'PYCODE'
+import pandas as pd, os, subprocess
+
+# Get changed files in this commit range
+result = subprocess.run(
+    ["git", "diff", "--name-only", "HEAD~1", "HEAD"],
+    capture_output=True, text=True
+)
+changed = [f.strip() for f in result.stdout.splitlines() if f.endswith(".xlsx")]
+
+def convert_xlsx(file, outfile):
+    xls = pd.ExcelFile(file)
+    with open(outfile, "w", encoding="utf-8") as f:
+        f.write(f"<h1>{os.path.basename(file)}</h1>")
+        for sheet in xls.sheet_names:
+            df = pd.read_excel(file, sheet_name=sheet)
+            f.write(f"<h2>Sheet: {sheet}</h2>")
+            f.write(df.to_html(index=False, escape=False))
+
+for file in changed:
+    base = os.path.splitext(os.path.basename(file))[0]
+    outfile = f"docs/previews/{base}.html"
+    os.makedirs(os.path.dirname(outfile), exist_ok=True)
+    print(f"Converting {file} → {outfile}")
+    convert_xlsx(file, outfile)
+PYCODE
+          python convert.py
 
       - name: Debug – list previews
-        run: ls -lh docs/previews
+        run: ls -lh docs/previews || echo "No previews generated"
 
       - name: Commit previews
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add docs/previews/*.html
+          git add docs/previews/*.html || true
           git commit -m "Update XLSX HTML previews" || echo "No changes to commit"
-          git push
+          git push || true
