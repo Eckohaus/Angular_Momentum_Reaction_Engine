@@ -1,4 +1,4 @@
-### Formulation Notes
+### Formulation Notes 
 
 This document provides a **mathematical and conceptual foundation** for the Angular Momentum Reaction Engine (v2).
 It transitions the 2020 formulations into a structured, testable form.
