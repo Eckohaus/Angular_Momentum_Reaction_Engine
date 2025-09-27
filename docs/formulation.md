@@ -17,8 +17,8 @@ $$
 E_n = E_0 \cdot r^n
 $$
 
-  - **Default ratio** : $r = 1.14$ **(statistically validated optimum).**
-	- Series growth is monotonic under $r > 1$.
+- **Default ratio:** $r = 1.14$ (statistically validated optimum).  
+- Series growth is monotonic under $r > 1$.  
 
 **Use in code:** implemented in `amre/lambda_seq/engine.py` as `project_lambda`.
 
