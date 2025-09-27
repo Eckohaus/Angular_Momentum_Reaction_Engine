@@ -36,13 +36,13 @@ Two modes of representing infinities:
   - **Assigned form:**
 
 $$
-I_{assigned}(x) = f(x_1, x_2, \dots, x_n)
+I_{\text{assigned}}(x) = f(x_1, x_2, \dots, x_n)
 $$
 
   - **Continuous form:**
 
 $$
-I_{continuous}(t) = \int f(t) \, dt
+I_{\text{continuous}}(t) = \int f(t) \, dt
 $$
 
 These will be formalized in amre/infinities/.
