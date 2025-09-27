@@ -11,6 +11,7 @@ This tree will be updated incrementally as files and folders change.
 
 ## Repo Tree
 
+```text
 data/
 └── spreadsheets/
     └── in_development/
@@ -104,6 +105,7 @@ data/
             ├── lambda_sequencer/
             │   └── Base_Equation.xlsx
             └── Readme.md   (GitHub link)
+```
 
 ---
 
