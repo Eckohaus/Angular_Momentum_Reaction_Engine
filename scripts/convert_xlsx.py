@@ -18,7 +18,7 @@ if __name__ == "__main__":
             if file.endswith(".xlsx"):
                 infile = os.path.join(root, file)
                 base = os.path.splitext(file)[0]
-                outfile = f"docs/previews/{base}.html"
+                outfile = f"previews/{base}.html"   # 👈 CHANGED
                 os.makedirs(os.path.dirname(outfile), exist_ok=True)
                 print(f"Converting {infile} → {outfile}")
                 convert_xlsx(infile, outfile)
