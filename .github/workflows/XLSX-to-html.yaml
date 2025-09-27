@@ -21,39 +21,10 @@ jobs:
           python-version: '3.x'
 
       - name: Install dependencies
-        run: |
-          pip install pandas openpyxl
+        run: pip install pandas openpyxl
 
-      - name: Convert changed XLSX to HTML
-        run: |
-          mkdir -p docs/previews
-          cat > convert.py << 'PYCODE'
-import pandas as pd, os, subprocess
-
-# Get changed files in this commit range
-result = subprocess.run(
-    ["git", "diff", "--name-only", "HEAD~1", "HEAD"],
-    capture_output=True, text=True
-)
-changed = [f.strip() for f in result.stdout.splitlines() if f.endswith(".xlsx")]
-
-def convert_xlsx(file, outfile):
-    xls = pd.ExcelFile(file)
-    with open(outfile, "w", encoding="utf-8") as f:
-        f.write(f"<h1>{os.path.basename(file)}</h1>")
-        for sheet in xls.sheet_names:
-            df = pd.read_excel(file, sheet_name=sheet)
-            f.write(f"<h2>Sheet: {sheet}</h2>")
-            f.write(df.to_html(index=False, escape=False))
-
-for file in changed:
-    base = os.path.splitext(os.path.basename(file))[0]
-    outfile = f"docs/previews/{base}.html"
-    os.makedirs(os.path.dirname(outfile), exist_ok=True)
-    print(f"Converting {file} → {outfile}")
-    convert_xlsx(file, outfile)
-PYCODE
-          python convert.py
+      - name: Convert XLSX to HTML
+        run: python scripts/convert_xlsx.py
 
       - name: Debug – list previews
         run: ls -lh docs/previews || echo "No previews generated"
