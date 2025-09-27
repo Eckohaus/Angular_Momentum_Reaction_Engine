@@ -2,6 +2,8 @@ name: XLSX to HTML Previews
 
 on:
   push:
+    branches:
+      - master
     paths:
       - 'data/spreadsheets/**/*.xlsx'
   workflow_dispatch:
@@ -20,23 +22,31 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install pandas openpyxl tabulate
+          pip install pandas openpyxl
 
       - name: Convert XLSX to HTML
         run: |
           mkdir -p docs/previews
           for file in $(find data/spreadsheets -name '*.xlsx'); do
-            outfile="docs/previews/$(basename ${file%.*}).html"
-            python - << 'EOF'
+            base=$(basename "$file" .xlsx)
+            outfile="docs/previews/${base}.html"
+            python - << 'EOF' "$file" "$outfile"
 import pandas as pd, sys, os
-file = sys.argv[1]
-outfile = sys.argv[2]
+file = sys.argv[1]; outfile = sys.argv[2]
 xls = pd.ExcelFile(file)
 with open(outfile, "w", encoding="utf-8") as f:
-    f.write("<h1>{}</h1>".format(os.path.basename(file)))
+    f.write(f"<h1>{os.path.basename(file)}</h1>")
     for sheet in xls.sheet_names:
         df = pd.read_excel(file, sheet_name=sheet)
         f.write(f"<h2>Sheet: {sheet}</h2>")
         f.write(df.to_html(index=False, escape=False))
 EOF
           done
+
+      - name: Commit previews
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/previews/*.html
+          git commit -m "Update XLSX HTML previews" || echo "No changes to commit"
+          git push
