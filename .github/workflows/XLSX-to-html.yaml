@@ -30,9 +30,10 @@ jobs:
           for file in $(find data/spreadsheets -name '*.xlsx'); do
             base=$(basename "$file" .xlsx)
             outfile="docs/previews/${base}.html"
-            python - << 'EOF' "$file" "$outfile"
-import pandas as pd, sys, os
-file = sys.argv[1]; outfile = sys.argv[2]
+            FILE="$file" OUTFILE="$outfile" python << 'EOF'
+import pandas as pd, os
+file = os.environ["FILE"]
+outfile = os.environ["OUTFILE"]
 xls = pd.ExcelFile(file)
 with open(outfile, "w", encoding="utf-8") as f:
     f.write(f"<h1>{os.path.basename(file)}</h1>")
@@ -42,6 +43,9 @@ with open(outfile, "w", encoding="utf-8") as f:
         f.write(df.to_html(index=False, escape=False))
 EOF
           done
+
+      - name: Debug – list previews
+        run: ls -lh docs/previews
 
       - name: Commit previews
         run: |
