@@ -32,14 +32,12 @@ Angular_Momentum_Reaction_Engine_v2/
 ---
 
 ## Current Status
-
-## **Lambda Projection Engine** (amre/lambda_seq/engine.py)
-- Forecasts energy as discrete units mapped by eigenvalue scaling.
-## **Core constants** (amre/core/constants.py)
-- Base power ratios, unit registry, physical constants.
-## **Basic test coverage** (tests/test_lambda.py)
-- Confirms Lambda projections grow monotonically.
-
+- **Lambda Projection Engine** (`amre/lambda_seq/engine.py`)  
+  → Forecasts energy as discrete units mapped by eigenvalue scaling.  
+- **Core constants** (`amre/core/constants.py`)  
+  → Base power ratios, unit registry, physical constants.  
+- **Basic test coverage** (`tests/test_lambda.py`)  
+  → Confirms Lambda projections grow monotonically.  
 
 ### Roadmap
 - Port **Boundary Momentum** calculators (growth-in-division).
@@ -55,5 +53,5 @@ Angular_Momentum_Reaction_Engine_v2/
 - **Commercial Use** : Requires separate license from [Eckohaus Limited](https://eckohaus.blog)
 
 ### Related Repositories
--	Formula-to-3D Prototype Engine
--	ASTF Documentation
+- [Formula-to-3D Prototype Engine](https://github.com/Eckohaus/Formula-to-3D_Prototype_Engine)  
+- ASTF Documentation (private repo)  
