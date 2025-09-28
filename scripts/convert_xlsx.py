@@ -7,6 +7,7 @@ PREVIEWS_DIR = "previews"
 INDEX_FILE = "docs/in_development_previews.html"
 STYLE_PATH = "style.css"
 REPO_URL = "https://github.com/Eckohaus/Angular_Momentum_Reaction_Engine_v2/blob/master"
+REPO_HOME = "https://github.com/Eckohaus/Angular_Momentum_Reaction_Engine_v2"
 
 os.makedirs(PREVIEWS_DIR, exist_ok=True)
 
@@ -36,6 +37,9 @@ def build_index(entries):
         f.write("<html><head>")
         f.write(f'<link rel="stylesheet" href="../{STYLE_PATH}">')
         f.write("</head><body>\n")
+
+        # Header
+        f.write(f"<div class='nav'><a href='{REPO_HOME}'>← Back to GitHub Repo</a></div>\n")
         f.write("<h1>In Development XLSX Previews</h1>\n")
         f.write("<p>Browse generated HTML previews of XLSX files. Expand folders to view contents.</p>\n")
 
@@ -45,7 +49,7 @@ def build_index(entries):
                     # file
                     src_link = f"{REPO_URL}/{node['src']}"
                     prev_link = f"https://eckohaus.github.io/Angular_Momentum_Reaction_Engine_v2/{node['preview']}"
-                    f.write("  " * indent + f"{name} [<a href='{prev_link}'>Preview</a>] [<a href='{src_link}'>Source XLSX</a>]<br>\n")
+                    f.write("  " * indent + f"<a href='{prev_link}'>{name}</a> <a class='source-link' href='{src_link}'>[Source XLSX]</a><br>\n")
                 elif isinstance(node, dict):
                     # folder
                     f.write("  " * indent + f"<details><summary>{name}</summary>\n")
