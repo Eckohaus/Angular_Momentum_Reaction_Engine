@@ -34,7 +34,8 @@ jobs:
 
       - name: Clean previews folder
         run: |
-          rm -rf previews
+          echo "⚡ Cleaning previews folder before regeneration"
+          rm -rf previews/*
           mkdir -p previews
 
       - name: Convert XLSX to HTML and regenerate index
