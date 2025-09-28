@@ -32,6 +32,11 @@ jobs:
       - name: Install dependencies
         run: pip install pandas openpyxl
 
+      - name: Clean previews folder
+        run: |
+          rm -rf previews
+          mkdir -p previews
+
       - name: Convert XLSX to HTML and regenerate index
         run: python scripts/convert_xlsx.py
 
@@ -49,7 +54,7 @@ jobs:
             git rm docs/in_development_previews.md
           fi
 
-          # Stage root-level previews + new .html index
+          # Stage previews (HTML + static CSS) + new .html index
           git add -A previews docs/in_development_previews.html
 
           # Commit only if there are changes
