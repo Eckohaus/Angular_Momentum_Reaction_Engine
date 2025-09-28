@@ -41,14 +41,14 @@ def build_index(entries):
 
         def recurse(tree, indent=0):
             for name, node in sorted(tree.items()):
-                if isinstance(node, dict) and "src" in node:  
-                    # leaf with preview info
+                if isinstance(node, dict) and "src" in node:
+                    # file
                     src_link = f"{REPO_URL}/{node['src']}"
                     prev_link = f"https://eckohaus.github.io/Angular_Momentum_Reaction_Engine_v2/{node['preview']}"
-                    f.write("  " * indent + f"• {name} [<a href='{prev_link}'>Preview</a>] [<a href='{src_link}'>Source XLSX</a>]<br>\n")
-                elif isinstance(node, dict):  
+                    f.write("  " * indent + f"{name} [<a href='{prev_link}'>Preview</a>] [<a href='{src_link}'>Source XLSX</a>]<br>\n")
+                elif isinstance(node, dict):
                     # folder
-                    f.write("  " * indent + f"<details><summary>📂 {name}</summary>\n")
+                    f.write("  " * indent + f"<details><summary>{name}</summary>\n")
                     recurse(node, indent + 1)
                     f.write("  " * indent + "</details>\n")
 
@@ -57,7 +57,6 @@ def build_index(entries):
 
 def main():
     entries = {}
-
     for root, _, files in os.walk(DATA_DIR):
         for file in files:
             if file.endswith(".xlsx"):
@@ -68,12 +67,12 @@ def main():
 
                 convert_xlsx_to_html(xlsx_path, html_path)
 
-                # Build nested tree
+                # Build nested dict based on folders
                 parts = rel_path.split(os.sep)
                 current = entries
                 for p in parts[:-1]:
                     current = current.setdefault(p, {})
-                current[file] = {"src": rel_path, "preview": f"{PREVIEWS_DIR}/{html_name}"}
+                current[parts[-1]] = {"src": rel_path, "preview": f"{PREVIEWS_DIR}/{html_name}"}
 
     build_index(entries)
 
