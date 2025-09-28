@@ -36,7 +36,7 @@ jobs:
         run: python scripts/convert_xlsx.py
 
       - name: Debug – list previews
-        run: ls -lh previews || echo "No previews generated"
+        run: ls -lh docs/previews || echo "No previews generated"
 
       - name: Commit previews and index
         run: |
@@ -49,8 +49,8 @@ jobs:
             git rm docs/in_development_previews.md
           fi
 
-          # Stage previews + new .html index
-          git add -A previews docs/in_development_previews.html
+          # Stage previews (HTML + static CSS) + new .html index
+          git add -A docs/previews docs/in_development_previews.html
 
           # Commit only if there are changes
           git diff --cached --quiet || git commit -m "Update XLSX HTML previews and index"
