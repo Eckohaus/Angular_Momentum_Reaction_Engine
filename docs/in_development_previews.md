@@ -127,9 +127,9 @@ Do not edit manually — changes will be overwritten.
 
 ## formulae → chemistry → periodic_table → lanthanide_series → Neodymium
 
-- **1_Atomic_number _144.243.xlsx**  
-  - [Source XLSX](../../data/spreadsheets/in_development/formulae/chemistry/periodic_table/lanthanide_series/Neodymium/1_Atomic_number _144.243.xlsx)  
-  - [Preview (HTML)](https://eckohaus.github.io/Angular_Momentum_Reaction_Engine_v2/previews/1_Atomic_number _144.243.html)
+- **1_Atomic_number_144.243.xlsx**  
+  - [Source XLSX](../../data/spreadsheets/in_development/formulae/chemistry/periodic_table/lanthanide_series/Neodymium/1_Atomic_number_144.243.xlsx)  
+  - [Preview (HTML)](https://eckohaus.github.io/Angular_Momentum_Reaction_Engine_v2/previews/1_Atomic_number_144.243.html)
 
 - **2_e_squared_in_binary.xlsx**  
   - [Source XLSX](../../data/spreadsheets/in_development/formulae/chemistry/periodic_table/lanthanide_series/Neodymium/2_e_squared_in_binary.xlsx)  
