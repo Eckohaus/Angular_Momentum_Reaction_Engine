@@ -1,8 +1,10 @@
+/* General layout */
 body {
   font-family: Arial, sans-serif;
   margin: 2em;
   background: #fafafa;
   color: #333;
+  line-height: 1.5;
 }
 
 h1, h2, h3 {
@@ -11,38 +13,64 @@ h1, h2, h3 {
   margin-top: 1em;
 }
 
+/* Navigation link */
+.nav {
+  margin-bottom: 1.5em;
+}
+.nav a {
+  color: #444;
+  font-weight: bold;
+  text-decoration: none;
+}
+.nav a:hover {
+  text-decoration: underline;
+}
+
+/* Tables */
 table {
   border-collapse: collapse;
   width: 100%;
   margin-bottom: 2em;
   font-size: 14px;
 }
-
 th, td {
   border: 1px solid #ddd;
   padding: 6px 10px;
   text-align: left;
 }
-
 th {
   background-color: #f2f2f2;
   font-weight: bold;
 }
-
 tr:nth-child(even) {
   background-color: #f9f9f9;
 }
-
 tr:hover {
   background-color: #f1f7ff;
 }
 
+/* Folder + file tree */
 details {
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
 }
-
 summary {
   font-weight: bold;
   cursor: pointer;
-  padding: 4px 0;
+  padding: 2px 0;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: #3366cc;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Secondary links (Source XLSX) */
+.source-link {
+  color: #777;
+  font-size: 0.9em;
+  margin-left: 6px;
 }
