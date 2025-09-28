@@ -1,5 +1,8 @@
 name: XLSX to HTML Previews
 
+permissions:
+  contents: write   # 👈 allow the workflow to push commits back to the repo
+
 on:
   push:
     branches:
@@ -40,10 +43,14 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-          # Read changed files list (from Python script)
-          CHANGED=$(cat changed_files.txt || echo "previews + index")
+          # Make sure we're on master branch (not detached HEAD)
+          git checkout master
 
-          # Add the entire previews folder, not just *.html
-          git add previews docs/in_development_previews.md || true
-          git commit -m "Update previews: $CHANGED" || echo "No changes to commit"
-          git push || true
+          # Stage everything in previews + index
+          git add -A previews docs/in_development_previews.md
+
+          # Commit only if there are changes
+          git diff --cached --quiet || git commit -m "Update previews and index"
+
+          # Push back to master
+          git push origin master
