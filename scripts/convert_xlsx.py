@@ -1,11 +1,12 @@
-# scripts/convert_xlsx.py
 import pandas as pd
 import os
+import urllib.parse
 from collections import defaultdict
 
 PREVIEWS_DIR = "previews"
 INDEX_FILE = "docs/in_development_previews.md"
 BASE_URL = "https://eckohaus.github.io/Angular_Momentum_Reaction_Engine_v2/previews"
+GITHUB_BASE = "https://github.com/Eckohaus/Angular_Momentum_Reaction_Engine_v2/blob/master"
 CHANGES_FILE = "changed_files.txt"
 
 def convert_xlsx(file, outfile):
@@ -29,10 +30,17 @@ def build_index(grouped_files):
             f.write(f"## {module}\n\n")
             for file in sorted(files):
                 base = os.path.splitext(os.path.basename(file))[0]
-                rel_source = os.path.relpath(file, "docs")
-                preview_url = f"{BASE_URL}/{base}.html"
+
+                # GitHub blob URL for source XLSX
+                repo_path = file.replace("\\", "/")  # normalize slashes
+                source_url = f"{GITHUB_BASE}/{repo_path}"
+
+                # URL-encode filename for HTML preview link
+                preview_file = urllib.parse.quote(base) + ".html"
+                preview_url = f"{BASE_URL}/{preview_file}"
+
                 f.write(f"- **{os.path.basename(file)}**  \n")
-                f.write(f"  - [Source XLSX](../{rel_source})  \n")
+                f.write(f"  - [Source XLSX]({source_url})  \n")
                 f.write(f"  - [Preview (HTML)]({preview_url})\n\n")
 
 if __name__ == "__main__":
@@ -52,7 +60,7 @@ if __name__ == "__main__":
                 xlsx_files.append(infile)
                 changed.append(outfile)
 
-                # derive module name from folder path
+                # Derive module name from folder path
                 rel_root = os.path.relpath(root, "data/spreadsheets/in_development")
                 module = rel_root.replace("/", " → ") if rel_root != "." else "Root"
                 grouped_files[module].append(infile)
