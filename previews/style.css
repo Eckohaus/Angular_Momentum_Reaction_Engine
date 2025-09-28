@@ -18,8 +18,19 @@ p {
 }
 
 details {
-  margin-left: 20px;
   margin-bottom: 6px;
+}
+
+details details {
+  margin-left: 20px;
+}
+
+details details details {
+  margin-left: 40px;
+}
+
+details details details details {
+  margin-left: 60px;
 }
 
 summary {
