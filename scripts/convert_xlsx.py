@@ -1,9 +1,11 @@
 import pandas as pd
 import os
+from collections import defaultdict
 
 INPUT_DIR = "data/spreadsheets/in_development"
 OUTPUT_DIR = "docs/previews"
 INDEX_FILE = "docs/in_development_previews.html"
+
 
 def convert_xlsx_to_html(filepath):
     """Convert one XLSX file to styled HTML with collapsible sheets."""
@@ -40,32 +42,58 @@ def convert_xlsx_to_html(filepath):
         f.write("\n".join(html_parts))
 
     print(f"✅ Converted {filepath} → {outpath}")
-    return filename, filepath  # return info for index building
+    return filename, filepath
+
 
 def build_index(entries):
-    """Generate index HTML with links to previews and source XLSX files."""
+    """Generate hierarchical index HTML grouped by folder structure."""
+    # Build a nested dict tree
+    tree = defaultdict(dict)
+    for name, src in entries:
+        rel_path = os.path.relpath(src, start=INPUT_DIR)
+        parts = rel_path.split(os.sep)
+        cursor = tree
+        for part in parts[:-1]:  # folders
+            cursor = cursor.setdefault(part, {})
+        cursor[parts[-1]] = (name, src)  # file
+
+    # Recursive function to render HTML
+    def render_node(node, depth=2):
+        html = []
+        for key, value in sorted(node.items()):
+            if isinstance(value, dict):
+                # Folder
+                html.append(f"<h{depth}>{key}</h{depth}>")
+                html.append("<ul>")
+                html.extend(render_node(value, depth + 1))
+                html.append("</ul>")
+            else:
+                # File
+                name, src = value
+                rel_src = os.path.relpath(src, start=".")
+                html.append("<li>")
+                html.append(f"{name}.xlsx<br>")
+                html.append(f"↳ <a href='previews/{name}.html'>Preview (HTML)</a><br>")
+                html.append(f"↳ <a href='{rel_src}'>Source XLSX</a>")
+                html.append("</li>")
+        return html
+
     html = [
         "<html><head><meta charset='utf-8'>",
         "<title>In Development Previews</title>",
         "<link rel='stylesheet' type='text/css' href='previews/style.css'>",
         "</head><body>",
-        "<h1>In Development Previews</h1>",
-        "<ul>"
+        "<h1>In Development Previews</h1>"
     ]
 
-    for name, src in sorted(entries):
-        html.append("<li>")
-        html.append(f"{name}.xlsx<br>")
-        html.append(f"↳ <a href='previews/{name}.html'>Preview (HTML)</a><br>")
-        html.append(f"↳ <a href='{src}'>Source XLSX</a>")
-        html.append("</li>")
-
-    html.extend(["</ul>", "</body></html>"])
+    html.extend(render_node(tree))
+    html.extend(["</body></html>"])
 
     with open(INDEX_FILE, "w", encoding="utf-8") as f:
         f.write("\n".join(html))
 
     print(f"📑 Index updated → {INDEX_FILE}")
+
 
 def main():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
@@ -77,12 +105,11 @@ def main():
                 result = convert_xlsx_to_html(filepath)
                 if result:
                     name, src = result
-                    # Use repo-relative path for Source XLSX link
-                    rel_src = os.path.relpath(filepath, start=".")
-                    entries.append((name, rel_src))
+                    entries.append((name, src))
 
     if entries:
         build_index(entries)
+
 
 if __name__ == "__main__":
     main()
