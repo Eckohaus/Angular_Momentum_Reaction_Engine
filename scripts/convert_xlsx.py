@@ -2,7 +2,8 @@ import pandas as pd
 import os
 
 INPUT_DIR = "data/spreadsheets/in_development"
-OUTPUT_DIR = "docs/previews"   # put previews + style.css together
+OUTPUT_DIR = "docs/previews"
+INDEX_FILE = "docs/in_development_previews.html"
 
 def convert_xlsx_to_html(filepath):
     """Convert one XLSX file to styled HTML with collapsible sheets."""
@@ -39,15 +40,49 @@ def convert_xlsx_to_html(filepath):
         f.write("\n".join(html_parts))
 
     print(f"✅ Converted {filepath} → {outpath}")
-    return outpath
+    return filename, filepath  # return info for index building
+
+def build_index(entries):
+    """Generate index HTML with links to previews and source XLSX files."""
+    html = [
+        "<html><head><meta charset='utf-8'>",
+        "<title>In Development Previews</title>",
+        "<link rel='stylesheet' type='text/css' href='previews/style.css'>",
+        "</head><body>",
+        "<h1>In Development Previews</h1>",
+        "<ul>"
+    ]
+
+    for name, src in sorted(entries):
+        html.append("<li>")
+        html.append(f"{name}.xlsx<br>")
+        html.append(f"↳ <a href='previews/{name}.html'>Preview (HTML)</a><br>")
+        html.append(f"↳ <a href='{src}'>Source XLSX</a>")
+        html.append("</li>")
+
+    html.extend(["</ul>", "</body></html>"])
+
+    with open(INDEX_FILE, "w", encoding="utf-8") as f:
+        f.write("\n".join(html))
+
+    print(f"📑 Index updated → {INDEX_FILE}")
 
 def main():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
+    entries = []
     for root, _, files in os.walk(INPUT_DIR):
         for file in files:
             if file.endswith(".xlsx"):
                 filepath = os.path.join(root, file)
-                convert_xlsx_to_html(filepath)
+                result = convert_xlsx_to_html(filepath)
+                if result:
+                    name, src = result
+                    # Use repo-relative path for Source XLSX link
+                    rel_src = os.path.relpath(filepath, start=".")
+                    entries.append((name, rel_src))
+
+    if entries:
+        build_index(entries)
 
 if __name__ == "__main__":
     main()
