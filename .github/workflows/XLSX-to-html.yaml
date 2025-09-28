@@ -43,6 +43,7 @@ jobs:
           # Read changed files list (from Python script)
           CHANGED=$(cat changed_files.txt || echo "previews + index")
 
-          git add previews/*.html docs/in_development_previews.md || true
+          # Add the entire previews folder, not just *.html
+          git add previews docs/in_development_previews.md || true
           git commit -m "Update previews: $CHANGED" || echo "No changes to commit"
           git push || true
