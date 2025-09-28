@@ -1,62 +1,16 @@
-/* General layout */
+/* Global font + layout */
 body {
-  font-family: Arial, sans-serif;
-  margin: 2em;
+  font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+  line-height: 1.5;
+  margin: 20px;
   background: #fafafa;
   color: #333;
-  line-height: 1.5;
 }
 
 h1, h2, h3 {
-  font-family: "Segoe UI", Tahoma, sans-serif;
-  color: #222;
+  font-family: "Segoe UI", Tahoma, Arial, sans-serif;
   margin-top: 1em;
-}
-
-/* Navigation link */
-.nav {
-  margin-bottom: 1.5em;
-}
-.nav a {
-  color: #444;
-  font-weight: bold;
-  text-decoration: none;
-}
-.nav a:hover {
-  text-decoration: underline;
-}
-
-/* Tables */
-table {
-  border-collapse: collapse;
-  width: 100%;
-  margin-bottom: 2em;
-  font-size: 14px;
-}
-th, td {
-  border: 1px solid #ddd;
-  padding: 6px 10px;
-  text-align: left;
-}
-th {
-  background-color: #f2f2f2;
-  font-weight: bold;
-}
-tr:nth-child(even) {
-  background-color: #f9f9f9;
-}
-tr:hover {
-  background-color: #f1f7ff;
-}
-
-/* Folder + file tree */
-details {
-  margin-bottom: 0.5em;
-}
-summary {
-  font-weight: bold;
-  cursor: pointer;
-  padding: 2px 0;
+  color: #222;
 }
 
 /* Links */
@@ -68,9 +22,49 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Secondary links (Source XLSX) */
-.source-link {
-  color: #777;
-  font-size: 0.9em;
-  margin-left: 6px;
+/* Tree-style folders */
+details {
+  margin-left: 20px; /* indentation for nesting */
+  position: relative;
+  padding-left: 12px;
+}
+
+details::before {
+  content: "";
+  position: absolute;
+  top: 0.8em;
+  left: 0;
+  width: 8px;
+  height: 1px;
+  background: #bbb; /* horizontal branch */
+}
+
+details summary {
+  font-weight: bold;
+  cursor: pointer;
+  list-style: none;
+}
+
+details summary::marker {
+  display: none; /* hide default triangle */
+}
+
+details summary::before {
+  content: "▶"; /* collapsed arrow */
+  display: inline-block;
+  margin-right: 6px;
+  transform: rotate(0deg);
+  transition: transform 0.2s ease;
+  font-size: 0.8em;
+}
+
+details[open] summary::before {
+  transform: rotate(90deg); /* open arrow */
+}
+
+/* Files inside */
+.file {
+  margin-left: 36px;
+  display: block;
+  font-family: monospace;
 }
