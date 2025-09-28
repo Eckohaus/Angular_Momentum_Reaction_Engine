@@ -6,6 +6,8 @@ on:
       - master
     paths:
       - 'data/spreadsheets/**/*.xlsx'
+  schedule:
+    - cron: "0 3 * * *"   # run daily at 03:00 UTC
   workflow_dispatch:
 
 jobs:
@@ -27,7 +29,7 @@ jobs:
       - name: Install dependencies
         run: pip install pandas openpyxl
 
-      - name: Convert XLSX to HTML
+      - name: Convert XLSX to HTML and regenerate index
         run: python scripts/convert_xlsx.py
 
       - name: Debug – list previews
@@ -37,6 +39,10 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Read changed files list (from Python script)
+          CHANGED=$(cat changed_files.txt || echo "previews + index")
+
           git add previews/*.html docs/in_development_previews.md || true
-          git commit -m "Update XLSX HTML previews and index" || echo "No changes to commit"
+          git commit -m "Update previews: $CHANGED" || echo "No changes to commit"
           git push || true
