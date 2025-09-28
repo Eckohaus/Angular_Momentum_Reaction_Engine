@@ -41,14 +41,16 @@ def build_index(entries):
 
         def recurse(tree, indent=0):
             for name, node in sorted(tree.items()):
-                if isinstance(node, dict):
-                    f.write("  " * indent + f"<details><summary>📂 {name}</summary>\n")
-                    recurse(node, indent + 1)
-                    f.write("  " * indent + "</details>\n")
-                else:
+                if isinstance(node, dict) and "src" in node:  
+                    # leaf with preview info
                     src_link = f"{REPO_URL}/{node['src']}"
                     prev_link = f"https://eckohaus.github.io/Angular_Momentum_Reaction_Engine_v2/{node['preview']}"
                     f.write("  " * indent + f"• {name} [<a href='{prev_link}'>Preview</a>] [<a href='{src_link}'>Source XLSX</a>]<br>\n")
+                elif isinstance(node, dict):  
+                    # folder
+                    f.write("  " * indent + f"<details><summary>📂 {name}</summary>\n")
+                    recurse(node, indent + 1)
+                    f.write("  " * indent + "</details>\n")
 
         recurse(entries, 0)
         f.write("</body></html>")
