@@ -37,7 +37,10 @@ Angular_Momentum_Reaction_Engine_v2/
 - **Core constants** (`amre/core/constants.py`)  
   → Base power ratios, unit registry, physical constants.  
 - **Basic test coverage** (`tests/test_lambda.py`)  
-  → Confirms Lambda projections grow monotonically.  
+  → Confirms Lambda projections grow monotonically.
+- **Web Directory at:**
+  - [https://eckohaus.github.io/angular_momentum_v2](https://eckohaus.github.io/Angular_Momentum_Reaction_Engine_v2)
+  - [XLSX-to-HTML Previews](https://eckohaus.github.io/Angular_Momentum_Reaction_Engine_v2/docs/in_development_previews.html)
 
 ### Roadmap
 - Port **Boundary Momentum** calculators (growth-in-division).
