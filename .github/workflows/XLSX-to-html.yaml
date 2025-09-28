@@ -1,7 +1,7 @@
 name: XLSX to HTML Previews
 
 permissions:
-  contents: write   # 👈 allow the workflow to push commits back to the repo
+  contents: write   # allow workflow to push commits back to the repo
 
 on:
   push:
@@ -42,15 +42,18 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-
-          # Make sure we're on master branch (not detached HEAD)
           git checkout master
 
-          # Stage everything in previews + index
-          git add -A previews docs/in_development_previews.md
+          # Remove old .md index if it exists
+          if [ -f docs/in_development_previews.md ]; then
+            git rm docs/in_development_previews.md
+          fi
+
+          # Stage previews + new .html index
+          git add -A previews docs/in_development_previews.html
 
           # Commit only if there are changes
-          git diff --cached --quiet || git commit -m "Update previews and index"
+          git diff --cached --quiet || git commit -m "Update XLSX HTML previews and index"
 
           # Push back to master
           git push origin master
