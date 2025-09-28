@@ -68,3 +68,9 @@ details[open] summary::before {
   display: block;
   font-family: monospace;
 }
+
+.file {
+  margin-left: 36px;
+  display: block;
+  font-family: monospace;
+}
