@@ -1,24 +1,30 @@
 # amre/lambda_seq/base_equation.py
+import json
 
 def base_equation(high: float, low: float, steps: int = 10):
     """
     Replicates the Base_Equation.xlsx logic:
-    - Takes a high and low (closing values of a currency pair).
+    - Takes a high and low (for example : the closing values of a currency pair).
     - Computes the differential.
     - Runs a daisy-chain attenuation cycle.
 
     Args:
-        high: Closing high (float).
-        low: Closing low (float).
-        steps: Number of attenuation iterations.
+        high (float): Closing high.
+        low (float): Closing low.
+        steps (int): Number of attenuation iterations.
 
     Returns:
-        dict with differential, attenuation cycle, and final target value.
+        dict: {
+            "inputs": {"high": float, "low": float},
+            "differential": float,
+            "attenuation_cycle": list of (step, value),
+            "target": float
+        }
     """
     # Core differential
     diff = high - low
 
-    # Attenuation chain (simple sequential division)
+    # Attenuation chain
     attenuation = []
     value = diff
     for i in range(1, steps + 1):
@@ -32,8 +38,8 @@ def base_equation(high: float, low: float, steps: int = 10):
         "target": attenuation[-1][1],
     }
 
-
-# Example usage
+# Example usage (only runs if executed directly, not on import)
 if __name__ == "__main__":
     result = base_equation(1.0824, 1.0813)
-    print(result)
+    # Pretty-print JSON for easier HTML preview rendering
+    print(json.dumps(result, indent=2))
