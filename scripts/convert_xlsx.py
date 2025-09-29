@@ -9,6 +9,7 @@ INDEX_FILE = "docs/in_development_previews.html"
 os.makedirs(PREVIEWS_DIR, exist_ok=True)
 
 def convert_xlsx_to_html(src_path, dst_path):
+    """Convert one XLSX into a styled HTML preview"""
     try:
         xls = pd.ExcelFile(src_path)
         html_parts = []
@@ -16,37 +17,41 @@ def convert_xlsx_to_html(src_path, dst_path):
             df = xls.parse(sheet)
             html_parts.append(f"<h3>Sheet: {sheet}</h3>")
             html_parts.append(df.to_html(index=False, border=0))
+
         html = "\n".join(html_parts)
 
         os.makedirs(os.path.dirname(dst_path), exist_ok=True)
         with open(dst_path, "w", encoding="utf-8") as f:
-            f.write("<html><head>")
-            f.write('<link rel="stylesheet" type="text/css" href="../docs/style.css">')
-            f.write("</head><body>")
+            f.write("<html><head>\n")
+            f.write('<meta charset="UTF-8">\n')
+            f.write('<link rel="stylesheet" type="text/css" href="../docs/style.css">\n')
+            f.write("</head><body>\n")
+            f.write(f"<h2>{os.path.basename(src_path)}</h2>\n")
             f.write(html)
-            f.write("</body></html>")
+            f.write("</body></html>\n")
+
     except Exception as e:
         print(f"Failed to convert {src_path}: {e}")
 
 def build_index(entries):
+    """Generate index of all previews"""
     with open(INDEX_FILE, "w", encoding="utf-8") as f:
-        f.write("<html><head>")
-        f.write('<link rel="stylesheet" type="text/css" href="style.css">')
+        f.write("<html><head>\n")
+        f.write('<meta charset="UTF-8">\n')
+        f.write('<link rel="stylesheet" type="text/css" href="style.css">\n')
         f.write("</head><body>\n")
         f.write("<h1>In Development Previews</h1>\n")
-        f.write("<div class='note'>These HTML previews are automatically generated from the latest XLSX files. "
-                "They are faithful renderings for reference only — for authoritative use, download the original Excel files.</div>\n")
         f.write("<p>Browse generated HTML previews of XLSX files. Expand folders to view contents.</p>\n")
 
-        def recurse(node, indent=0, level=0):
+        def recurse(node, indent=0):
             for name, content in sorted(node.items()):
                 if isinstance(content, dict):  # folder
-                    f.write(" " * indent + f"<details class='folder level-{level}'><summary>{name}</summary>\n")
-                    recurse(content, indent + 2, level + 1)
-                    f.write(" " * indent + "</details>\n")
+                    f.write(f'<details class="level-{indent}"><summary>{name}</summary>\n')
+                    recurse(content, indent + 1)
+                    f.write("</details>\n")
                 else:  # file
                     xlsx_path, html_path = content
-                    f.write(" " * indent + f'<div class="file level-{level}">{name} '
+                    f.write(f'<div class="file level-{indent}">{name} '
                             f'[<a href="{html_path}">Preview</a>] '
                             f'[<a href="{xlsx_path}">Source XLSX</a>]</div>\n')
 
