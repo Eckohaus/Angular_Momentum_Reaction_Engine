@@ -38,11 +38,22 @@ jobs:
       - name: Debug – list previews
         run: ls -lh previews || echo "No previews generated"
 
-      - name: Commit previews and index
+      - name: Commit previews, index, and logs
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git checkout master
-          git add -A previews docs/in_development_previews.html
-          git diff --cached --quiet || git commit -m "Update previews (auto-clean + regenerate)"
+
+          # Remove old .md index if it exists
+          if [ -f docs/in_development_previews.md ]; then
+            git rm docs/in_development_previews.md
+          fi
+
+          # Stage previews, index, and logs
+          git add -A previews docs/in_development_previews.html cleanup_log.txt logs/
+
+          # Commit only if there are changes
+          git diff --cached --quiet || git commit -m "Update previews, index, and logs"
+
+          # Push back to master
           git push origin master
