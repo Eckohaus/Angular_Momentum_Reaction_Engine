@@ -1,7 +1,8 @@
 # Base Equation (Electrical Resistance)
 
-The Base Equation models the attenuation cycle between a **high** ($H$) and **low** ($L$) value,  
-often interpreted as the closing high/low of a currency pair.
+The Base Equation models the attenuation cycle between a **high** ($H$) and **low** ($L$) value.  
+It defines a differential and then applies a sequential attenuation process,  
+making it a general framework independent of any specific dataset or domain.
 
 ---
 
@@ -9,8 +10,8 @@ often interpreted as the closing high/low of a currency pair.
 
 Let:
 
-- $H$ = high input (e.g., currency pair closing high)  
-- $L$ = low input (e.g., currency pair closing low)  
+- $H$ = high input (a chosen reference value, e.g. from observed data)  
+- $L$ = low input (a paired reference value, e.g. from observed data)  
 - $n$ = iteration step  
 
 Difference:
