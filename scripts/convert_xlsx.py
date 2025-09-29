@@ -4,10 +4,18 @@ import pandas as pd
 REPO_URL = "https://github.com/Eckohaus/Angular_Momentum_Reaction_Engine_v2/blob/master"
 PREVIEWS_DIR = "previews"
 INDEX_FILE = "docs/in_development_previews.html"
+LOG_FILE = "docs/cleanup_log.txt"
 
-# make sure preview folder exists
+# Ensure required dirs
 os.makedirs(PREVIEWS_DIR, exist_ok=True)
+os.makedirs(os.path.dirname(LOG_FILE), exist_ok=True)
 
+# --- Logging ---
+def log_message(message):
+    with open(LOG_FILE, "a", encoding="utf-8") as f:
+        f.write(message + "\n")
+
+# --- Convert XLSX → HTML ---
 def convert_xlsx_to_html(src_path, dst_path):
     try:
         xls = pd.ExcelFile(src_path)
@@ -25,9 +33,14 @@ def convert_xlsx_to_html(src_path, dst_path):
             f.write("</head><body>")
             f.write(html)
             f.write("</body></html>")
-    except Exception as e:
-        print(f"Failed to convert {src_path}: {e}")
 
+        log_message(f"Converted {src_path} → {dst_path}")
+        return True
+    except Exception as e:
+        log_message(f"Failed {src_path}: {e}")
+        return False
+
+# --- Build Index HTML ---
 def build_index(entries):
     with open(INDEX_FILE, "w", encoding="utf-8") as f:
         f.write("<html><head>")
@@ -39,7 +52,7 @@ def build_index(entries):
         def recurse(node, level=0):
             for name, content in sorted(node.items()):
                 if isinstance(content, dict):  # folder
-                    f.write(f'<details class="level-{level}"><summary>{name}</summary>\n')
+                    f.write(f'<details class="folder level-{level}"><summary>{name}</summary>\n')
                     recurse(content, level + 1)
                     f.write("</details>\n")
                 else:  # file
@@ -51,9 +64,27 @@ def build_index(entries):
         recurse(entries)
         f.write("</body></html>\n")
 
+# --- Cleanup Stale Previews ---
+def clean_previews(preview_dir, valid_html_paths):
+    removed_files = []
+    for root, _, files in os.walk(preview_dir):
+        for file in files:
+            if file.endswith(".html"):
+                full_path = os.path.join(root, file)
+                rel_path = os.path.relpath(full_path, preview_dir)
+                if rel_path not in valid_html_paths:
+                    os.remove(full_path)
+                    removed_files.append(rel_path)
+                    log_message(f"Removed stale preview: {rel_path}")
+    if removed_files:
+        print(f"Cleanup complete: {len(removed_files)} stale previews removed.")
+    else:
+        print("Cleanup complete: no stale previews found.")
+
+# --- Main ---
 def main():
     entries = {}
-    generated_files = set()
+    valid_html_paths = set()
 
     for root, _, files in os.walk("data/spreadsheets/in_development"):
         for file in files:
@@ -66,8 +97,8 @@ def main():
             rel_path = os.path.relpath(src_path, "data/spreadsheets/in_development")
             dst_path = os.path.join(PREVIEWS_DIR, rel_path).replace(".xlsx", ".html")
 
-            convert_xlsx_to_html(src_path, dst_path)
-            generated_files.add(os.path.normpath(dst_path))
+            if convert_xlsx_to_html(src_path, dst_path):
+                valid_html_paths.add(os.path.relpath(dst_path, PREVIEWS_DIR))
 
             # build tree entry
             parts = rel_path.split(os.sep)
@@ -79,17 +110,13 @@ def main():
                 f"../{dst_path}"                                # preview HTML link
             )
 
-    # cleanup: remove any previews not regenerated
-    for root, _, files in os.walk(PREVIEWS_DIR):
-        for file in files:
-            if not file.endswith(".html"):
-                continue
-            path = os.path.normpath(os.path.join(root, file))
-            if path not in generated_files:
-                print(f"Cleaning up stale preview: {path}")
-                os.remove(path)
+    # cleanup unused previews
+    clean_previews(PREVIEWS_DIR, valid_html_paths)
 
+    # rebuild index
     build_index(entries)
+
+    print("Index regenerated and previews updated.")
 
 if __name__ == "__main__":
     main()
