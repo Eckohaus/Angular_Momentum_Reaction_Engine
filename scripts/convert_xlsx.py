@@ -1,9 +1,9 @@
+# scripts/convert_xlsx.py
+
 import os
 import json
 import pandas as pd
-
-# Import your Python module(s)
-from amre.lambda_seq.base_equation import base_equation
+import subprocess
 
 # Constants
 REPO_URL = "https://github.com/Eckohaus/Angular_Momentum_Reaction_Engine_v2/blob/master"
@@ -50,42 +50,46 @@ def convert_xlsx(src_path, rel_path):
             json.dump(json_export, f, indent=2)
 
         return html_dst, json_dst
-
     except Exception as e:
-        print(f"❌ Failed to convert {src_path}: {e}")
+        print(f"❌ Failed to convert XLSX {src_path}: {e}")
         return None, None
 
 
-def convert_python_module(name, func, args, rel_path):
-    """Run a Python module, capture output as pretty JSON wrapped in <pre>."""
+def convert_py(src_path, rel_path):
+    """Run a Python module and capture its output as an HTML preview."""
+    preview_html = os.path.join(PREVIEWS_DIR, rel_path).replace(".py", ".html")
+    os.makedirs(os.path.dirname(preview_html), exist_ok=True)
+
     try:
-        result = func(*args)
-        pretty_json = json.dumps(result, indent=2)
-
-        html_dst = os.path.join(PREVIEWS_DIR, rel_path).replace(".py", ".html")
-        os.makedirs(os.path.dirname(html_dst), exist_ok=True)
-        with open(html_dst, "w", encoding="utf-8") as f:
-            f.write("<html><head>")
-            f.write('<link rel="stylesheet" type="text/css" href="../docs/style.css">')
-            f.write("</head><body>")
-            f.write(f"<h2>Module Preview: {name}</h2>")
-            f.write(f"<pre>{pretty_json}</pre>")
-            f.write("</body></html>")
-
-        return html_dst
+        result = subprocess.run(
+            ["python", src_path],
+            capture_output=True,
+            text=True,
+            timeout=5  # avoid hangs
+        )
+        output = result.stdout or result.stderr
     except Exception as e:
-        print(f"❌ Failed to run {name}: {e}")
-        return None
+        output = f"⚠️ Error running {src_path}: {e}"
+
+    with open(preview_html, "w", encoding="utf-8") as f:
+        f.write("<html><head>")
+        f.write('<link rel="stylesheet" type="text/css" href="../docs/style.css">')
+        f.write("</head><body>")
+        f.write(f"<h2>Module Preview: {os.path.basename(src_path)}</h2>")
+        f.write("<pre>" + output + "</pre>")
+        f.write("</body></html>")
+
+    return preview_html
 
 
 def build_index(entries):
-    """Generate index page linking to previews."""
+    """Generate index page with links for both XLSX + Python previews."""
     with open(INDEX_FILE, "w", encoding="utf-8") as f:
         f.write("<html><head>")
         f.write('<link rel="stylesheet" type="text/css" href="style.css">')
         f.write("</head><body>\n")
         f.write("<h1>In Development Previews</h1>\n")
-        f.write("<p>Browse generated previews of XLSX and Python modules. Expand folders to view contents.</p>\n")
+        f.write("<p>Browse generated previews of XLSX spreadsheets and Python modules.</p>\n")
 
         def recurse(node, indent=0):
             for name, content in sorted(node.items()):
@@ -93,9 +97,8 @@ def build_index(entries):
                     f.write(" " * indent + f'<details><summary>{name}</summary>\n')
                     recurse(content, indent + 2)
                     f.write(" " * indent + "</details>\n")
-                else:  # file
-                    links = " ".join([f'[<a href="{link}">{label}</a>]' for label, link in content])
-                    f.write(" " * indent + f'<div class="file">{name} {links}</div>\n')
+                else:  # file entry
+                    f.write(" " * indent + content + "\n")
 
         recurse(entries)
         f.write("</body></html>\n")
@@ -104,36 +107,29 @@ def build_index(entries):
 def main():
     entries = {}
 
-    # Pass 1 – XLSX files
     for root, _, files in os.walk("data/spreadsheets/in_development"):
         for file in files:
-            if not file.endswith(".xlsx"):
-                continue
-
             src_path = os.path.join(root, file)
             rel_path = os.path.relpath(src_path, "data/spreadsheets/in_development")
+            parts = rel_path.split(os.sep)
+            node = entries
+            for part in parts[:-1]:
+                node = node.setdefault(part, {})
 
-            html_dst, json_dst = convert_xlsx(src_path, rel_path)
-
-            if html_dst:
-                parts = rel_path.split(os.sep)
-                node = entries
-                for part in parts[:-1]:
-                    node = node.setdefault(part, {})
-                node[parts[-1]] = [
-                    ("Source XLSX", f"{REPO_URL}/{src_path.replace(os.sep, '/')}"),
-                    ("Module/Code Preview", f"../{html_dst}")
-                ]
-
-    # Pass 2 – Python modules
-    py_rel_path = "Electrical_resistance/lambda_sequencer/Base_Equation.py"
-    py_html = convert_python_module("Base Equation", base_equation, (1.0824, 1.0813), py_rel_path)
-    if py_html:
-        parts = py_rel_path.split(os.sep)
-        node = entries
-        for part in parts[:-1]:
-            node = node.setdefault(part, {})
-        node[parts[-1]] = [("Module/Code Preview", f"../{py_html}")]
+            if file.endswith(".xlsx"):
+                html_dst, _ = convert_xlsx(src_path, rel_path)
+                if html_dst:
+                    node[file] = (
+                        f'<div class="file">{file} '
+                        f'[<a href="../{html_dst}">Module/Code Preview</a>] '
+                        f'[<a href="{REPO_URL}/{src_path.replace(os.sep, "/")}">Source XLSX</a>]</div>'
+                    )
+            elif file.endswith(".py"):
+                html_dst = convert_py(src_path, rel_path)
+                node[file] = (
+                    f'<div class="file">{file} '
+                    f'[<a href="../{html_dst}">Module Preview</a>]</div>'
+                )
 
     build_index(entries)
 
