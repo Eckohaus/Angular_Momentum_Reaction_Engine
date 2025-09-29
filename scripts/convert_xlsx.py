@@ -14,7 +14,6 @@ INDEX_FILE = "docs/in_development_previews.html"
 os.makedirs(PREVIEWS_DIR, exist_ok=True)
 os.makedirs(TRANSFORMS_DIR, exist_ok=True)
 
-
 def convert_xlsx(src_path, rel_path):
     """Convert an XLSX into HTML + JSON for pipeline use (not shown in index)."""
     try:
@@ -37,13 +36,12 @@ def convert_xlsx(src_path, rel_path):
             f.write("\n".join(html_parts))
             f.write("</body></html>")
 
-        # Save JSON transform (datetime-safe)
+        # Save JSON transform (with datetime-safe serialization)
         json_dst = os.path.join(TRANSFORMS_DIR, rel_path).replace(".xlsx", ".json")
         os.makedirs(os.path.dirname(json_dst), exist_ok=True)
         with open(json_dst, "w", encoding="utf-8") as f:
             json.dump(json_export, f, indent=2, default=str)
 
-        print(f"✅ Converted XLSX: {src_path}")
         return html_dst, json_dst
     except Exception as e:
         print(f"❌ Failed to convert {src_path}: {e}")
@@ -63,10 +61,8 @@ def convert_py(src_path, rel_path):
             check=False
         )
         output = result.stdout or result.stderr
-        print(f"✅ Converted PY: {src_path}")
     except Exception as e:
         output = f"Error running {src_path}: {e}"
-        print(f"❌ Failed to run {src_path}: {e}")
 
     with open(preview_html, "w", encoding="utf-8") as f:
         f.write("<html><head>")
@@ -80,13 +76,13 @@ def convert_py(src_path, rel_path):
 
 
 def build_index(entries):
-    """Generate index page showing only Code Preview + Source XLSX."""
+    """Generate index page showing only Source XLSX + Code Preview (py)."""
     with open(INDEX_FILE, "w", encoding="utf-8") as f:
         f.write("<html><head>")
         f.write('<link rel="stylesheet" type="text/css" href="style.css">')
         f.write("</head><body>\n")
         f.write("<h1>In Development Previews</h1>\n")
-        f.write("<p>Browse generated previews. Only key links shown: Code Preview (py) + Source XLSX.</p>\n")
+        f.write("<p>Browse generated previews. Only key links shown: Source XLSX + Code Preview (py).</p>\n")
 
         def recurse(node, indent=0):
             for name, content in sorted(node.items()):
@@ -97,10 +93,10 @@ def build_index(entries):
                 else:
                     xlsx_path, py_preview = content
                     f.write(" " * indent + f'<div class="file">{name} ')
-                    if py_preview:
-                        f.write(f'[<a href="{py_preview}">Code Preview (py)</a>] ')
                     if xlsx_path:
-                        f.write(f'[<a href="{xlsx_path}">Source XLSX</a>]')
+                        f.write(f'[<a href="{xlsx_path}">Source XLSX</a>] ')
+                    if py_preview:
+                        f.write(f'[<a href="{py_preview}">Code Preview (py)</a>]')
                     f.write("</div>\n")
 
         recurse(entries)
@@ -124,7 +120,7 @@ def main():
                     node = node.setdefault(part, {})
                 node[file] = (
                     f"{REPO_URL}/{src_path.replace(os.sep, '/')}",  # Source XLSX
-                    None  # no direct code preview
+                    None  # no Code Preview for .xlsx
                 )
 
             elif file.endswith(".py"):
