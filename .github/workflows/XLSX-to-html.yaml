@@ -38,8 +38,12 @@ jobs:
       - name: Debug – list previews
         run: ls -lh previews || echo "No previews generated"
 
-      - name: Ensure logs directory exists
-        run: mkdir -p logs
+      - name: Ensure logs folder exists
+        run: |
+          mkdir -p logs
+          if [ ! -f logs/.gitkeep ]; then
+            echo "# Placeholder to keep logs directory tracked by Git" > logs/.gitkeep
+          fi
 
       - name: Commit previews, index, and logs
         run: |
