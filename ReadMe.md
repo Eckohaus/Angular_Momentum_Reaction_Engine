@@ -1,14 +1,17 @@
 # **Angular Momentum Reaction Engine v2 (2020)**  
 *Statistical Modeling Tools for Energy-As-A-Unit Calculus*  
 
-### **Overview**  
-**Angular_Momentum_Reaction_Engine_v2** is the structured continuation of the 2020 project.
+### **Overview**
+
+**Angular_Momentum_Reaction_Engine_v2** is the structured continuation of the 2020 project.  
 It transitions the original formula arrays and spreadsheet workflows into a **reproducible, testable, and documented codebase.**
 
-This repository is part of the **ASTF project** (Applied Scientific & Theoretical Frameworks / August Sixth, Twenty Fifteen).
+This repository is part of the **ASTF project**  
+(*Applied Scientific & Theoretical Frameworks / August Sixth, Twenty Fifteen*).
+
+---
 
 ## **Repository Structure**  
-
 ```  
 Angular_Momentum_Reaction_Engine_v2/
 ├── amre/                     # Core package
@@ -31,30 +34,42 @@ Angular_Momentum_Reaction_Engine_v2/
 ``` 
 ---
 
-## Current Status
+## **Current Status**
 - **Lambda Projection Engine** (`amre/lambda_seq/engine.py`)  
   → Forecasts energy as discrete units mapped by eigenvalue scaling.  
 - **Core constants** (`amre/core/constants.py`)  
   → Base power ratios, unit registry, physical constants.  
 - **Basic test coverage** (`tests/test_lambda.py`)  
-  → Confirms Lambda projections grow monotonically.
-- **Web Directory at:**
-  - [https://eckohaus.github.io/angular_momentum_v2](https://eckohaus.github.io/Angular_Momentum_Reaction_Engine_v2)
-  - [XLSX-to-HTML Previews](https://eckohaus.github.io/Angular_Momentum_Reaction_Engine_v2/docs/in_development_previews.html)
+  → Confirms Lambda projections grow monotonically.  
 
-### Roadmap
-- Port **Boundary Momentum** calculators (growth-in-division).
-- Encode **Infinities Framework** (assigned vs continuous).
-- Convert **AC Deposition** XLSX → Python module with unit checks.
-- Create **dataset loaders** (amre/io/datasets.py) with schema validation.
-- Provide **examples/** notebooks for quick start.
-- Deploy **MkDocs documentation** to GitHub Pages.
+---
 
-### Licence
-- **Code** MIT Licence
-- **Formulas/Data Compilations** CC BY-NC 4.0
-- **Commercial Use** : Requires separate license from [Eckohaus Limited](https://eckohaus.blog)
+## **Live Pages**
 
-### Related Repositories
+- **Web Directory**: [Angular Momentum v2 GitHub Pages](https://eckohaus.github.io/Angular_Momentum_Reaction_Engine_v2)  
+- **Spreadsheet Previews**: [In-Development XLSX-to-HTML Index](https://eckohaus.github.io/Angular_Momentum_Reaction_Engine_v2/docs/in_development_previews.html)  
+
+*(Browse the entire `data/spreadsheets/in_development/` tree as styled HTML previews — auto-updated via GitHub Actions.)*
+
+---
+
+## **Roadmap**
+- Port **Boundary Momentum** calculators (growth-in-division).  
+- Encode **Infinities Framework** (assigned vs continuous).  
+- Convert **AC Deposition** XLSX → Python module with unit checks.  
+- Create **dataset loaders** (`amre/io/datasets.py`) with schema validation.  
+- Provide **examples/** notebooks for quick start.  
+- Deploy **MkDocs documentation** to GitHub Pages.  
+
+---
+
+## **Licence**
+- **Code**: MIT Licence  
+- **Formulas/Data Compilations**: CC BY-NC 4.0  
+- **Commercial Use**: Requires separate license from [Eckohaus Limited](https://eckohaus.blog)  
+
+---
+
+## **Related Repositories**
 - [Formula-to-3D Prototype Engine](https://github.com/Eckohaus/Formula-to-3D_Prototype_Engine)  
-- ASTF Documentation (private repo)  
+- ASTF Documentation *(private repo)*  
