@@ -24,6 +24,11 @@ jobs:
           persist-credentials: true
           fetch-depth: 0
 
+      - name: Clean old previews (remove duplicates)
+        run: |
+          rm -rf docs/previews
+          rm -rf previews/*
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
@@ -32,17 +37,11 @@ jobs:
       - name: Install dependencies
         run: pip install pandas openpyxl
 
-      - name: Clean previews folder
-        run: |
-          echo "⚡ Cleaning previews folder before regeneration"
-          rm -rf previews/*
-          mkdir -p previews
-
       - name: Convert XLSX to HTML and regenerate index
         run: python scripts/convert_xlsx.py
 
       - name: Debug – list previews
-        run: ls -lh previews || echo "No previews generated"
+        run: ls -R previews || echo "No previews generated"
 
       - name: Commit previews and index
         run: |
@@ -56,7 +55,7 @@ jobs:
           fi
 
           # Stage previews (HTML + static CSS) + new .html index
-          git add -A previews docs/in_development_previews.html
+          git add -A previews docs/in_development_previews.html docs/style.css
 
           # Commit only if there are changes
           git diff --cached --quiet || git commit -m "Update XLSX HTML previews and index"
