@@ -50,13 +50,14 @@ def convert_xlsx(src_path, rel_path):
             json.dump(json_export, f, indent=2)
 
         return html_dst, json_dst
+
     except Exception as e:
-        print(f"❌ Failed to convert XLSX {src_path}: {e}")
+        print(f"❌ Failed to convert {src_path}: {e}")
         return None, None
 
 
 def convert_py(src_path, rel_path):
-    """Run a Python module and capture its output as an HTML preview."""
+    """Convert a Python module into an HTML preview (captures stdout)."""
     preview_html = os.path.join(PREVIEWS_DIR, rel_path).replace(".py", ".html")
     os.makedirs(os.path.dirname(preview_html), exist_ok=True)
 
@@ -64,12 +65,11 @@ def convert_py(src_path, rel_path):
         result = subprocess.run(
             ["python", src_path],
             capture_output=True,
-            text=True,
-            timeout=5  # avoid hangs
+            text=True
         )
         output = result.stdout or result.stderr
     except Exception as e:
-        output = f"⚠️ Error running {src_path}: {e}"
+        output = f"Error running {src_path}: {e}"
 
     with open(preview_html, "w", encoding="utf-8") as f:
         f.write("<html><head>")
@@ -83,7 +83,7 @@ def convert_py(src_path, rel_path):
 
 
 def build_index(entries):
-    """Generate index page with links for both XLSX + Python previews."""
+    """Generate index page with correct labels per file type."""
     with open(INDEX_FILE, "w", encoding="utf-8") as f:
         f.write("<html><head>")
         f.write('<link rel="stylesheet" type="text/css" href="style.css">')
@@ -97,8 +97,15 @@ def build_index(entries):
                     f.write(" " * indent + f'<details><summary>{name}</summary>\n')
                     recurse(content, indent + 2)
                     f.write(" " * indent + "</details>\n")
-                else:  # file entry
-                    f.write(" " * indent + content + "\n")
+                else:  # file
+                    src_path, html_path = content
+                    if name.endswith(".xlsx"):
+                        f.write(" " * indent + f'<div class="file">{name} '
+                                f'[<a href="{html_path}">Spreadsheet Preview</a>] '
+                                f'[<a href="{src_path}">Source XLSX</a>]</div>\n')
+                    elif name.endswith(".py"):
+                        f.write(" " * indent + f'<div class="file">{name} '
+                                f'[<a href="{html_path}">Module Preview</a>]</div>\n')
 
         recurse(entries)
         f.write("</body></html>\n")
@@ -111,25 +118,30 @@ def main():
         for file in files:
             src_path = os.path.join(root, file)
             rel_path = os.path.relpath(src_path, "data/spreadsheets/in_development")
-            parts = rel_path.split(os.sep)
-            node = entries
-            for part in parts[:-1]:
-                node = node.setdefault(part, {})
 
             if file.endswith(".xlsx"):
                 html_dst, _ = convert_xlsx(src_path, rel_path)
                 if html_dst:
-                    node[file] = (
-                        f'<div class="file">{file} '
-                        f'[<a href="../{html_dst}">Module/Code Preview</a>] '
-                        f'[<a href="{REPO_URL}/{src_path.replace(os.sep, "/")}">Source XLSX</a>]</div>'
+                    parts = rel_path.split(os.sep)
+                    node = entries
+                    for part in parts[:-1]:
+                        node = node.setdefault(part, {})
+                    node[parts[-1]] = (
+                        f"{REPO_URL}/{src_path.replace(os.sep, '/')}",
+                        f"../{html_dst}"
                     )
+
             elif file.endswith(".py"):
                 html_dst = convert_py(src_path, rel_path)
-                node[file] = (
-                    f'<div class="file">{file} '
-                    f'[<a href="../{html_dst}">Module Preview</a>]</div>'
-                )
+                if html_dst:
+                    parts = rel_path.split(os.sep)
+                    node = entries
+                    for part in parts[:-1]:
+                        node = node.setdefault(part, {})
+                    node[parts[-1]] = (
+                        f"{REPO_URL}/{src_path.replace(os.sep, '/')}",
+                        f"../{html_dst}"
+                    )
 
     build_index(entries)
 
