@@ -14,8 +14,9 @@ INDEX_FILE = "docs/in_development_previews.html"
 os.makedirs(PREVIEWS_DIR, exist_ok=True)
 os.makedirs(TRANSFORMS_DIR, exist_ok=True)
 
+
 def convert_xlsx(src_path, rel_path):
-    """Convert an XLSX into HTML + JSON for pipeline use (not shown in index)."""
+    """Convert an XLSX into HTML + JSON (for pipeline use)."""
     try:
         xls = pd.ExcelFile(src_path)
         html_parts, json_export = [], {}
@@ -26,7 +27,7 @@ def convert_xlsx(src_path, rel_path):
             html_parts.append(df.to_html(index=False, border=0))
             json_export[sheet] = df.to_dict(orient="records")
 
-        # Save HTML preview (hidden from index, but stored)
+        # HTML preview
         html_dst = os.path.join(PREVIEWS_DIR, rel_path).replace(".xlsx", ".html")
         os.makedirs(os.path.dirname(html_dst), exist_ok=True)
         with open(html_dst, "w", encoding="utf-8") as f:
@@ -36,7 +37,7 @@ def convert_xlsx(src_path, rel_path):
             f.write("\n".join(html_parts))
             f.write("</body></html>")
 
-        # Save JSON transform (with datetime-safe serialization)
+        # JSON export (safe for datetime)
         json_dst = os.path.join(TRANSFORMS_DIR, rel_path).replace(".xlsx", ".json")
         os.makedirs(os.path.dirname(json_dst), exist_ok=True)
         with open(json_dst, "w", encoding="utf-8") as f:
@@ -49,7 +50,7 @@ def convert_xlsx(src_path, rel_path):
 
 
 def convert_py(src_path, rel_path):
-    """Run a Python module and capture its output into an HTML preview."""
+    """Run a Python module and capture its output into HTML."""
     preview_html = os.path.join(PREVIEWS_DIR, rel_path).replace(".py", ".html")
     os.makedirs(os.path.dirname(preview_html), exist_ok=True)
 
@@ -82,59 +83,73 @@ def build_index(entries):
         f.write('<link rel="stylesheet" type="text/css" href="style.css">')
         f.write("</head><body>\n")
         f.write("<h1>In Development Previews</h1>\n")
-        f.write("<p>Browse generated previews. Only key links shown: Source XLSX + Code Preview (py).</p>\n")
+        f.write("<p>Browse generated previews. Links: Code Preview (py) + Source XLSX.</p>\n")
 
         def recurse(node, indent=0):
             for name, content in sorted(node.items()):
+                level_class = f'level-{indent//2}'
                 if isinstance(content, dict):  # folder
-                    f.write(" " * indent + f'<details><summary>{name}</summary>\n')
+                    f.write(" " * indent + f'<details class="{level_class}"><summary>{name}</summary>\n')
                     recurse(content, indent + 2)
                     f.write(" " * indent + "</details>\n")
                 else:
                     xlsx_path, py_preview = content
-                    f.write(" " * indent + f'<div class="file">{name} ')
-                    if xlsx_path:
-                        f.write(f'[<a href="{xlsx_path}">Source XLSX</a>] ')
+                    f.write(" " * indent + f'<div class="file {level_class}">{name} ')
                     if py_preview:
-                        f.write(f'[<a href="{py_preview}">Code Preview (py)</a>]')
+                        f.write(f'[<a href="{py_preview}">Code Preview (py)</a>] ')
+                    if xlsx_path:
+                        f.write(f'[<a href="{xlsx_path}">Source XLSX</a>]')
                     f.write("</div>\n")
 
         recurse(entries)
         f.write("</body></html>\n")
 
 
+def add_entry(entries, rel_path, file, xlsx_path=None, py_preview=None):
+    """Helper to nest entries in the tree."""
+    parts = rel_path.split(os.sep)
+    node = entries
+    for part in parts[:-1]:
+        node = node.setdefault(part, {})
+    node[file] = (xlsx_path, py_preview)
+
+
 def main():
     entries = {}
 
+    # Pass 1: spreadsheets
     for root, _, files in os.walk("data/spreadsheets/in_development"):
         for file in files:
+            if not file.endswith(".xlsx"):
+                continue
             src_path = os.path.join(root, file)
             rel_path = os.path.relpath(src_path, "data/spreadsheets/in_development")
+            convert_xlsx(src_path, rel_path)
+            add_entry(
+                entries,
+                rel_path,
+                file,
+                xlsx_path=f"{REPO_URL}/{src_path.replace(os.sep, '/')}",
+                py_preview=None
+            )
 
-            if file.endswith(".xlsx"):
-                convert_xlsx(src_path, rel_path)  # still runs for pipeline use
-                # add XLSX link
-                parts = rel_path.split(os.sep)
-                node = entries
-                for part in parts[:-1]:
-                    node = node.setdefault(part, {})
-                node[file] = (
-                    f"{REPO_URL}/{src_path.replace(os.sep, '/')}",  # Source XLSX
-                    None  # no Code Preview for .xlsx
-                )
+    # Pass 2: python modules
+    for root, _, files in os.walk("amre"):
+        for file in files:
+            if not file.endswith(".py"):
+                continue
+            src_path = os.path.join(root, file)
+            rel_path = os.path.relpath(src_path, "amre")
+            preview_html = convert_py(src_path, rel_path)
+            add_entry(
+                entries,
+                rel_path,
+                file,
+                xlsx_path=None,
+                py_preview=f"../{preview_html}"
+            )
 
-            elif file.endswith(".py"):
-                preview_html = convert_py(src_path, rel_path)
-                # add Python preview
-                parts = rel_path.split(os.sep)
-                node = entries
-                for part in parts[:-1]:
-                    node = node.setdefault(part, {})
-                node[file] = (
-                    None,  # no XLSX link
-                    f"../{preview_html}"  # Code Preview (py)
-                )
-
+    # Build index
     build_index(entries)
 
 
