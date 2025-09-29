@@ -43,6 +43,7 @@ def convert_xlsx(src_path, rel_path):
         with open(json_dst, "w", encoding="utf-8") as f:
             json.dump(json_export, f, indent=2, default=str)
 
+        print(f"✅ Converted XLSX: {src_path}")
         return html_dst, json_dst
     except Exception as e:
         print(f"❌ Failed to convert {src_path}: {e}")
@@ -62,8 +63,10 @@ def convert_py(src_path, rel_path):
             check=False
         )
         output = result.stdout or result.stderr
+        print(f"✅ Converted PY: {src_path}")
     except Exception as e:
         output = f"Error running {src_path}: {e}"
+        print(f"❌ Failed to run {src_path}: {e}")
 
     with open(preview_html, "w", encoding="utf-8") as f:
         f.write("<html><head>")
