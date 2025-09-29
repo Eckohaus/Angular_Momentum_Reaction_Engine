@@ -24,11 +24,6 @@ jobs:
           persist-credentials: true
           fetch-depth: 0
 
-      - name: Clean old previews (remove duplicates)
-        run: |
-          rm -rf docs/previews
-          rm -rf previews/*
-
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
@@ -41,24 +36,13 @@ jobs:
         run: python scripts/convert_xlsx.py
 
       - name: Debug – list previews
-        run: ls -R previews || echo "No previews generated"
+        run: ls -lh previews || echo "No previews generated"
 
       - name: Commit previews and index
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git checkout master
-
-          # Remove old .md index if it exists
-          if [ -f docs/in_development_previews.md ]; then
-            git rm docs/in_development_previews.md
-          fi
-
-          # Stage previews (HTML + static CSS) + new .html index
-          git add -A previews docs/in_development_previews.html docs/style.css
-
-          # Commit only if there are changes
-          git diff --cached --quiet || git commit -m "Update XLSX HTML previews and index"
-
-          # Push back to master
+          git add -A previews docs/in_development_previews.html
+          git diff --cached --quiet || git commit -m "Update previews (auto-clean + regenerate)"
           git push origin master
