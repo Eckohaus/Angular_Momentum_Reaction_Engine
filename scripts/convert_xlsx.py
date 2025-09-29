@@ -14,6 +14,7 @@ INDEX_FILE = "docs/in_development_previews.html"
 os.makedirs(PREVIEWS_DIR, exist_ok=True)
 os.makedirs(TRANSFORMS_DIR, exist_ok=True)
 
+
 def convert_xlsx(src_path, rel_path):
     """Convert an XLSX into HTML + JSON for pipeline use (not shown in index)."""
     try:
@@ -36,11 +37,11 @@ def convert_xlsx(src_path, rel_path):
             f.write("\n".join(html_parts))
             f.write("</body></html>")
 
-        # Save JSON transform
+        # Save JSON transform (datetime-safe)
         json_dst = os.path.join(TRANSFORMS_DIR, rel_path).replace(".xlsx", ".json")
         os.makedirs(os.path.dirname(json_dst), exist_ok=True)
         with open(json_dst, "w", encoding="utf-8") as f:
-            json.dump(json_export, f, indent=2)
+            json.dump(json_export, f, indent=2, default=str)
 
         return html_dst, json_dst
     except Exception as e:
@@ -120,7 +121,7 @@ def main():
                     node = node.setdefault(part, {})
                 node[file] = (
                     f"{REPO_URL}/{src_path.replace(os.sep, '/')}",  # Source XLSX
-                    None  # no direct preview in index
+                    None  # no direct code preview
                 )
 
             elif file.endswith(".py"):
