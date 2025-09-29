@@ -1,14 +1,11 @@
 import os
-import shutil
 import pandas as pd
 
 REPO_URL = "https://github.com/Eckohaus/Angular_Momentum_Reaction_Engine_v2/blob/master"
 PREVIEWS_DIR = "previews"
 INDEX_FILE = "docs/in_development_previews.html"
 
-# --- Clean previews folder first ---
-if os.path.exists(PREVIEWS_DIR):
-    shutil.rmtree(PREVIEWS_DIR)
+# make sure preview folder exists
 os.makedirs(PREVIEWS_DIR, exist_ok=True)
 
 def convert_xlsx_to_html(src_path, dst_path):
@@ -39,15 +36,15 @@ def build_index(entries):
         f.write("<h1>In Development Previews</h1>\n")
         f.write("<p>Browse generated HTML previews of XLSX files. Expand folders to view contents.</p>\n")
 
-        def recurse(node, indent=0):
+        def recurse(node, level=0):
             for name, content in sorted(node.items()):
                 if isinstance(content, dict):  # folder
-                    f.write(" " * indent + f"<details><summary>{name}</summary>\n")
-                    recurse(content, indent + 2)
-                    f.write(" " * indent + "</details>\n")
+                    f.write(f'<details class="level-{level}"><summary>{name}</summary>\n')
+                    recurse(content, level + 1)
+                    f.write("</details>\n")
                 else:  # file
                     xlsx_path, html_path = content
-                    f.write(" " * indent + f'<div class="file">{name} '
+                    f.write(f'<div class="file level-{level}">{name} '
                             f'[<a href="{html_path}">Preview</a>] '
                             f'[<a href="{xlsx_path}">Source XLSX</a>]</div>\n')
 
@@ -56,6 +53,7 @@ def build_index(entries):
 
 def main():
     entries = {}
+    generated_files = set()
 
     for root, _, files in os.walk("data/spreadsheets/in_development"):
         for file in files:
@@ -69,6 +67,7 @@ def main():
             dst_path = os.path.join(PREVIEWS_DIR, rel_path).replace(".xlsx", ".html")
 
             convert_xlsx_to_html(src_path, dst_path)
+            generated_files.add(os.path.normpath(dst_path))
 
             # build tree entry
             parts = rel_path.split(os.sep)
@@ -79,6 +78,16 @@ def main():
                 f"{REPO_URL}/{src_path.replace(os.sep, '/')}",   # source XLSX link
                 f"../{dst_path}"                                # preview HTML link
             )
+
+    # cleanup: remove any previews not regenerated
+    for root, _, files in os.walk(PREVIEWS_DIR):
+        for file in files:
+            if not file.endswith(".html"):
+                continue
+            path = os.path.normpath(os.path.join(root, file))
+            if path not in generated_files:
+                print(f"Cleaning up stale preview: {path}")
+                os.remove(path)
 
     build_index(entries)
 
