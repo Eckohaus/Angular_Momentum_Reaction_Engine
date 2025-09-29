@@ -1,17 +1,15 @@
 import os
 import pandas as pd
 
-# Repo + paths
 REPO_URL = "https://github.com/Eckohaus/Angular_Momentum_Reaction_Engine_v2/blob/master"
 PREVIEWS_DIR = "previews"
 INDEX_FILE = "docs/in_development_previews.html"
-CSS_URL = "https://eckohaus.github.io/Angular_Momentum_Reaction_Engine_v2/docs/style.css"
 
-# Ensure preview folder exists
+# make sure preview folder exists
 os.makedirs(PREVIEWS_DIR, exist_ok=True)
 
 def convert_xlsx_to_html(src_path, dst_path):
-    """Convert a single XLSX to styled HTML preview"""
+    """Convert a single XLSX file to styled HTML preview."""
     try:
         xls = pd.ExcelFile(src_path)
         html_parts = []
@@ -24,20 +22,18 @@ def convert_xlsx_to_html(src_path, dst_path):
         os.makedirs(os.path.dirname(dst_path), exist_ok=True)
         with open(dst_path, "w", encoding="utf-8") as f:
             f.write("<html><head>")
-            f.write(f'<link rel="stylesheet" type="text/css" href="{CSS_URL}">')
-            f.write("</head><body>\n")
-            f.write(f"<h1>Preview: {os.path.basename(src_path)}</h1>\n")
+            f.write('<link rel="stylesheet" type="text/css" href="../docs/style.css">')
+            f.write("</head><body>")
             f.write(html)
             f.write("</body></html>")
-        print(f"✔ Converted {src_path} → {dst_path}")
     except Exception as e:
-        print(f"✘ Failed to convert {src_path}: {e}")
+        print(f"Failed to convert {src_path}: {e}")
 
 def build_index(entries):
-    """Build the main previews index page"""
+    """Generate the index HTML page for all previews."""
     with open(INDEX_FILE, "w", encoding="utf-8") as f:
         f.write("<html><head>")
-        f.write(f'<link rel="stylesheet" type="text/css" href="{CSS_URL}">')
+        f.write('<link rel="stylesheet" type="text/css" href="style.css">')
         f.write("</head><body>\n")
         f.write("<h1>In Development Previews</h1>\n")
         f.write("<p>Browse generated HTML previews of XLSX files. Expand folders to view contents.</p>\n")
@@ -45,7 +41,7 @@ def build_index(entries):
         def recurse(node, indent=0, level=0):
             for name, content in sorted(node.items()):
                 if isinstance(content, dict):  # folder
-                    f.write(" " * indent + f'<details class="level-{level}"><summary>{name}</summary>\n')
+                    f.write(" " * indent + f'<details class="folder level-{level}"><summary>{name}</summary>\n')
                     recurse(content, indent + 2, level + 1)
                     f.write(" " * indent + "</details>\n")
                 else:  # file
@@ -80,7 +76,7 @@ def main():
                 node = node.setdefault(part, {})
             node[parts[-1]] = (
                 f"{REPO_URL}/{src_path.replace(os.sep, '/')}",   # source XLSX link
-                f"/{dst_path}"                                 # preview HTML link (served by Pages)
+                f"../{dst_path}"                                # preview HTML link
             )
 
     build_index(entries)
