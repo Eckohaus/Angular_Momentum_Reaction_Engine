@@ -1,67 +1,62 @@
-# Deposition within Decimalisation
+# Deposition Decimalisation (Electrical Resistance)
 
-*Part of the **Electrical Resistance** module in Angular Momentum Reaction Engine v2.*
+The *Deposition Decimalisation* construct extends the **Electrical Resistance module**.  
+It describes the progressive subdivision of an initial boundary value into finer decimalised steps,  
+followed by accumulation into an **output sequence**.
 
----
-
-## **Overview**
-This document defines the deposition–decimalisation process as developed in the original spreadsheets  
-(`deposition_within_decimalisation.xlsx`).  
-
-Unlike the **Base Equation**, which is a direct differential/attenuation chain,  
-this process operates through **multiple tab stages**.  
-Each stage is a daisy-chained decimalisation, propagating progressively to an **OUTPUT vector**.
+Originally expressed in spreadsheet form (`deposition_within_decimalisation.xlsx`),  
+this formulation captures staged attenuation across multiple decimalisation levels.  
 
 ---
 
-## **Formula (General Form)**
+## General Formula (Compact Form)
 
 Let:
 
-- \( D^{(n)} \) = value at the \( n \)-th decimalisation stage.  
-- \( f_n \) = transformation applied at stage \( n \).  
-- \( \text{OUTPUT}_i \) = final deposition values, indexed by \( i \).
+- $X$ = initial deposition input  
+- $n$ = decimalisation level (e.g., first, second, …, $n$-th)  
+- $k$ = index within each level  
 
-Then:
+**Decimal subdivision:**
 
-\[
-\text{OUTPUT}(i) = f_{N} \circ f_{N-1} \circ \dots \circ f_1 ( \text{Initial Inputs}[i] )
-\]
+$$
+d_{n,k} = \frac{X}{10^n}
+$$
+
+**Output accumulation (per level):**
+
+$$
+A_n = \sum_{k=1}^{m} d_{n,k}
+$$
 
 Where:
-- \( N \) = number of decimalisation stages (typically 12 in the current workbook).
-- Initial inputs often derive from **high / low values** seeded from `Base_Equation`.
+
+- $d_{n,k}$ is the $k$-th subdivision at decimalisation level $n$  
+- $A_n$ is the aggregated value across that level  
 
 ---
 
-## **Expanded Staging**
+## Expanded Staging (Spreadsheet Behaviour)
 
-For each stage \( n \):
+The spreadsheet implements this as chained sheets/tabs:  
 
-\[
-D^{(n)} = D^{(n-1)} \; \pm \; \delta_n
-\]
-
-- \( \delta_n \) = adjustment factor (simple ± increments, no higher-order operators).  
-- Output sheet cells \( A1 \ldots A5 \) aggregate the terminal results.
-
----
-
-## **Position in the Framework**
-
-- **Base Equation** provides initial differentials (high vs low).  
-- **Deposition Decimalisation** propagates those values across multiple stages.  
-- Both live under:  
-  `formulae/electrical_resistance/`  
-  and map to corresponding Python prototypes in:  
-  `amre/electrical_resistance/`.
+1. Begin with deposition input $X$ at level $n=0$  
+2. Apply successive decimalisation:  
+   - Level 1: $d_{1,k} = X / 10$  
+   - Level 2: $d_{2,k} = d_{1,k} / 10$  
+   - …  
+   - Level $n$: $d_{n,k} = d_{n-1,k} / 10$  
+3. For each level, accumulate subdivisions into $A_n$  
+4. Final **OUTPUT sheet** reports values $(A_1, A_2, \dots, A_N)$  
 
 ---
 
-## **Next Steps**
+## Notes
 
-- Confirm precise **cell-by-cell mappings** from the workbook (tabs → functions).  
-- Translate staged propagation into Python module:  
-  `amre/electrical_resistance/deposition_decimalisation.py`.  
-- Link results to HTML preview:  
-  `previews/electrical_resistance/deposition_decimalisation.html`.  
+- The construct is **sequential and cumulative**, mimicking chained spreadsheet tabs.  
+- Each decimalisation stage attenuates the initial deposition by an additional order of magnitude.  
+- The **OUTPUT vector** represents progressive resistance effects under subdivision.  
+- Can be generalised to bases other than 10, but the original implementation uses decimalisation.  
+- In practice, this functions as a **complement** to the *Base Equation*:  
+  - *Base Equation* → attenuation by factorial steps  
+  - *Deposition Decimalisation* → attenuation by decimal subdivision  
