@@ -1,8 +1,8 @@
 # Base Equation (Electrical Resistance)
 
-The Base Equation models the attenuation cycle between a **high** ($H$) and **low** ($L$) value.  
-It defines a differential and then applies a sequential attenuation process.  
-This framework is general and independent of any particular dataset or context.
+The Base Equation models an attenuation cycle between a **high** ($H$) and **low** ($L$) value.  
+It was originally expressed in spreadsheet form (`Base_Equation.xlsx`) as part of the *Electrical Resistance* module.  
+The construct captures the progressive reduction of a differential through sequential steps.  
 
 ---
 
@@ -10,23 +10,23 @@ This framework is general and independent of any particular dataset or context.
 
 Let:
 
-- $H$ = high input  
-- $L$ = low input  
+- $H$ = upper boundary input  
+- $L$ = lower boundary input  
 - $n$ = iteration step  
 
-Difference:
+**Difference:**
 
 $$
 D = H - L
 $$
 
-Attenuation sequence:
+**Attenuation sequence:**
 
 $$
 A_n = \frac{D}{n!}
 $$
 
-Target (after $N$ steps):
+**Target (after $N$ steps):**
 
 $$
 T = A_N
@@ -40,9 +40,9 @@ The spreadsheet implements this sequentially:
 
 1. Compute differential:
 
-$$
-D = H - L
-$$
+   $$
+   D = H - L
+   $$
 
 2. Iteratively divide by each step index:  
    - Step 1: $A_1 = D / 1$  
@@ -53,16 +53,18 @@ $$
 
 3. Output target:
 
-$$
-T = A_N
-$$
+   $$
+   T = A_N
+   $$
 
 ---
 
 ## Notes
 
-- $H$ and $L$ are externally provided.  
-- The attenuation behaves like a daisy-chained division (factorial decay).  
+- The Base Equation is **data-agnostic**: $H$ and $L$ are generic boundary values.  
+- Attenuation is modeled as a **sequential dampening process** (factorial decay).  
 - In spreadsheet form, this corresponds to chained cell references ($C2 \dots C13$).  
-- Within the **electrical resistance module**, this equation is treated as a structural element,  
-  not tied to any specific application domain.
+- Within the **Electrical Resistance module**, it functions as a **general operator**:  
+  - Any two boundary values can be supplied as inputs.  
+  - The output $T$ represents the cumulative effect of progressive resistance.  
+- This neutrality enables its use as a **building block** inside larger formulae, modules, or simulations.  
