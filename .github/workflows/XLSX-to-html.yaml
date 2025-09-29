@@ -33,7 +33,9 @@ jobs:
         run: pip install pandas openpyxl xlsx2html
 
       - name: Convert XLSX to HTML and regenerate index
-        run: python scripts/convert_xlsx.py
+        run: |
+          export PYTHONPATH=$PYTHONPATH:$(pwd)
+          python scripts/convert_xlsx.py
 
       - name: Debug – list previews
         run: ls -lh previews || echo "No previews generated"
