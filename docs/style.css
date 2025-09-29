@@ -22,7 +22,6 @@ details {
   margin-bottom: 4px;
 }
 
-/* Folder + file tree */
 .folder, .file {
   font-family: monospace;
   margin: 2px 0;
@@ -34,7 +33,6 @@ details {
 .level-3 { margin-left: 60px; }
 .level-4 { margin-left: 80px; }
 
-/* Links */
 a {
   text-decoration: none;
   color: #3366cc;
@@ -43,29 +41,12 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Table formatting (for XLSX previews) */
-table {
-  border-collapse: collapse;
-  width: 100%;
-  margin-bottom: 2em;
-  font-size: 14px;
-}
-
-th, td {
-  border: 1px solid #ddd;
-  padding: 6px 10px;
-  text-align: left;
-}
-
-th {
-  background-color: #f2f2f2;
-  font-weight: bold;
-}
-
-tr:nth-child(even) {
-  background-color: #f9f9f9;
-}
-
-tr:hover {
-  background-color: #f1f7ff;
+/* --- new note style --- */
+.note {
+  font-style: italic;
+  color: #666;
+  margin: 0.5em 0 1em 0;
+  padding: 0.5em;
+  background: #f2f2f2;
+  border-left: 4px solid #ccc;
 }
