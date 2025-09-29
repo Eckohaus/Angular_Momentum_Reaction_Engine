@@ -30,20 +30,13 @@ jobs:
           python-version: '3.x'
 
       - name: Install dependencies
-        run: pip install pandas openpyxl
+        run: pip install pandas openpyxl xlsx2html
 
       - name: Convert XLSX to HTML and regenerate index
         run: python scripts/convert_xlsx.py
 
       - name: Debug – list previews
         run: ls -lh previews || echo "No previews generated"
-
-      - name: Ensure logs folder exists
-        run: |
-          mkdir -p logs
-          if [ ! -f logs/.gitkeep ]; then
-            echo "# Placeholder to keep logs directory tracked by Git" > logs/.gitkeep
-          fi
 
       - name: Commit previews, index, and logs
         run: |
@@ -57,10 +50,10 @@ jobs:
           fi
 
           # Stage previews, index, and logs
-          git add -A previews docs/in_development_previews.html cleanup_log.txt logs/
+          git add -A previews docs/in_development_previews.html cleanup_log.txt || true
 
           # Commit only if there are changes
-          git diff --cached --quiet || git commit -m "Update previews, index, and logs"
+          git diff --cached --quiet || git commit -m "Update XLSX HTML previews and index"
 
           # Push back to master
           git push origin master
