@@ -1,3 +1,4 @@
+/* Base styling */
 body {
   font-family: Arial, sans-serif;
   margin: 2em;
@@ -11,6 +12,7 @@ h1, h2, h3 {
   margin-top: 1em;
 }
 
+/* Table styling */
 table {
   border-collapse: collapse;
   width: 100%;
@@ -37,17 +39,18 @@ tr:hover {
   background-color: #f1f7ff;
 }
 
-details {
-  margin-bottom: 1em;
-}
-
+/* Folder tree styling */
 summary {
   font-weight: bold;
   cursor: pointer;
   padding: 4px 0;
 }
 
-/* folder + file indentation */
+details {
+  margin-bottom: 0.3em;
+}
+
+/* File + folder indentation */
 .folder, .file {
   font-family: monospace;
   margin: 4px 0;
@@ -58,3 +61,13 @@ summary {
 .level-2 { margin-left: 40px; }
 .level-3 { margin-left: 60px; }
 .level-4 { margin-left: 80px; }
+
+/* Links */
+a {
+  text-decoration: none;
+  color: #3366cc;
+}
+
+a:hover {
+  text-decoration: underline;
+}
