@@ -1,45 +1,38 @@
 # amre/lambda_seq/base_equation.py
 import json
 
-def base_equation(high: float, low: float, steps: int = 10):
+def base_equation(high: float, low: float, lambda_factor: float = 1.14, depth: int = 4):
     """
-    Replicates the Base_Equation.xlsx logic:
-    - Takes a high and low (for example : the closing values of a currency pair).
-    - Computes the differential.
-    - Runs a daisy-chain attenuation cycle.
+    Replicates Base_Equation.xlsx -> Calculating Variables sheet.
+
+    Formula:
+        target = (high + low)/2 + (high - low) * (lambda_factor ** depth)
 
     Args:
-        high (float): Closing high.
-        low (float): Closing low.
-        steps (int): Number of attenuation iterations.
+        high: Closing high (e.g. from currency pair).
+        low: Closing low.
+        lambda_factor: Growth multiplier (Excel used 1.14).
+        depth: Number of iterations (Excel applied 1.14 four times).
 
     Returns:
-        dict: {
-            "inputs": {"high": float, "low": float},
-            "differential": float,
-            "attenuation_cycle": list of (step, value),
-            "target": float
-        }
+        dict with inputs, intermediate steps, and final target.
     """
-    # Core differential
     diff = high - low
-
-    # Attenuation chain
-    attenuation = []
-    value = diff
-    for i in range(1, steps + 1):
-        value = value / i
-        attenuation.append((i, value))
+    avg = (high + low) / 2
+    c9 = diff * (lambda_factor ** depth)
+    target = avg + c9
 
     return {
         "inputs": {"high": high, "low": low},
-        "differential": diff,
-        "attenuation_cycle": attenuation,
-        "target": attenuation[-1][1],
+        "parameters": {"lambda_factor": lambda_factor, "depth": depth},
+        "difference": diff,
+        "average": avg,
+        "c9": c9,
+        "target": target
     }
 
-# Example usage (only runs if executed directly, not on import)
+# Example usage
 if __name__ == "__main__":
-    result = base_equation(1.0824, 1.0813)
-    # Pretty-print JSON for easier HTML preview rendering
+    # Same test you ran in Excel
+    result = base_equation(1.0536, 1.0247)
     print(json.dumps(result, indent=2))
