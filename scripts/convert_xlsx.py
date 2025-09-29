@@ -15,10 +15,11 @@ os.makedirs(PREVIEWS_DIR, exist_ok=True)
 os.makedirs(TRANSFORMS_DIR, exist_ok=True)
 
 def convert_xlsx(src_path, rel_path):
-    """Convert an XLSX into an HTML preview + JSON transform."""
+    """Convert an XLSX into both HTML + JSON outputs."""
     try:
         xls = pd.ExcelFile(src_path)
-        html_parts, json_export = [], {}
+        html_parts = []
+        json_export = {}
 
         for sheet in xls.sheet_names:
             df = xls.parse(sheet)
@@ -31,7 +32,7 @@ def convert_xlsx(src_path, rel_path):
             json_export[sheet] = df.to_dict(orient="records")
 
         # Save HTML preview
-        html_dst = os.path.join(PREVIEWS_DIR, rel_path).replace(".xlsx", ".html")
+        html_dst = os.path.join(PREVIEWS_DIR, rel_path).replace(".xlsx", ".html").lower()
         os.makedirs(os.path.dirname(html_dst), exist_ok=True)
         with open(html_dst, "w", encoding="utf-8") as f:
             f.write("<html><head>")
@@ -41,28 +42,28 @@ def convert_xlsx(src_path, rel_path):
             f.write("</body></html>")
 
         # Save JSON transform
-        json_dst = os.path.join(TRANSFORMS_DIR, rel_path).replace(".xlsx", ".json")
+        json_dst = os.path.join(TRANSFORMS_DIR, rel_path).replace(".xlsx", ".json").lower()
         os.makedirs(os.path.dirname(json_dst), exist_ok=True)
         with open(json_dst, "w", encoding="utf-8") as f:
             json.dump(json_export, f, indent=2)
 
-        return html_dst
+        return html_dst, json_dst
+
     except Exception as e:
         print(f"❌ Failed to convert {src_path}: {e}")
-        return None
+        return None, None
 
 
 def convert_py(src_path, rel_path):
-    """Run a Python module and capture stdout as an HTML preview."""
-    preview_html = os.path.join(PREVIEWS_DIR, rel_path).replace(".py", ".html")
+    """Run a Python module and capture stdout → HTML preview."""
+    preview_html = os.path.join(PREVIEWS_DIR, rel_path).replace(".py", ".html").lower()
     os.makedirs(os.path.dirname(preview_html), exist_ok=True)
 
     try:
         result = subprocess.run(
             ["python", src_path],
             capture_output=True,
-            text=True,
-            check=False
+            text=True
         )
         output = result.stdout or result.stderr
     except Exception as e:
@@ -80,33 +81,25 @@ def convert_py(src_path, rel_path):
 
 
 def build_index(entries):
-    """Generate index page with both XLSX and Python previews grouped."""
+    """Generate index page with module/code + spreadsheet previews."""
     with open(INDEX_FILE, "w", encoding="utf-8") as f:
         f.write("<html><head>")
         f.write('<link rel="stylesheet" type="text/css" href="style.css">')
         f.write("</head><body>\n")
         f.write("<h1>In Development Previews</h1>\n")
-        f.write("<p>Browse generated previews of XLSX + Python files. Expand folders to view contents.</p>\n")
+        f.write("<p>Browse generated previews of spreadsheets and Python modules.</p>\n")
 
-        def recurse(node, level=0):
-            for key, content in sorted(node.items()):
-                if isinstance(content, dict) and ("xlsx" in content or "py" in content):
-                    # File entry
-                    display_name = content.get("display", key)
-                    row = f'<div class="file level-{level}">{display_name} '
-                    if "xlsx" in content:
-                        xlsx_src, xlsx_html = content["xlsx"]
-                        row += f'[<a href="{xlsx_html}">Spreadsheet Preview</a>] [<a href="{xlsx_src}">Source XLSX</a>] '
-                    if "py" in content:
-                        py_src, py_html = content["py"]
-                        row += f'[<a href="{py_html}">Module Preview</a>] [<a href="{py_src}">Source PY</a>] '
-                    row += "</div>\n"
-                    f.write(row)
-                else:
-                    # Folder
-                    f.write(" " * level + f'<details><summary>{key}</summary>\n')
-                    recurse(content, level + 1)
-                    f.write(" " * level + "</details>\n")
+        def recurse(node, indent=0):
+            for name, content in sorted(node.items()):
+                if isinstance(content, dict):  # folder
+                    f.write(" " * indent + f'<details><summary>{name}</summary>\n')
+                    recurse(content, indent + 2)
+                    f.write(" " * indent + "</details>\n")
+                else:  # file
+                    src_link, preview_link = content
+                    f.write(" " * indent + f'<div class="file">{name} '
+                            f'[<a href="{preview_link}">Preview</a>] '
+                            f'[<a href="{src_link}">Source</a>]</div>\n')
 
         recurse(entries)
         f.write("</body></html>\n")
@@ -120,33 +113,36 @@ def main():
             if not (file.endswith(".xlsx") or file.endswith(".py")):
                 continue
 
+            # Warn if mixed-case
+            if any(ch.isupper() for ch in file):
+                print(f"⚠️ Warning: Mixed-case filename detected -> {file}. "
+                      f"Consider renaming to lowercase for consistency.")
+
             src_path = os.path.join(root, file)
             rel_path = os.path.relpath(src_path, "data/spreadsheets/in_development")
-            parts = rel_path.split(os.sep)
 
-            node = entries
-            for part in parts[:-1]:
-                node = node.setdefault(part, {})
-
-            base, ext = os.path.splitext(file)
-            key = base.lower()  # normalize for grouping
-
-            if key not in node:
-                node[key] = {"display": base}  # preserve original for display
-
-            if ext == ".xlsx":
-                html_dst = convert_xlsx(src_path, rel_path)
+            if file.endswith(".xlsx"):
+                html_dst, json_dst = convert_xlsx(src_path, rel_path)
                 if html_dst:
-                    node[key]["xlsx"] = (
-                        f"{REPO_URL}/{src_path.replace(os.sep, '/')}",
-                        f"../{html_dst}"
+                    parts = rel_path.split(os.sep)
+                    node = entries
+                    for part in parts[:-1]:
+                        node = node.setdefault(part, {})
+                    node[file] = (
+                        f"{REPO_URL}/{src_path.replace(os.sep, '/')}",   # source XLSX link
+                        f"../{html_dst}"                                # preview HTML link
                     )
-            elif ext == ".py":
-                html_dst = convert_py(src_path, rel_path)
-                if html_dst:
-                    node[key]["py"] = (
-                        f"{REPO_URL}/{src_path.replace(os.sep, '/')}",
-                        f"../{html_dst}"
+
+            elif file.endswith(".py"):
+                preview_html = convert_py(src_path, rel_path)
+                if preview_html:
+                    parts = rel_path.split(os.sep)
+                    node = entries
+                    for part in parts[:-1]:
+                        node = node.setdefault(part, {})
+                    node[file] = (
+                        f"{REPO_URL}/{src_path.replace(os.sep, '/')}",   # source PY link
+                        f"../{preview_html}"                            # preview HTML link
                     )
 
     build_index(entries)
