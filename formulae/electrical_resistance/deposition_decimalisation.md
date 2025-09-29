@@ -1,11 +1,9 @@
 # Deposition Decimalisation (Electrical Resistance)
 
-The *Deposition Decimalisation* construct extends the **Electrical Resistance module**.  
-It describes the progressive subdivision of an initial boundary value into finer decimalised steps,  
-followed by accumulation into an **output sequence**.
+The *Deposition Decimalisation* describes the subdivision of an initial input value into progressively finer partitions.  
+It originated in spreadsheet form (`deposition_within_decimalisation.xlsx`) under the *Electrical Resistance* module.
 
-Originally expressed in spreadsheet form (`deposition_within_decimalisation.xlsx`),  
-this formulation captures staged attenuation across multiple decimalisation levels.  
+The construct explores how a deposition $X$ is reduced, step by step, through decimal subdivisions and accumulations.
 
 ---
 
@@ -13,50 +11,53 @@ this formulation captures staged attenuation across multiple decimalisation leve
 
 Let:
 
-- $X$ = initial deposition input  
-- $n$ = decimalisation level (e.g., first, second, …, $n$-th)  
-- $k$ = index within each level  
+- $X$ = initial deposition (boundary input)  
+- $n$ = decimalisation level (iteration step)  
+- $k$ = number of subdivisions per level  
 
-**Decimal subdivision:**
-
-$$
-d_{n,k} = \frac{X}{10^n}
-$$
-
-**Output accumulation (per level):**
+**Subdivision at level $n$:**
 
 $$
-A_n = \sum_{k=1}^{m} d_{n,k}
+d_n = \frac{X}{10^n}
 $$
 
-Where:
+**Accumulated output:**
 
-- $d_{n,k}$ is the $k$-th subdivision at decimalisation level $n$  
-- $A_n$ is the aggregated value across that level  
+$$
+A_n = \sum_{i=1}^{k} d_n = k \cdot \frac{X}{10^n}
+$$
 
 ---
 
 ## Expanded Staging (Spreadsheet Behaviour)
 
-The spreadsheet implements this as chained sheets/tabs:  
+The spreadsheet implements this sequentially:
 
-1. Begin with deposition input $X$ at level $n=0$  
-2. Apply successive decimalisation:  
-   - Level 1: $d_{1,k} = X / 10$  
-   - Level 2: $d_{2,k} = d_{1,k} / 10$  
-   - …  
-   - Level $n$: $d_{n,k} = d_{n-1,k} / 10$  
-3. For each level, accumulate subdivisions into $A_n$  
-4. Final **OUTPUT sheet** reports values $(A_1, A_2, \dots, A_N)$  
+1. Begin with input $X$.  
+2. At level $n$, subdivide $X$ by $10^n$.  
+3. Accumulate across $k$ subdivisions (often $k = 10$).  
+4. Record the result as $A_n$.  
+5. Repeat for $n = 1, 2, \dots, N$.  
+
+The output sequence is:
+
+$$
+[A_1, A_2, \dots, A_N]
+$$
 
 ---
 
 ## Notes
 
-- The construct is **sequential and cumulative**, mimicking chained spreadsheet tabs.  
-- Each decimalisation stage attenuates the initial deposition by an additional order of magnitude.  
-- The **OUTPUT vector** represents progressive resistance effects under subdivision.  
-- Can be generalised to bases other than 10, but the original implementation uses decimalisation.  
-- In practice, this functions as a **complement** to the *Base Equation*:  
-  - *Base Equation* → attenuation by factorial steps  
-  - *Deposition Decimalisation* → attenuation by decimal subdivision  
+- $X$ can be combined with additional inputs (e.g. $A_3$ in spreadsheet experiments) to adjust the subdivision baseline.  
+- In spreadsheet form, each *tab* may represent a stage of chained decimalisation.  
+- Outputs $A_1, \dots, A_N$ correspond to columns in the **OUTPUT** sheet.  
+- Within the *Electrical Resistance* module, this provides a **stepwise dampening operator** distinct from the Base Equation.  
+
+---
+
+## Implementation Links
+
+- Formula: [`formulas/electrical_resistance/deposition_decimalisation.md`](./deposition_decimalisation.md)  
+- Python: [`amre/electrical_resistance/deposition_decimalisation.py`](../../amre/electrical_resistance/deposition_decimalisation.py)  
+- Preview: [`previews/electrical_resistance/deposition_decimalisation.html`](../../previews/electrical_resistance/deposition_decimalisation.html)
