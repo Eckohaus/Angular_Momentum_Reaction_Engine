@@ -17,17 +17,12 @@ def convert_xlsx(src_path, rel_path):
     """Convert an XLSX into HTML + JSON outputs."""
     try:
         xls = pd.ExcelFile(src_path)
-        html_parts = []
-        json_export = {}
+        html_parts, json_export = [], {}
 
         for sheet in xls.sheet_names:
             df = xls.parse(sheet)
-
-            # HTML block
             html_parts.append(f"<h3>Sheet: {sheet}</h3>")
             html_parts.append(df.to_html(index=False, border=0))
-
-            # JSON block
             json_export[sheet] = df.to_dict(orient="records")
 
         # Save HTML preview
@@ -80,7 +75,7 @@ def convert_py(src_path, rel_path):
 
 
 def build_index(entries):
-    """Generate index page with module/code previews + XLSX links."""
+    """Generate index page with spreadsheet + module previews."""
     with open(INDEX_FILE, "w", encoding="utf-8") as f:
         f.write("<html><head>")
         f.write('<link rel="stylesheet" type="text/css" href="style.css">')
@@ -100,10 +95,9 @@ def build_index(entries):
                         f.write(" " * indent + f'<div class="file level-{level}">{name} '
                                 f'[<a href="{paths["preview"]}">Spreadsheet Preview</a>] '
                                 f'[<a href="{paths["xlsx"]}">Source XLSX</a>]</div>\n')
-                    elif link_type == "py+xlsx":
+                    elif link_type == "py":
                         f.write(" " * indent + f'<div class="file level-{level}">{name} '
-                                f'[<a href="{paths["preview"]}">Module Preview</a>] '
-                                f'[<a href="{paths["xlsx"]}">Source XLSX</a>]</div>\n')
+                                f'[<a href="{paths["preview"]}">Module Preview</a>]</div>\n')
 
         recurse(entries)
         f.write("</body></html>\n")
@@ -112,7 +106,7 @@ def build_index(entries):
 def main():
     entries = {}
 
-    # First: handle XLSX spreadsheets
+    # Pass 1: XLSX
     for root, _, files in os.walk("data/spreadsheets/in_development"):
         for file in files:
             if not file.endswith(".xlsx"):
@@ -120,7 +114,6 @@ def main():
 
             src_path = os.path.join(root, file)
             rel_path = os.path.relpath(src_path, "data/spreadsheets/in_development")
-
             html_dst, _ = convert_xlsx(src_path, rel_path)
 
             if html_dst:
@@ -136,25 +129,27 @@ def main():
                     }
                 )
 
-    # Then: handle the Python module Base_Equation.py
-    py_path = "amre/lambda_seq/base_equation.py"
-    if os.path.exists(py_path):
-        rel_path = os.path.relpath(py_path, "amre/lambda_seq")
-        html_dst = convert_py(py_path, rel_path)
+    # Pass 2: Python modules
+    for root, _, files in os.walk("amre"):
+        for file in files:
+            if not file.endswith(".py"):
+                continue
 
-        # Insert it under the Electrical_resistance/lambda_sequencer branch
-        parts = ["Electrical_resistance", "lambda_sequencer"]
-        node = entries
-        for part in parts:
-            node = node.setdefault(part, {})
+            src_path = os.path.join(root, file)
+            rel_path = os.path.relpath(src_path, "amre")
+            html_dst = convert_py(src_path, rel_path)
 
-        node["Base_Equation.py"] = (
-            "py+xlsx",
-            {
-                "preview": f"../{html_dst}",
-                "xlsx": f"{REPO_URL}/data/spreadsheets/in_development/Electrical_resistance/lambda_sequencer/Base_Equation.xlsx"
-            }
-        )
+            if html_dst:
+                parts = rel_path.split(os.sep)
+                node = entries
+                for part in parts[:-1]:
+                    node = node.setdefault(part, {})
+                node[file] = (
+                    "py",
+                    {
+                        "preview": f"../{html_dst}"
+                    }
+                )
 
     build_index(entries)
 
