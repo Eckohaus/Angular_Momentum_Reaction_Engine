@@ -1,21 +1,27 @@
 import os
 import pandas as pd
+from datetime import datetime
 
 REPO_URL = "https://github.com/Eckohaus/Angular_Momentum_Reaction_Engine_v2/blob/master"
 PREVIEWS_DIR = "previews"
 INDEX_FILE = "docs/in_development_previews.html"
-LOG_FILE = "docs/cleanup_log.txt"
+LOG_FILE = "cleanup_log.txt"
+LOGS_DIR = "logs"
 
-# Ensure required dirs
+# ensure folders exist
 os.makedirs(PREVIEWS_DIR, exist_ok=True)
-os.makedirs(os.path.dirname(LOG_FILE), exist_ok=True)
+os.makedirs(LOGS_DIR, exist_ok=True)
 
-# --- Logging ---
-def log_message(message):
-    with open(LOG_FILE, "a", encoding="utf-8") as f:
-        f.write(message + "\n")
+# reset log each run
+with open(LOG_FILE, "w", encoding="utf-8") as log:
+    log.write(f"Log for run at {datetime.utcnow().isoformat()} UTC\n\n")
 
-# --- Convert XLSX → HTML ---
+def log_event(message: str):
+    """Write message to cleanup_log.txt"""
+    with open(LOG_FILE, "a", encoding="utf-8") as log:
+        log.write(message + "\n")
+    print(message)
+
 def convert_xlsx_to_html(src_path, dst_path):
     try:
         xls = pd.ExcelFile(src_path)
@@ -34,13 +40,10 @@ def convert_xlsx_to_html(src_path, dst_path):
             f.write(html)
             f.write("</body></html>")
 
-        log_message(f"Converted {src_path} → {dst_path}")
-        return True
+        log_event(f"✔ Converted {src_path} → {dst_path}")
     except Exception as e:
-        log_message(f"Failed {src_path}: {e}")
-        return False
+        log_event(f"✘ Failed {src_path}: {e}")
 
-# --- Build Index HTML ---
 def build_index(entries):
     with open(INDEX_FILE, "w", encoding="utf-8") as f:
         f.write("<html><head>")
@@ -49,42 +52,24 @@ def build_index(entries):
         f.write("<h1>In Development Previews</h1>\n")
         f.write("<p>Browse generated HTML previews of XLSX files. Expand folders to view contents.</p>\n")
 
-        def recurse(node, level=0):
+        def recurse(node, indent=0):
             for name, content in sorted(node.items()):
                 if isinstance(content, dict):  # folder
-                    f.write(f'<details class="folder level-{level}"><summary>{name}</summary>\n')
-                    recurse(content, level + 1)
-                    f.write("</details>\n")
+                    f.write(" " * indent + f"<details><summary>{name}</summary>\n")
+                    recurse(content, indent + 2)
+                    f.write(" " * indent + "</details>\n")
                 else:  # file
                     xlsx_path, html_path = content
-                    f.write(f'<div class="file level-{level}">{name} '
+                    f.write(" " * indent + f'<div class="file level-{indent//2}">{name} '
                             f'[<a href="{html_path}">Preview</a>] '
                             f'[<a href="{xlsx_path}">Source XLSX</a>]</div>\n')
 
         recurse(entries)
         f.write("</body></html>\n")
 
-# --- Cleanup Stale Previews ---
-def clean_previews(preview_dir, valid_html_paths):
-    removed_files = []
-    for root, _, files in os.walk(preview_dir):
-        for file in files:
-            if file.endswith(".html"):
-                full_path = os.path.join(root, file)
-                rel_path = os.path.relpath(full_path, preview_dir)
-                if rel_path not in valid_html_paths:
-                    os.remove(full_path)
-                    removed_files.append(rel_path)
-                    log_message(f"Removed stale preview: {rel_path}")
-    if removed_files:
-        print(f"Cleanup complete: {len(removed_files)} stale previews removed.")
-    else:
-        print("Cleanup complete: no stale previews found.")
-
-# --- Main ---
 def main():
     entries = {}
-    valid_html_paths = set()
+    generated = set()
 
     for root, _, files in os.walk("data/spreadsheets/in_development"):
         for file in files:
@@ -93,12 +78,12 @@ def main():
 
             src_path = os.path.join(root, file)
 
-            # preview path mirrors repo structure
             rel_path = os.path.relpath(src_path, "data/spreadsheets/in_development")
             dst_path = os.path.join(PREVIEWS_DIR, rel_path).replace(".xlsx", ".html")
 
-            if convert_xlsx_to_html(src_path, dst_path):
-                valid_html_paths.add(os.path.relpath(dst_path, PREVIEWS_DIR))
+            convert_xlsx_to_html(src_path, dst_path)
+
+            generated.add(os.path.normpath(dst_path))
 
             # build tree entry
             parts = rel_path.split(os.sep)
@@ -110,13 +95,27 @@ def main():
                 f"../{dst_path}"                                # preview HTML link
             )
 
-    # cleanup unused previews
-    clean_previews(PREVIEWS_DIR, valid_html_paths)
+    # cleanup stale previews
+    for root, _, files in os.walk(PREVIEWS_DIR):
+        for file in files:
+            if not file.endswith(".html"):
+                continue
+            path = os.path.normpath(os.path.join(root, file))
+            if path not in generated and not path.endswith("index.html"):
+                os.remove(path)
+                log_event(f"🗑 Deleted stale preview: {path}")
 
-    # rebuild index
     build_index(entries)
 
-    print("Index regenerated and previews updated.")
+    # Weekly archive snapshot on Sundays (UTC)
+    today = datetime.utcnow()
+    if today.weekday() == 6:  # Sunday = 6
+        archive_name = today.strftime("%Y-%m-%d_cleanup_log.txt")
+        archive_path = os.path.join(LOGS_DIR, archive_name)
+        os.replace(LOG_FILE, archive_path)
+        print(f"📦 Archived log to {archive_path}")
+    else:
+        print("✔ Run complete – log kept as cleanup_log.txt")
 
 if __name__ == "__main__":
     main()
