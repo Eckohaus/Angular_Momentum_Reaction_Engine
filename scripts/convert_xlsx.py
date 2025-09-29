@@ -1,11 +1,14 @@
 import os
+import shutil
 import pandas as pd
 
 REPO_URL = "https://github.com/Eckohaus/Angular_Momentum_Reaction_Engine_v2/blob/master"
 PREVIEWS_DIR = "previews"
 INDEX_FILE = "docs/in_development_previews.html"
 
-# make sure preview folder exists
+# --- Clean previews folder first ---
+if os.path.exists(PREVIEWS_DIR):
+    shutil.rmtree(PREVIEWS_DIR)
 os.makedirs(PREVIEWS_DIR, exist_ok=True)
 
 def convert_xlsx_to_html(src_path, dst_path):
@@ -25,12 +28,8 @@ def convert_xlsx_to_html(src_path, dst_path):
             f.write("</head><body>")
             f.write(html)
             f.write("</body></html>")
-
-        # log success
-        print(f"[OK] {src_path} → {dst_path}")
-
     except Exception as e:
-        print(f"[FAIL] {src_path}: {e}")
+        print(f"Failed to convert {src_path}: {e}")
 
 def build_index(entries):
     with open(INDEX_FILE, "w", encoding="utf-8") as f:
@@ -43,20 +42,14 @@ def build_index(entries):
         def recurse(node, indent=0):
             for name, content in sorted(node.items()):
                 if isinstance(content, dict):  # folder
-                    f.write(
-                        " " * indent
-                        + f'<details class="level-{indent//2}"><summary>{name}</summary>\n'
-                    )
+                    f.write(" " * indent + f"<details><summary>{name}</summary>\n")
                     recurse(content, indent + 2)
                     f.write(" " * indent + "</details>\n")
                 else:  # file
                     xlsx_path, html_path = content
-                    f.write(
-                        " " * indent
-                        + f'<div class="file level-{indent//2}">{name} '
-                        f'[<a href="{html_path}">Preview</a>] '
-                        f'[<a href="{xlsx_path}">Source XLSX</a>]</div>\n'
-                    )
+                    f.write(" " * indent + f'<div class="file">{name} '
+                            f'[<a href="{html_path}">Preview</a>] '
+                            f'[<a href="{xlsx_path}">Source XLSX</a>]</div>\n')
 
         recurse(entries)
         f.write("</body></html>\n")
