@@ -1,8 +1,8 @@
 # Base Equation (Electrical Resistance)
 
 The Base Equation models the attenuation cycle between a **high** ($H$) and **low** ($L$) value.  
-It defines a differential and then applies a sequential attenuation process,  
-making it a general framework independent of any specific dataset or domain.
+It defines a differential and then applies a sequential attenuation process.  
+This framework is general and independent of any particular dataset or context.
 
 ---
 
@@ -10,8 +10,8 @@ making it a general framework independent of any specific dataset or domain.
 
 Let:
 
-- $H$ = high input (a chosen reference value, e.g. from observed data)  
-- $L$ = low input (a paired reference value, e.g. from observed data)  
+- $H$ = high input  
+- $L$ = low input  
 - $n$ = iteration step  
 
 Difference:
@@ -41,7 +41,7 @@ The spreadsheet implements this sequentially:
 1. Compute differential:
 
 $$
-D = H - L 
+D = H - L
 $$
 
 2. Iteratively divide by each step index:  
@@ -60,6 +60,9 @@ $$
 ---
 
 ## Notes
-- $H$ and $L$ are externally provided (imported data).  
+
+- $H$ and $L$ are externally provided.  
 - The attenuation behaves like a daisy-chained division (factorial decay).  
-- In spreadsheet form, this corresponds to chained cell references ($C2 \dots C13$).
+- In spreadsheet form, this corresponds to chained cell references ($C2 \dots C13$).  
+- Within the **electrical resistance module**, this equation is treated as a structural element,  
+  not tied to any specific application domain.
