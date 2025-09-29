@@ -2,43 +2,58 @@ import os
 import json
 import pandas as pd
 
+# Constants
 REPO_URL = "https://github.com/Eckohaus/Angular_Momentum_Reaction_Engine_v2/blob/master"
 PREVIEWS_DIR = "previews"
+TRANSFORMS_DIR = "transforms"
 INDEX_FILE = "docs/in_development_previews.html"
-ONEDRIVE_MAP = "onedrive_links.json"
 
-# load optional onedrive map
-if os.path.exists(ONEDRIVE_MAP):
-    with open(ONEDRIVE_MAP, "r", encoding="utf-8") as f:
-        onedrive_links = json.load(f)
-else:
-    onedrive_links = {}
-
+# Ensure folders exist
 os.makedirs(PREVIEWS_DIR, exist_ok=True)
+os.makedirs(TRANSFORMS_DIR, exist_ok=True)
 
-def convert_xlsx_to_html(src_path, dst_path):
-    """Convert XLSX to a simple HTML table preview with CSS link."""
+def convert_xlsx(src_path, rel_path):
+    """Convert an XLSX into both HTML + JSON outputs."""
     try:
         xls = pd.ExcelFile(src_path)
         html_parts = []
+        json_export = {}
+
         for sheet in xls.sheet_names:
             df = xls.parse(sheet)
+
+            # HTML block
             html_parts.append(f"<h3>Sheet: {sheet}</h3>")
             html_parts.append(df.to_html(index=False, border=0))
-        html = "\n".join(html_parts)
 
-        os.makedirs(os.path.dirname(dst_path), exist_ok=True)
-        with open(dst_path, "w", encoding="utf-8") as f:
+            # JSON block
+            json_export[sheet] = df.to_dict(orient="records")
+
+        # Save HTML preview
+        html_dst = os.path.join(PREVIEWS_DIR, rel_path).replace(".xlsx", ".html")
+        os.makedirs(os.path.dirname(html_dst), exist_ok=True)
+        with open(html_dst, "w", encoding="utf-8") as f:
             f.write("<html><head>")
-            f.write('<link rel="stylesheet" type="text/css" href="../../docs/style.css">')
+            f.write('<link rel="stylesheet" type="text/css" href="../docs/style.css">')
             f.write("</head><body>")
-            f.write(html)
+            f.write("\n".join(html_parts))
             f.write("</body></html>")
+
+        # Save JSON transform
+        json_dst = os.path.join(TRANSFORMS_DIR, rel_path).replace(".xlsx", ".json")
+        os.makedirs(os.path.dirname(json_dst), exist_ok=True)
+        with open(json_dst, "w", encoding="utf-8") as f:
+            json.dump(json_export, f, indent=2)
+
+        return html_dst, json_dst
+
     except Exception as e:
-        print(f"Failed to convert {src_path}: {e}")
+        print(f"❌ Failed to convert {src_path}: {e}")
+        return None, None
+
 
 def build_index(entries):
-    """Build index HTML with source, live (if exists), and preview links."""
+    """Generate index page with just module/code previews."""
     with open(INDEX_FILE, "w", encoding="utf-8") as f:
         f.write("<html><head>")
         f.write('<link rel="stylesheet" type="text/css" href="style.css">')
@@ -49,22 +64,18 @@ def build_index(entries):
         def recurse(node, indent=0):
             for name, content in sorted(node.items()):
                 if isinstance(content, dict):  # folder
-                    f.write(" " * indent + f"<details><summary>{name}</summary>\n")
+                    f.write(" " * indent + f'<details><summary>{name}</summary>\n')
                     recurse(content, indent + 2)
                     f.write(" " * indent + "</details>\n")
                 else:  # file
-                    src_path, html_path, rel_key = content
-                    links = [
-                        f'[<a href="{src_path}">XLSX source</a>]'
-                    ]
-                    if rel_key in onedrive_links:
-                        links.append(f'[<a href="{onedrive_links[rel_key]}">XLSX live</a>]')
-                    links.append(f'[<a href="{html_path}">Code/module preview</a>]')
-
-                    f.write(" " * indent + f'<div class="file">{name} {" ".join(links)}</div>\n')
+                    xlsx_path, html_path = content
+                    f.write(" " * indent + f'<div class="file">{name} '
+                            f'[<a href="{html_path}">Module/Code Preview</a>] '
+                            f'[<a href="{xlsx_path}">Source XLSX</a>]</div>\n')
 
         recurse(entries)
         f.write("</body></html>\n")
+
 
 def main():
     entries = {}
@@ -76,22 +87,22 @@ def main():
 
             src_path = os.path.join(root, file)
             rel_path = os.path.relpath(src_path, "data/spreadsheets/in_development")
-            dst_path = os.path.join(PREVIEWS_DIR, rel_path).replace(".xlsx", ".html")
 
-            convert_xlsx_to_html(src_path, dst_path)
+            html_dst, json_dst = convert_xlsx(src_path, rel_path)
 
-            # build tree
-            parts = rel_path.split(os.sep)
-            node = entries
-            for part in parts[:-1]:
-                node = node.setdefault(part, {})
-            node[parts[-1]] = (
-                f"{REPO_URL}/{src_path.replace(os.sep, '/')}",  # source XLSX
-                f"../{dst_path}",                              # preview HTML
-                rel_path.replace(os.sep, "/")                  # lookup key
-            )
+            if html_dst:
+                # Build index entry
+                parts = rel_path.split(os.sep)
+                node = entries
+                for part in parts[:-1]:
+                    node = node.setdefault(part, {})
+                node[parts[-1]] = (
+                    f"{REPO_URL}/{src_path.replace(os.sep, '/')}",   # source XLSX link
+                    f"../{html_dst}"                                # preview HTML link
+                )
 
     build_index(entries)
+
 
 if __name__ == "__main__":
     main()
