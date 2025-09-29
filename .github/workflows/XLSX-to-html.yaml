@@ -38,6 +38,9 @@ jobs:
       - name: Debug – list previews
         run: ls -lh previews || echo "No previews generated"
 
+      - name: Ensure logs directory exists
+        run: mkdir -p logs
+
       - name: Commit previews, index, and logs
         run: |
           git config --global user.name "github-actions[bot]"
