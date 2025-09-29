@@ -1,0 +1,30 @@
+Log for run at 2025-09-29T01:40:08.856752 UTC
+
+✔ Converted data/spreadsheets/in_development/Electrical_resistance/Unit_(AC)/deposition_within_decimalisation_v1.xlsx → previews/Electrical_resistance/Unit_(AC)/deposition_within_decimalisation_v1.html
+✔ Converted data/spreadsheets/in_development/Electrical_resistance/Unit_(AC)/deposition_within_decimalisation.xlsx → previews/Electrical_resistance/Unit_(AC)/deposition_within_decimalisation.html
+✔ Converted data/spreadsheets/in_development/Electrical_resistance/lambda_sequencer/Base_Equation.xlsx → previews/Electrical_resistance/lambda_sequencer/Base_Equation.html
+✔ Converted data/spreadsheets/in_development/Infinities/Infinities_Continuous.xlsx → previews/Infinities/Infinities_Continuous.html
+✔ Converted data/spreadsheets/in_development/Infinities/Infinities_Transport.xlsx → previews/Infinities/Infinities_Transport.html
+✔ Converted data/spreadsheets/in_development/formulae/chemistry/periodic_table/alkali/the_hydrogen_equation/e_squared/lambda/Cartography_2.xlsx → previews/formulae/chemistry/periodic_table/alkali/the_hydrogen_equation/e_squared/lambda/Cartography_2.html
+✔ Converted data/spreadsheets/in_development/formulae/chemistry/periodic_table/alkali/the_hydrogen_equation/e_squared/lambda/Cartography_3.xlsx → previews/formulae/chemistry/periodic_table/alkali/the_hydrogen_equation/e_squared/lambda/Cartography_3.html
+✔ Converted data/spreadsheets/in_development/formulae/chemistry/periodic_table/alkali/the_hydrogen_equation/e_squared/lambda/Cartography_1.xlsx → previews/formulae/chemistry/periodic_table/alkali/the_hydrogen_equation/e_squared/lambda/Cartography_1.html
+✔ Converted data/spreadsheets/in_development/formulae/chemistry/periodic_table/alkali/the_hydrogen_equation/e_squared/boundary_momentum/A.xlsx → previews/formulae/chemistry/periodic_table/alkali/the_hydrogen_equation/e_squared/boundary_momentum/A.html
+✔ Converted data/spreadsheets/in_development/formulae/chemistry/periodic_table/lanthanide_series/Neodymium/2_e_squared_in_binary.xlsx → previews/formulae/chemistry/periodic_table/lanthanide_series/Neodymium/2_e_squared_in_binary.html
+✔ Converted data/spreadsheets/in_development/formulae/chemistry/periodic_table/lanthanide_series/Neodymium/1_Atomic_number_144.243.xlsx → previews/formulae/chemistry/periodic_table/lanthanide_series/Neodymium/1_Atomic_number_144.243.html
+✔ Converted data/spreadsheets/in_development/formulae/chemistry/periodic_table/lanthanide_series/Neodymium/3_AC_differentials.xlsx → previews/formulae/chemistry/periodic_table/lanthanide_series/Neodymium/3_AC_differentials.html
+✔ Converted data/spreadsheets/in_development/formulae/chemistry/periodic_table/lanthanide_series/Neodymium/4_EM_curvature.xlsx → previews/formulae/chemistry/periodic_table/lanthanide_series/Neodymium/4_EM_curvature.html
+✔ Converted data/spreadsheets/in_development/financials/currency/Unit_Currency/differential_Inversions.xlsx → previews/financials/currency/Unit_Currency/differential_Inversions.html
+✔ Converted data/spreadsheets/in_development/financials/currency/Unit_Currency/differential_inversions_1.xlsx → previews/financials/currency/Unit_Currency/differential_inversions_1.html
+✔ Converted data/spreadsheets/in_development/financials/index/FTSE/baserate.xlsx → previews/financials/index/FTSE/baserate.html
+✔ Converted data/spreadsheets/in_development/financials/index/FTSE/XLS_files/A.xlsx → previews/financials/index/FTSE/XLS_files/A.html
+✔ Converted data/spreadsheets/in_development/financials/index/FTSE/XLS_files/B.xlsx → previews/financials/index/FTSE/XLS_files/B.html
+✔ Converted data/spreadsheets/in_development/financials/index/FTSE/XLS_files/C.xlsx → previews/financials/index/FTSE/XLS_files/C.html
+✔ Converted data/spreadsheets/in_development/financials/index/FTSE/XLS_files/closing_analysis_november_2020/FTSE_ITCSOLDP.xlsx → previews/financials/index/FTSE/XLS_files/closing_analysis_november_2020/FTSE_ITCSOLDP.html
+✔ Converted data/spreadsheets/in_development/financials/interest_rates/BOE/historical_data/base_rate_since_1694/XLS_file/baserate.xlsx → previews/financials/interest_rates/BOE/historical_data/base_rate_since_1694/XLS_file/baserate.html
+✔ Converted data/spreadsheets/in_development/financials/interest_rates/BOE/historical_data/base_rate_since_1694/XLS_file/lambda/2nd_render/cartography_2.xlsx → previews/financials/interest_rates/BOE/historical_data/base_rate_since_1694/XLS_file/lambda/2nd_render/cartography_2.html
+✔ Converted data/spreadsheets/in_development/financials/interest_rates/BOE/historical_data/base_rate_since_1694/XLS_file/lambda/2nd_render/cartography_1.xlsx → previews/financials/interest_rates/BOE/historical_data/base_rate_since_1694/XLS_file/lambda/2nd_render/cartography_1.html
+✔ Converted data/spreadsheets/in_development/financials/interest_rates/BOE/historical_data/base_rate_since_1694/XLS_file/lambda/2nd_render/cartography_3.xlsx → previews/financials/interest_rates/BOE/historical_data/base_rate_since_1694/XLS_file/lambda/2nd_render/cartography_3.html
+✔ Converted data/spreadsheets/in_development/financials/interest_rates/BOE/historical_data/base_rate_since_1694/XLS_file/lambda/1st_overview/1_log_to_linear.xlsx → previews/financials/interest_rates/BOE/historical_data/base_rate_since_1694/XLS_file/lambda/1st_overview/1_log_to_linear.html
+✔ Converted data/spreadsheets/in_development/financials/interest_rates/BOE/historical_data/base_rate_since_1694/XLS_file/lambda/1st_overview/2_log_to_linear.xlsx → previews/financials/interest_rates/BOE/historical_data/base_rate_since_1694/XLS_file/lambda/1st_overview/2_log_to_linear.html
+✔ Converted data/spreadsheets/in_development/financials/interest_rates/BOE/historical_data/base_rate_since_1694/XLS_file/lambda/1st_overview/3_log_to_linear.xlsx → previews/financials/interest_rates/BOE/historical_data/base_rate_since_1694/XLS_file/lambda/1st_overview/3_log_to_linear.html
+✔ Converted data/spreadsheets/in_development/financials/interest_rates/BOE/historical_data/base_rate_since_1694/XLS_file/boundary_momentum/A.xlsx → previews/financials/interest_rates/BOE/historical_data/base_rate_since_1694/XLS_file/boundary_momentum/A.html
