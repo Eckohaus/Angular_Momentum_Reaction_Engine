@@ -37,8 +37,11 @@ $$
 
 The spreadsheet implements this sequentially:
 
-1. Compute differential:  
-   $$ D = H - L $$
+1. Compute differential:
+
+$$
+D = H - L 
+$$
 
 2. Iteratively divide by each step index:  
    - Step 1: $A_1 = D / 1$  
@@ -47,8 +50,11 @@ The spreadsheet implements this sequentially:
    - …  
    - Step $n$: $A_n = A_{n-1} / n$
 
-3. Output target:  
-   $$ T = A_N $$
+3. Output target:
+
+$$
+T = A_N
+$$
 
 ---
 
