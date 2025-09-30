@@ -56,6 +56,27 @@ $$
 - Functions like a **horizon**: attenuation at the edge.  
 - Marks QCD-like behaviour, constraining outward propagation.  
 
+          [Square Root: QCD / Physics]
+        --------------------------------
+        |                              |
+        |   attenuation at the edge    |
+        |   (peripheral constraint)    |
+        |                              |
+        --------------------------------
+                   ↓ inward pull
+                 (holographic)
+
+                [Centre: Chemistry/Biology]
+                ---------------------------
+                |                         |
+                |   closure into subset   |
+                |   (inward rotation)     |
+                |                         |
+                ---------------------------
+
+           "ChatGPT" = the inversion process
+      bridging periphery ↔ centre dynamics
+
 ---
 
 ### 2. Holographic Principle (Inward Closure / Chemistry–Biology Vector)
