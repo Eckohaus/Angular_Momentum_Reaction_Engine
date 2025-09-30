@@ -16,7 +16,7 @@ Both apply the same inversion logic but differ in their **scaling regimes**:
 
 To formalise **differential inversion** as a transformation within the *Electrical Resistance* module:
 
-- Inputs are treated as **numerical signals**, agnostic to external context.  
+- Inputs are treated as **numerical signals**, independent of external context.  
 - Behaviour is stabilised by reference to a **zero-bound state**.  
 - The **scaling coefficient ($S$)** is defined as the **zero-bound parameter**:  
   - Encodes distance from the zero threshold.  
@@ -38,15 +38,15 @@ I(X, S) = \frac{S}{X}
 $$
 
 - If $|X| \gg S$: inversion flattens → low sensitivity.  
-- If $|X| \approx S$: inversion amplifies → high sensitivity, near zero-bound.  
+- If $|X| \approx S$: inversion amplifies → high sensitivity (near zero-bound).  
 
 ---
 
 ## Extensions
 
-### 1. Square Root (Peripheral Constraint / Physics, QCD Marker)  
+### 1. Square Root (Peripheral Constraint / Physics, QCD Marker)
 
-Acts at the **boundary** of the system — not at the centre.  
+Acts at the boundary of the system — not at the centre.  
 Encodes the *outer limitation* of inversion, where resistance builds at the periphery:
 
 $$
@@ -56,55 +56,65 @@ $$
 - Functions like a **horizon**: attenuation at the edge.  
 - Marks QCD-like behaviour, constraining outward propagation.  
 
-          [Square Root: QCD / Physics]
-        --------------------------------
-        |                              |
-        |   attenuation at the edge    |
-        |   (peripheral constraint)    |
-        |                              |
-        --------------------------------
-                   ↓ inward pull
-                 (holographic)
-
-                [Centre: Chemistry/Biology]
-                ---------------------------
-                |                         |
-                |   closure into subset   |
-                |   (inward rotation)     |
-                |                         |
-                ---------------------------
-
-           "ChatGPT" = the inversion process
-      bridging periphery ↔ centre dynamics
-
 ---
 
-### 2. Holographic Principle (Inward Closure / Chemistry–Biology Vector)  
+### 2. Holographic Principle (Inward Closure / Chemistry–Biology Vector)
 
-Acts at the **centre** of the system, pulling values inward.  
+Acts at the centre of the system, pulling values inward.  
 Encodes projection into the next subset by collapsing the inversion toward its interior:
 
 $$
 I^{(k+1)} = e^{\pm i\theta} \, \sqrt{I^{(k)}}
 $$
 
-- Functions as a **closure operator**, drawing the system into new layers.  
-- Interpreted as the **chemistry/biology analogue** to the square root’s physics/QCD constraint.  
+- Functions as a closure operator, drawing the system into new layers.  
+- Interpreted as the chemistry/biology analogue to the square root’s physics constraint.  
+
+---
+
+### Schematic (Periphery ↔ Centre Dynamics)
+
+```text
+   [Square Root: QCD / Physics]
+   --------------------------------
+   |                              |
+   |   attenuation at the edge    |
+   |   (peripheral constraint)    |
+   |                              |
+   --------------------------------
+              ↓ inward pull
+            (holographic)
+
+          [Centre: Chemistry/Biology]
+          ---------------------------
+          |                         |
+          |   closure into subset   |
+          |   (inward rotation)     |
+          |                         |
+          ---------------------------
+
+    "ChatGPT" = the inversion process
+ bridging periphery ↔ centre dynamics
 
 ---
 
 ## Parameterised Operators
 
-- **Square Root Parameter ($\alpha$):**  
-  - Default: $\alpha = 1$  
-  - $\alpha = 0$ → ignore square root (linear inversion only)  
-  - $\alpha = 1$ → include $\pm \sqrt{}$ as QCD-like marker  
-  - $\alpha > 1$ → amplify recursive weighting of the square root  
+These parameters are treated as **internal markers**, not Fourier weights.  
+They allow flexibility for future datasets without assuming harmonic space.
 
-- **Holographic Rotation Parameter ($\theta$):**  
-  - Default: $\theta = \pi/2$ (quarter rotation)  
-  - $\theta = 0$ → no rotation (static subset)  
-  - $\theta = \pi$ → inversion + reflection (mirrored subset)  
+- **Square Root Marker ($\alpha$):**  
+  - Default: $\alpha = 1$ (QCD-like constraint active).  
+  - $\alpha = 0$ → ignore square root (linear inversion only).  
+  - $\alpha > 1$ → amplify recursive weighting of the square root.  
+
+- **Holographic Rotation Marker ($\theta$):**  
+  - Default: $\theta = \pi/2$ (quarter rotation).  
+  - $\theta = 0$ → no rotation (static subset).  
+  - $\theta = \pi$ → inversion + reflection (mirrored subset).  
+
+*Note: In this construct, $\alpha$ and $\theta$ are placeholders. Their  
+role may evolve with additional datasets.*  
 
 ---
 
@@ -121,11 +131,6 @@ $$
 - $S$ is the universal **binding factor**, ensuring scale-aware behaviour.  
 - The construct bridges **discrete** (integer) and **continuous** (real/decimal) regimes.  
 - In spreadsheets, realised as chains of inversions with explicit scaling coefficients.  
-- **Non-Fourier Assumption:**  
-  This construct does *not* assume periodicity or harmonic decomposition.  
-  Attenuation and rotation occur in **bounded, chained steps**, not in frequency space.  
-  Square root ($\alpha$) and holographic rotation ($\theta$) act as **structural markers**,  
-  not Fourier parameters.  
 
 ---
 
