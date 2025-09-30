@@ -1,4 +1,4 @@
-name: XLSX to HTML Previews
+name: XLSX + PY to HTML Previews
 
 permissions:
   contents: write   # allow workflow to push commits back to the repo
@@ -9,12 +9,13 @@ on:
       - master
     paths:
       - 'data/spreadsheets/**/*.xlsx'
+      - 'amre/**/*.py'
   schedule:
     - cron: "0 3 * * *"   # run daily at 03:00 UTC
   workflow_dispatch:
 
 env:
-  KEEP_LOGS: 7   # how many logs to keep (adjust as needed)
+  KEEP_LOGS: 7   # how many logs to keep
 
 jobs:
   build:
@@ -35,24 +36,26 @@ jobs:
       - name: Install dependencies
         run: pip install pandas openpyxl xlsx2html
 
-      - name: Clean previews before regeneration
+      - name: Clean old previews
         run: |
-          echo "🧹 Cleaning old previews in docs/previews..."
+          echo "🧹 Removing legacy previews/ folder"
+          rm -rf previews
+          echo "🧹 Cleaning docs/previews/"
           rm -rf docs/previews/*
 
-      - name: Convert XLSX to HTML and regenerate index
+      - name: Convert XLSX/PY to HTML and regenerate index
         run: |
           set -o pipefail
           mkdir -p logs
-          log_file="logs/$(date +'%Y-%m-%d_%H-%M-%S')_convert_xlsx.log"
-          python scripts/convert_xlsx.py > "$log_file" 2>&1 || echo "⚠️ Python preview pipeline failed, see $log_file"
+          log_file="logs/$(date +'%Y-%m-%d_%H-%M-%S')_convert.log"
+          python scripts/convert_xlsx.py > "$log_file" 2>&1 || echo "⚠️ Preview pipeline failed, see $log_file"
 
       - name: Prune old logs
         run: |
           ls -t logs/*.log | tail -n +$(( $KEEP_LOGS + 1 )) | xargs -r rm -- || true
 
       - name: Debug – list previews
-        run: ls -lh docs/previews || echo "No previews generated"
+        run: ls -Rlh docs/previews || echo "No previews generated"
 
       - name: Commit previews, index, and logs
         run: |
@@ -65,12 +68,19 @@ jobs:
             git rm docs/in_development_previews.md
           fi
 
-          # Stage previews, index, and only last $KEEP_LOGS logs if present
+          # Stage docs/previews, index, and logs
           git add -A docs/previews docs/in_development_previews.html || true
           git add logs/*.log cleanup_log.txt 2>/dev/null || true
 
+          # Trim cleanup_log.txt
+          if [ -f cleanup_log.txt ]; then
+            tail -n 500 cleanup_log.txt > cleanup_log.tmp || true
+            mv cleanup_log.tmp cleanup_log.txt
+            git add cleanup_log.txt
+          fi
+
           # Commit only if there are changes
-          git diff --cached --quiet || git commit -m "Update XLSX HTML previews, index, and logs"
+          git diff --cached --quiet || git commit -m "Update HTML previews, index, and logs"
 
           # Push back to master
           git push origin master
