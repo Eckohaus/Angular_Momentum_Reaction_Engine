@@ -32,7 +32,6 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: '3.x'
-          check-latest: true
 
       - name: Install dependencies
         run: pip install pandas openpyxl xlsx2html
@@ -47,8 +46,13 @@ jobs:
         run: |
           set -o pipefail
           mkdir -p logs
-          log_file="logs/$(date +'%Y-%m-%d_%H-%M-%S')_convert_xlsx.log"
+          log_file="logs/$(date +'%Y-%m-%d_%H-%M-%S')_convert.log"
           python scripts/convert_xlsx.py > "$log_file" 2>&1 || echo "⚠️ Preview pipeline failed, see $log_file"
+
+      - name: Debug – show last 50 lines of log
+        run: |
+          echo "=== Latest pipeline log ==="
+          ls -t logs/*.log | head -n 1 | xargs tail -n 50 || true
 
       - name: Prune old logs
         run: |
@@ -71,6 +75,13 @@ jobs:
           # Stage previews, index, and only last $KEEP_LOGS logs if present
           git add -A docs/previews docs/in_development_previews.html || true
           git add logs/*.log cleanup_log.txt 2>/dev/null || true
+
+          # Trim cleanup_log.txt to last 500 lines
+          if [ -f cleanup_log.txt ]; then
+            tail -n 500 cleanup_log.txt > cleanup_log.tmp || true
+            mv cleanup_log.tmp cleanup_log.txt
+            git add cleanup_log.txt
+          fi
 
           # Commit only if there are changes
           git diff --cached --quiet || git commit -m "Update XLSX + PY HTML previews, index, and logs"
