@@ -52,7 +52,7 @@ jobs:
             git rm docs/in_development_previews.md
           fi
 
-          # Stage previews, index, and logs
+          # Stage previews, index, logs, and cleanup log
           git add -A previews docs/in_development_previews.html logs cleanup_log.txt || true
 
           # Commit only if there are changes
