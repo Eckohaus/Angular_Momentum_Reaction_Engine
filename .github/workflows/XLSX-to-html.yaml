@@ -39,6 +39,9 @@ jobs:
           pip install matplotlib numpy  # ✅ added for .py scripts
           pip install plotly kaleido   # ✅ added if any scripts generate charts
 
+      - name: Remove legacy previews folder
+        run: rm -rf previews || true
+
       - name: Clean old previews before regeneration
         run: |
           echo "🧹 Cleaning old previews..."
