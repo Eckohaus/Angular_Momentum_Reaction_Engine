@@ -1,48 +1,112 @@
 # amre/electrical_resistance/differential_inversions.py
-import json
-import cmath
 
-def differential_inversion(x: float, s: float = 1.0):
+import json
+import math
+from typing import List, Dict
+
+
+def differential_inversion(
+    X: float,
+    S: float = 1.0,
+    steps: int = 5,
+    regime: str = "auto"
+) -> Dict:
     """
-    Compute the differential inversion with respect to a zero-bound scaling coefficient.
+    Differential Inversions (Electrical Resistance Module)
+
+    Implements the construct described in
+    `formulae/electrical_resistance/differential_inversions.md`.
+
+    Mathematical definitions:
+        - Core inversion:
+              I(X, S) = S / X
+        - Square root extension (limitation vector):
+              I_{t+1} = ± sqrt(I(X_t, S))
+        - Holographic rotation (subset projection):
+              I^(k+1) = e^(±iθ) sqrt(I^(k)), θ = π/2
+
+    Extrapolation logic:
+        • Iterates the inversion recursively across `steps`.
+        • Tracks both integer-scale (whole numbers) and real-scale (fractional)
+          behaviour. These are distinguished by `regime`, or auto-detected:
+              - "integer": |X| ≥ 1
+              - "real":    |X| < 1
+        • Outputs per-step inversion, square root, and holographic rotation
+          approximated here as ± roots.
 
     Args:
-        x (float): Input value.
-        s (float): Scaling coefficient (zero-bound parameter). Default = 1.0.
+        X (float): Input value.
+        S (float): Scaling coefficient (zero-bound parameter).
+        steps (int): Number of recursive iterations.
+        regime (str): "integer", "real", or "auto".
+            - "integer": interpret as whole-number regime.
+            - "real": interpret as fractional regime.
+            - "auto": select based on |X|.
 
     Returns:
-        dict: Contains input, inversion, square root variants, and holographic rotation.
+        dict: {
+            "inputs": {
+                "X": float,
+                "S": float,
+                "steps": int,
+                "regime": str
+            },
+            "iterations": [
+                {
+                    "step": int,
+                    "input": float,
+                    "inversion": float,
+                    "square_root": float,
+                    "holographic_rotation": [float, float]
+                },
+                ...
+            ],
+            "notes": str
+        }
     """
-    if x == 0:
-        raise ValueError("Input x cannot be zero (division by zero).")
+    if regime == "auto":
+        regime = "real" if abs(X) < 1 else "integer"
 
-    # Core inversion
-    inv = s / x
+    iterations: List[Dict] = []
+    value = X
 
-    # Square root branch (±)
-    sqrt_pos = inv**0.5 if inv >= 0 else None
-    sqrt_neg = -(inv**0.5) if inv >= 0 else None
+    for t in range(steps):
+        # Core inversion
+        inv = S / value if value != 0 else float("inf")
 
-    # Complex holographic rotation (subset transition)
-    # Here θ = π/2 represents a 90° rotation
-    theta = cmath.pi / 2
-    holographic = cmath.exp(1j * theta) * cmath.sqrt(inv)
+        # Square root extension
+        root = math.sqrt(abs(inv))
+
+        # Holographic rotation (placeholder: ± root)
+        rotated = [+root, -root]
+
+        iterations.append({
+            "step": t + 1,
+            "input": value,
+            "inversion": inv,
+            "square_root": root,
+            "holographic_rotation": rotated
+        })
+
+        # Feed-forward
+        value = inv
 
     return {
-        "inputs": {"x": x, "s": s},
-        "inversion": inv,
-        "square_root": {"positive": sqrt_pos, "negative": sqrt_neg},
-        "holographic_rotation": holographic,
-        "notes": "s is treated as zero-bound scaling coefficient."
+        "inputs": {"X": X, "S": S, "steps": steps, "regime": regime},
+        "iterations": iterations,
+        "notes": (
+            f"Regime '{regime}' selected. "
+            "Square root = limitation vector. "
+            "Holographic rotation = subset projection. "
+            "s is treated as zero-bound scaling coefficient."
+        )
     }
 
 
 # Example usage
 if __name__ == "__main__":
-    # Test values in both regimes
-    results = [
-        differential_inversion(10, s=1),      # Whole number regime
-        differential_inversion(1e-5, s=1),    # Real number regime near zero
-        differential_inversion(200000, s=1),  # Large real number regime
-    ]
-    print(json.dumps(results, indent=2, default=str))
+    result_int = differential_inversion(15, S=1.0, steps=5, regime="integer")
+    print("Integer regime:\n", json.dumps(result_int, indent=2))
+
+    result_real = differential_inversion(0.0025, S=1.0, steps=5, regime="real")
+    print("Real regime:\n", json.dumps(result_real, indent=2))
