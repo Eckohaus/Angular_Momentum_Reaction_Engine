@@ -2,8 +2,8 @@
 
 The *Differential Inversions* construct originated in two spreadsheets:
 
-- `differential_Inversions.xlsx`
-- `differential_inversions_1.xlsx`
+- `differential_Inversions.xlsx`  
+- `differential_inversions_1.xlsx`  
 
 Both apply the same inversion logic but differ in their **scaling regimes**:
 
@@ -44,14 +44,14 @@ $$
 
 ## Extensions
 
-### 1. Square Root (Peripheral Constraint / Physics, QCD Marker)
+### 1. Square Root (Peripheral Constraint / Physics, QCD Marker)  
 
-Acts at the **boundary of the system** — not at the centre.  
+Acts at the **boundary** of the system — not at the centre.  
 Encodes the *outer limitation* of inversion, where resistance builds at the periphery:
 
 $$
 I_{t+1} = \pm \sqrt{I(X_t, S)}
-$$  
+$$
 
 - Functions like a **horizon**: attenuation at the edge.  
 - Marks QCD-like behaviour, constraining outward propagation.  
@@ -79,17 +79,17 @@ $$
 
 ---
 
-### 2. Holographic Principle (Inward Closure / Chemistry–Biology Vector)
+### 2. Holographic Principle (Inward Closure / Chemistry–Biology Vector)  
 
-Acts at the **centre of the system**, pulling values inward.  
+Acts at the **centre** of the system, pulling values inward.  
 Encodes projection into the next subset by collapsing the inversion toward its interior:
 
 $$
 I^{(k+1)} = e^{\pm i\theta} \, \sqrt{I^{(k)}}
-$$  
+$$
 
 - Functions as a **closure operator**, drawing the system into new layers.  
-- Interpreted as the chemistry/biology analogue to the square root’s physics constraint.  
+- Interpreted as the **chemistry/biology analogue** to the square root’s physics/QCD constraint.  
 
 ---
 
