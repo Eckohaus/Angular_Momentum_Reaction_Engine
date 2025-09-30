@@ -13,6 +13,9 @@ on:
     - cron: "0 3 * * *"   # run daily at 03:00 UTC
   workflow_dispatch:
 
+env:
+  KEEP_LOGS: 7   # how many logs to keep (adjust as needed)
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -36,7 +39,12 @@ jobs:
         run: |
           set -o pipefail
           mkdir -p logs
-          python scripts/convert_xlsx.py > logs/convert_xlsx.log 2>&1 || echo "⚠️ Python preview pipeline failed, see logs/convert_xlsx.log"
+          log_file="logs/$(date +'%Y-%m-%d_%H-%M-%S')_convert_xlsx.log"
+          python scripts/convert_xlsx.py > "$log_file" 2>&1 || echo "⚠️ Python preview pipeline failed, see $log_file"
+
+      - name: Prune old logs
+        run: |
+          ls -t logs/*.log | tail -n +$(( $KEEP_LOGS + 1 )) | xargs -r rm --
 
       - name: Debug – list previews
         run: ls -lh previews || echo "No previews generated"
@@ -52,11 +60,11 @@ jobs:
             git rm docs/in_development_previews.md
           fi
 
-          # Stage previews, index, logs, and cleanup log
-          git add -A previews docs/in_development_previews.html logs cleanup_log.txt || true
+          # Stage previews, index, and only last $KEEP_LOGS logs
+          git add -A previews docs/in_development_previews.html logs/*.log cleanup_log.txt || true
 
           # Commit only if there are changes
-          git diff --cached --quiet || git commit -m "Update XLSX HTML previews and index"
+          git diff --cached --quiet || git commit -m "Update XLSX HTML previews, index, and logs"
 
           # Push back to master
           git push origin master
