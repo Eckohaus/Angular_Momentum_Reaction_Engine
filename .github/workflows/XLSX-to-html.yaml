@@ -44,8 +44,7 @@ jobs:
 
       - name: Clean old previews before regeneration
         run: |
-          echo "🧹 Cleaning old previews..."
-          rm -rf previews/* || true
+          echo "🧹 Cleaning docs/previews..."
           rm -rf docs/previews/* || true
 
       - name: Convert XLSX + PY to HTML and regenerate index
