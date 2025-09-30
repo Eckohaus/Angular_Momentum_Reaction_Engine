@@ -15,7 +15,7 @@ on:
   workflow_dispatch:
 
 env:
-  KEEP_LOGS: 7   # how many logs to keep (adjust as needed)
+  KEEP_LOGS: 7   # how many logs to keep
 
 jobs:
   build:
@@ -34,7 +34,10 @@ jobs:
           python-version: '3.x'
 
       - name: Install dependencies
-        run: pip install pandas openpyxl xlsx2html
+        run: |
+          pip install pandas openpyxl xlsx2html
+          pip install matplotlib numpy  # ✅ added for .py scripts
+          pip install plotly kaleido   # ✅ added if any scripts generate charts
 
       - name: Clean old previews before regeneration
         run: |
@@ -49,7 +52,7 @@ jobs:
           log_file="logs/$(date +'%Y-%m-%d_%H-%M-%S')_convert.log"
           python scripts/convert_xlsx.py > "$log_file" 2>&1 || echo "⚠️ Preview pipeline failed, see $log_file"
 
-      - name: Debug – show last 50 lines of log
+      - name: Show latest log tail
         run: |
           echo "=== Latest pipeline log ==="
           ls -t logs/*.log | head -n 1 | xargs tail -n 50 || true
@@ -75,13 +78,6 @@ jobs:
           # Stage previews, index, and only last $KEEP_LOGS logs if present
           git add -A docs/previews docs/in_development_previews.html || true
           git add logs/*.log cleanup_log.txt 2>/dev/null || true
-
-          # Trim cleanup_log.txt to last 500 lines
-          if [ -f cleanup_log.txt ]; then
-            tail -n 500 cleanup_log.txt > cleanup_log.tmp || true
-            mv cleanup_log.tmp cleanup_log.txt
-            git add cleanup_log.txt
-          fi
 
           # Commit only if there are changes
           git diff --cached --quiet || git commit -m "Update XLSX + PY HTML previews, index, and logs"
