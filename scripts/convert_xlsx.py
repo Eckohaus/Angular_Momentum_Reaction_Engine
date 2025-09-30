@@ -1,3 +1,4 @@
+# scripts/convert_xlsx.py
 import os
 import json
 import pandas as pd
@@ -5,9 +6,14 @@ import subprocess
 
 # Constants
 REPO_URL = "https://github.com/Eckohaus/Angular_Momentum_Reaction_Engine_v2/blob/master"
-PREVIEWS_DIR = "docs/previews"   # unified output
+PREVIEWS_DIR = "docs/previews"
 TRANSFORMS_DIR = "transforms"
 INDEX_FILE = "docs/in_development_previews.html"
+
+SEARCH_DIRS = [
+    "data/spreadsheets/in_development",
+    "amre",  # include Python modules
+]
 
 # Ensure folders exist
 os.makedirs(PREVIEWS_DIR, exist_ok=True)
@@ -15,7 +21,7 @@ os.makedirs(TRANSFORMS_DIR, exist_ok=True)
 
 
 def convert_xlsx(src_path, rel_path):
-    """Convert an XLSX into HTML + JSON for pipeline use."""
+    """Convert an XLSX into HTML + JSON for pipeline use (JSON not shown in index)."""
     try:
         xls = pd.ExcelFile(src_path)
         html_parts, json_export = [], {}
@@ -50,7 +56,7 @@ def convert_xlsx(src_path, rel_path):
 
 
 def convert_py(src_path, rel_path):
-    """Run a Python module and capture its output into an HTML preview."""
+    """Run a Python script and capture its stdout/stderr into an HTML preview."""
     preview_html = os.path.join(PREVIEWS_DIR, rel_path).replace(".py", ".html")
     os.makedirs(os.path.dirname(preview_html), exist_ok=True)
 
@@ -61,10 +67,7 @@ def convert_py(src_path, rel_path):
             text=True,
             check=False
         )
-        output = result.stdout.strip()
-        if result.stderr:
-            print(f"⚠️ Error in {src_path}: {result.stderr.strip()}")
-            output += "\n\n[stderr]\n" + result.stderr.strip()
+        output = result.stdout or result.stderr
     except Exception as e:
         output = f"Error running {src_path}: {e}"
 
@@ -76,12 +79,12 @@ def convert_py(src_path, rel_path):
         f.write("<pre>" + output + "</pre>")
         f.write("</body></html>")
 
-    print(f"✔ Converted {src_path} → {preview_html}")
+    print(f"✔ Ran {src_path} → {preview_html}")
     return preview_html
 
 
 def build_index(entries):
-    """Generate index page showing only Code Preview (py) + Source XLSX."""
+    """Generate index page showing only Code Preview (py) + Source XLSX links."""
     with open(INDEX_FILE, "w", encoding="utf-8") as f:
         f.write("<html><head>")
         f.write('<link rel="stylesheet" type="text/css" href="style.css">')
@@ -111,33 +114,35 @@ def build_index(entries):
 def main():
     entries = {}
 
-    for root, _, files in os.walk("data/spreadsheets/in_development"):
-        for file in files:
-            src_path = os.path.join(root, file)
-            rel_path = os.path.relpath(src_path, "data/spreadsheets/in_development")
+    for search_dir in SEARCH_DIRS:
+        for root, _, files in os.walk(search_dir):
+            for file in files:
+                src_path = os.path.join(root, file)
+                rel_path = os.path.relpath(src_path, search_dir)
 
-            if file.endswith(".xlsx"):
-                convert_xlsx(src_path, rel_path)
-                # add XLSX link
-                parts = rel_path.split(os.sep)
-                node = entries
-                for part in parts[:-1]:
-                    node = node.setdefault(part, {})
-                node[file] = (
-                    f"{REPO_URL}/{src_path.replace(os.sep, '/')}",
-                    None
-                )
+                if file.endswith(".xlsx"):
+                    convert_xlsx(src_path, rel_path)
+                    # add XLSX link
+                    parts = rel_path.split(os.sep)
+                    node = entries
+                    for part in parts[:-1]:
+                        node = node.setdefault(part, {})
+                    node[file] = (
+                        f"{REPO_URL}/{src_path.replace(os.sep, '/')}",  # Source XLSX
+                        None
+                    )
 
-            elif file.endswith(".py"):
-                preview_html = convert_py(src_path, rel_path)
-                parts = rel_path.split(os.sep)
-                node = entries
-                for part in parts[:-1]:
-                    node = node.setdefault(part, {})
-                node[file] = (
-                    None,
-                    preview_html.replace("docs/", "")  # relative path for Pages
-                )
+                elif file.endswith(".py"):
+                    preview_html = convert_py(src_path, rel_path)
+                    # add Python preview
+                    parts = rel_path.split(os.sep)
+                    node = entries
+                    for part in parts[:-1]:
+                        node = node.setdefault(part, {})
+                    node[file] = (
+                        None,
+                        f"{preview_html.replace('docs/', '')}"  # relative link for Pages
+                    )
 
     build_index(entries)
 
