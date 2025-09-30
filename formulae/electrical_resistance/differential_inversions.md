@@ -121,6 +121,11 @@ $$
 - $S$ is the universal **binding factor**, ensuring scale-aware behaviour.  
 - The construct bridges **discrete** (integer) and **continuous** (real/decimal) regimes.  
 - In spreadsheets, realised as chains of inversions with explicit scaling coefficients.  
+- **Non-Fourier Assumption:**  
+  This construct does *not* assume periodicity or harmonic decomposition.  
+  Attenuation and rotation occur in **bounded, chained steps**, not in frequency space.  
+  Square root ($\alpha$) and holographic rotation ($\theta$) act as **structural markers**,  
+  not Fourier parameters.  
 
 ---
 
