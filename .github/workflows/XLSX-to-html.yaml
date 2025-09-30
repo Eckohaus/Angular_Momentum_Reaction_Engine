@@ -35,7 +35,8 @@ jobs:
       - name: Convert XLSX to HTML and regenerate index
         run: |
           set -o pipefail
-          python scripts/convert_xlsx.py || echo "⚠️ Python preview pipeline failed, continuing..."
+          mkdir -p logs
+          python scripts/convert_xlsx.py > logs/convert_xlsx.log 2>&1 \ || echo "⚠️ Python preview pipeline failed, see logs/convert_xlsx.log"
 
       - name: Debug – list previews
         run: ls -lh previews || echo "No previews generated"
