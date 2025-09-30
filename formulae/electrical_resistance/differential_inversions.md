@@ -1,6 +1,6 @@
-# Differential Inversions (Scaling Regimes)
+# Differential Inversions (Electrical Resistance)
 
-The *Differential Inversions* construct originates from two spreadsheets:
+The *Differential Inversions* construct originated in two spreadsheets:
 
 - `differential_Inversions.xlsx`
 - `differential_inversions_1.xlsx`
