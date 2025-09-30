@@ -1,39 +1,87 @@
 # Differential Inversions (Electrical Resistance)
 
-The **Differential Inversions** construct extends the *Electrical Resistance* module by incorporating **scaling coefficients** that allow comparisons across **macro** (whole numbers) and **micro** (fractional/decimal) regimes.  
-All operations remain anchored to a **zero-bound state**.
+The *Differential Inversions* construct originated in two spreadsheets:
+
+- `differential_Inversions.xlsx`
+- `differential_inversions_1.xlsx`
+
+Both apply the same inversion logic but differ in their **scaling regimes**:
+
+- **Regime A (Whole Numbers):** operates with values on an integer scale (±1 … ~17).  
+- **Regime B (Real Numbers):** operates across fractional values (1e−05 … up to ~200,000+).  
 
 ---
 
-## Governing Principles
+## General Aim
 
-1. **Zero-Bound State**  
-   - Neutral reference point for all transpositions.  
-   - Ensures comparability across scales.  
+To formalise **differential inversion** as a transformation consistent with the *Electrical Resistance* module:
 
-2. **Square Root (Limitation Vector)**  
-   - Encodes the **constraining behaviour** of the system.  
-   - **Physics domain**: operates as a boundary condition, dampening oscillations.  
+- Inputs are treated as **numerical signals**, independent of their external origin.  
+- Behaviour is anchored to a **zero-bound state**, which stabilises cross-scale comparisons.  
+- The **scaling coefficient ($S$)** is defined as the **zero-bound parameter**:  
+  - It encodes how far a system is positioned from the zero threshold.  
+  - It governs whether inversion appears *stable* (macro regime) or *sensitive* (micro regime).  
 
-3. **Holographic Principle (Rotation Vector)**  
-   - Encodes the **forward projection** of the system into new subsets.  
-   - **Chemistry / Biology domain**: operates as the transformational step where differential structure expresses itself in new layers.  
+---
+
+## Core Formula (Conceptual)
+
+Let:
+
+- $X$ = input value  
+- $S$ = scaling coefficient (zero-bound parameter)  
+
+**Differential inversion:**
+
+$$
+I(X, S) = \frac{S}{X}
+$$
+
+- If $|X| \gg S$, inversion tends to flatten (low sensitivity).  
+- If $|X| \approx S$, inversion amplifies (high sensitivity, near zero-bound).  
+
+---
+
+## Extensions
+
+1. **Square Root (Limitation / Recursive Marker):**  
+Encodes constraint within the system, acting as the *physics* stabiliser:  
+
+$$
+I_{t+1} = \pm \sqrt{I(X_t, S)}
+$$  
+
+2. **Holographic Principle (Rotation Vector):**  
+Encodes projection into the next subset, acting as the *chemistry / biology* transformer:  
+
+$$
+I^{(k+1)} = e^{\pm i\theta} \, \sqrt{I^{(k)}}
+$$  
+
+- Together, the square root + holographic rotation describe how inversions both **constrain** and **propagate** into new layers.  
 
 ---
 
 ## Transposition and Positioning
 
-- **Transposition** = moving values between regimes (macro ↔ micro) while maintaining reference to the zero-bound state.  
-- **Positioning** = locating the output on either the **limitation vector** (square root, physics) or the **rotation vector** (holographic principle, chemistry/biology).  
+- **Transposition** = shifting values between macro (whole number) and micro (fractional) regimes while maintaining reference to the zero-bound.  
+- **Positioning** = determining whether the inversion resolves on the **limitation vector** (square root, physics) or the **rotation vector** (holographic, chemistry/biology).  
 
 ---
 
 ## Notes
 
-- The distinction between **square root** and **holographic principle** is **not arbitrary**:  
-  - Square root = physics → describes *constraint*.  
-  - Holographic principle = chemistry/biology → describes *emergence*.  
-- Together, they form a differential operator that can be generalised across domains.  
-- Future computational work can:  
-  - Encode the square root as a stabiliser.  
-  - Encode the holographic projection as a forward-stepper into new subsets.  
+- Regimes A and B differ only in **scale**, not in fundamental operator.  
+- $S$ acts as the universal **binding factor**, ensuring scale-aware behaviour.  
+- This construct bridges **discrete** (integer) and **continuous** (real/decimal) interpretations.  
+- In spreadsheet form, this is implemented through chains of inversions with explicit scaling coefficients.  
+
+---
+
+## Open Questions
+
+- Should Regimes A and B be unified under a **single operator**, with $S$ as the determinant of behaviour?  
+- Would renaming the source spreadsheets to:  
+  - `differential_inversions_integer.xlsx`  
+  - `differential_inversions_real.xlsx`  
+  make their intent clearer within the repository structure?  
