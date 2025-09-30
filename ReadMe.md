@@ -128,6 +128,6 @@ This creates a reproducible chain:
 
 ## **Related Repositories**
 
-- [Formula-to-3D Prototype Engine](https://github.com/Eckohaus/Formula-to-3D_Prototype_Engine)  
+- [Formula-to-3D Prototype Engine](https://github.com/Eckohaus/Formula-to-3D-Prototype-Engine)
 - [Ultralight Fortran Stack](https://github.com/Eckohaus/Ultralight-Fortran-stack)  
 - ASTF Documentation *(private repo)*  
