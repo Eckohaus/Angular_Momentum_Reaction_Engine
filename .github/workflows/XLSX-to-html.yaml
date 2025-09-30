@@ -36,15 +36,13 @@ jobs:
       - name: Install dependencies
         run: |
           pip install pandas openpyxl xlsx2html
-          pip install matplotlib numpy  # ✅ added for .py scripts
-          pip install plotly kaleido   # ✅ added if any scripts generate charts
-
-      - name: Remove legacy previews folder
-        run: rm -rf previews || true
+          pip install matplotlib numpy   # ✅ for .py scripts
+          pip install plotly kaleido    # ✅ if any scripts generate charts
 
       - name: Clean old previews before regeneration
         run: |
-          echo "🧹 Cleaning docs/previews..."
+          echo "🧹 Cleaning old previews..."
+          rm -rf previews/* || true
           rm -rf docs/previews/* || true
 
       - name: Convert XLSX + PY to HTML and regenerate index
@@ -66,6 +64,12 @@ jobs:
       - name: Debug – list previews
         run: ls -lh docs/previews || echo "No previews generated"
 
+      - name: Remove legacy previews folder from repo
+        run: |
+          if [ -d previews ]; then
+            git rm -r previews
+          fi
+
       - name: Commit previews, index, and logs
         run: |
           git config --global user.name "github-actions[bot]"
@@ -77,7 +81,7 @@ jobs:
             git rm docs/in_development_previews.md
           fi
 
-          # Stage previews, index, and only last $KEEP_LOGS logs if present
+          # Stage previews, index, and logs
           git add -A docs/previews docs/in_development_previews.html || true
           git add logs/*.log cleanup_log.txt 2>/dev/null || true
 
