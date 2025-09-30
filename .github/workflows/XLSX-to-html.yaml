@@ -54,6 +54,12 @@ jobs:
       - name: Debug – list previews
         run: ls -lh previews || echo "No previews generated"
 
+      - name: Prune cleanup_log.txt
+        run: |
+          echo "🧹 Pruning cleanup_log.txt (keeping last 500 lines)..."
+          tail -n 500 cleanup_log.txt > cleanup_log.tmp || true
+          mv cleanup_log.tmp cleanup_log.txt || true
+
       - name: Commit previews, index, and logs
         run: |
           git config --global user.name "github-actions[bot]"
@@ -65,7 +71,7 @@ jobs:
             git rm docs/in_development_previews.md
           fi
 
-          # Stage previews, index, and only last $KEEP_LOGS logs if present
+          # Stage previews, index, and logs
           git add -A previews docs/in_development_previews.html || true
           git add logs/*.log cleanup_log.txt 2>/dev/null || true
 
