@@ -44,20 +44,31 @@ $$
 
 ## Extensions
 
-1. **Square Root (Peripheral Constraint / Physics, QCD Marker):**  
-   Acts at the boundary of the system — not at the centre.  
-   Encodes the *outer limitation* of inversion, where resistance builds at the periphery:  
+### 1. Square Root (Peripheral Constraint / Physics, QCD Marker)
 
-   $$
-   I_{t+1} = \pm \sqrt{I(X_t, S)}
-   $$  
+Acts at the **boundary of the system** — not at the centre.  
+Encodes the *outer limitation* of inversion, where resistance builds at the periphery:
 
-   - Functions like a **horizon**: attenuation at the edge.  
-   - Marks the QCD-like behaviour of limiting outward propagation.  
+$$
+I_{t+1} = \pm \sqrt{I(X_t, S)}
+$$  
 
-2. **Holographic Principle (Inward Closure / Chemistry-Biology Vector):**  
-   Acts at the centre of the scene — closing values inward.  
-   Encodes projection into the next subset by pulling the system toward its interior:  
+- Functions like a **horizon**: attenuation at the edge.  
+- Marks QCD-like behaviour, constraining outward propagation.  
+
+---
+
+### 2. Holographic Principle (Inward Closure / Chemistry–Biology Vector)
+
+Acts at the **centre of the system**, pulling values inward.  
+Encodes projection into the next subset by collapsing the inversion toward its interior:
+
+$$
+I^{(k+1)} = e^{\pm i\theta} \, \sqrt{I^{(k)}}
+$$  
+
+- Functions as a **closure operator**, drawing the system into new layers.  
+- Interpreted as the chemistry/biology analogue to the square root’s physics constraint.  
 
 ---
 
@@ -79,7 +90,7 @@ $$
 ## Transposition and Positioning
 
 - **Transposition** = shifting values between macro (whole number) and micro (fractional) regimes while maintaining zero-bound reference.  
-- **Positioning** = whether inversion resolves on the **limitation vector** (square root, physics) or the **rotation vector** (holographic, chemistry/biology).  
+- **Positioning** = whether inversion resolves on the **limitation vector** (square root, physics/QCD) or the **rotation vector** (holographic, chemistry/biology).  
 
 ---
 
