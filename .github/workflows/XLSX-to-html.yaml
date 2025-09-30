@@ -15,7 +15,7 @@ on:
   workflow_dispatch:
 
 env:
-  KEEP_LOGS: 7   # how many logs to keep
+  KEEP_LOGS: 7   # how many logs to keep (adjust as needed)
 
 jobs:
   build:
@@ -36,18 +36,17 @@ jobs:
       - name: Install dependencies
         run: pip install pandas openpyxl xlsx2html
 
-      - name: Clean old previews
+      - name: Clean old previews before regeneration
         run: |
-          echo "🧹 Removing legacy previews/ folder"
-          rm -rf previews
-          echo "🧹 Cleaning docs/previews/"
-          rm -rf docs/previews/*
+          echo "🧹 Cleaning old previews..."
+          rm -rf previews/* || true
+          rm -rf docs/previews/* || true
 
-      - name: Convert XLSX/PY to HTML and regenerate index
+      - name: Convert XLSX + PY to HTML and regenerate index
         run: |
           set -o pipefail
           mkdir -p logs
-          log_file="logs/$(date +'%Y-%m-%d_%H-%M-%S')_convert.log"
+          log_file="logs/$(date +'%Y-%m-%d_%H-%M-%S')_convert_xlsx.log"
           python scripts/convert_xlsx.py > "$log_file" 2>&1 || echo "⚠️ Preview pipeline failed, see $log_file"
 
       - name: Prune old logs
@@ -55,7 +54,7 @@ jobs:
           ls -t logs/*.log | tail -n +$(( $KEEP_LOGS + 1 )) | xargs -r rm -- || true
 
       - name: Debug – list previews
-        run: ls -Rlh docs/previews || echo "No previews generated"
+        run: ls -lh docs/previews || echo "No previews generated"
 
       - name: Commit previews, index, and logs
         run: |
@@ -68,19 +67,12 @@ jobs:
             git rm docs/in_development_previews.md
           fi
 
-          # Stage docs/previews, index, and logs
+          # Stage previews, index, and only last $KEEP_LOGS logs if present
           git add -A docs/previews docs/in_development_previews.html || true
           git add logs/*.log cleanup_log.txt 2>/dev/null || true
 
-          # Trim cleanup_log.txt
-          if [ -f cleanup_log.txt ]; then
-            tail -n 500 cleanup_log.txt > cleanup_log.tmp || true
-            mv cleanup_log.tmp cleanup_log.txt
-            git add cleanup_log.txt
-          fi
-
           # Commit only if there are changes
-          git diff --cached --quiet || git commit -m "Update HTML previews, index, and logs"
+          git diff --cached --quiet || git commit -m "Update XLSX + PY HTML previews, index, and logs"
 
           # Push back to master
           git push origin master
