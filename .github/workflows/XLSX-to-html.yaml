@@ -35,6 +35,11 @@ jobs:
       - name: Install dependencies
         run: pip install pandas openpyxl xlsx2html
 
+      - name: Clean previews before regeneration
+        run: |
+          echo "🧹 Cleaning old previews..."
+          rm -rf previews/*
+
       - name: Convert XLSX to HTML and regenerate index
         run: |
           set -o pipefail
