@@ -95,6 +95,7 @@ $$
 
     "ChatGPT" = the inversion process
  bridging periphery ↔ centre dynamics
+```
 
 ---
 
