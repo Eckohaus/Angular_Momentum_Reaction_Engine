@@ -53,7 +53,7 @@ jobs:
           fi
 
           # Stage previews, index, and logs
-          git add -A previews docs/in_development_previews.html cleanup_log.txt || true
+          git add -A previews docs/in_development_previews.html logs cleanup_log.txt || true
 
           # Commit only if there are changes
           git diff --cached --quiet || git commit -m "Update XLSX HTML previews and index"
