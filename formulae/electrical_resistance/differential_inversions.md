@@ -44,21 +44,20 @@ $$
 
 ## Extensions
 
-1. **Square Root (Limitation / Recursive Marker):**  
-   Encodes internal constraint, acting as the *physics stabiliser*:  
+1. **Square Root (Peripheral Constraint / Physics, QCD Marker):**  
+   Acts at the boundary of the system — not at the centre.  
+   Encodes the *outer limitation* of inversion, where resistance builds at the periphery:  
 
    $$
    I_{t+1} = \pm \sqrt{I(X_t, S)}
    $$  
 
-2. **Holographic Principle (Rotation Vector):**  
-   Encodes projection into the next subset, acting as the *chemistry / biology transformer*:  
+   - Functions like a **horizon**: attenuation at the edge.  
+   - Marks the QCD-like behaviour of limiting outward propagation.  
 
-   $$
-   I^{(k+1)} = e^{\pm i\theta} \, \sqrt{I^{(k)}}
-   $$  
-
-Together, the **square root** and **holographic rotation** describe how inversions both **constrain** and **propagate** into new layers.  
+2. **Holographic Principle (Inward Closure / Chemistry-Biology Vector):**  
+   Acts at the centre of the scene — closing values inward.  
+   Encodes projection into the next subset by pulling the system toward its interior:  
 
 ---
 
