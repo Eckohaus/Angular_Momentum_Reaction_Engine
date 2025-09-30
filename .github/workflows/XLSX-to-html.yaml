@@ -14,7 +14,8 @@ on:
   workflow_dispatch:
 
 env:
-  KEEP_LOGS: 7   # how many logs to keep (adjust as needed)
+  KEEP_LOGS: 7     # how many log files to keep
+  KEEP_LINES: 500  # how many lines to keep in cleanup_log.txt
 
 jobs:
   build:
@@ -56,8 +57,8 @@ jobs:
 
       - name: Prune cleanup_log.txt
         run: |
-          echo "🧹 Pruning cleanup_log.txt (keeping last 500 lines)..."
-          tail -n 500 cleanup_log.txt > cleanup_log.tmp || true
+          echo "🧹 Pruning cleanup_log.txt (keeping last $KEEP_LINES lines)..."
+          tail -n $KEEP_LINES cleanup_log.txt > cleanup_log.tmp || true
           mv cleanup_log.tmp cleanup_log.txt || true
 
       - name: Commit previews, index, and logs
