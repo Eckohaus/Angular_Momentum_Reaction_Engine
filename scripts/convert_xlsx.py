@@ -1,30 +1,21 @@
-# scripts/convert_xlsx.py
 import os
 import json
 import pandas as pd
 import subprocess
-from datetime import datetime
 
 # Constants
 REPO_URL = "https://github.com/Eckohaus/Angular_Momentum_Reaction_Engine_v2/blob/master"
-PREVIEWS_DIR = "docs/previews"   # ✅ unified: everything goes here now
+PREVIEWS_DIR = "docs/previews"   # unified output
 TRANSFORMS_DIR = "transforms"
 INDEX_FILE = "docs/in_development_previews.html"
-CLEANUP_LOG = "cleanup_log.txt"
 
 # Ensure folders exist
 os.makedirs(PREVIEWS_DIR, exist_ok=True)
 os.makedirs(TRANSFORMS_DIR, exist_ok=True)
 
-def log(msg: str):
-    """Print log messages with timestamp, append to cleanup_log.txt too."""
-    timestamped = f"[{datetime.utcnow().isoformat()} UTC] {msg}"
-    print(timestamped)
-    with open(CLEANUP_LOG, "a", encoding="utf-8") as f:
-        f.write(timestamped + "\n")
 
 def convert_xlsx(src_path, rel_path):
-    """Convert an XLSX into HTML + JSON for pipeline use (not shown in index)."""
+    """Convert an XLSX into HTML + JSON for pipeline use."""
     try:
         xls = pd.ExcelFile(src_path)
         html_parts, json_export = [], {}
@@ -35,7 +26,7 @@ def convert_xlsx(src_path, rel_path):
             html_parts.append(df.to_html(index=False, border=0))
             json_export[sheet] = df.to_dict(orient="records")
 
-        # Save HTML preview (in docs/previews/)
+        # Save HTML preview
         html_dst = os.path.join(PREVIEWS_DIR, rel_path).replace(".xlsx", ".html")
         os.makedirs(os.path.dirname(html_dst), exist_ok=True)
         with open(html_dst, "w", encoding="utf-8") as f:
@@ -51,11 +42,12 @@ def convert_xlsx(src_path, rel_path):
         with open(json_dst, "w", encoding="utf-8") as f:
             json.dump(json_export, f, indent=2, default=str)
 
-        log(f"✔ Converted {src_path} → {html_dst}")
+        print(f"✔ Converted {src_path} → {html_dst}")
         return html_dst, json_dst
     except Exception as e:
-        log(f"❌ Failed to convert {src_path}: {e}")
+        print(f"❌ Failed to convert {src_path}: {e}")
         return None, None
+
 
 def convert_py(src_path, rel_path):
     """Run a Python module and capture its output into an HTML preview."""
@@ -69,11 +61,12 @@ def convert_py(src_path, rel_path):
             text=True,
             check=False
         )
-        output = result.stdout or result.stderr
-        log(f"✔ Ran Python module {src_path}")
+        output = result.stdout.strip()
+        if result.stderr:
+            print(f"⚠️ Error in {src_path}: {result.stderr.strip()}")
+            output += "\n\n[stderr]\n" + result.stderr.strip()
     except Exception as e:
         output = f"Error running {src_path}: {e}"
-        log(f"❌ Failed running {src_path}: {e}")
 
     with open(preview_html, "w", encoding="utf-8") as f:
         f.write("<html><head>")
@@ -83,7 +76,9 @@ def convert_py(src_path, rel_path):
         f.write("<pre>" + output + "</pre>")
         f.write("</body></html>")
 
+    print(f"✔ Converted {src_path} → {preview_html}")
     return preview_html
+
 
 def build_index(entries):
     """Generate index page showing only Code Preview (py) + Source XLSX."""
@@ -112,9 +107,9 @@ def build_index(entries):
         recurse(entries)
         f.write("</body></html>\n")
 
+
 def main():
     entries = {}
-    log("🚀 Starting conversion run")
 
     for root, _, files in os.walk("data/spreadsheets/in_development"):
         for file in files:
@@ -135,18 +130,17 @@ def main():
 
             elif file.endswith(".py"):
                 preview_html = convert_py(src_path, rel_path)
-                # add Python preview
                 parts = rel_path.split(os.sep)
                 node = entries
                 for part in parts[:-1]:
                     node = node.setdefault(part, {})
                 node[file] = (
                     None,
-                    f"{preview_html.replace('docs/', '')}"  # relative link for Pages
+                    preview_html.replace("docs/", "")  # relative path for Pages
                 )
 
     build_index(entries)
-    log("✅ Finished conversion run")
+
 
 if __name__ == "__main__":
     main()
