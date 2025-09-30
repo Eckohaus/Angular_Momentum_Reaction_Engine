@@ -6,22 +6,17 @@ import subprocess
 
 # Constants
 REPO_URL = "https://github.com/Eckohaus/Angular_Momentum_Reaction_Engine_v2/blob/master"
-PREVIEWS_DIR = "previews"
+PREVIEWS_DIR = "docs/previews"   # ✅ previews now live inside docs/
 TRANSFORMS_DIR = "transforms"
 INDEX_FILE = "docs/in_development_previews.html"
 
-# Ensure base folders exist
+# Ensure folders exist
 os.makedirs(PREVIEWS_DIR, exist_ok=True)
 os.makedirs(TRANSFORMS_DIR, exist_ok=True)
 
 
 def convert_xlsx(src_path, rel_path):
-    """
-    Convert an XLSX file into:
-      1. An HTML preview (for visual inspection).
-      2. A JSON transform (for programmatic use).
-    The JSON transform is not shown in the index.
-    """
+    """Convert an XLSX into HTML + JSON for pipeline use (not shown in index)."""
     try:
         xls = pd.ExcelFile(src_path)
         html_parts, json_export = [], {}
@@ -32,12 +27,12 @@ def convert_xlsx(src_path, rel_path):
             html_parts.append(df.to_html(index=False, border=0))
             json_export[sheet] = df.to_dict(orient="records")
 
-        # Save HTML preview
+        # Save HTML preview (hidden from index, but stored)
         html_dst = os.path.join(PREVIEWS_DIR, rel_path).replace(".xlsx", ".html")
         os.makedirs(os.path.dirname(html_dst), exist_ok=True)
         with open(html_dst, "w", encoding="utf-8") as f:
             f.write("<html><head>")
-            f.write('<link rel="stylesheet" type="text/css" href="../docs/style.css">')
+            f.write('<link rel="stylesheet" type="text/css" href="../../style.css">')
             f.write("</head><body>")
             f.write("\n".join(html_parts))
             f.write("</body></html>")
@@ -49,16 +44,13 @@ def convert_xlsx(src_path, rel_path):
             json.dump(json_export, f, indent=2, default=str)
 
         return html_dst, json_dst
-
     except Exception as e:
         print(f"❌ Failed to convert {src_path}: {e}")
         return None, None
 
 
 def convert_py(src_path, rel_path):
-    """
-    Run a Python module and capture its output into an HTML preview.
-    """
+    """Run a Python module and capture its output into an HTML preview."""
     preview_html = os.path.join(PREVIEWS_DIR, rel_path).replace(".py", ".html")
     os.makedirs(os.path.dirname(preview_html), exist_ok=True)
 
@@ -75,7 +67,7 @@ def convert_py(src_path, rel_path):
 
     with open(preview_html, "w", encoding="utf-8") as f:
         f.write("<html><head>")
-        f.write('<link rel="stylesheet" type="text/css" href="../docs/style.css">')
+        f.write('<link rel="stylesheet" type="text/css" href="../../style.css">')
         f.write("</head><body>")
         f.write(f"<h2>Module Preview: {os.path.basename(src_path)}</h2>")
         f.write("<pre>" + output + "</pre>")
@@ -85,12 +77,7 @@ def convert_py(src_path, rel_path):
 
 
 def build_index(entries):
-    """
-    Generate index page showing only:
-      - Python Code Preview (.py → HTML)
-      - Source XLSX (raw file link)
-    JSON transforms remain machine-readable only.
-    """
+    """Generate index page showing only Code Preview (py) + Source XLSX."""
     with open(INDEX_FILE, "w", encoding="utf-8") as f:
         f.write("<html><head>")
         f.write('<link rel="stylesheet" type="text/css" href="style.css">')
@@ -108,6 +95,7 @@ def build_index(entries):
                     xlsx_path, py_preview = content
                     f.write(" " * indent + f'<div class="file">{name} ')
                     if py_preview:
+                        # ✅ now links correctly inside docs/previews/
                         f.write(f'[<a href="{py_preview}">Code Preview (py)</a>] ')
                     if xlsx_path:
                         f.write(f'[<a href="{xlsx_path}">Source XLSX</a>]')
@@ -126,27 +114,27 @@ def main():
             rel_path = os.path.relpath(src_path, "data/spreadsheets/in_development")
 
             if file.endswith(".xlsx"):
-                convert_xlsx(src_path, rel_path)  # run conversion for pipeline use
-                # Add XLSX link to index
+                convert_xlsx(src_path, rel_path)  # still runs for pipeline use
+                # add XLSX link
                 parts = rel_path.split(os.sep)
                 node = entries
                 for part in parts[:-1]:
                     node = node.setdefault(part, {})
                 node[file] = (
                     f"{REPO_URL}/{src_path.replace(os.sep, '/')}",  # Source XLSX
-                    None  # no preview in index
+                    None  # no direct preview in index
                 )
 
             elif file.endswith(".py"):
                 preview_html = convert_py(src_path, rel_path)
-                # Add Python preview to index
+                # add Python preview
                 parts = rel_path.split(os.sep)
                 node = entries
                 for part in parts[:-1]:
                     node = node.setdefault(part, {})
                 node[file] = (
                     None,  # no XLSX link
-                    f"../{preview_html}"  # Code Preview (py)
+                    preview_html.replace("docs/", "")  # relative path inside docs/
                 )
 
     build_index(entries)
