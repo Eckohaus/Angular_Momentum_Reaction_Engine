@@ -1,0 +1,125 @@
+<html><head><link rel="stylesheet" type="text/css" href="../../style.css"></head><body><h2>Module Preview: differential_inversions.py</h2><pre>Integer regime:
+ {
+  "inputs": {
+    "X": 15,
+    "S": 1.0,
+    "steps": 5,
+    "regime": "integer"
+  },
+  "iterations": [
+    {
+      "step": 1,
+      "input": 15,
+      "inversion": 0.06666666666666667,
+      "square_root": 0.2581988897471611,
+      "holographic_rotation": [
+        0.2581988897471611,
+        -0.2581988897471611
+      ]
+    },
+    {
+      "step": 2,
+      "input": 0.06666666666666667,
+      "inversion": 15.0,
+      "square_root": 3.872983346207417,
+      "holographic_rotation": [
+        3.872983346207417,
+        -3.872983346207417
+      ]
+    },
+    {
+      "step": 3,
+      "input": 15.0,
+      "inversion": 0.06666666666666667,
+      "square_root": 0.2581988897471611,
+      "holographic_rotation": [
+        0.2581988897471611,
+        -0.2581988897471611
+      ]
+    },
+    {
+      "step": 4,
+      "input": 0.06666666666666667,
+      "inversion": 15.0,
+      "square_root": 3.872983346207417,
+      "holographic_rotation": [
+        3.872983346207417,
+        -3.872983346207417
+      ]
+    },
+    {
+      "step": 5,
+      "input": 15.0,
+      "inversion": 0.06666666666666667,
+      "square_root": 0.2581988897471611,
+      "holographic_rotation": [
+        0.2581988897471611,
+        -0.2581988897471611
+      ]
+    }
+  ],
+  "notes": "Regime 'integer' selected. Square root = limitation vector. Holographic rotation = subset projection. s is treated as zero-bound scaling coefficient."
+}
+Real regime:
+ {
+  "inputs": {
+    "X": 0.0025,
+    "S": 1.0,
+    "steps": 5,
+    "regime": "real"
+  },
+  "iterations": [
+    {
+      "step": 1,
+      "input": 0.0025,
+      "inversion": 400.0,
+      "square_root": 20.0,
+      "holographic_rotation": [
+        20.0,
+        -20.0
+      ]
+    },
+    {
+      "step": 2,
+      "input": 400.0,
+      "inversion": 0.0025,
+      "square_root": 0.05,
+      "holographic_rotation": [
+        0.05,
+        -0.05
+      ]
+    },
+    {
+      "step": 3,
+      "input": 0.0025,
+      "inversion": 400.0,
+      "square_root": 20.0,
+      "holographic_rotation": [
+        20.0,
+        -20.0
+      ]
+    },
+    {
+      "step": 4,
+      "input": 400.0,
+      "inversion": 0.0025,
+      "square_root": 0.05,
+      "holographic_rotation": [
+        0.05,
+        -0.05
+      ]
+    },
+    {
+      "step": 5,
+      "input": 0.0025,
+      "inversion": 400.0,
+      "square_root": 20.0,
+      "holographic_rotation": [
+        20.0,
+        -20.0
+      ]
+    }
+  ],
+  "notes": "Regime 'real' selected. Square root = limitation vector. Holographic rotation = subset projection. s is treated as zero-bound scaling coefficient."
+}
+</pre></body></html>
