@@ -14,8 +14,13 @@ os.makedirs(PREVIEWS_DIR, exist_ok=True)
 os.makedirs(TRANSFORMS_DIR, exist_ok=True)
 
 
+def log(msg):
+    print(f"[convert_xlsx] {msg}")
+
+
 def convert_xlsx(src_path, rel_path):
     try:
+        log(f"Converting XLSX → {rel_path}")
         xls = pd.ExcelFile(src_path)
         html_parts, json_export = [], {}
         for sheet in xls.sheet_names:
@@ -40,7 +45,7 @@ def convert_xlsx(src_path, rel_path):
 
         return f"{REPO_URL}/{src_path.replace(os.sep, '/')}", None, None
     except Exception as e:
-        print(f"❌ Failed to convert {src_path}: {e}")
+        log(f"❌ Failed to convert {rel_path}: {e}")
         return None, None, None
 
 
@@ -49,6 +54,7 @@ def convert_py(src_path, rel_path):
     os.makedirs(os.path.dirname(preview_html), exist_ok=True)
 
     try:
+        log(f"Running Python → {rel_path}")
         result = subprocess.run(
             ["python", src_path],
             capture_output=True,
@@ -71,6 +77,7 @@ def convert_py(src_path, rel_path):
 
 
 def build_index(entries):
+    log("Building index page...")
     with open(INDEX_FILE, "w", encoding="utf-8") as f:
         f.write("<html><head>")
         f.write('<link rel="stylesheet" type="text/css" href="style.css">')
@@ -97,12 +104,13 @@ def build_index(entries):
 
         recurse(entries)
         f.write("</body></html>\n")
+    log(f"Index written → {INDEX_FILE}")
 
 
 def main():
     entries = {}
 
-    # Step 1: XLSX + PY
+    # Step 1: walk spreadsheets (XLSX only here)
     for root, _, files in os.walk("data/spreadsheets/in_development"):
         for file in files:
             src_path = os.path.join(root, file)
@@ -114,10 +122,21 @@ def main():
 
             if file.endswith(".xlsx"):
                 node[file] = convert_xlsx(src_path, rel_path)
-            elif file.endswith(".py"):
-                node[file] = convert_py(src_path, rel_path)
 
-    # Step 2: pick up interactives
+    # Step 2: walk Python modules (amre + formulas)
+    for root_dir in ["amre", "formulas"]:
+        for root, _, files in os.walk(root_dir):
+            for file in files:
+                if file.endswith(".py"):
+                    src_path = os.path.join(root, file)
+                    rel_path = os.path.relpath(src_path, ".")
+                    parts = rel_path.split(os.sep)
+                    node = entries
+                    for part in parts[:-1]:
+                        node = node.setdefault(part, {})
+                    node[file] = convert_py(src_path, rel_path)
+
+    # Step 3: pick up interactives
     for root, _, files in os.walk(PREVIEWS_DIR):
         for file in files:
             if file.endswith("_interactive.html"):
@@ -127,6 +146,7 @@ def main():
                 for part in parts[:-1]:
                     node = node.setdefault(part, {})
                 node[file] = (None, None, f"previews/{rel_path}")
+                log(f"Linked interactive → {rel_path}")
 
     build_index(entries)
 
