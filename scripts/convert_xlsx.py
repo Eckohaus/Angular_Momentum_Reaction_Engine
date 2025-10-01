@@ -7,12 +7,10 @@ import subprocess
 # Constants
 REPO_URL = "https://github.com/Eckohaus/Angular_Momentum_Reaction_Engine_v2/blob/master"
 PREVIEWS_DIR = "docs/previews"
-INTERACTIVE_DIR = "docs/interactive"
 TRANSFORMS_DIR = "transforms"
 INDEX_FILE = "docs/in_development_previews.html"
 
 os.makedirs(PREVIEWS_DIR, exist_ok=True)
-os.makedirs(INTERACTIVE_DIR, exist_ok=True)
 os.makedirs(TRANSFORMS_DIR, exist_ok=True)
 
 
@@ -72,6 +70,19 @@ def convert_py(src_path, rel_path):
     return preview_html
 
 
+def update_entry(node, file, xlsx_path=None, py_preview=None, interactive=None):
+    """Merge entries so we don't overwrite existing ones."""
+    if file not in node:
+        node[file] = (xlsx_path, py_preview, interactive)
+    else:
+        old_xlsx, old_py, old_interactive = node[file]
+        node[file] = (
+            xlsx_path or old_xlsx,
+            py_preview or old_py,
+            interactive or old_interactive,
+        )
+
+
 def build_index(entries):
     with open(INDEX_FILE, "w", encoding="utf-8") as f:
         f.write("<html><head>")
@@ -101,23 +112,10 @@ def build_index(entries):
         f.write("</body></html>\n")
 
 
-def scan_interactives(entries, base_dir, web_prefix):
-    """Scan a directory (previews or interactive) for *_interactive.html files"""
-    for root, _, files in os.walk(base_dir):
-        for file in files:
-            if file.endswith("_interactive.html"):
-                rel_path = os.path.relpath(os.path.join(root, file), base_dir)
-                parts = rel_path.split(os.sep)
-                node = entries
-                for part in parts[:-1]:
-                    node = node.setdefault(part, {})
-                node[file] = (None, None, f"{web_prefix}/{rel_path}")
-
-
 def main():
     entries = {}
 
-    # 1. Handle XLSX + PY
+    # Scan spreadsheets
     for root, _, files in os.walk("data/spreadsheets/in_development"):
         for file in files:
             src_path = os.path.join(root, file)
@@ -129,7 +127,7 @@ def main():
                 node = entries
                 for part in parts[:-1]:
                     node = node.setdefault(part, {})
-                node[file] = (f"{REPO_URL}/{src_path.replace(os.sep, '/')}", None, None)
+                update_entry(node, file, xlsx_path=f"{REPO_URL}/{src_path.replace(os.sep, '/')}")
 
             elif file.endswith(".py"):
                 preview_html = convert_py(src_path, rel_path)
@@ -137,11 +135,18 @@ def main():
                 node = entries
                 for part in parts[:-1]:
                     node = node.setdefault(part, {})
-                node[file] = (None, f"{preview_html.replace('docs/', '')}", None)
+                update_entry(node, file, py_preview=f"{preview_html.replace('docs/', '')}")
 
-    # 2. Scan for interactives in both previews and interactive dirs
-    scan_interactives(entries, PREVIEWS_DIR, "previews")
-    scan_interactives(entries, INTERACTIVE_DIR, "interactive")
+    # Pick up manually added interactives (_interactive.html)
+    for root, _, files in os.walk(PREVIEWS_DIR):
+        for file in files:
+            if file.endswith("_interactive.html"):
+                rel_path = os.path.relpath(os.path.join(root, file), PREVIEWS_DIR)
+                parts = rel_path.split(os.sep)
+                node = entries
+                for part in parts[:-1]:
+                    node = node.setdefault(part, {})
+                update_entry(node, file, interactive=f"previews/{rel_path}")
 
     build_index(entries)
 
