@@ -10,7 +10,7 @@ on:
     paths:
       - 'data/spreadsheets/**/*.xlsx'
       - 'amre/**/*.py'
-      - 'docs/previews/**/*_interactive.html'   # ✅ interactive HTML also triggers rebuild
+      - 'docs/previews/**/*_interactive.html'
   schedule:
     - cron: "0 3 * * *"   # run daily at 03:00 UTC
   workflow_dispatch:
@@ -40,16 +40,12 @@ jobs:
           pip install matplotlib numpy
           pip install plotly kaleido
 
-      - name: Remove legacy previews folder
-        run: rm -rf previews || true
-
       - name: Clean old previews before regeneration
         run: |
           echo "🧹 Cleaning old previews..."
-          rm -rf previews/* || true
           rm -rf docs/previews/* || true
 
-      - name: Convert XLSX + PY + Interactive into HTML index
+      - name: Convert XLSX + PY to HTML and regenerate index
         run: |
           set -o pipefail
           mkdir -p logs
@@ -66,7 +62,7 @@ jobs:
           ls -t logs/*.log | tail -n +$(( $KEEP_LOGS + 1 )) | xargs -r rm -- || true
 
       - name: Debug – list previews
-        run: ls -lh docs/previews || echo "No previews generated"
+        run: ls -R docs/previews || echo "No previews generated"
 
       - name: Commit previews, index, and logs
         run: |
@@ -79,12 +75,12 @@ jobs:
             git rm docs/in_development_previews.md
           fi
 
-          # Stage previews (including interactives), index, and logs
+          # Stage previews (XLSX, PY, interactives), index, and last logs
           git add -A docs/previews docs/in_development_previews.html || true
           git add logs/*.log cleanup_log.txt 2>/dev/null || true
 
           # Commit only if there are changes
-          git diff --cached --quiet || git commit -m "Update previews (XLSX + PY + Interactive), index, and logs"
+          git diff --cached --quiet || git commit -m "Update previews (XLSX, PY, Interactive), index, and logs"
 
           # Push back to master
           git push origin master
