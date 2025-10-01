@@ -1,86 +1,58 @@
-name: XLSX + PY + Interactive to HTML Previews
-
-permissions:
-  contents: write   # allow workflow to push commits back to the repo
+name: XLSX / PY → HTML Previews
 
 on:
   push:
-    branches:
-      - master
     paths:
-      - 'data/spreadsheets/**/*.xlsx'
-      - 'amre/**/*.py'
-      - 'docs/previews/**/*_interactive.html'
-  schedule:
-    - cron: "0 3 * * *"   # run daily at 03:00 UTC
+      - "data/spreadsheets/in_development/**"
+      - "scripts/convert_xlsx.py"
+      - ".github/workflows/xlsx-to-html.yaml"
   workflow_dispatch:
 
-env:
-  KEEP_LOGS: 7   # how many logs to keep
+permissions:
+  contents: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
+      - name: 📥 Checkout repo
         uses: actions/checkout@v3
-        with:
-          ref: master
-          persist-credentials: true
-          fetch-depth: 0
 
-      - name: Set up Python
+      - name: 🐍 Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.x'
+          python-version: "3.x"
 
-      - name: Install dependencies
+      - name: 🧹 Clean old previews
         run: |
-          pip install pandas openpyxl xlsx2html
-          pip install matplotlib numpy
-          pip install plotly kaleido
-
-      - name: Clean old previews before regeneration
-        run: |
-          echo "🧹 Cleaning old previews..."
+          echo "🧹 Removing old previews..."
           rm -rf docs/previews/* || true
 
-      - name: Convert XLSX + PY to HTML and regenerate index
+      - name: ⚡ Run conversion pipeline
         run: |
           set -o pipefail
           mkdir -p logs
           log_file="logs/$(date +'%Y-%m-%d_%H-%M-%S')_convert.log"
-          python scripts/convert_xlsx.py > "$log_file" 2>&1 || echo "⚠️ Preview pipeline failed, see $log_file"
+          echo "🚀 Starting conversion → $log_file"
+          python scripts/convert_xlsx.py > "$log_file" 2>&1 || echo "⚠️ Pipeline failed, see $log_file"
+          echo "✅ Conversion step finished"
 
-      - name: Show latest log tail
+      - name: 📊 Show summary of previews
         run: |
-          echo "=== Latest pipeline log ==="
-          ls -t logs/*.log | head -n 1 | xargs tail -n 50 || true
+          echo "=== PREVIEWS GENERATED ==="
+          find docs/previews -type f -name "*.html" | sed 's/^/ - /'
+          echo "=========================="
+          echo "=== INTERACTIVE FILES ==="
+          find docs/previews -type f -name "*_interactive.html" | sed 's/^/ - /' || true
+          echo "=========================="
+          echo "=== PY CODE PREVIEWS ==="
+          find docs/previews -type f -name "*.html" | grep -v "_interactive" | grep -v "xlsx" | sed 's/^/ - /' || true
+          echo "=========================="
 
-      - name: Prune old logs
+      - name: 🚀 Commit + Push
         run: |
-          ls -t logs/*.log | tail -n +$(( $KEEP_LOGS + 1 )) | xargs -r rm -- || true
-
-      - name: Debug – list previews
-        run: ls -R docs/previews || echo "No previews generated"
-
-      - name: Commit previews, index, and logs
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git checkout master
-
-          # Remove old .md index if it exists
-          if [ -f docs/in_development_previews.md ]; then
-            git rm docs/in_development_previews.md
-          fi
-
-          # Stage previews (XLSX, PY, interactives), index, and last logs
-          git add -A docs/previews docs/in_development_previews.html || true
-          git add logs/*.log cleanup_log.txt 2>/dev/null || true
-
-          # Commit only if there are changes
-          git diff --cached --quiet || git commit -m "Update previews (XLSX, PY, Interactive), index, and logs"
-
-          # Push back to master
-          git push origin master
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add docs/previews docs/in_development_previews.html transforms logs || true
+          git commit -m "Update: auto-generated previews" || echo "No changes"
+          git push
