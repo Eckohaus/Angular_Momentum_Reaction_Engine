@@ -1,32 +1,51 @@
-git config user.name "github-actions"
-git config user.email "actions@github.com"
+name: Maintenance - Normalize to Lowercase
 
-changes=false
+on:
+  workflow_dispatch:
 
-# Only normalize files outside workflows
-for f in $(git ls-files | grep -v '^.github/workflows/'); do
-  lower=$(echo "$f" | tr '[:upper:]' '[:lower:]')
+permissions:
+  contents: write
 
-  if [ "$f" != "$lower" ]; then
-    mkdir -p "$(dirname "$lower")"
+jobs:
+  normalize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
-    if [ -e "$lower" ]; then
-      # Case conflict: rename via unique temp name
-      tmp="$(dirname "$lower")/.__tmp_$(basename "$lower")"
-      git mv -f "$f" "$tmp"
-      git mv -f "$tmp" "$lower"
-    else
-      git mv -f "$f" "$lower"
-    fi
+      - name: Normalize file paths to lowercase
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
 
-    echo "Renamed: $f -> $lower" >> renamed_files.log
-    changes=true
-  fi
-done
+          changes=false
 
-if [ "$changes" = true ]; then
-  git commit -m "Maintenance: normalize paths to lowercase (safe two-step)" || echo "No changes"
-  git push
-else
-  echo "No files needed renaming."
-fi
+          # Only normalize files outside workflows
+          for f in $(git ls-files | grep -v '^.github/workflows/'); do
+            lower=$(echo "$f" | tr '[:upper:]' '[:lower:]')
+
+            if [ "$f" != "$lower" ]; then
+              mkdir -p "$(dirname "$lower")"
+
+              if [ -e "$lower" ]; then
+                # Case conflict: rename via unique temp name
+                tmp="$(dirname "$lower")/.__tmp_$(basename "$lower")"
+                git mv -f "$f" "$tmp"
+                git mv -f "$tmp" "$lower"
+              else
+                git mv -f "$f" "$lower"
+              fi
+
+              echo "Renamed: $f -> $lower" >> renamed_files.log
+              changes=true
+            fi
+          done
+
+          if [ "$changes" = true ]; then
+            git commit -m "Maintenance: normalize paths to lowercase (safe two-step)" || echo "No changes"
+            git push
+          else
+            echo "No files needed renaming."
+          fi
