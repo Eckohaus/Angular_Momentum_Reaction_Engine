@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Base Equation Interactive Calculator</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2em; }
+    input { margin: 0.5em; }
+    button { margin: 1em 0; }
+    pre { background: #f5f5f5; padding: 1em; }
+  </style>
+</head>
+<body>
+  <h1>Base Equation Interactive Calculator</h1>
+  <p>Enter values for High (H), Low (L), and Steps (N):</p>
+  
+  <label>H: <input id="H" type="number" value="10"></label><br>
+  <label>L: <input id="L" type="number" value="2"></label><br>
+  <label>N: <input id="N" type="number" value="5"></label><br>
+  
+  <button onclick="calculate()">Calculate</button>
+  
+  <h2>Result</h2>
+  <pre id="output">Enter values and click Calculate</pre>
+  
+  <script>
+    function calculate() {
+      const H = parseFloat(document.getElementById('H').value);
+      const L = parseFloat(document.getElementById('L').value);
+      const N = parseInt(document.getElementById('N').value);
+      
+      let D = H - L;
+      let sequence = [`D = H - L = ${H} - ${L} = ${D}`];
+      
+      let A = D;
+      for (let i = 1; i <= N; i++) {
+        A = A / i;
+        sequence.push(`Step ${i}: A_${i} = ${A}`);
+      }
+      
+      const result = `Target after ${N} steps = ${A}`;
+      document.getElementById('output').textContent = sequence.join("\n") + "\n\n" + result;
+    }
+  </script>
+</body>
+</html>
