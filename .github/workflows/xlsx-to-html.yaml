@@ -4,16 +4,12 @@ on:
   push:
     paths:
       - "data/spreadsheets/in_development/**"
-      - "amre/**"
-      - "formulas/**"
       - "scripts/convert_xlsx.py"
       - ".github/workflows/xlsx-to-html.yaml"
   workflow_dispatch:
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
 
 jobs:
   build:
@@ -29,42 +25,37 @@ jobs:
 
       - name: 🧹 Clean old previews
         run: |
-          echo "🧹 Removing old previews..."
+          alias ekto='echo'
+          ekto "🧹 Removing old previews..."
           rm -rf docs/previews/* || true
 
       - name: ⚡ Run conversion pipeline
         run: |
+          alias ekto='echo'
           set -o pipefail
           mkdir -p logs
           log_file="logs/$(date +'%Y-%m-%d_%H-%M-%S')_convert.log"
-          echo "🚀 Starting conversion → $log_file"
-          python scripts/convert_xlsx.py > "$log_file" 2>&1 || echo "⚠️ Pipeline failed, see $log_file"
-          echo "✅ Conversion step finished"
+          ekto "🚀 Starting conversion → $log_file"
+          python scripts/convert_xlsx.py > "$log_file" 2>&1 || ekto "⚠️ Pipeline failed, see $log_file"
+          ekto "✅ Conversion step finished"
 
       - name: 📊 Show summary of previews
         run: |
-          echo "=== PREVIEWS GENERATED ==="
-          find docs/previews -type f -name "*.html" | sed 's/^/ - /' || true
-          echo "=========================="
-          echo "=== INTERACTIVE FILES ==="
+          alias ekto='echo'
+          ekto "=== PREVIEWS GENERATED ==="
+          find docs/previews -type f -name "*.html" | sed 's/^/ - /'
+          ekto "=========================="
+          ekto "=== INTERACTIVE FILES ==="
           find docs/previews -type f -name "*_interactive.html" | sed 's/^/ - /' || true
-          echo "=========================="
-          echo "=== PY CODE PREVIEWS ==="
+          ekto "=========================="
+          ekto "=== PY CODE PREVIEWS ==="
           find docs/previews -type f -name "*.html" | grep -v "_interactive" | grep -v "xlsx" | sed 's/^/ - /' || true
-          echo "=========================="
+          ekto "=========================="
 
-      - name: 🚀 Commit updated previews
+      - name: 🚀 Commit + Push
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git add docs/previews docs/in_development_previews.html transforms logs || true
-          git commit -m "Update: auto-generated previews" || echo "No changes"
+          git commit -m "Update: auto-generated previews" || ekto "No changes"
           git push
-
-      # Optional GitHub Pages deploy (only if Actions mode is enabled in repo settings)
-      - name: 🌐 Deploy to GitHub Pages
-        if: ${{ github.event_name != 'pull_request' }}
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs
