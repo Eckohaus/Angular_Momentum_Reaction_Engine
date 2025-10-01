@@ -55,7 +55,7 @@ def convert_py(src_path, rel_path):
             text=True,
             check=False
         )
-        output = result.stdout or result.stderr
+        output = f"STDOUT:\n{result.stdout}\n\nSTDERR:\n{result.stderr}"
     except Exception as e:
         output = f"Error running {src_path}: {e}"
 
@@ -67,20 +67,7 @@ def convert_py(src_path, rel_path):
         f.write("<pre>" + output + "</pre>")
         f.write("</body></html>")
 
-    return preview_html
-
-
-def update_entry(node, file, xlsx_path=None, py_preview=None, interactive=None):
-    """Merge entries so we don't overwrite existing ones."""
-    if file not in node:
-        node[file] = (xlsx_path, py_preview, interactive)
-    else:
-        old_xlsx, old_py, old_interactive = node[file]
-        node[file] = (
-            xlsx_path or old_xlsx,
-            py_preview or old_py,
-            interactive or old_interactive,
-        )
+    return preview_html.replace("docs/", "")
 
 
 def build_index(entries):
@@ -115,7 +102,6 @@ def build_index(entries):
 def main():
     entries = {}
 
-    # Scan spreadsheets
     for root, _, files in os.walk("data/spreadsheets/in_development"):
         for file in files:
             src_path = os.path.join(root, file)
@@ -127,7 +113,7 @@ def main():
                 node = entries
                 for part in parts[:-1]:
                     node = node.setdefault(part, {})
-                update_entry(node, file, xlsx_path=f"{REPO_URL}/{src_path.replace(os.sep, '/')}")
+                node[file] = (f"{REPO_URL}/{src_path.replace(os.sep, '/')}", None, None)
 
             elif file.endswith(".py"):
                 preview_html = convert_py(src_path, rel_path)
@@ -135,7 +121,7 @@ def main():
                 node = entries
                 for part in parts[:-1]:
                     node = node.setdefault(part, {})
-                update_entry(node, file, py_preview=f"{preview_html.replace('docs/', '')}")
+                node[file] = (None, preview_html, None)
 
     # Pick up manually added interactives (_interactive.html)
     for root, _, files in os.walk(PREVIEWS_DIR):
@@ -146,7 +132,7 @@ def main():
                 node = entries
                 for part in parts[:-1]:
                     node = node.setdefault(part, {})
-                update_entry(node, file, interactive=f"previews/{rel_path}")
+                node[file] = (None, None, f"previews/{rel_path}")
 
     build_index(entries)
 
