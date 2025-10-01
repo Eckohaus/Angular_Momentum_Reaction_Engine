@@ -55,7 +55,7 @@ def convert_py(src_path, rel_path):
             text=True,
             check=False
         )
-        output = f"STDOUT:\n{result.stdout}\n\nSTDERR:\n{result.stderr}"
+        output = result.stdout or result.stderr
     except Exception as e:
         output = f"Error running {src_path}: {e}"
 
@@ -67,7 +67,20 @@ def convert_py(src_path, rel_path):
         f.write("<pre>" + output + "</pre>")
         f.write("</body></html>")
 
-    return preview_html.replace("docs/", "")
+    return preview_html
+
+
+def add_entry(node, file, xlsx_path=None, py_preview=None, interactive=None):
+    """Safely add or merge entries for a given file into the index."""
+    if file not in node:
+        node[file] = (xlsx_path, py_preview, interactive)
+    else:
+        old_xlsx, old_py, old_interactive = node[file]
+        node[file] = (
+            xlsx_path or old_xlsx,
+            py_preview or old_py,
+            interactive or old_interactive
+        )
 
 
 def build_index(entries):
@@ -107,21 +120,17 @@ def main():
             src_path = os.path.join(root, file)
             rel_path = os.path.relpath(src_path, "data/spreadsheets/in_development")
 
+            parts = rel_path.split(os.sep)
+            node = entries
+            for part in parts[:-1]:
+                node = node.setdefault(part, {})
+
             if file.endswith(".xlsx"):
                 convert_xlsx(src_path, rel_path)
-                parts = rel_path.split(os.sep)
-                node = entries
-                for part in parts[:-1]:
-                    node = node.setdefault(part, {})
-                node[file] = (f"{REPO_URL}/{src_path.replace(os.sep, '/')}", None, None)
-
+                add_entry(node, file, xlsx_path=f"{REPO_URL}/{src_path.replace(os.sep, '/')}")
             elif file.endswith(".py"):
                 preview_html = convert_py(src_path, rel_path)
-                parts = rel_path.split(os.sep)
-                node = entries
-                for part in parts[:-1]:
-                    node = node.setdefault(part, {})
-                node[file] = (None, preview_html, None)
+                add_entry(node, file, py_preview=f"{preview_html.replace('docs/', '')}")
 
     # Pick up manually added interactives (_interactive.html)
     for root, _, files in os.walk(PREVIEWS_DIR):
@@ -132,7 +141,7 @@ def main():
                 node = entries
                 for part in parts[:-1]:
                     node = node.setdefault(part, {})
-                node[file] = (None, None, f"previews/{rel_path}")
+                add_entry(node, file, interactive=f"previews/{rel_path}")
 
     build_index(entries)
 
