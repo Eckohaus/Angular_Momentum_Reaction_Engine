@@ -1,21 +1,16 @@
-name: Normalize Repo Paths to Lowercase
+name: Normalize paths to lowercase
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - master
 
 permissions:
   contents: write
 
 jobs:
-  normalize:
+  lowercase:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
@@ -24,10 +19,11 @@ jobs:
           git config user.name "github-actions"
           git config user.email "actions@github.com"
 
-          # Use git mv to rename everything to lowercase
-          find . -depth -print | while read path; do
+          # Normalize everything EXCEPT .github/
+          find . -depth -print | grep -v '^./.github/' | while read path; do
             lower=$(echo "$path" | tr '[:upper:]' '[:lower:]')
             if [ "$path" != "$lower" ]; then
+              echo "Renaming $path -> $lower"
               git mv -f "$path" "$lower" || true
             fi
           done
