@@ -22,8 +22,16 @@ jobs:
           git ls-files | while read f; do
             lower=$(echo "$f" | tr '[:upper:]' '[:lower:]')
             if [ "$f" != "$lower" ]; then
+              mkdir -p "$(dirname "$lower")"
               git mv -f "$f" "$lower"
             fi
           done
           git commit -m "Maintenance: normalize paths to lowercase" || echo "No changes"
           git push
+
+      - name: Rotate logs (keep 7 latest)
+        run: |
+          mkdir -p logs
+          log_file="logs/$(date +'%Y-%m-%d_%H-%M-%S')_maintenance.log"
+          echo "✅ Maintenance run at $(date)" > "$log_file"
+          ls -tp logs/*.log | grep -v '^\S*\/'$(ls -tp logs/*.log | head -n 7 | tr '\n' '|') | xargs -r rm --
