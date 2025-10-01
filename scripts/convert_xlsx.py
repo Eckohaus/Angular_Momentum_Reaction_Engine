@@ -7,10 +7,12 @@ import subprocess
 # Constants
 REPO_URL = "https://github.com/Eckohaus/Angular_Momentum_Reaction_Engine_v2/blob/master"
 PREVIEWS_DIR = "docs/previews"
+INTERACTIVE_DIR = "docs/interactive"
 TRANSFORMS_DIR = "transforms"
 INDEX_FILE = "docs/in_development_previews.html"
 
 os.makedirs(PREVIEWS_DIR, exist_ok=True)
+os.makedirs(INTERACTIVE_DIR, exist_ok=True)
 os.makedirs(TRANSFORMS_DIR, exist_ok=True)
 
 
@@ -99,9 +101,23 @@ def build_index(entries):
         f.write("</body></html>\n")
 
 
+def scan_interactives(entries, base_dir, web_prefix):
+    """Scan a directory (previews or interactive) for *_interactive.html files"""
+    for root, _, files in os.walk(base_dir):
+        for file in files:
+            if file.endswith("_interactive.html"):
+                rel_path = os.path.relpath(os.path.join(root, file), base_dir)
+                parts = rel_path.split(os.sep)
+                node = entries
+                for part in parts[:-1]:
+                    node = node.setdefault(part, {})
+                node[file] = (None, None, f"{web_prefix}/{rel_path}")
+
+
 def main():
     entries = {}
 
+    # 1. Handle XLSX + PY
     for root, _, files in os.walk("data/spreadsheets/in_development"):
         for file in files:
             src_path = os.path.join(root, file)
@@ -123,16 +139,9 @@ def main():
                     node = node.setdefault(part, {})
                 node[file] = (None, f"{preview_html.replace('docs/', '')}", None)
 
-    # Pick up manually added interactives (_interactive.html)
-    for root, _, files in os.walk(PREVIEWS_DIR):
-        for file in files:
-            if file.endswith("_interactive.html"):
-                rel_path = os.path.relpath(os.path.join(root, file), PREVIEWS_DIR)
-                parts = rel_path.split(os.sep)
-                node = entries
-                for part in parts[:-1]:
-                    node = node.setdefault(part, {})
-                node[file] = (None, None, f"previews/{rel_path}")
+    # 2. Scan for interactives in both previews and interactive dirs
+    scan_interactives(entries, PREVIEWS_DIR, "previews")
+    scan_interactives(entries, INTERACTIVE_DIR, "interactive")
 
     build_index(entries)
 
