@@ -1,0 +1,29 @@
+# .github/workflows/maintenance.yaml
+name: Maintenance (Normalize Lowercase)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  normalize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Normalize repo paths to lowercase
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git ls-files | while read f; do
+            lower=$(echo "$f" | tr '[:upper:]' '[:lower:]')
+            if [ "$f" != "$lower" ]; then
+              git mv -f "$f" "$lower"
+            fi
+          done
+          git commit -m "Maintenance: normalize paths to lowercase" || echo "No changes"
+          git push
