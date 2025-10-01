@@ -1,21 +1,21 @@
-name: Normalize Lowercase
+name: Normalize Lowercase Repo
 
 on:
-  workflow_dispatch:  # manual trigger
+  workflow_dispatch:  # run manually from Actions tab
 
 jobs:
   lowercase:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout repo
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
-      - name: Normalize file and folder names to lowercase
+      - name: Normalize all files/folders to lowercase
         run: |
           set -e
-          find data/spreadsheets/in_development -depth | while read f; do
+          find . -depth | while read f; do
             lower=$(dirname "$f")/$(basename "$f" | tr 'A-Z' 'a-z')
             if [ "$f" != "$lower" ]; then
               git mv "$f" "${lower}_tmp" || true
@@ -23,7 +23,7 @@ jobs:
             fi
           done
 
-      - name: Commit changes
+      - name: Commit and push
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
