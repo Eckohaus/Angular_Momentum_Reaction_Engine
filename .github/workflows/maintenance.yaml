@@ -7,13 +7,11 @@ permissions:
   contents: write
 
 jobs:
-  normalize:
+  normalize-lowercase:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
 
       - name: Normalize file paths to lowercase (safe two-step)
         run: |
@@ -33,9 +31,9 @@ jobs:
                 continue
               fi
 
-              tmp="$(dirname "$f")/.__tmp_$(basename "$f")"
-              git mv -f "$f" "$tmp"
-              git mv -f "$tmp" "$lower"
+              tmp="${f}.tmp"
+              git mv -f "$f" "$tmp" || continue
+              git mv -f "$tmp" "$lower" || { rm -f "$tmp"; continue; }
 
               echo "Renamed: $f -> $lower"
               changes=true
