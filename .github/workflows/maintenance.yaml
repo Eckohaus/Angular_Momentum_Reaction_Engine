@@ -1,4 +1,4 @@
-name: Maintenance - Normalize Lowercase
+name: Maintenance Normalize Paths
 
 on:
   workflow_dispatch:
@@ -10,24 +10,24 @@ jobs:
   normalize:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
-      - name: Normalize repo paths to lowercase
+      - name: Normalize repo paths to lowercase (excluding workflows)
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-          git config core.ignorecase false
-          
-          # Go through every tracked file and force lowercase paths
-          git ls-files | while read f; do
+
+          # Only rename files in data/, docs/, and root — exclude .github/workflows
+          for f in $(git ls-files | grep -v '^.github/workflows/'); do
             lower=$(echo "$f" | tr '[:upper:]' '[:lower:]')
             if [ "$f" != "$lower" ]; then
               mkdir -p "$(dirname "$lower")"
               git mv -f "$f" "$lower"
             fi
           done
-          
-          git commit -m "Maintenance: normalize paths to lowercase (case-sensitive)" || echo "No changes"
+
+          git commit -m "Maintenance: normalize paths to lowercase (excluding workflows)" || echo "No changes"
           git push
