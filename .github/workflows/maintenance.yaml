@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write   # allow pushing changes
+  contents: write
 
 jobs:
   normalize:
@@ -15,14 +15,13 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Normalize file paths to lowercase
+      - name: Normalize file paths to lowercase (safe two-step)
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
 
           changes=false
 
-          # Only normalize files outside workflows
           for f in $(git ls-files | grep -v '^.github/workflows/'); do
             lower=$(echo "$f" | tr '[:upper:]' '[:lower:]')
 
@@ -30,13 +29,13 @@ jobs:
               mkdir -p "$(dirname "$lower")"
 
               if [ -e "$lower" ]; then
-                # Case conflict: rename via a unique temp file
-                tmp="$(dirname "$lower")/.__tmp_$(uuidgen)_$(basename "$lower")"
-                git mv -f "$f" "$tmp"
-                git mv -f "$tmp" "$lower"
-              else
-                git mv -f "$f" "$lower"
+                echo "⚠️ Skipping $f (already exists as $lower)"
+                continue
               fi
+
+              tmp="$(dirname "$f")/.__tmp_$(basename "$f")"
+              git mv -f "$f" "$tmp"
+              git mv -f "$tmp" "$lower"
 
               echo "Renamed: $f -> $lower"
               changes=true
@@ -44,7 +43,7 @@ jobs:
           done
 
           if [ "$changes" = true ]; then
-            git commit -m "Maintenance: normalize paths to lowercase (safe UUID two-step)" || echo "No changes"
+            git commit -m "Maintenance: normalize paths to lowercase (safe two-step)"
             git push
           else
             echo "No files needed renaming."
