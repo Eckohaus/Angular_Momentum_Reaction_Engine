@@ -10,11 +10,12 @@ jobs:
   normalize-lowercase:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
+      - name: 📥 Checkout repo
         uses: actions/checkout@v3
 
-      - name: Normalize file paths to lowercase (safe two-step)
+      - name: 🔤 Normalize file paths to lowercase (safe two-step)
         run: |
+          echo "🚀 Starting maintenance: normalize paths to lowercase..."
           git config user.name "github-actions"
           git config user.email "actions@github.com"
 
@@ -35,7 +36,7 @@ jobs:
               git mv -f "$f" "$tmp" || continue
               git mv -f "$tmp" "$lower" || { rm -f "$tmp"; continue; }
 
-              echo "Renamed: $f -> $lower"
+              echo "✅ Renamed: $f -> $lower"
               changes=true
             fi
           done
@@ -44,5 +45,5 @@ jobs:
             git commit -m "Maintenance: normalize paths to lowercase (safe two-step)"
             git push
           else
-            echo "No files needed renaming."
+            echo "ℹ️ No files needed renaming."
           fi
