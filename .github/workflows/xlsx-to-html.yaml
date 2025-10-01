@@ -5,6 +5,7 @@ on:
     paths:
       - "data/spreadsheets/in_development/**"
       - "scripts/convert_xlsx.py"
+      - ".github/workflows/xlsx-to-html.yaml"
   workflow_dispatch:
 
 permissions:
@@ -24,13 +25,13 @@ jobs:
 
       - name: 🧹 Clean old previews
         run: |
-          alias ekto='echo'
+          ekto() { echo "$@"; }
           ekto "🧹 Removing old previews..."
           rm -rf docs/previews/* || true
 
       - name: ⚡ Run conversion pipeline
         run: |
-          alias ekto='echo'
+          ekto() { echo "$@"; }
           set -o pipefail
           mkdir -p logs
           log_file="logs/$(date +'%Y-%m-%d_%H-%M-%S')_convert.log"
@@ -40,7 +41,7 @@ jobs:
 
       - name: 📊 Show summary of previews
         run: |
-          alias ekto='echo'
+          ekto() { echo "$@"; }
           ekto "=== PREVIEWS GENERATED ==="
           find docs/previews -type f -name "*.html" | sed 's/^/ - /'
           ekto "=========================="
