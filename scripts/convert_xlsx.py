@@ -38,10 +38,10 @@ def convert_xlsx(src_path, rel_path):
         with open(json_dst, "w", encoding="utf-8") as f:
             json.dump(json_export, f, indent=2, default=str)
 
-        return html_dst, json_dst
+        return f"{REPO_URL}/{src_path.replace(os.sep, '/')}", None, None
     except Exception as e:
         print(f"❌ Failed to convert {src_path}: {e}")
-        return None, None
+        return None, None, None
 
 
 def convert_py(src_path, rel_path):
@@ -67,20 +67,7 @@ def convert_py(src_path, rel_path):
         f.write("<pre>" + output + "</pre>")
         f.write("</body></html>")
 
-    return preview_html
-
-
-def add_entry(node, file, xlsx_path=None, py_preview=None, interactive=None):
-    """Safely add or merge entries for a given file into the index."""
-    if file not in node:
-        node[file] = (xlsx_path, py_preview, interactive)
-    else:
-        old_xlsx, old_py, old_interactive = node[file]
-        node[file] = (
-            xlsx_path or old_xlsx,
-            py_preview or old_py,
-            interactive or old_interactive
-        )
+    return None, f"previews/{rel_path.replace('.py', '.html')}", None
 
 
 def build_index(entries):
@@ -115,24 +102,22 @@ def build_index(entries):
 def main():
     entries = {}
 
+    # Step 1: XLSX + PY
     for root, _, files in os.walk("data/spreadsheets/in_development"):
         for file in files:
             src_path = os.path.join(root, file)
             rel_path = os.path.relpath(src_path, "data/spreadsheets/in_development")
-
             parts = rel_path.split(os.sep)
             node = entries
             for part in parts[:-1]:
                 node = node.setdefault(part, {})
 
             if file.endswith(".xlsx"):
-                convert_xlsx(src_path, rel_path)
-                add_entry(node, file, xlsx_path=f"{REPO_URL}/{src_path.replace(os.sep, '/')}")
+                node[file] = convert_xlsx(src_path, rel_path)
             elif file.endswith(".py"):
-                preview_html = convert_py(src_path, rel_path)
-                add_entry(node, file, py_preview=f"{preview_html.replace('docs/', '')}")
+                node[file] = convert_py(src_path, rel_path)
 
-    # Pick up manually added interactives (_interactive.html)
+    # Step 2: pick up interactives
     for root, _, files in os.walk(PREVIEWS_DIR):
         for file in files:
             if file.endswith("_interactive.html"):
@@ -141,7 +126,7 @@ def main():
                 node = entries
                 for part in parts[:-1]:
                     node = node.setdefault(part, {})
-                add_entry(node, file, interactive=f"previews/{rel_path}")
+                node[file] = (None, None, f"previews/{rel_path}")
 
     build_index(entries)
 
