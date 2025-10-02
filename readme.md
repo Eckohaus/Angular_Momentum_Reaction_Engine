@@ -66,6 +66,8 @@ into a formula-first workflow:
 - `amre/` → Python implementations (mirroring formulas)  
 - `previews/` → HTML renderings (auto-generated)  
 
+Interactive previews (`*_interactive.html`) are generated where applicable, providing richer inspection alongside static previews.  
+
 **Example: Base Equation**  
 - Formula: `formulas/electrical_resistance/base_equation.md`  
 - Python: `amre/electrical_resistance/base_equation.py`  
