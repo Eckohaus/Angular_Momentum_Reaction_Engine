@@ -14,46 +14,22 @@ This repository is part of the **ASTF project**
 
 ## **Repository Structure**  
 
-```
-Angular_Momentum_Reaction_Engine_v2/
-├── amre/                     # Core package
-│   ├── core/                 # Base constants, ratios, unit handling
-│   ├── lambda_seq/           # Lambda Projection Engine
-│   ├── infinities/           # Assigned vs Continuous models (future)
-│   ├── boundary/             # Growth-in-division calculators (future)
-│   ├── electrochem/          # AC deposition models (future)
-│   ├── finance/              # Currency differential tools (future)
-│   ├── io/                   # Dataset loaders & validators
-│   └── viz/                  # Plotting & visualisation tools
-│
-├── formulas/                 # Formula-first definitions (Markdown + LaTeX)
-│   └── electrical_resistance/
-│       ├── base_equation.md
-│       └── deposition_decimalisation.md
-│
-├── amre/                     # Python implementations (mirroring formulas)
-│   └── electrical_resistance/
-│       ├── base_equation.py
-│       └── deposition_decimalisation.py
-│
-├── previews/                 # Auto-generated HTML previews
-│   └── electrical_resistance/
-│       ├── base_equation.html
-│       ├── base_equation_interactive.html
-│       ├── deposition_decimalisation.html
-│       └── deposition_decimalisation_interactive.html
-│
-├── docs/                     # Project documentation (GitHub Pages root)
-│   ├── index.html            # Auto-generated previews index
-│   └── style.css             # Styling for previews
-│
-├── data/                     # Example datasets (CSV/XLSX)
-├── examples/                 # Jupyter notebooks & usage demos
-├── tests/                    # Pytest suite
-├── pyproject.toml            # Project configuration
-├── mkdocs.yml                # Documentation site config
-└── README.md                 # We are here
-```
+- `amre/` — Core package (constants, lambda engine, etc.)
+- `formulas/` — Formula-first definitions (`.md`, LaTeX)
+- `amre/electrical_resistance/` — Python implementations (mirroring formulas)
+- `docs/index.html` — Auto-generated preview index (landing page)
+- `docs/previews/` — Static previews (`.xlsx` + `.py` output)
+  - `docs/previews/electrical_resistance/base_equation.html`
+  - `docs/previews/electrical_resistance/deposition_decimalisation.html`
+- `docs/interactive/` — Interactive HTML demos
+  - `docs/interactive/base_equation_interactive.html`
+  - `docs/interactive/deposition_decimalisation_interactive.html`
+- `data/` — Example datasets (`.csv` / `.xlsx`)
+- `examples/` — Jupyter notebooks & usage demos
+- `tests/` — Pytest suite
+- `pyproject.toml` — Project configuration
+- `mkdocs.yml` — Documentation site config
+- `README.md` — We are here
 
 ---
 
