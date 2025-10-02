@@ -8,7 +8,6 @@ import subprocess
 REPO_URL = "https://github.com/Eckohaus/Angular_Momentum_Reaction_Engine_v2/blob/master"
 PREVIEWS_DIR = "docs/previews"
 TRANSFORMS_DIR = "transforms"
-INDEX_FILE = "docs/in_development_previews.html"
 INDEX_FILE = "docs/index.html"
 
 os.makedirs(PREVIEWS_DIR, exist_ok=True)
