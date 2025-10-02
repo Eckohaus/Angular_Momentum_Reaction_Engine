@@ -10,8 +10,6 @@ on:
 
 permissions:
   contents: write
-  pages: write   # required for gh-pages deployment
-  id-token: write
 
 jobs:
   build:
@@ -51,16 +49,10 @@ jobs:
           find docs/previews -type f -name "*.html" | grep -v "_interactive" | grep -v "xlsx" | sed 's/^/ - /' || true
           echo "=========================="
 
-      - name: 🚀 Commit updated previews
+      - name: 🚀 Commit + Push updates
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git add docs/previews docs/in_development_previews.html transforms logs || true
-          git commit -m "Update: auto-generated previews" || echo "No changes"
+          git commit -m "[skip ci] Update: auto-generated previews" || echo "No changes"
           git push
-
-      - name: 🌍 Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs
