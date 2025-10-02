@@ -39,10 +39,13 @@ Angular_Momentum_Reaction_Engine_v2/
 ├── previews/                 # Auto-generated HTML previews
 │   └── electrical_resistance/
 │       ├── base_equation.html
-│       └── deposition_decimalisation.html
+│       ├── base_equation_interactive.html
+│       ├── deposition_decimalisation.html
+│       └── deposition_decimalisation_interactive.html
 │
-├── docs/                     # Project documentation
-│   └── in_development_previews.html
+├── docs/                     # Project documentation (GitHub Pages root)
+│   ├── index.html            # Auto-generated previews index
+│   └── style.css             # Styling for previews
 │
 ├── data/                     # Example datasets (CSV/XLSX)
 ├── examples/                 # Jupyter notebooks & usage demos
@@ -100,10 +103,9 @@ This creates a reproducible chain:
 
 ## **Live Pages**
 
-- **Web Directory**: [Angular Momentum v2 GitHub Pages](https://eckohaus.github.io/Angular_Momentum_Reaction_Engine_v2)  
-- **Development Index**: [In-Development Previews](https://eckohaus.github.io/Angular_Momentum_Reaction_Engine_v2/docs/in_development_previews.html)  
+- **Previews Index**: [Angular Momentum v2 GitHub Pages](https://eckohaus.github.io/Angular_Momentum_Reaction_Engine_v2)  
 
-*(Browse the `formulas/`, `amre/`, and `previews/` chains — auto-updated via GitHub Actions.)*  
+*(Browse the `formulas/`, `amre/`, and `previews/` chains — auto-updated via GitHub Actions.)*   
 
 ---
 
