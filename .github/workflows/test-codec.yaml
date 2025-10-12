@@ -1,0 +1,41 @@
+name: Codec Translation Tests
+
+on:
+  push:
+    paths:
+      - "amre/codec/**"
+      - ".github/workflows/test-codec.yaml"
+  pull_request:
+    paths:
+      - "amre/codec/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v3
+
+      - name: 🐍 Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+
+      - name: 🧩 Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest
+
+      - name: 🧪 Run codec tests
+        run: |
+          echo "=== Running Binary→Nucleotide Codec Tests ==="
+          pytest -v amre/codec/binary_to_nucleotide/tests || exit 1
+
+      - name: 📊 Report results
+        if: success()
+        run: echo "✅ All codec tests passed successfully."
