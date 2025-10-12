@@ -1,17 +1,20 @@
 # **Angular Momentum Reaction Engine v2 (2020)**  
+*A modular, physics-inspired computational framework exploring symmetry,  
+energy differentials, and translational grammars across domains.*  
+
 *Statistical Modeling Tools for Energy-As-A-Unit Calculus*  
 
----
-
-## **Overview**  
-**Angular_Momentum_Reaction_Engine_v2** is the structured continuation of the 2020 project.  
-It transitions the original formula arrays and spreadsheet workflows into a **reproducible, testable, and documented codebase.**  
-
-This repository is part of the **ASTF project**  
-(*Applied Scientific & Theoretical Frameworks / August Sixth, Twenty Fifteen*).  
+[![Codec Tests](https://github.com/Eckohaus/Angular_Momentum_Reaction_Engine_v2/actions/workflows/test-codec.yaml/badge.svg)](https://github.com/Eckohaus/Angular_Momentum_Reaction_Engine_v2/actions/workflows/test-codec.yaml)
 
 ---
 
+The **Angular Momentum Reaction Engine (AMRE)** unifies physical, computational, and symbolic systems into a shared modeling architecture.  
+It treats **energy as a calculable unit** across domains — from electrical resistance and field induction to binary and nucleotide grammars — enabling continuous translation between physical constants and informational structures.  
+Through modular builds (core, lambda, boundary, codec), AMRE v2 formalises this symmetry within a reproducible software framework designed for both theoretical exploration and experimental computation.
+
+---
+
+## **Repository Structure**
 ```
 Angular_Momentum_Reaction_Engine_v2/
 ├── amre/                     # Core package
@@ -23,6 +26,14 @@ Angular_Momentum_Reaction_Engine_v2/
 │   ├── finance/              # Currency differential tools (future)
 │   ├── io/                   # Dataset loaders & validators
 │   └── viz/                  # Plotting & visualisation tools
+│
+├── codec/                    # Cross-domain translation layer
+│   └── binary_to_nucleotide/ # Codec initialization module (v1)
+│       ├── codec_map.json
+│       ├── codec_translation_engine.py
+│       ├── codec_validation_framework.md
+│       ├── test_codec_map.py
+│       └── readme.md
 │
 ├── formulas/                 # Formula-first definitions (Markdown + LaTeX)
 │   └── electrical_resistance/
@@ -85,8 +96,10 @@ This creates a reproducible chain:
   → Forecasts energy as discrete units mapped by eigenvalue scaling.  
 - **Core constants** (`amre/core/constants.py`)  
   → Base power ratios, unit registry, physical constants.  
-- **Basic test coverage** (`tests/test_lambda.py`)  
-  → Confirms Lambda projections grow monotonically.  
+- **Binary → Nucleotide Codec** (`codec/binary_to_nucleotide/`)  
+  → Defines reversible translation grammar between digital and biological logic.  
+- **Basic test coverage** (`tests/test_lambda.py`, `codec/.../test_codec_translation.py`)  
+  → Confirms Lambda growth and Codec roundtrip symmetry.  
 - **Electrical Resistance (in progress):**  
   → Migrating `Base_Equation.xlsx` and `Deposition_Decimalisation.xlsx`  
   into formula-first + Python modules with live previews.  
@@ -106,7 +119,7 @@ This creates a reproducible chain:
 
 - **Previews Index**: [Angular Momentum v2 GitHub Pages](https://eckohaus.github.io/Angular_Momentum_Reaction_Engine_v2)  
 
-*(Browse the `formulas/`, `amre/`, and `previews/` chains — auto-updated via GitHub Actions.)*   
+*(Browse the `formulas/`, `amre/`, and `previews/` chains — auto-updated via GitHub Actions.)*  
 
 ---
 
@@ -114,6 +127,7 @@ This creates a reproducible chain:
 
 - Port **Boundary Momentum** calculators (growth-in-division).  
 - Encode **Infinities Framework** (assigned vs continuous).  
+- Expand **Binary → Nucleotide Codec** into probabilistic field grammar.  
 - Finalise **AC Deposition** formulas → Python module with unit checks.  
 - Create **dataset loaders** (`amre/io/datasets.py`) with schema validation.  
 - Provide **examples/** notebooks for quick start.  
