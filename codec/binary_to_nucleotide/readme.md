@@ -22,6 +22,19 @@ and information across both regimes.
 
 ---
 
+### Contextual Scope
+
+The codec can **conceptually interpret binary signals from any domain** —  
+including theoretical or experimental systems such as **cold-atom Rydberg processors**.  
+🔴 However, it cannot yet **physically interact, measure, or respond** to those systems —  
+it is a **language**, not an **instrument**.  
+
+Its purpose at this stage is to formalize **reversible symmetry** in information space,  
+providing a symbolic substrate that future physical or biochemical implementations  
+could align with, once a real translation port is defined.
+
+---
+
 ## Conceptual Basis
 
 | Domain | Function | Structural Substrate | Analogue Reference |
@@ -64,11 +77,25 @@ The **Binary → Nucleotide Codec** is a *cross-domain interface*,
 not bound to any single computation engine.  
 
 It can be **imported by AMRE**, **ASTF**, or other frameworks as a translation service:  
+
 ```python
 
 from codec.binary_to_nucleotide import translate, reverse_translate
 ```
-This structure ensures the codec remains a portable substrate —
+This structure ensures the codec remains a portable substrate —  
 a shared grammar between physics (binary induction) and biology (nucleotide expression).
 
+---
 
+## 🧩 State of Development
+
+✅ **Current CI Status:** Passing  
+*(Codec Translation Tests – all 6 tests validated via `test-codec.yaml` GitHub Action)*  
+
+🧠 **Validated Domain:** Computational  
+⚙️ **Translation Symmetry:** Confirmed reversible *(binary → nucleotide → binary)*  
+🧬 **Empirical Interface:** Not yet implemented *(conceptual only)*  
+
+This state marks the codec as a **foundational proof of correspondence** —  
+demonstrating that informational symmetry can exist between physical logic  
+and biological encoding within a reproducible computational framework.
