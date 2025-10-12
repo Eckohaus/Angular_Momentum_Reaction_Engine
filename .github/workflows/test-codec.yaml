@@ -2,9 +2,15 @@ name: Codec Translation Tests
 
 on:
   push:
+    branches:
+      - master
+      - main
     paths:
       - "codec/**"
       - ".github/workflows/test-codec.yaml"
+  pull_request:
+    paths:
+      - "codec/**"
   workflow_dispatch:
 
 permissions:
@@ -12,16 +18,18 @@ permissions:
 
 jobs:
   test:
+    name: 🧬 Codec Validation Suite
     runs-on: ubuntu-latest
+    timeout-minutes: 5
 
     steps:
       - name: 📥 Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: 🐍 Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: "3.x"
+          python-version: "3.13"
 
       - name: ⚙️ Install dependencies
         run: |
@@ -31,9 +39,12 @@ jobs:
       - name: 🧪 Run Codec Tests
         run: |
           echo "=== Discovering Codec Test Suites ==="
-          find codec -type d -name "tests" || echo "No tests folder found."
-          echo "=== Running pytest ==="
-          pytest -v codec
+          if [ -d "codec" ]; then
+            pytest -v codec
+          else
+            echo "❌ Directory 'codec' not found"
+            exit 1
+          fi
 
       - name: 📊 Summarize Results
         if: always()
@@ -44,10 +55,9 @@ jobs:
 
 # -------------------------------------------
 # 🧷 Notes:
-# Once this workflow runs successfully, add the
-# following badge to your main README.md:
+# Add this badge to your main README.md:
 #
 # [![Codec Tests](https://github.com/Eckohaus/Angular_Momentum_Reaction_Engine_v2/actions/workflows/test-codec.yaml/badge.svg)](https://github.com/Eckohaus/Angular_Momentum_Reaction_Engine_v2/actions/workflows/test-codec.yaml)
 #
-# This badge auto-updates with test status.
+# This badge auto-updates with CI status.
 # -------------------------------------------
