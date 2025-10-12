@@ -31,11 +31,13 @@ jobs:
           python -m pip install --upgrade pip
           pip install pytest
 
-      - name: 🧪 Run codec tests
+      - name: 🧪 Discover and run all codec tests
         run: |
-          echo "=== Running Binary→Nucleotide Codec Tests ==="
-          pytest -v amre/codec/binary_to_nucleotide/tests || exit 1
+          echo "=== Discovering Codec Test Suites ==="
+          find amre/codec -type d -name "tests"
+          echo "=== Running pytest ==="
+          pytest -v amre/codec
 
       - name: 📊 Report results
         if: success()
-        run: echo "✅ All codec tests passed successfully."
+        run: echo "✅ All codec translation tests passed successfully."
