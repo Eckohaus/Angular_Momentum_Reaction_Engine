@@ -1,6 +1,6 @@
 # Binary → Nucleotide Codec Initialization
 
-**Module:** `amre/codec/binary_to_nucleotide/`  
+**Module:** `codec/binary_to_nucleotide/`  
 **Stage:** Initialization (v1)  
 **Project:** Angular Momentum Reaction Engine v2  
 
@@ -16,7 +16,7 @@ Unlike `base_equation.xlsx` — which defines *field induction and bandgap behav
 the codec operates *downstream* of that layer, at the point where field symmetry  
 stabilises into discrete dual-states (the precondition of binary logic).
 
-The codec aims to express how digital dualities (0 / 1) can emerge as  
+The codec expresses how digital dualities (0 / 1) can emerge as  
 genetic quartets (A / T / G / C), maintaining conservation of energy  
 and information across both regimes.
 
@@ -30,9 +30,8 @@ and information across both regimes.
 | Codec Process | Translative / Discrete | Binary ↔ Nucleotide grammar | Codec symmetries |
 
 The codec thus begins where **induction stabilises**, not where it originates.  
-It uses `base_equation.xlsx` only as a **reference for initialization constants**  
-(e.g., potential differences, resistance ratios) exported into  
-`induction_reference/base_equation_reference.json`.
+It can use exported constants from AMRE’s field models as **initialisation references**,  
+but functions autonomously as its own **translation layer** between computational and biological logic.
 
 ---
 
@@ -40,16 +39,36 @@ It uses `base_equation.xlsx` only as a **reference for initialization constants*
 
 | File | Purpose |
 |------|----------|
-| `induction_reference/base_equation_reference.json` | Simplified constants imported from AMRE base equations. |
-| `codec_process.xlsx` | Core working sheet defining binary↔nucleotide translation logic. |
-| `codec_init.py` | Python prototype of translation map and schema. |
-| `readme.md` | This documentation file. |
+| `codec_map.json` | Defines binary↔nucleotide mapping schema. |
+| `codec_validation_framework.md` | Documents reversibility tests and logical constraints. |
+| `test_codec_map.py` | Local validation of codec roundtrip symmetry. |
+| `README.md` | Conceptual and structural overview of the codec system. |
+
+*(The validation framework is linked to the GitHub Actions workflow `test-codec.yaml`.)*
 
 ---
 
 ## Development Sequence
 
-1. Extract relevant constants from `base_equation.xlsx` → `induction_reference/base_equation_reference.json`.  
-2. Define binary↔nucleotide grammar in `codec_process.xlsx`.  
-3. Implement reversible mapping prototype (`codec_init.py`).  
-4. Validate with Lambda Projection Engine harmonics.  
+1. Define binary↔nucleotide grammar in `codec_map.json`.  
+2. Implement and verify reversible translation in `test_codec_map.py`.  
+3. Validate codec integrity through automated CI tests (`.github/workflows/test-codec.yaml`).  
+4. (Optional) Integrate field constants from AMRE’s `base_equation.xlsx` into a  
+   future `induction_reference/base_equation_reference.json` for contextual mapping.
+
+---
+
+## Relationship to AMRE
+
+The **Binary → Nucleotide Codec** is a *cross-domain interface*,  
+not bound to any single computation engine.  
+
+It can be **imported by AMRE**, **ASTF**, or other frameworks as a translation service:  
+```python
+
+from codec.binary_to_nucleotide import translate, reverse_translate
+```
+This structure ensures the codec remains a portable substrate —
+a shared grammar between physics (binary induction) and biology (nucleotide expression).
+
+
