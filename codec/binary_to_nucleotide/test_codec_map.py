@@ -2,13 +2,16 @@
 import json
 import os
 from datetime import datetime
+import pytest
 
 # === Path & Logging Setup ===
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+CODEC_MAP_PATH = os.path.join(BASE_DIR, "codec_map.json")
+
 LOG_DIR = os.path.join(BASE_DIR, "logs")
 LOG_FILE = os.path.join(LOG_DIR, "codec_validation.log")
-
 os.makedirs(LOG_DIR, exist_ok=True)
+
 
 def log(message):
     """Write message to both console and persistent log."""
@@ -19,11 +22,22 @@ def log(message):
         f.write(entry + "\n")
 
 
-# === Core I/O ===
-def load_codec_map(path=None):
-    """Load the JSON codec mapping."""
-    if path is None:
-        path = os.path.join(BASE_DIR, "codec_map.json")
+# === Pytest Fixture ===
+@pytest.fixture(scope="module")
+def codec_map():
+    """Load the JSON codec mapping safely for tests."""
+    if not os.path.exists(CODEC_MAP_PATH):
+        # Fallback for GitHub Actions path resolution
+        fallback_path = os.path.join(
+            os.path.dirname(BASE_DIR), "binary_to_nucleotide", "codec_map.json"
+        )
+        if os.path.exists(fallback_path):
+            path = fallback_path
+        else:
+            raise FileNotFoundError("❌ codec_map.json not found in expected locations.")
+    else:
+        path = CODEC_MAP_PATH
+
     with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
 
@@ -42,7 +56,10 @@ def validate_codec_structure(codec_map):
 def translate(binary_str, codec_map):
     """Translate a binary string into nucleotide symbols."""
     codec = codec_map["codec"]
-    return "".join(codec.get(binary_str[i:i+2], {"symbol": "?"})["symbol"] for i in range(0, len(binary_str), 2))
+    return "".join(
+        codec.get(binary_str[i:i + 2], {"symbol": "?"})["symbol"]
+        for i in range(0, len(binary_str), 2)
+    )
 
 
 def reverse_translate(nucleotide_str, codec_map):
@@ -57,13 +74,15 @@ def test_round_trip(codec_map):
     binary_input = "00101111"
     nucleotide_seq = translate(binary_input, codec_map)
     binary_output = reverse_translate(nucleotide_seq, codec_map)
-    assert binary_input == binary_output, f"❌ Round-trip failed: {binary_input} → {nucleotide_seq} → {binary_output}"
+    assert binary_input == binary_output, (
+        f"❌ Round-trip failed: {binary_input} → {nucleotide_seq} → {binary_output}"
+    )
     log(f"🔁 Round-trip successful: {binary_input} → {nucleotide_seq} → {binary_output}")
 
 
-# === Entry Point ===
+# === Entry Point (Manual Run) ===
 if __name__ == "__main__":
-    codec_map = load_codec_map()
-    validate_codec_structure(codec_map)
-    test_round_trip(codec_map)
+    codec_map_data = codec_map()  # direct call for local test
+    validate_codec_structure(codec_map_data)
+    test_round_trip(codec_map_data)
     log("🏁 Codec validation completed.\n")
