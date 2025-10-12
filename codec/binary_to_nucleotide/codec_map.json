@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "version": "1.0",
+    "description": "Binary-to-Nucleotide Codec Map (v1)",
+    "context": "Bridges digital bit-pairs to nucleotide bases for transliteration experiments within AMRE v2",
+    "note": "Probabilistic and chemical weighting fields may be added in future versions."
+  },
+  "codec": {
+    "00": { "symbol": "A", "base": "adenine", "group": "purine", "weight": 1.0 },
+    "01": { "symbol": "T", "base": "thymine", "group": "pyrimidine", "weight": 0.98 },
+    "10": { "symbol": "C", "base": "cytosine", "group": "pyrimidine", "weight": 0.97 },
+    "11": { "symbol": "G", "base": "guanine", "group": "purine", "weight": 1.02 }
+  },
+  "rules": {
+    "pair_length": 2,
+    "translation_mode": "bitpair_to_base",
+    "default_on_unknown": "?"
+  }
+}
