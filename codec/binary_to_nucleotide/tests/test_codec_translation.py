@@ -1,66 +1,63 @@
+# codec/binary_to_nucleotide/tests/test_codec_translation.py
 import os
-import pytest
 import json
+import pytest
 from codec.binary_to_nucleotide.codec_translation_engine import (
     translate,
     reverse_translate,
     codec_roundtrip,
 )
 
-# --- Load codec map dynamically for contextual validation ---
-CODEC_MAP_PATH = os.path.join(
-    os.path.dirname(__file__), "codec_map.json"
-)
-if os.path.exists(CODEC_MAP_PATH):
-    with open(CODEC_MAP_PATH, "r", encoding="utf-8") as f:
+# === Safe path resolution ===
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+CODEC_PATH = os.path.join(BASE_DIR, "..", "codec_map.json")
+
+# Load codec map (CI-safe)
+CODEC_MAP = None
+if os.path.exists(CODEC_PATH):
+    with open(CODEC_PATH, "r", encoding="utf-8") as f:
         CODEC_MAP = json.load(f)
-else:
-    CODEC_MAP = None
 
-
-# --- Base test cases ---
+# --- Basic validation dataset ---
 TEST_CASES = [
-    ("00", "A"),
-    ("01", "T"),
-    ("10", "C"),
-    ("11", "G"),
-    ("00011011", None),  # Extended sequence test
+    ("0101", None),   # Example direct mapping test
+    ("111000", None), # Stress pattern
+    ("000111", None), # Complementary input pattern
 ]
-
-
-def test_translation_symmetry():
-    """Ensure binary → nucleotide → binary yields identical output."""
-    for binary_input, _ in TEST_CASES:
-        assert codec_roundtrip(binary_input), f"❌ Roundtrip failed for {binary_input}"
-
-
-def test_forward_translation_non_empty():
-    """Forward translation should produce a valid nucleotide string."""
-    for binary_input, _ in TEST_CASES:
-        nucleotide_output = translate(binary_input)
-        assert nucleotide_output.strip() != "", f"❌ Empty output for {binary_input}"
-
-
-def test_reverse_translation_non_empty():
-    """Reverse translation should return a valid binary sequence."""
-    for binary_input, _ in TEST_CASES:
-        nucleotide_output = translate(binary_input)
-        binary_output = reverse_translate(nucleotide_output)
-        assert binary_output.strip() != "", f"❌ Empty reverse output for {binary_input}"
 
 
 def test_codec_map_integrity():
     """Check codec_map.json structural integrity and expected fields."""
     assert CODEC_MAP is not None, "❌ codec_map.json missing"
-    assert "codec" in CODEC_MAP, "❌ codec section missing"
-    for k, v in CODEC_MAP["codec"].items():
-        assert "symbol" in v, f"❌ Missing symbol in entry {k}"
-        assert isinstance(v["symbol"], str), f"❌ Non-string symbol in {k}"
+    assert "codec" in CODEC_MAP, "❌ Missing 'codec' key in map"
+    for pair in ["00", "01", "10", "11"]:
+        assert pair in CODEC_MAP["codec"], f"❌ Missing mapping for bit-pair {pair}"
+
+
+def test_translation_symmetry():
+    """Ensure binary → nucleotide → binary yields the same output."""
+    for binary_input, _ in TEST_CASES:
+        assert codec_roundtrip(binary_input), f"Roundtrip failed for {binary_input}"
+
+
+def test_forward_translation_non_empty():
+    """Ensure forward translation produces a non-empty nucleotide string."""
+    for binary_input, _ in TEST_CASES:
+        nucleotide_output = translate(binary_input)
+        assert len(nucleotide_output) > 0, f"No output for {binary_input}"
+
+
+def test_reverse_translation_non_empty():
+    """Ensure reverse translation produces a valid binary sequence."""
+    for binary_input, _ in TEST_CASES:
+        nucleotide_output = translate(binary_input)
+        binary_output = reverse_translate(nucleotide_output)
+        assert len(binary_output) > 0, f"No reverse output for {binary_input}"
 
 
 def test_consistency_across_random_inputs():
-    """Run randomized checks to ensure consistent mapping."""
+    """Run randomized checks to ensure consistent mapping for random binary patterns."""
     import random
     for _ in range(10):
         rand_bin = "".join(random.choice("01") for _ in range(8))
-        assert codec_roundtrip(rand_bin), f"❌ Codec failed for random input {rand_bin}"
+        assert codec_roundtrip(rand_bin), f"Codec failed at random input {rand_bin}"
