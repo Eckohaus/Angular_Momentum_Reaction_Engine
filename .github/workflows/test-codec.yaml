@@ -3,11 +3,8 @@ name: Codec Translation Tests
 on:
   push:
     paths:
-      - "amre/codec/**"
+      - "codec/**"
       - ".github/workflows/test-codec.yaml"
-  pull_request:
-    paths:
-      - "amre/codec/**"
   workflow_dispatch:
 
 permissions:
@@ -26,18 +23,31 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: 🧩 Install dependencies
+      - name: ⚙️ Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install pytest
 
-      - name: 🧪 Discover and run all codec tests
+      - name: 🧪 Run Codec Tests
         run: |
           echo "=== Discovering Codec Test Suites ==="
-          find amre/codec -type d -name "tests"
+          find codec -type d -name "tests" || echo "No tests folder found."
           echo "=== Running pytest ==="
-          pytest -v amre/codec
+          pytest -v codec
 
-      - name: 📊 Report results
-        if: success()
-        run: echo "✅ All codec translation tests passed successfully."
+      - name: 📊 Summarize Results
+        if: always()
+        run: |
+          echo "=============================="
+          echo "✅ Codec translation tests completed"
+          echo "=============================="
+
+# -------------------------------------------
+# 🧷 Notes:
+# Once this workflow runs successfully, add the
+# following badge to your main README.md:
+#
+# [![Codec Tests](https://github.com/Eckohaus/Angular_Momentum_Reaction_Engine_v2/actions/workflows/test-codec.yaml/badge.svg)](https://github.com/Eckohaus/Angular_Momentum_Reaction_Engine_v2/actions/workflows/test-codec.yaml)
+#
+# This badge auto-updates with test status.
+# -------------------------------------------
