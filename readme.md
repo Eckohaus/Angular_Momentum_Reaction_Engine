@@ -131,7 +131,14 @@ This creates a reproducible chain:
 - Finalise **AC Deposition** formulas → Python module with unit checks.  
 - Create **dataset loaders** (`amre/io/datasets.py`) with schema validation.  
 - Provide **examples/** notebooks for quick start.  
-- Deploy **MkDocs documentation** to GitHub Pages.  
+- Deploy **MkDocs documentation** to GitHub Pages.
+
+**For detailed analysis and V3 roadmap, see**:
+- [Repository Analysis](docs/repository_analysis.md) - Comprehensive analysis of all four focus areas
+- [V3 Readiness Assessment](docs/v3_readiness.md) - Migration roadmap and gap analysis
+- [Formula Index](docs/formula_index.md) - Complete cross-referenced formula catalog
+- [XLSX Pipeline Guide](docs/xlsx_pipeline_guide.md) - Data processing workflow documentation
+- [PONG Integration Guide](formulae/pong_algorithm/integration_guide.md) - Theoretical integration examples
 
 ---
 
