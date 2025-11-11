@@ -1,3 +1,17 @@
+---
+title: Differential Inversions (Electrical Resistance)
+version: 1.0
+last_updated: 2025-11-11
+module: electrical_resistance
+dependencies:
+  - base_equation.md
+status: stable
+related_formulae:
+  - base_equation.md
+  - deposition_decimalisation.md
+  - ../pong_algorithm/readme.md (QCD/Poisson integration)
+---
+
 # Differential Inversions (Electrical Resistance)
 
 The *Differential Inversions* construct originated in two spreadsheets:

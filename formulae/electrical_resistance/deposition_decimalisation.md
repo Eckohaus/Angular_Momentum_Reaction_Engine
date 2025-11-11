@@ -1,3 +1,15 @@
+---
+title: Deposition Decimalisation (Electrical Resistance)
+version: 1.0
+last_updated: 2025-11-11
+module: electrical_resistance
+dependencies: []
+status: stable
+related_formulae:
+  - base_equation.md
+  - differential_inversions.md
+---
+
 # Deposition Decimalisation (Electrical Resistance)
 
 The *Deposition Decimalisation* describes the subdivision of an initial input value into progressively finer partitions.  

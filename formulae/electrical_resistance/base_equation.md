@@ -1,3 +1,15 @@
+---
+title: Base Equation (Electrical Resistance)
+version: 1.0
+last_updated: 2025-11-11
+module: electrical_resistance
+dependencies: []
+status: stable
+related_formulae:
+  - differential_inversions.md
+  - deposition_decimalisation.md
+---
+
 # Base Equation (Electrical Resistance)
 
 The Base Equation models an attenuation cycle between a **high** ($H$) and **low** ($L$) value.  

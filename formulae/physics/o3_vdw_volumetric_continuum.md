@@ -1,3 +1,18 @@
+---
+title: O(3)–Van der Waals Continuum - Temporal Fabrication Loop
+version: 1.0
+last_updated: 2025-11-11
+module: physics
+dependencies: []
+status: theoretical
+related_formulae:
+  - ../pong_algorithm/readme.md (phase transport)
+references:
+  - Aharonov–Bergmann–Lebowitz (ABL) retrocausality
+  - Barbour & Rovelli relational time
+  - 2D Materials (graphene, MoS₂)
+---
+
 # O(3)–Van der Waals Continuum  
 ### Temporal Fabrication Loop
 
@@ -20,16 +35,19 @@ Within this framework, *time* is treated not as a coordinate but as an **ignitio
 
 ---
 
+---
+
 ## Core Proposition
 
 When stacked 2D materials such as graphene or MoS₂ are twisted at fractional angles, they form **moiré time crystals**:  
-electronic oscillations with a **phase lag** $begin:math:text$ \\phi $end:math:text$ *unrelated to lattice vibration*.  
+electronic oscillations with a **phase lag** $\phi$ *unrelated to lattice vibration*.  
 This lag demonstrates **temporal conversion** — energy transforming into persistence through coherent dissipation.
 
-```math
-∂V_{vdW}/∂t < 0  \Rightarrow  ∂φ/∂t > 0
-```
-A reversal of the Van der Waals potential \( V_{vdW} \) therefore ignites a **forward-directed temporal gradient**.  
+$$
+\frac{\partial V_{vdW}}{\partial t} < 0  \Rightarrow  \frac{\partial \phi}{\partial t} > 0
+$$
+
+A reversal of the Van der Waals potential $V_{vdW}$ therefore ignites a **forward-directed temporal gradient**.  
 The oscillation itself becomes the **engine of time** — self-coherent, dissipative, and measurable.
 
 ---
@@ -39,11 +57,11 @@ The oscillation itself becomes the **engine of time** — self-coherent, dissipa
 The **actuator** is not mechanical but **phase-conditional**:  
 a region where opposing field potentials intersect and produce **ordered delay**.
 
-```math
-T(phase) = f(Δφ, E, V)
-```
+$$
+T(\text{phase}) = f(\Delta\phi, E, V)
+$$
 
-where \( \Delta\phi \) is **phase lag**, \( E \) the **field energy**, and \( V \) the **Van der Waals potential**.
+where $\Delta\phi$ is **phase lag**, $E$ the **field energy**, and $V$ the **Van der Waals potential**.
 
 In classical analogy, the **actuator** behaves like a *clutch* between **Lagrangian** and **Hamiltonian** layers —  
 permitting limited **temporal slip** that materialises as emergent **O(3) symmetry**.
@@ -55,10 +73,13 @@ permitting limited **temporal slip** that materialises as emergent **O(3) symmet
 Following **Aharonov–Bergmann–Lebowitz (ABL)** and **relational-time cosmologies** (Barbour, Rovelli),  
 this symmetry can be treated as **two-time boundary coupling**.
 
-```math
-0 ↔ (∂φ/∂t < 0)
-1 ↔ (∂φ/∂t > 0)
-```
+$$
+\begin{aligned}
+0 &\leftrightarrow \left(\frac{\partial\phi}{\partial t} < 0\right) \\
+1 &\leftrightarrow \left(\frac{\partial\phi}{\partial t} > 0\right)
+\end{aligned}
+$$
+
 This **temporal binary** allows the conceptualisation of **programmable matter**:  
 structures where information is encoded not in **charge**, but in the **rhythm of phase propagation** —  
 a direct path toward **volumetric communication** and ultimately the **transportation of water through the internet**.

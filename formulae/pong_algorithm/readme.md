@@ -1,3 +1,19 @@
+---
+title: Lambda–Poisson QCD Compiler (PONG Algorithm)
+version: 1.0
+last_updated: 2025-11-11
+module: pong_algorithm
+dependencies:
+  - Hydrogen Equation
+  - Lambda Projections
+  - Differential Inversions
+status: theoretical
+related_formulae:
+  - ../electrical_resistance/differential_inversions.md (Poisson integration)
+  - ../physics/o3_vdw_volumetric_continuum.md (phase dynamics)
+integration_guide: integration_guide.md
+---
+
 # **Lambda–Poisson QCD Compiler**  
 *Conceptual Continuation of Angular Momentum Framework*  
 
@@ -22,11 +38,12 @@ mapping — bridging **hydrogen binaries**, **non-Abelian QCD structures**, and
 
 2. **Mathematical Vision**  
 
-   ```math
+   $$
    \underbrace{\nabla^2 \phi}_{\text{Angular Momentum}}
    \;\rightarrow\;
    \underbrace{-4\pi\rho}_{\text{Poisson Charge Density}}
-   ```
+   $$
+   
 ---
 
 ### **Integration Context**
@@ -68,23 +85,23 @@ a continuum of couplings that are mathematically real but physically unobserved.
 Unlike electromagnetic or binary transmission, Pong transfers information by **phase translation**.  
 A state  
 
-```math
+$$
 |\psi_1\rangle
-```
+$$
 
 becomes coherent with
 
-```math
+$$
 |\psi_2\rangle
-```
+$$
 
 through the preservation of their overlap
 
-```math
+$$
 \langle \psi_1 | \psi_2 \rangle = e^{i\phi}
-```
+$$
 
-where \( \phi \) is the transported phase.
+where $\phi$ is the transported phase.
 
 Nothing moves through space; coherence itself is conveyed.  
 This defines a *transport of information to a second state* without material exchange —  
@@ -112,11 +129,11 @@ Information exists as **relational curvature** inside the Hilbert topology itsel
 This places the algorithm conceptually in a **post-electromagnetic regime** —  
 where computation and communication are defined by *coherence rather than current*.
 
-```
+$$
 \hat{P}|\psi\rangle = e^{i\phi}|\psi\rangle
-```
+$$
 
-The Pong operator `\( \hat{P} \)` maintains **phase continuity** across domains,  
+The Pong operator $\hat{P}$ maintains **phase continuity** across domains,  
 enabling information to remain coherent as it passes from **physical association**  
 to **abstract numeric form**.  
 
