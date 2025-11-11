@@ -1,0 +1,48 @@
+[2025-11-11 10:55:45] Translated binary→nucleotide: 0101 → TT
+[2025-11-11 10:55:45] Reversed nucleotide→binary: TT → 0101
+[2025-11-11 10:55:45] Roundtrip: 0101 → TT → 0101 [✅ Success]
+[2025-11-11 10:55:45] Translated binary→nucleotide: 111000 → GCA
+[2025-11-11 10:55:45] Reversed nucleotide→binary: GCA → 111000
+[2025-11-11 10:55:45] Roundtrip: 111000 → GCA → 111000 [✅ Success]
+[2025-11-11 10:55:45] Translated binary→nucleotide: 000111 → ATG
+[2025-11-11 10:55:45] Reversed nucleotide→binary: ATG → 000111
+[2025-11-11 10:55:45] Roundtrip: 000111 → ATG → 000111 [✅ Success]
+[2025-11-11 10:55:45] Translated binary→nucleotide: 0101 → TT
+[2025-11-11 10:55:45] Translated binary→nucleotide: 111000 → GCA
+[2025-11-11 10:55:45] Translated binary→nucleotide: 000111 → ATG
+[2025-11-11 10:55:45] Translated binary→nucleotide: 0101 → TT
+[2025-11-11 10:55:45] Reversed nucleotide→binary: TT → 0101
+[2025-11-11 10:55:45] Translated binary→nucleotide: 111000 → GCA
+[2025-11-11 10:55:45] Reversed nucleotide→binary: GCA → 111000
+[2025-11-11 10:55:45] Translated binary→nucleotide: 000111 → ATG
+[2025-11-11 10:55:45] Reversed nucleotide→binary: ATG → 000111
+[2025-11-11 10:55:45] Translated binary→nucleotide: 11000111 → GATG
+[2025-11-11 10:55:45] Reversed nucleotide→binary: GATG → 11000111
+[2025-11-11 10:55:45] Roundtrip: 11000111 → GATG → 11000111 [✅ Success]
+[2025-11-11 10:55:45] Translated binary→nucleotide: 10111000 → CGCA
+[2025-11-11 10:55:45] Reversed nucleotide→binary: CGCA → 10111000
+[2025-11-11 10:55:45] Roundtrip: 10111000 → CGCA → 10111000 [✅ Success]
+[2025-11-11 10:55:45] Translated binary→nucleotide: 01010101 → TTTT
+[2025-11-11 10:55:45] Reversed nucleotide→binary: TTTT → 01010101
+[2025-11-11 10:55:45] Roundtrip: 01010101 → TTTT → 01010101 [✅ Success]
+[2025-11-11 10:55:45] Translated binary→nucleotide: 11110101 → GGTT
+[2025-11-11 10:55:45] Reversed nucleotide→binary: GGTT → 11110101
+[2025-11-11 10:55:45] Roundtrip: 11110101 → GGTT → 11110101 [✅ Success]
+[2025-11-11 10:55:45] Translated binary→nucleotide: 11100000 → GCAA
+[2025-11-11 10:55:45] Reversed nucleotide→binary: GCAA → 11100000
+[2025-11-11 10:55:45] Roundtrip: 11100000 → GCAA → 11100000 [✅ Success]
+[2025-11-11 10:55:45] Translated binary→nucleotide: 01101110 → TCGC
+[2025-11-11 10:55:45] Reversed nucleotide→binary: TCGC → 01101110
+[2025-11-11 10:55:45] Roundtrip: 01101110 → TCGC → 01101110 [✅ Success]
+[2025-11-11 10:55:45] Translated binary→nucleotide: 00101100 → ACGA
+[2025-11-11 10:55:45] Reversed nucleotide→binary: ACGA → 00101100
+[2025-11-11 10:55:45] Roundtrip: 00101100 → ACGA → 00101100 [✅ Success]
+[2025-11-11 10:55:45] Translated binary→nucleotide: 01100110 → TCTC
+[2025-11-11 10:55:45] Reversed nucleotide→binary: TCTC → 01100110
+[2025-11-11 10:55:45] Roundtrip: 01100110 → TCTC → 01100110 [✅ Success]
+[2025-11-11 10:55:45] Translated binary→nucleotide: 00111111 → AGGG
+[2025-11-11 10:55:45] Reversed nucleotide→binary: AGGG → 00111111
+[2025-11-11 10:55:45] Roundtrip: 00111111 → AGGG → 00111111 [✅ Success]
+[2025-11-11 10:55:45] Translated binary→nucleotide: 01000110 → TATC
+[2025-11-11 10:55:45] Reversed nucleotide→binary: TATC → 01000110
+[2025-11-11 10:55:45] Roundtrip: 01000110 → TATC → 01000110 [✅ Success]
