@@ -1,0 +1,68 @@
+name: Create First-Draft Branch
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_branch:
+        description: 'Source branch to create first-draft from'
+        required: false
+        default: 'copilot/create-first-draft-branch-please-work'
+
+jobs:
+  create-branch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.inputs.source_branch }}
+      
+      - name: Configure Git
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+      
+      - name: Add V1 remote and fetch
+        run: |
+          git remote add v1 https://github.com/Eckohaus-Indonesia/Angular_Momentum_Reaction_Engine_V1.git || true
+          git fetch v1 master
+      
+      - name: Create first-draft branch
+        run: |
+          # Check if first-draft branch already exists remotely
+          if git ls-remote --heads origin first-draft | grep first-draft; then
+            echo "first-draft branch already exists remotely"
+            echo "Checking out existing branch..."
+            git checkout first-draft
+            git pull origin first-draft
+          else
+            echo "Creating new first-draft branch..."
+            git checkout -b first-draft
+          fi
+      
+      - name: Merge V1 master content
+        run: |
+          # Check if V1 content is already merged
+          if git log --oneline | grep -q "Merge V1 master"; then
+            echo "V1 content appears to already be merged"
+          else
+            echo "Merging V1 master content..."
+            git merge v1/master --allow-unrelated-histories -m "Merge V1 master branch into first-draft"
+          fi
+      
+      - name: Push first-draft branch
+        run: |
+          git push -u origin first-draft
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Summary
+        run: |
+          echo "✓ first-draft branch created successfully!"
+          echo "Branch includes content from:"
+          echo "  - Current repository (v2)"
+          echo "  - V1 repository (Eckohaus-Indonesia/Angular_Momentum_Reaction_Engine_V1)"
