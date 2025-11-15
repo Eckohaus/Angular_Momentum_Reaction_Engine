@@ -32,21 +32,19 @@ The first-draft branch contains the following structure from V1:
 
 ## Remaining Action Required
 
-**UPDATE:** A git push refspec has been configured to automatically push the first-draft branch when the PR branch is pushed.
+The `first-draft` branch has been created locally and is ready to be pushed to the remote repository.
 
-The `first-draft` branch exists locally and will be pushed to the remote repository automatically with the next push operation.
+**Option 1: Run the provided script**
+```bash
+./push-first-draft.sh
+```
 
-**Manual Push Command (if needed):**
+**Option 2: Manual push command**
 ```bash
 git push -u origin first-draft
 ```
 
-Alternatively, a user with write access to the repository can execute:
-```bash
-cd /path/to/local/repo
-git checkout first-draft
-git push -u origin first-draft
-```
+**Note:** Either method requires appropriate GitHub authentication/credentials.
 
 ## Verification
 
