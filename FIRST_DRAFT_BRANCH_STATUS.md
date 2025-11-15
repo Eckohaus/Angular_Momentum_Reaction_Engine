@@ -32,19 +32,44 @@ The branch has been verified to contain V1 content, which is distinctly differen
 
 ## What Needs to Be Done
 
-### ⚠️ Push Required
-Due to environment constraints (sandboxed execution without direct push permissions), the `first-draft` branch exists locally but has not yet been pushed to the remote repository.
+### ⚠️ MANUAL ACTION REQUIRED: Push the Branch
 
-### Manual Push Command
-To complete the task, run the following command with appropriate GitHub credentials:
+Due to environment constraints (sandboxed execution without direct push permissions), the `first-draft` branch exists locally in this workspace but has not yet been pushed to the remote repository.
+
+**The branch is ready to push - all content has been verified.**
+
+### Option A: Push from GitHub Codespaces or Local Clone
+
+If you have write access to the repository, clone it and push the branch:
 
 ```bash
+# Clone the repository
+git clone https://github.com/Eckohaus/Angular_Momentum_Reaction_Engine_v2.git
+cd Angular_Momentum_Reaction_Engine_v2
+
+# Add V1 as remote
+git remote add v1 https://github.com/Eckohaus-Indonesia/Angular_Momentum_Reaction_Engine_V1.git
+
+# Fetch V1 master
+git fetch v1 master
+
+# Create and push first-draft branch
+git checkout -b first-draft v1/master
 git push -u origin first-draft
 ```
 
-Alternatively, you can use the provided helper script:
+### Option B: Use the Helper Script (if in this workspace)
+
+If you're in the same workspace with credentials:
 ```bash
 ./push-first-draft.sh
+```
+
+### Option C: Manual Push (if already in this workspace)
+
+If you can authenticate:
+```bash
+git push -u origin first-draft
 ```
 
 ## Verification Steps
