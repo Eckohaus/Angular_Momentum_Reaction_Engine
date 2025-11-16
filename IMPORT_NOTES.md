@@ -18,11 +18,13 @@ This branch includes:
 - Import metadata file (`.imported-from`)
 
 ## About PONG Algorithm V1
-The PONG Algorithm is a quantum computing compiler framework that explores:
+According to the original repository documentation, the PONG Algorithm is described as a quantum computing compiler framework that explores:
 - Lambda Field Encoding for point-to-point calculations
 - Poisson's equation applications
 - QCD (Quantum Chromodynamics) quantum computer compiler design
 - Space-time kinematics via Muon Tau Decay within Ohm's Law
+
+*Note: The above description is preserved from the original PONG repository for historical accuracy.*
 
 ## Purpose
 This import preserves the PONG Algorithm V1 as a historical record within the broader AMRE project ecosystem.
