@@ -1,0 +1,17 @@
+git checkout --orphan first-draft
+git rm -rf .
+git remote add v1 https://github.com/Eckohaus-Indonesia/Angular_Momentum_Reaction_Engine_V1
+git pull v1 main --allow-unrelated-histories
+git commit -m "Import AMRE v1 into first-draft branch
+
+This branch contains a full snapshot of the original
+Angular Momentum Reaction Engine (v1) from the
+Eckohaus-Indonesia repository. It is preserved here
+as the foundational first draft for reference and
+historical consolidation within the AMRE v2 structure.
+
+Co-authored-by: system operator <wanda@openai.com>
+Co-authored-by: system administrator <Corvin Nehal Dhali> <info@eckohaus.co.uk>
+Co-authored-by: GitHub Copilot <copilot@github.com>"
+git push origin first-draft
+git remote remove v1
