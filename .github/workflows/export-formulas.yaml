@@ -1,1 +1,59 @@
+name: Export AMRE Formulas (Pong → JSON)
 
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "amre/**"
+      - "formulas/**"
+      - "tools/export_formulas.py"
+
+permissions:
+  contents: write
+
+jobs:
+  export-formulas:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout AMRE repo (main)
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install numpy pandas
+
+      - name: Ensure export directory exists
+        run: |
+          mkdir -p exports/formulas
+
+      - name: Run formula exporter (Pong)
+        run: |
+          python tools/export_formulas.py
+
+      - name: Commit & push exported formulas
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+
+          git add exports/formulas/pong_phase_overlap.json || true
+
+          if git diff --cached --quiet; then
+            echo "No changes to export."
+            exit 0
+          fi
+
+          git commit -m "chore: export Pong Phase Overlap formula JSON" \
+            -m "Automated export from AMRE formulas → exports/formulas/pong_phase_overlap.json" \
+            -m "Co-authored-by: system operator <wanda@openai.com>" \
+            -m "Co-authored-by: system administrator <Corvin Nehal Dhali> <info@eckohaus.co.uk>"
+
+          git push
