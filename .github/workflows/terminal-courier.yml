@@ -1,0 +1,47 @@
+name: AMRE to Terminal Courier
+
+on:
+  push:
+    branches: [ main ] # Adjust if your personal repo uses 'master'
+
+jobs:
+  inject-to-terminal:
+    if: github.repository_owner == 'Eckohaus'
+    runs-on: ubuntu-latest
+    
+    steps:
+      # Step 1: Grab the personal AMRE code
+      - name: Checkout AMRE Sandbox
+        uses: actions/checkout@v4
+        with:
+          path: 'source-amre'
+
+      # Step 2: Grab the official Jupiter-IV Terminal
+      - name: Checkout Jupiter-IV Terminal
+        uses: actions/checkout@v4
+        with:
+          repository: 'Eckohaus-Indonesia/jupiter-IV-terminal'
+          token: ${{ secrets.ORG_MIRROR_TOKEN }}
+          path: 'dest-terminal'
+
+      # Step 3: Inject AMRE into the Terminal subfolder
+      - name: Sync AMRE Module
+        run: |
+          # Wipe the old AMRE folder in the terminal to prevent ghost files
+          rm -rf dest-terminal/amre
+          
+          # Create a fresh directory
+          mkdir -p dest-terminal/amre
+          
+          # Copy the code over (ignoring github action files so they don't trigger loops)
+          rsync -av --exclude='.git' --exclude='.github' source-amre/ dest-terminal/amre/
+
+      # Step 4: Commit and Push back to the Org
+      - name: Deploy to Kupu-Home
+        run: |
+          cd dest-terminal
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "build(amre): auto-sync latest engine iteration to terminal" || echo "No changes to sync"
+          git push origin main
