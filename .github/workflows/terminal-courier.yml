@@ -14,12 +14,13 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      # Step 1: Grab full AMRE history and all branches
+      # Step 1: Grab personal AMRE code without locking to local credentials
       - name: Checkout AMRE Sandbox
         uses: actions/checkout@v4
         with:
           path: 'source-amre'
           fetch-depth: 0
+          persist-credentials: false
 
       # Step 2: Grab the official Jupiter-IV Terminal
       - name: Checkout Jupiter-IV Terminal
@@ -30,14 +31,14 @@ jobs:
           path: 'dest-terminal'
           fetch-depth: 0
 
-      # Step 3: Subfolder Injection (Your existing logic)
+      # Step 3: Inject AMRE into the Terminal subfolder (Main branch content)
       - name: Sync AMRE Module to Subfolder
         run: |
           rm -rf dest-terminal/amre
           mkdir -p dest-terminal/amre
           rsync -av --exclude='.git' --exclude='.github' source-amre/ dest-terminal/amre/
 
-      # Step 4: Deploy Subfolder Update to Main
+      # Step 4: Deploy Subfolder Update to Org Main
       - name: Deploy to Kupu-Home (Main)
         run: |
           cd dest-terminal
@@ -51,8 +52,8 @@ jobs:
       - name: Sync Modular Branches
         run: |
           cd source-amre
-          # Injecting the token directly into the remote URL for authentication
+          # Authenticate using the ORG_MIRROR_TOKEN via URL injection
           git remote add target-terminal https://x-access-token:${{ secrets.ORG_MIRROR_TOKEN }}@github.com/Eckohaus-Indonesia/jupiter-IV-terminal.git
           
-          # Force push the local tracking branches to the organization heads
+          # Map all sandbox branches (origin/*) to the organization heads
           git push --force target-terminal "refs/remotes/origin/*:refs/heads/*"
