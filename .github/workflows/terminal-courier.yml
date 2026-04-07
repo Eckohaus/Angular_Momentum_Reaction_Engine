@@ -2,7 +2,7 @@ name: AMRE to Terminal Courier
 
 on:
   push:
-    branches: [ main ] # Adjust if your personal repo uses 'master'
+    branches: [ master ] # Adjust if your personal repo uses 'master'
 
 jobs:
   inject-to-terminal:
