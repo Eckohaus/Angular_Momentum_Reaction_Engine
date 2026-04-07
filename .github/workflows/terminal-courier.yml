@@ -51,6 +51,8 @@ jobs:
       - name: Sync Modular Branches
         run: |
           cd source-amre
+          # Injecting the token directly into the remote URL for authentication
           git remote add target-terminal https://x-access-token:${{ secrets.ORG_MIRROR_TOKEN }}@github.com/Eckohaus-Indonesia/jupiter-IV-terminal.git
-          # This pushes all branches from the sandbox to the org, matching names
+          
+          # Force push the local tracking branches to the organization heads
           git push --force target-terminal "refs/remotes/origin/*:refs/heads/*"
