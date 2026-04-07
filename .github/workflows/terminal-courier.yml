@@ -2,20 +2,24 @@ name: AMRE to Terminal Courier
 
 on:
   push:
-    branches: [ master ] # Adjust if your personal repo uses 'master'
-  workflow_dispatch: #
+    branches: [ master ]
+  workflow_dispatch:
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
-  inject-to-terminal:
+  inject-and-mirror:
     if: github.repository_owner == 'Eckohaus'
     runs-on: ubuntu-latest
     
     steps:
-      # Step 1: Grab the personal AMRE code
+      # Step 1: Grab full AMRE history and all branches
       - name: Checkout AMRE Sandbox
         uses: actions/checkout@v4
         with:
           path: 'source-amre'
+          fetch-depth: 0
 
       # Step 2: Grab the official Jupiter-IV Terminal
       - name: Checkout Jupiter-IV Terminal
@@ -24,25 +28,29 @@ jobs:
           repository: 'Eckohaus-Indonesia/jupiter-IV-terminal'
           token: ${{ secrets.ORG_MIRROR_TOKEN }}
           path: 'dest-terminal'
+          fetch-depth: 0
 
-      # Step 3: Inject AMRE into the Terminal subfolder
-      - name: Sync AMRE Module
+      # Step 3: Subfolder Injection (Your existing logic)
+      - name: Sync AMRE Module to Subfolder
         run: |
-          # Wipe the old AMRE folder in the terminal to prevent ghost files
           rm -rf dest-terminal/amre
-          
-          # Create a fresh directory
           mkdir -p dest-terminal/amre
-          
-          # Copy the code over (ignoring github action files so they don't trigger loops)
           rsync -av --exclude='.git' --exclude='.github' source-amre/ dest-terminal/amre/
 
-      # Step 4: Commit and Push back to the Org
-      - name: Deploy to Kupu-Home
+      # Step 4: Deploy Subfolder Update to Main
+      - name: Deploy to Kupu-Home (Main)
         run: |
           cd dest-terminal
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add .
-          git commit -m "build(amre): auto-sync latest engine iteration to terminal" || echo "No changes to sync"
+          git commit -m "build(amre): auto-sync latest engine iteration to terminal subfolder" || echo "No changes to sync"
           git push origin main
+
+      # Step 5: Mirror All Other Branches (The modular fix)
+      - name: Sync Modular Branches
+        run: |
+          cd source-amre
+          git remote add target-terminal https://x-access-token:${{ secrets.ORG_MIRROR_TOKEN }}@github.com/Eckohaus-Indonesia/jupiter-IV-terminal.git
+          # This pushes all branches from the sandbox to the org, matching names
+          git push --force target-terminal "refs/remotes/origin/*:refs/heads/*"
