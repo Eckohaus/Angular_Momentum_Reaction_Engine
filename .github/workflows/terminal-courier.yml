@@ -49,20 +49,20 @@ jobs:
           mkdir -p dest-uk/amre
           rsync -av --exclude='.git' --exclude='.github' source-amre/ dest-uk/amre/
 
-      # Step 4: Finalize Main Branch Layout
+      # Step 4: Finalize Master Branch Layout
       - name: Deploy Subfolder Updates
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           
-          # Push to ID (Explicitly mapping local current to remote main)
+          # Commit and Push ID (Using master to match your sandbox)
           cd $GITHUB_WORKSPACE/dest-id
           git add .
           git commit -m "build(amre): sync engine to terminal subfolder" || echo "No changes"
-          git push origin main
+          git push origin master
           
-          # Push to UK (Explicitly mapping local current to remote main)
+          # Commit and Push UK (Using master to match your sandbox)
           cd $GITHUB_WORKSPACE/dest-uk
           git add .
           git commit -m "build(amre): sync engine to terminal subfolder" || echo "No changes"
-          git push origin main
+          git push origin master
