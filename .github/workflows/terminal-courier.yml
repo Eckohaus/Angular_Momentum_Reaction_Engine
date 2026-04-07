@@ -1,4 +1,4 @@
-name: AMRE to Terminal Courier
+name: AMRE to Terminal Courier (Dual Org)
 
 on:
   push:
@@ -14,7 +14,6 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      # Step 1: Grab personal AMRE code without locking to local credentials
       - name: Checkout AMRE Sandbox
         uses: actions/checkout@v4
         with:
@@ -22,38 +21,60 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
 
-      # Step 2: Grab the official Jupiter-IV Terminal
-      - name: Checkout Jupiter-IV Terminal
+      - name: Checkout Jupiter-IV Terminal (ID)
         uses: actions/checkout@v4
         with:
           repository: 'Eckohaus-Indonesia/jupiter-IV-terminal'
           token: ${{ secrets.ORG_MIRROR_TOKEN }}
-          path: 'dest-terminal'
-          fetch-depth: 0
+          path: 'dest-terminal-id'
 
-      # Step 3: Inject AMRE into the Terminal subfolder (Main branch content)
-      - name: Sync AMRE Module to Subfolder
-        run: |
-          rm -rf dest-terminal/amre
-          mkdir -p dest-terminal/amre
-          rsync -av --exclude='.git' --exclude='.github' source-amre/ dest-terminal/amre/
+      - name: Checkout Jupiter-IV Terminal (UK)
+        uses: actions/checkout@v4
+        with:
+          repository: 'Eckohaus-Ltd/jupiter-IV-terminal'
+          token: ${{ secrets.ORG_MIRROR_TOKEN }}
+          path: 'dest-terminal-uk'
 
-      # Step 4: Deploy Subfolder Update to Org Main
-      - name: Deploy to Kupu-Home (Main)
+      # Step 3: Inject AMRE into both Terminal subfolders
+      - name: Sync AMRE Module to Subfolders
         run: |
-          cd dest-terminal
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          # Sync ID
+          rm -rf dest-terminal-id/amre
+          mkdir -p dest-terminal-id/amre
+          rsync -av --exclude='.git' --exclude='.github' source-amre/ dest-terminal-id/amre/
+          
+          # Sync UK
+          rm -rf dest-terminal-uk/amre
+          mkdir -p dest-terminal-uk/amre
+          rsync -av --exclude='.git' --exclude='.github' source-amre/ dest-terminal-uk/amre/
+
+      # Step 4: Deploy Subfolder Updates to Main
+      - name: Deploy to Kupu-Home (Dual)
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Push to ID
+          cd $GITHUB_WORKSPACE/dest-terminal-id
           git add .
-          git commit -m "build(amre): auto-sync latest engine iteration to terminal subfolder" || echo "No changes to sync"
+          git commit -m "build(amre): auto-sync engine to terminal subfolder" || echo "No changes"
+          git push origin main
+          
+          # Push to UK
+          cd $GITHUB_WORKSPACE/dest-terminal-uk
+          git add .
+          git commit -m "build(amre): auto-sync engine to terminal subfolder" || echo "No changes"
           git push origin main
 
-      # Step 5: Mirror All Other Branches (The modular fix)
-      - name: Sync Modular Branches
+      # Step 5: Mirror All Other Branches
+      - name: Sync Modular Branches (Dual Org)
         run: |
-          cd source-amre
-          # Authenticate using the ORG_MIRROR_TOKEN via URL injection
-          git remote add target-terminal https://x-access-token:${{ secrets.ORG_MIRROR_TOKEN }}@github.com/Eckohaus-Indonesia/jupiter-IV-terminal.git
+          cd $GITHUB_WORKSPACE/source-amre
           
-          # Map all sandbox branches (origin/*) to the organization heads
-          git push --force target-terminal "refs/remotes/origin/*:refs/heads/*"
+          # Add ID Remote
+          git remote add target-id https://x-access-token:${{ secrets.ORG_MIRROR_TOKEN }}@github.com/Eckohaus-Indonesia/jupiter-IV-terminal.git
+          git push --force target-id "refs/remotes/origin/*:refs/heads/*"
+          
+          # Add UK Remote
+          git remote add target-uk https://x-access-token:${{ secrets.ORG_MIRROR_TOKEN }}@github.com/Eckohaus-Ltd/jupiter-IV-terminal.git
+          git push --force target-uk "refs/remotes/origin/*:refs/heads/*"
