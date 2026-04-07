@@ -22,31 +22,29 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
 
-      # Step 2: Push Modular Branches (This creates 'main' if it doesn't exist)
+      # Step 2: Push Modular Branches (Initializes the Org Vaults)
       - name: Mirror All Branches to Both Orgs
         run: |
           cd source-amre
-          # Setup Remotes
           git remote add target-id https://x-access-token:${{ secrets.ORG_MIRROR_TOKEN }}@github.com/Eckohaus-Indonesia/jupiter-IV-terminal.git
           git remote add target-uk https://x-access-token:${{ secrets.ORG_MIRROR_TOKEN }}@github.com/Eckohaus-Ltd/jupiter-IV-terminal.git
           
-          # Force push all branches. This initializes the empty UK repo.
+          # Force push all branches. master -> master will exist here.
           git push --force target-id "refs/remotes/origin/*:refs/heads/*"
           git push --force target-uk "refs/remotes/origin/*:refs/heads/*"
 
-      # Step 3: Subfolder Injection (Now that repos have a 'main' branch)
+      # Step 3: Checkout and Sync Subfolders
       - name: Checkout and Sync Subfolders
         run: |
-          # We manually clone the newly populated main branches to do the rsync injection
           git clone https://x-access-token:${{ secrets.ORG_MIRROR_TOKEN }}@github.com/Eckohaus-Indonesia/jupiter-IV-terminal.git dest-id
           git clone https://x-access-token:${{ secrets.ORG_MIRROR_TOKEN }}@github.com/Eckohaus-Ltd/jupiter-IV-terminal.git dest-uk
           
-          # Sync ID
+          # Sync ID (Main Branch)
           rm -rf dest-id/amre
           mkdir -p dest-id/amre
           rsync -av --exclude='.git' --exclude='.github' source-amre/ dest-id/amre/
           
-          # Sync UK
+          # Sync UK (Main Branch)
           rm -rf dest-uk/amre
           mkdir -p dest-uk/amre
           rsync -av --exclude='.git' --exclude='.github' source-amre/ dest-uk/amre/
@@ -57,13 +55,13 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           
-          # Commit and Push ID
+          # Push to ID (Explicitly mapping local current to remote main)
           cd $GITHUB_WORKSPACE/dest-id
           git add .
           git commit -m "build(amre): sync engine to terminal subfolder" || echo "No changes"
           git push origin main
           
-          # Commit and Push UK
+          # Push to UK (Explicitly mapping local current to remote main)
           cd $GITHUB_WORKSPACE/dest-uk
           git add .
           git commit -m "build(amre): sync engine to terminal subfolder" || echo "No changes"
