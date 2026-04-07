@@ -3,6 +3,7 @@ name: AMRE to Terminal Courier
 on:
   push:
     branches: [ master ] # Adjust if your personal repo uses 'master'
+  workflow_dispatch: #
 
 jobs:
   inject-to-terminal:
