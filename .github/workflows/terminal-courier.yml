@@ -14,7 +14,6 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      # Step 1: Grab personal AMRE code
       - name: Checkout AMRE Sandbox
         uses: actions/checkout@v4
         with:
@@ -22,47 +21,42 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
 
-      # Step 2: Push Modular Branches (Initializes the Org Vaults)
       - name: Mirror All Branches to Both Orgs
         run: |
           cd source-amre
           git remote add target-id https://x-access-token:${{ secrets.ORG_MIRROR_TOKEN }}@github.com/Eckohaus-Indonesia/jupiter-IV-terminal.git
           git remote add target-uk https://x-access-token:${{ secrets.ORG_MIRROR_TOKEN }}@github.com/Eckohaus-Ltd/jupiter-IV-terminal.git
-          
-          # Force push all branches. master -> master will exist here.
           git push --force target-id "refs/remotes/origin/*:refs/heads/*"
           git push --force target-uk "refs/remotes/origin/*:refs/heads/*"
 
-      # Step 3: Checkout and Sync Subfolders
       - name: Checkout and Sync Subfolders
         run: |
           git clone https://x-access-token:${{ secrets.ORG_MIRROR_TOKEN }}@github.com/Eckohaus-Indonesia/jupiter-IV-terminal.git dest-id
           git clone https://x-access-token:${{ secrets.ORG_MIRROR_TOKEN }}@github.com/Eckohaus-Ltd/jupiter-IV-terminal.git dest-uk
           
-          # Sync ID (Main Branch)
+          # Sync ID
           rm -rf dest-id/amre
           mkdir -p dest-id/amre
           rsync -av --exclude='.git' --exclude='.github' source-amre/ dest-id/amre/
           
-          # Sync UK (Main Branch)
+          # Sync UK
           rm -rf dest-uk/amre
           mkdir -p dest-uk/amre
           rsync -av --exclude='.git' --exclude='.github' source-amre/ dest-uk/amre/
 
-      # Step 4: Finalize Master Branch Layout
       - name: Deploy Subfolder Updates
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           
-          # Commit and Push ID (Using master to match your sandbox)
+          # Push to ID production (main)
           cd $GITHUB_WORKSPACE/dest-id
           git add .
           git commit -m "build(amre): sync engine to terminal subfolder" || echo "No changes"
-          git push origin master
+          git push origin HEAD:main
           
-          # Commit and Push UK (Using master to match your sandbox)
+          # Push to UK production (main)
           cd $GITHUB_WORKSPACE/dest-uk
           git add .
           git commit -m "build(amre): sync engine to terminal subfolder" || echo "No changes"
-          git push origin master
+          git push origin HEAD:main
