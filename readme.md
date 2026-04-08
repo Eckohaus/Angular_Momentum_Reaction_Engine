@@ -16,53 +16,23 @@ Through modular builds (core, lambda, boundary, codec), AMRE v2 formalises this 
 
 ## **Repository Structure**
 ```
-Angular_Momentum_Reaction_Engine_v2/
-├── amre/                     # Core package
-│   ├── core/                 # Base constants, ratios, unit handling
-│   ├── lambda_seq/           # Lambda Projection Engine
-│   ├── infinities/           # Assigned vs Continuous models (future)
-│   ├── boundary/             # Growth-in-division calculators (future)
-│   ├── electrochem/          # AC deposition models (future)
-│   ├── finance/              # Currency differential tools (future)
-│   ├── io/                   # Dataset loaders & validators
-│   └── viz/                  # Plotting & visualisation tools
+### Repository Structure
+
+Angular_Momentum_Reaction_Engine/
+├── .github/workflows/        # CI/CD pipelines (e.g., xlsx-to-html, export-formulas)
+├── amre/                     # Python implementations (e.g., electrical_resistance)
+├── codec/                    # Cross-domain translation layer (binary_to_nucleotide)
+├── data/                     # Raw source material and development spreadsheets
+├── docs/                     # GitHub Pages root (Previews, interactive demos, CSS)
+├── exports/                  # Generated output files (e.g., pong_phase_overlap.json)
+├── formulae/                 # Theoretical definitions (Markdown files)
+├── logs/                     # System logs and conversion tracking
+├── scripts/                  # General utility scripts (e.g., convert_xlsx.py)
+├── tools/                    # Specialized functional tools (e.g., export_formulas.py)
 │
-├── codec/                    # Cross-domain translation layer
-│   └── binary_to_nucleotide/ # Codec initialization module (v1)
-│       ├── codec_map.json
-│       ├── codec_translation_engine.py
-│       ├── codec_validation_framework.md
-│       ├── test_codec_map.py
-│       └── readme.md
-│
-├── formulas/                 # Formula-first definitions (Markdown + LaTeX)
-│   └── electrical_resistance/
-│       ├── base_equation.md
-│       └── deposition_decimalisation.md
-│
-├── amre/                     # Python implementations (mirroring formulas)
-│   └── electrical_resistance/
-│       ├── base_equation.py
-│       └── deposition_decimalisation.py
-│
-├── docs/                     # GitHub Pages root
-│   ├── index.html            # Auto-generated previews index
-│   ├── style.css             # Styling for previews
-│   ├── previews/             # Auto-generated static previews
-│   │   └── electrical_resistance/
-│   │       ├── base_equation.html
-│   │       └── deposition_decimalisation.html
-│   └── interactive/          # Auto-generated interactive previews
-│       └── electrical_resistance/
-│           ├── base_equation_interactive.html
-│           └── deposition_decimalisation_interactive.html
-│
-├── data/                     # Example datasets (CSV/XLSX)
-├── examples/                 # Jupyter notebooks & usage demos
-├── tests/                    # Pytest suite
-├── pyproject.toml            # Project configuration
-├── mkdocs.yml                # Documentation site config
-└── README.md                 # We are here
+├── cleanup_log.txt           # Active repository maintenance tracking
+├── license                   # Project licensing
+└── readme.md                 # You are here
 ```
 
 ---
