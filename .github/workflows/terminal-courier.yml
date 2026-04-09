@@ -28,38 +28,3 @@ jobs:
           git remote add target-uk https://x-access-token:${{ secrets.ORG_MIRROR_TOKEN }}@github.com/Eckohaus-Ltd/jupiter-IV-terminal.git
           git push --force target-id "refs/remotes/origin/*:refs/heads/*"
           git push --force target-uk "refs/remotes/origin/*:refs/heads/*"
-
-      - name: Checkout and Sync Subfolders
-        run: |
-          git clone https://x-access-token:${{ secrets.ORG_MIRROR_TOKEN }}@github.com/Eckohaus-Indonesia/jupiter-IV-terminal.git dest-id
-          git clone https://x-access-token:${{ secrets.ORG_MIRROR_TOKEN }}@github.com/Eckohaus-Ltd/jupiter-IV-terminal.git dest-uk
-          
-          # Sync ID
-          rm -rf dest-id/amre
-          mkdir -p dest-id/amre
-          rsync -av --exclude='.git' --exclude='.github' source-amre/ dest-id/amre/
-          
-          # Sync UK
-          rm -rf dest-uk/amre
-          mkdir -p dest-uk/amre
-          rsync -av --exclude='.git' --exclude='.github' source-amre/ dest-uk/amre/
-
-      - name: Deploy Subfolder Updates
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          
-          # Push to ID production (main)
-          cd $GITHUB_WORKSPACE/dest-id
-          git add .
-          git commit -m "build(amre): sync engine to terminal subfolder" || echo "No changes"
-          git pull origin master --rebase
-          git push origin HEAD:master
-          
-          # Push to UK production (main)
-          cd $GITHUB_WORKSPACE/dest-uk
-          git add .
-          git commit -m "build(amre): sync engine to terminal subfolder" || echo "No changes"
-          git pull origin master --rebase
-          git push origin HEAD:master
-
