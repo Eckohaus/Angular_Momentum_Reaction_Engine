@@ -4,7 +4,7 @@ on:
   push:
     paths:
       - "data/spreadsheets/in_development/**"
-      - "tools/convert_xlsx.py"
+      - "engine/tools/convert_xlsx.py"
       - ".github/workflows/xlsx-to-html.yaml"
   workflow_dispatch:
 
@@ -34,7 +34,7 @@ jobs:
           mkdir -p logs
           log_file="logs/$(date +'%Y-%m-%d_%H-%M-%S')_convert.log"
           echo "🚀 Starting conversion → $log_file"
-          python tools/convert_xlsx.py > "$log_file" 2>&1 || echo "⚠️ Pipeline failed, see $log_file"
+          python engine/tools/convert_xlsx.py > "$log_file" 2>&1 || echo "⚠️ Pipeline failed, see $log_file"
           echo "✅ Conversion step finished"
 
           # Rotate logs (keep only last 7)
