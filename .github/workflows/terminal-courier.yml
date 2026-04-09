@@ -53,10 +53,13 @@ jobs:
           cd $GITHUB_WORKSPACE/dest-id
           git add .
           git commit -m "build(amre): sync engine to terminal subfolder" || echo "No changes"
-          git push origin HEAD:main
+          git pull origin master --rebase
+          git push origin HEAD:master
           
           # Push to UK production (main)
           cd $GITHUB_WORKSPACE/dest-uk
           git add .
           git commit -m "build(amre): sync engine to terminal subfolder" || echo "No changes"
-          git push origin HEAD:main
+          git pull origin master --rebase
+          git push origin HEAD:master
+
