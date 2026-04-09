@@ -1,4 +1,4 @@
-name: Codec Translation Tests
+﻿name: Codec Translation Tests
 
 on:
   push:
@@ -6,11 +6,11 @@ on:
       - master
       - main
     paths:
-      - "codec/**"
+      - "engine/codec/**"
       - ".github/workflows/test-codec.yaml"
   pull_request:
     paths:
-      - "codec/**"
+      - "engine/codec/**"
   workflow_dispatch:
 
 permissions:
@@ -39,10 +39,11 @@ jobs:
       - name: 🧪 Run Codec Tests
         run: |
           echo "=== Discovering Codec Test Suites ==="
-          if [ -d "codec" ]; then
-            pytest -v codec
+          if [ -d "engine/codec" ]; then
+            # Set PYTHONPATH so the internal Python imports resolve correctly
+            PYTHONPATH=engine pytest -v engine/codec
           else
-            echo "❌ Directory 'codec' not found"
+            echo "❌ Directory 'engine/codec' not found"
             exit 1
           fi
 
@@ -52,12 +53,3 @@ jobs:
           echo "=============================="
           echo "✅ Codec translation tests completed"
           echo "=============================="
-
-# -------------------------------------------
-# 🧷 Notes:
-# Add this badge to your main README.md:
-#
-# [![Codec Tests](https://github.com/Eckohaus/Angular_Momentum_Reaction_Engine_v2/actions/workflows/test-codec.yaml/badge.svg)](https://github.com/Eckohaus/Angular_Momentum_Reaction_Engine_v2/actions/workflows/test-codec.yaml)
-#
-# This badge auto-updates with CI status.
-# -------------------------------------------
