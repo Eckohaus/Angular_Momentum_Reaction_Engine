@@ -3,32 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JUPITER-IV-TERMINAL : ONE LITTTLE ROCKET MAN TO GO PLUS FRIES</title>
+    <title>JUPITER-IV-TERMINAL // PREVIEW_INDEX</title>
     <style>
-        /* TERMINAL AESTHETIC ENFORCEMENT */
         body { 
             background-color: #050505; 
             color: #d4d4d4; 
-            font-family: 'Courier New', Courier, monospace; 
-            padding: 3vw; 
-            max-width: 900px; 
-            margin: 0 auto;
+            font-family: 'Courier New', monospace; 
+            padding: 2vw; 
+            display: flex; 
+            justify-content: center; 
         }
-        h1 { 
+        .terminal-container { 
+            border: 1px solid #333; 
+            background: #0a0a0a; 
+            padding: 25px; 
+            width: 100%; 
+            max-width: 800px; 
+            box-shadow: 0 0 15px rgba(0,255,0,0.05); 
+        }
+        h2 { 
             color: #00ff00; 
-            font-size: 18px; 
-            border-bottom: 2px solid #333; 
-            padding-bottom: 15px; 
+            font-size: 14px; 
             text-transform: uppercase; 
-            letter-spacing: 2px;
-            text-shadow: 0 0 5px rgba(0,255,0,0.2);
-            line-height: 1.5;
+            letter-spacing: 2px; 
+            border-bottom: 1px solid #333; 
+            padding-bottom: 10px; 
+            margin-top: 0; 
         }
-        .sub-h1 {
-            color: #88ccff;
-            font-size: 13px;
-            display: block;
-            margin-top: 5px;
+        .sys-text { 
+            color: #555; 
+            font-size: 10px; 
+            display: block; 
+            margin-bottom: 25px; 
         }
         details { margin-bottom: 15px; margin-left: 10px; }
         summary { 
@@ -37,15 +43,16 @@
             letter-spacing: 1px; 
             margin-top: 10px; 
             cursor: pointer; 
-            padding: 5px 0;
+            padding: 5px 0; 
+            outline: none;
         }
         summary:hover { color: #88ccff; }
         .group-header { 
-            font-size: 15px; 
+            font-size: 14px; 
             border-bottom: 1px dashed #333; 
             padding-bottom: 5px; 
             margin-bottom: 15px; 
-            color: #fff; 
+            color: #d4d4d4; 
             text-transform: uppercase; 
         }
         .file { margin-left: 25px; margin-top: 5px; }
@@ -57,83 +64,78 @@
     </style>
 </head>
 <body>
-    <h1>
-        JUPITER-IV-TERMINAL : ONE LITTTLE ROCKET MAN TO GO PLUS FRIES
-        <span class="sub-h1">Angular Momentum Reaction Engine : AMRE System Administration : Preview Index</span>
-    </h1>
+    <div class="terminal-container">
+        <h2>AMRE SYSTEM ADMINISTRATION : PREVIEW_INDEX</h2>
+        <span class="sys-text">Node: JUPITER-IV-TERMINAL // Sector: Angular Momentum Reaction Engine</span>
 
-    <details open>
-        <summary class="group-header">ENGINE</summary>
-        <a class="portal-link" href="https://eckohaus.github.io/Formula-to-3D-Prototype-Engine/" target="_blank">[↗] Formula to 3D Prototype Engine</a>
-    </details>
-
-    <br>
-
-    <details open>
-        <summary class="group-header">RESEARCH</summary>
-        <a class="portal-link" href="https://eckohaus.github.io/Ultralight-Fortran-stack/" target="_blank">[↗] Ultralight Fortran Stack</a>
-    </details>
-
-    <br><br>
-
-    <details open>
-        <summary class="group-header">WORKSPACE [Html=Fortran Renders]</summary>
-
-        <details open>
-            <summary>ELECTRICAL_RESISTANCE</summary>
-            <div class="file"><a href="previews/electrical_resistance/lambda_sequencer/base_equation.html">[+] base_equation.html</a></div>
-            <div class="file"><a href="previews/electrical_resistance/lambda_sequencer/calculating_variables_2.html">[+] calculating_variables_2.html</a></div>
-            <div class="file"><a href="previews/electrical_resistance/ac_unit/environment_variable_v1.html">[+] environment_variable_v1.html</a></div>
-        </details>
-
-        <details open>
-            <summary>FINANCIALS</summary>
-            <div class="file"><a href="previews/financials/currency/unit_currency/differential_inversions.html">[+] differential_inversions.html</a></div>
-            <div class="file"><a href="previews/financials/index/ftse/baserate.html">[+] baserate.html</a></div>
+        <details>
+            <summary class="group-header">ENGINE</summary>
+            <a class="portal-link" href="https://eckohaus.github.io/Formula-to-3D-Prototype-Engine/" target="_blank">[↗] Formula to 3D Prototype Engine</a>
         </details>
 
         <details>
-            <summary>FORMULAE</summary>
-            <div class="file"><a href="previews/formulae/chemistry/periodic_table/lanthanide_series/neodymium/3_ac_differentials.html">[+] 3_ac_differentials.html</a></div>
-            <div class="file"><a href="previews/formulae/chemistry/periodic_table/alkali/the_hydrogen_equation/e_squared/boundary_momentum/a.html">[+] boundary_momentum_a.html</a></div>
+            <summary class="group-header">RESEARCH</summary>
+            <a class="portal-link" href="https://eckohaus.github.io/Ultralight-Fortran-stack/" target="_blank">[↗] Ultralight Fortran Stack</a>
+        </details>
+
+        <br>
+
+        <details>
+            <summary class="group-header">WORKSPACE [Html=Fortran Renders]</summary>
+
+            <details>
+                <summary>ELECTRICAL_RESISTANCE</summary>
+                <div class="file"><a href="previews/electrical_resistance/lambda_sequencer/base_equation.html">[+] base_equation.html</a></div>
+                <div class="file"><a href="previews/electrical_resistance/lambda_sequencer/calculating_variables_2.html">[+] calculating_variables_2.html</a></div>
+                <div class="file"><a href="previews/electrical_resistance/ac_unit/environment_variable_v1.html">[+] environment_variable_v1.html</a></div>
+            </details>
+
+            <details>
+                <summary>FINANCIALS</summary>
+                <div class="file"><a href="previews/financials/currency/unit_currency/differential_inversions.html">[+] differential_inversions.html</a></div>
+                <div class="file"><a href="previews/financials/index/ftse/baserate.html">[+] baserate.html</a></div>
+            </details>
+
+            <details>
+                <summary>FORMULAE</summary>
+                <div class="file"><a href="previews/formulae/chemistry/periodic_table/lanthanide_series/neodymium/3_ac_differentials.html">[+] 3_ac_differentials.html</a></div>
+                <div class="file"><a href="previews/formulae/chemistry/periodic_table/alkali/the_hydrogen_equation/e_squared/boundary_momentum/a.html">[+] boundary_momentum_a.html</a></div>
+            </details>
+
+            <details>
+                <summary>INFINITIES</summary>
+                <div class="file"><a href="previews/infinities/infinities_continuous.html">[+] infinities_continuous.html</a></div>
+                <div class="file"><a href="previews/infinities/infinities_transport.html">[+] infinities_transport.html</a></div>
+            </details>
         </details>
 
         <details>
-            <summary>INFINITIES</summary>
-            <div class="file"><a href="previews/infinities/infinities_continuous.html">[+] infinities_continuous.html</a></div>
-            <div class="file"><a href="previews/infinities/infinities_transport.html">[+] infinities_transport.html</a></div>
+            <summary class="group-header">WORKSPACE [Xlsx=Original Worksheets]</summary>
+
+            <details>
+                <summary>ELECTRICAL_RESISTANCE (Raw Downloads)</summary>
+                <div class="file"><a class="raw-link" href="https://github.com/Eckohaus/Angular_Momentum_Reaction_Engine/raw/refs/heads/master/workspace/data/spreadsheets/in_development/electrical_resistance/lambda_sequencer/base_equation.xlsx">[\_] base_equation.xlsx</a></div>
+                <div class="file"><a class="raw-link" href="https://github.com/Eckohaus/Angular_Momentum_Reaction_Engine/raw/refs/heads/master/workspace/data/spreadsheets/in_development/electrical_resistance/unit_(ac)/environment_variable_v1.xlsx">[\_] environment_variable_v1.xlsx</a></div>
+            </details>
+
+            <details>
+                <summary>FINANCIALS (Raw Downloads)</summary>
+                <div class="file"><a class="raw-link" href="https://github.com/Eckohaus/Angular_Momentum_Reaction_Engine/raw/refs/heads/master/workspace/data/spreadsheets/in_development/financials/currency/unit_currency/differential_inversions.xlsx">[\_] differential_inversions.xlsx</a></div>
+                <div class="file"><a class="raw-link" href="https://github.com/Eckohaus/Angular_Momentum_Reaction_Engine/raw/refs/heads/master/workspace/data/spreadsheets/in_development/financials/index/ftse/baserate.xlsx">[\_] baserate.xlsx</a></div>
+            </details>
+
+            <details>
+                <summary>FORMULAE (Raw Downloads)</summary>
+                <div class="file"><a class="raw-link" href="https://github.com/Eckohaus/Angular_Momentum_Reaction_Engine/raw/refs/heads/master/workspace/data/spreadsheets/in_development/formulae/chemistry/periodic_table/lanthanide_series/neodymium/3_ac_differentials.xlsx">[\_] 3_ac_differentials.xlsx</a></div>
+                <div class="file"><a class="raw-link" href="https://github.com/Eckohaus/Angular_Momentum_Reaction_Engine/raw/refs/heads/master/workspace/data/spreadsheets/in_development/formulae/chemistry/periodic_table/alkali/the_hydrogen_equation/e_squared/boundary_momentum/a.xlsx">[\_] a.xlsx</a></div>
+            </details>
+
+            <details>
+                <summary>INFINITIES (Raw Downloads)</summary>
+                <div class="file"><a class="raw-link" href="https://github.com/Eckohaus/Angular_Momentum_Reaction_Engine/raw/refs/heads/master/workspace/data/spreadsheets/in_development/infinities/infinities_continuous.xlsx">[\_] infinities_continuous.xlsx</a></div>
+                <div class="file"><a class="raw-link" href="https://github.com/Eckohaus/Angular_Momentum_Reaction_Engine/raw/refs/heads/master/workspace/data/spreadsheets/in_development/infinities/infinities_transport.xlsx">[\_] infinities_transport.xlsx</a></div>
+            </details>
         </details>
-    </details>
-
-    <br>
-
-    <details open>
-        <summary class="group-header">WORKSPACE [Xlsx=Original Worksheets]</summary>
-
-        <details open>
-            <summary>ELECTRICAL_RESISTANCE (Raw Downloads)</summary>
-            <div class="file"><a class="raw-link" href="https://github.com/Eckohaus/Angular_Momentum_Reaction_Engine/raw/refs/heads/master/workspace/data/spreadsheets/in_development/electrical_resistance/lambda_sequencer/base_equation.xlsx">[\_] base_equation.xlsx</a></div>
-            <div class="file"><a class="raw-link" href="https://github.com/Eckohaus/Angular_Momentum_Reaction_Engine/raw/refs/heads/master/workspace/data/spreadsheets/in_development/electrical_resistance/unit_(ac)/environment_variable_v1.xlsx">[\_] environment_variable_v1.xlsx</a></div>
-        </details>
-
-        <details open>
-            <summary>FINANCIALS (Raw Downloads)</summary>
-            <div class="file"><a class="raw-link" href="https://github.com/Eckohaus/Angular_Momentum_Reaction_Engine/raw/refs/heads/master/workspace/data/spreadsheets/in_development/financials/currency/unit_currency/differential_inversions.xlsx">[\_] differential_inversions.xlsx</a></div>
-            <div class="file"><a class="raw-link" href="https://github.com/Eckohaus/Angular_Momentum_Reaction_Engine/raw/refs/heads/master/workspace/data/spreadsheets/in_development/financials/index/ftse/baserate.xlsx">[\_] baserate.xlsx</a></div>
-        </details>
-
-        <details>
-            <summary>FORMULAE (Raw Downloads)</summary>
-            <div class="file"><a class="raw-link" href="https://github.com/Eckohaus/Angular_Momentum_Reaction_Engine/raw/refs/heads/master/workspace/data/spreadsheets/in_development/formulae/chemistry/periodic_table/lanthanide_series/neodymium/3_ac_differentials.xlsx">[\_] 3_ac_differentials.xlsx</a></div>
-            <div class="file"><a class="raw-link" href="https://github.com/Eckohaus/Angular_Momentum_Reaction_Engine/raw/refs/heads/master/workspace/data/spreadsheets/in_development/formulae/chemistry/periodic_table/alkali/the_hydrogen_equation/e_squared/boundary_momentum/a.xlsx">[\_] a.xlsx</a></div>
-        </details>
-
-        <details>
-            <summary>INFINITIES (Raw Downloads)</summary>
-            <div class="file"><a class="raw-link" href="https://github.com/Eckohaus/Angular_Momentum_Reaction_Engine/raw/refs/heads/master/workspace/data/spreadsheets/in_development/infinities/infinities_continuous.xlsx">[\_] infinities_continuous.xlsx</a></div>
-            <div class="file"><a class="raw-link" href="https://github.com/Eckohaus/Angular_Momentum_Reaction_Engine/raw/refs/heads/master/workspace/data/spreadsheets/in_development/infinities/infinities_transport.xlsx">[\_] infinities_transport.xlsx</a></div>
-        </details>
-    </details>
-
+    </div>
 </body>
 </html>
