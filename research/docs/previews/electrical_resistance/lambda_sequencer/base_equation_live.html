@@ -49,7 +49,7 @@
         <div class="output-panel" id="json_output"></div>
     </div>
 
-    <script>
+<script>
         const API_ENDPOINT = "http://172.232.237.109:8080/api/electrical/base_equation";
         const inputs = [
             document.getElementById('input_high'),
@@ -64,19 +64,34 @@
             statusDisplay.innerText = "[*] PROCESSING: Transmitting variables to Fortran API...";
             outputDisplay.style.opacity = "0.5";
             const queryUrl = `${API_ENDPOINT}?high=${inputs[0].value}&low=${inputs[1].value}&lambda=${inputs[2].value}&depth=${inputs[3].value}`;
+            
             try {
+                // 1. Fetch the data through the open CORS gateway
                 const response = await fetch(queryUrl);
-                const data = await response.json();
-                statusDisplay.innerText = "[+] SUCCESS: Matrix recalculated via 64-bit double precision.";
-                outputDisplay.innerText = JSON.stringify(data, null, 4);
+                
+                // 2. Intercept the RAW text before Javascript tries to parse it
+                const rawText = await response.text(); 
+                
+                try {
+                    // 3. Attempt to parse it as JSON
+                    const data = JSON.parse(rawText);
+                    statusDisplay.innerText = "[+] SUCCESS: Matrix recalculated via 64-bit double precision.";
+                    outputDisplay.innerText = JSON.stringify(data, null, 4);
+                } catch (parseError) {
+                    // 4. If it fails, print the raw text to the screen so we can see the glitch
+                    statusDisplay.style.color = "#ff5555";
+                    statusDisplay.innerText = "[-] ERROR: Fortran output is not valid JSON. See raw output below.";
+                    outputDisplay.innerText = "--- RAW FORTRAN PAYLOAD ---\n\n" + rawText;
+                }
                 outputDisplay.style.opacity = "1";
             } catch (error) {
-                statusDisplay.innerText = "[-] ERROR: Connection Blocked (Check Mixed Content / HTTP warning in browser).";
+                statusDisplay.innerText = "[-] ERROR: Network or CORS failure.";
                 outputDisplay.innerText = error;
             }
         }
+        
         inputs.forEach(input => input.addEventListener('input', runFortranEngine));
         runFortranEngine();
     </script>
-</body>
+    </body>
 </html>
