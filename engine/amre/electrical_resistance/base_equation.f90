@@ -1,7 +1,7 @@
 program base_equation_cgi
     implicit none
     
-    ! Enforce strict Double Precision
+    ! 1. Enforce strict Double Precision
     integer, parameter :: dp = selected_real_kind(15, 307) 
     
     character(len=1024) :: query_string
@@ -11,16 +11,16 @@ program base_equation_cgi
     integer :: depth
     real(dp) :: diff, avg, c9, target
 
-    ! 1. Establish Fallback Defaults (in case the web sends a blank signal)
+    ! 2. Establish Fallback Defaults
     high = 1.0536_dp
     low = 1.0247_dp
     lambda_factor = 1.14_dp
     depth = 4
 
-    ! 2. Read the Gateway Signal from Nginx
+    ! 3. Read the Gateway Signal from Nginx
     call get_environment_variable('QUERY_STRING', query_string, status=stat)
 
-    ! 3. Parse the Signal (Extract the unknown variables if present)
+    ! 4. Parse the Signal
     if (stat == 0 .and. len_trim(query_string) > 0) then
         call extract_real(query_string, 'high=', high)
         call extract_real(query_string, 'low=', low)
@@ -28,36 +28,31 @@ program base_equation_cgi
         call extract_int(query_string, 'depth=', depth)
     end if
 
-    ! 4. The Core Equation Array
+    ! 5. The Core AMRE Equation
     diff = high - low
     avg = (high + low) / 2.0_dp
     c9 = diff * (lambda_factor ** depth)
     target = avg + c9
 
-    ! 5. Standard CGI HTTP Header (Required for the web browser)
-    print *, "Content-Type: application/json"
-    print *, ""  ! A blank line must separate headers from the payload
-
-    ! 6. The JSON Payload
-    print *, "{"
-    print *, '  "inputs": {"high": ', high, ', "low": ', low, '},'
-    print *, '  "parameters": {"lambda_factor": ', lambda_factor, ', "depth": ', depth, '},'
-    print *, '  "difference": ', diff, ','
-    print *, '  "average": ', avg, ','
-    print *, '  "c9": ', c9, ','
-    print *, '  "target": ', target
-    print *, "}"
+    ! 6. JSON OUTPUT (Using '(A)' to strip legacy whitespace)
+    print '(A)', "Content-Type: application/json"
+    print '(A)', ""
+    print '(A)', "{"
+    print '(A, es24.15, A, es24.15, A)', '  "inputs": {"high": ', high, ', "low": ', low, '},'
+    print '(A, es24.15, A, I0, A)', '  "parameters": {"lambda_factor": ', lambda_factor, ', "depth": ', depth, '},'
+    print '(A, es24.15, A)', '  "difference": ', diff, ','
+    print '(A, es24.15, A)', '  "average": ', avg, ','
+    print '(A, es24.15, A)', '  "c9": ', c9, ','
+    print '(A, es24.15)', '  "target": ', target
+    print '(A)', "}"
 
 contains
 
-    ! --- String Extraction Routines --- !
-    ! Fortran needs these little helpers to slice up the URL parameters
     subroutine extract_real(str, key, val)
         character(len=*), intent(in) :: str, key
         real(dp), intent(inout) :: val
         integer :: idx, start_idx, end_idx
         character(len=50) :: val_str
-        
         idx = index(str, trim(key))
         if (idx > 0) then
             start_idx = idx + len(trim(key))
@@ -76,7 +71,6 @@ contains
         integer, intent(inout) :: val
         integer :: idx, start_idx, end_idx
         character(len=50) :: val_str
-        
         idx = index(str, trim(key))
         if (idx > 0) then
             start_idx = idx + len(trim(key))
