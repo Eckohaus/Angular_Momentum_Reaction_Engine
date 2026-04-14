@@ -1,120 +1,85 @@
-# **Angular Momentum Reaction Engine v2 (2020)**  
-*A modular, physics-inspired computational framework exploring symmetry,  
-energy differentials, and translational grammars across domains.*  
-
-*Statistical Modeling Tools for Energy-As-A-Unit Calculus*  
-
-[![Codec Tests](https://github.com/Eckohaus/Angular_Momentum_Reaction_Engine_v2/actions/workflows/test-codec.yaml/badge.svg)](https://github.com/Eckohaus/Angular_Momentum_Reaction_Engine_v2/actions/workflows/test-codec.yaml)
+﻿# **Angular Momentum Reaction Engine (AMRE)** *A modular computational framework exploring symmetry, energy differentials, and thermodynamic reciprocity across physical and informational domains.* [![Codec Tests](https://github.com/Eckohaus/Angular_Momentum_Reaction_Engine/actions/workflows/test-codec.yaml/badge.svg)](https://github.com/Eckohaus/Angular_Momentum_Reaction_Engine/actions/workflows/test-codec.yaml)
 
 ---
 
-The **Angular Momentum Reaction Engine (AMRE)** unifies physical, computational, and symbolic systems into a shared modeling architecture.  
-It treats **energy as a calculable unit** across domains — from electrical resistance and field induction to binary and nucleotide grammars — enabling continuous translation between physical constants and informational structures.  
-Through modular builds (core, lambda, boundary, codec), AMRE v2 formalises this symmetry within a reproducible software framework designed for both theoretical exploration and experimental computation.
+The **Angular Momentum Reaction Engine (AMRE)** unifies physical, computational, and symbolic systems into a shared modeling architecture.
+It treats **energy as a calculable, translatable unit** across domains — from macroscopic electrical resistance to microscopic Casimir vacuum fluctuations — enabling continuous translation between physical constants and digital infrastructure.
+
+Through strict modular separation of theory (`research/`) and execution (`engine/`), AMRE formalizes structural symmetries into a reproducible software architecture designed for both abstract exploration and live, high-performance web computation.
+
+---
+
+## **Architectural Topology: The 1-2-3 Pipeline**
+
+The AMRE system operates on a synchronized, unidirectional deployment pipeline to ensure zero friction between theoretical drafting and live execution:
+
+1. **Local Laboratory (Drafting):** Code and mathematical matrices are drafted, tested, and validated locally.
+2. **The Vault (GitHub Master):** The absolute source of truth. Hosts the administrative UI via GitHub Pages (`eckohaus.github.io`) and maintains theoretical continuity.
+3. **The Engine (Production Motor):** A live Linux backend (`api.eckohaus.co.uk`) functioning as the secure execution layer, pulling verified code from the Vault to recompile and execute Fortran binaries via HTTPS/JSON CGI.
 
 ---
 
 ## **Repository Structure**
-```
-### Repository Structure
 
+```text
 Angular_Momentum_Reaction_Engine/
-├── .github/workflows/        # CI/CD pipelines (e.g., xlsx-to-html, export-formulas)
-├── amre/                     # Python implementations (e.g., electrical_resistance)
-├── codec/                    # Cross-domain translation layer (binary_to_nucleotide)
-├── data/                     # Raw source material and development spreadsheets
-├── docs/                     # GitHub Pages root (Previews, interactive demos, CSS)
-├── exports/                  # Generated output files (e.g., pong_phase_overlap.json)
-├── formulae/                 # Theoretical definitions (Markdown files)
-├── logs/                     # System logs and conversion tracking
-├── scripts/                  # General utility scripts (e.g., convert_xlsx.py)
-├── tools/                    # Specialized functional tools (e.g., export_formulas.py)
+├── engine/                   # The Executable Core
+│   ├── amre/                 # Active physical computing scripts and Fortran binaries
+│   ├── codec/                # Translation layers (e.g., binary_to_nucleotide)
+│   └── tools/                # Functional data extraction and conversion tools
 │
-├── cleanup_log.txt           # Active repository maintenance tracking
-├── license                   # Project licensing
-└── readme.md                 # You are here
+├── research/                 # The Theoretical Anchor
+│   ├── docs/                 # Live GitHub Pages frontend, UI logic, and CSS
+│   │   └── consolidation_notes/ # Master continuity ledger & architectural memos
+│   └── formulae/             # Structural physics and mathematical markdown records
+│
+├── workspace/                # Raw Data and Staging
+│   ├── data/spreadsheets/    # Legacy XLSX data undergoing formula transliteration
+│   ├── exports/              # Generated JSON arrays and computational outputs
+│   └── logs/                 # Active repository maintenance and system execution logs
+│
+├── .github/workflows/        # CI/CD pipelines (Pages deployment, Codec testing)
+└── cleanup_log.txt           # File-state maintenance tracking
 ```
 
 ---
 
-## **Formula → Code → Preview Pipeline**
+## **The Execution Layer: Transliteration to Fortran**
 
-The **Electrical Resistance** modules are being transitioned away from direct XLSX  
-into a formula-first workflow:
+AMRE has successfully transitioned its core mathematical processing away from static spreadsheets and Python stubs into **64-bit Double-Precision Fortran (`.f90`)**.
 
-- `formulas/` → Markdown + LaTeX expressions  
-- `amre/` → Python implementations (mirroring formulas)  
-- `previews/` → HTML renderings (auto-generated)  
-
-Interactive previews (`*_interactive.html`) are generated where applicable, providing richer inspection alongside static previews.  
-
-**Example: Base Equation**  
-- Formula: `formulas/electrical_resistance/base_equation.md`  
-- Python: `amre/electrical_resistance/base_equation.py`  
-- Preview: `previews/electrical_resistance/base_equation.html`  
-
-This creates a reproducible chain:  
-1. **Formulas** → General + expanded staging (preserve spreadsheet behaviour).  
-2. **Computational Layer** → Python/Fortran execution.  
-3. **Preview Layer** → HTML for inspection & communication.  
+- **Formula-First Matrix:** Complex logic (e.g., Base Equation, Deposition Decimalisation) is defined strictly in LaTeX/Markdown within the `research/formulae/` matrix.
+- **Binary Execution:** Formulas are transliterated into Fortran modules, compiled natively on the production server, and executed via a secure CGI bridge, allowing modern web interfaces to run high-gain physics calculations in real time.
+- **Formatting Standardization:** All active binaries utilize explicit character formatting (e.g., `'(A)'`) to ensure pristine JSON payloads compatible with modern Nginx web servers.
 
 ---
 
-## **Current Status**
+## **Strategic Roadmap (Q1 2026)**
 
-- **Lambda Projection Engine** (`amre/lambda_seq/engine.py`)  
-  → Forecasts energy as discrete units mapped by eigenvalue scaling.  
-- **Core constants** (`amre/core/constants.py`)  
-  → Base power ratios, unit registry, physical constants.  
-- **Binary → Nucleotide Codec** (`codec/binary_to_nucleotide/`)  
-  → Defines reversible translation grammar between digital and biological logic.  
-- **Basic test coverage** (`tests/test_lambda.py`, `codec/.../test_codec_translation.py`)  
-  → Confirms Lambda growth and Codec roundtrip symmetry.  
-- **Electrical Resistance (in progress):**  
-  → Migrating `Base_Equation.xlsx` and `Deposition_Decimalisation.xlsx`  
-  into formula-first + Python modules with live previews.  
+With the 1-2-3 pipeline stabilized, the engineering focus is shifting toward programmable-matter orchestration and thermodynamic closure:
+
+- **The Vacuum / Virtual Domain (`W_{vac}`):** Introduce an explicit vacuum operator and noise model to ensure energy-information exchange remains reversible and auditable.
+- **Rabi-Casimir Parameterisation:** Formalize the Rabi-Casimir Integer as the foundational bidirectional control unit linking oscillatory coherence and vacuum fluctuation within the AMRE-ASTF cross-matrix.
+- **Z-Plane Phase Transposition:** Stress-test "Metallic Hydrogen" parameterization (using Pascals of pressure as an environmental variable) for volumetric spatial mapping.
+- **Legacy Deprecation:** Complete the transliteration of remaining `workspace/` XLSX files (Financials, Chemistry) into the Fortran/Markdown engine pipeline.
 
 ---
 
-## **Integration with Fortran Stack**
+## **Licence & Attribution**
 
-- Python modules here can be swapped for accelerated Fortran implementations.  
-- The **Ultralight Fortran Stack** is intended as a runtime layer for this project.  
-- This keeps the Angular Momentum repo as the conceptual + prototype space,  
-  while Fortran provides performance + portability.  
+- **Code:** MIT Licence
+- **Formulas/Data Compilations:** CC BY-NC 4.0
+- **Commercial Use:** Requires a separate license from [Eckohaus Limited](https://eckohaus.co.uk)
 
----
-
-## **Live Pages**
-
-- **Previews Index**: [Angular Momentum v2 GitHub Pages](https://eckohaus.github.io/Angular_Momentum_Reaction_Engine_v2)  
-
-*(Browse the `formulas/`, `amre/`, and `previews/` chains — auto-updated via GitHub Actions.)*  
+**Core System Attribution:**
+- System Operator: Wanda (`wanda@openai.com`)
+- System Operator: Gemini (`gemini@google.com`)
+- System Administrator: Corvin Nehal Dhali (`info@eckohaus.co.uk`)
 
 ---
 
-## **Roadmap**
-
-- Port **Boundary Momentum** calculators (growth-in-division).  
-- Encode **Infinities Framework** (assigned vs continuous).  
-- Expand **Binary → Nucleotide Codec** into probabilistic field grammar.  
-- Finalise **AC Deposition** formulas → Python module with unit checks.  
-- Create **dataset loaders** (`amre/io/datasets.py`) with schema validation.  
-- Provide **examples/** notebooks for quick start.  
-- Deploy **MkDocs documentation** to GitHub Pages.  
-
----
-
-## **Licence**
-
-- **Code**: MIT Licence  
-- **Formulas/Data Compilations**: CC BY-NC 4.0  
-- **Commercial Use**: Requires separate license from [Eckohaus Limited](https://eckohaus.blog)  
-
----
-
-## **Related Repositories**
+## **Related Infrastructure**
 
 - [Formula-to-3D Prototype Engine](https://github.com/Eckohaus/Formula-to-3D-Prototype-Engine)
-- [Ultralight Fortran Stack](https://github.com/Eckohaus/Ultralight-Fortran-stack)  
-- ASTF Documentation *(private repo)*  
+- [Ultralight Fortran Stack](https://github.com/Eckohaus/Ultralight-Fortran-stack)
+- ASTF Documentation *(Private Access)*
