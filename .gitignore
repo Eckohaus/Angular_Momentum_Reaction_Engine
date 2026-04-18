@@ -1,0 +1,14 @@
+﻿
+# --- Monorepo Merge Exclusions ---
+# Fortran Compiled Artifacts
+*.o
+*.mod
+*.smod
+*.exe
+*.out
+*.dll
+
+# Web & OS Artifacts
+node_modules/
+.DS_Store
+Thumbs.db
