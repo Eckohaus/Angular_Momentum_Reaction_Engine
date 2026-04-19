@@ -1,8 +1,8 @@
-﻿name: Update Volumetric Data (IERS + AMRE)
+﻿name: Update Volumetric Data (IERS + AMRE Formulas)
 
 on:
   schedule:
-    - cron: '0 3 * * *' # 3:00 AM UTC Daily
+    - cron: '0 3 * * 1-5' # Weekdays at 3:00 AM UTC (10:00 AM Jakarta)
   workflow_dispatch:
 
 jobs:
@@ -17,44 +17,47 @@ jobs:
 
     steps:
       - name: Checkout AMRE Repository
-        uses: actions/checkout@v4 # Upgraded to v4 to fix Node.js warnings
+        uses: actions/checkout@v4
 
       - name: Setup Python environment
-        uses: actions/setup-python@v5 # Upgraded to v5 to fix Node.js warnings
+        uses: actions/setup-python@v5
         with:
           python-version: '3.x'
 
       - name: Install Compute Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install pandas requests numpy plotly kaleido # Added Plotly + Kaleido for 3D/Image rendering
+          pip install pandas requests numpy plotly kaleido
 
-      - name: Execute IERS Data Fetch & Computation
+      - name: Generate IERS + Formula datasets
         env:
           IERS_SER7_URL: ${{ env.IERS_SER7_URL }}
           IERS_DEBUG: ${{ env.IERS_DEBUG }}
         run: |
-          # Fetch IERS and Compute AMRE 3D mappings
+          # Fetch IERS directly into the AMRE visualizer directory
           python engine/tools/volumetric_data/fetch_iers_data.py research/docs/visual/volumetric/iers.json --images_dir research/docs/visual/volumetric/images
+          
+          # Generate formula_a.json and formula_b.json
           if [ -f "engine/tools/volumetric_data/compute.py" ]; then python engine/tools/volumetric_data/compute.py; fi
- 
-      - name: Commit and Push Updated Arrays
+
+      - name: Commit & push changes
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           
-          # Stage both root volumetric JSONs and subfolder JSONs
+          # Stage the volumetric arrays and images
           git add research/docs/visual/volumetric/*.json || true
           git add research/docs/visual/volumetric/volumetric/*.json || true
+          git add research/docs/visual/volumetric/images/*.png || true
 
           if git diff --cached --quiet; then
             echo "No changes to commit."
             exit 0
           fi
 
-          git commit -m "chore(data): automated daily IERS volumetric sync [skip ci]" \
-            -m "Procedural Aspects: Automated fetch of IERS data and AMRE 3D mapping generation. Dependencies upgraded to resolve Plotly errors and Node.js deprecations." \
-            -m "Co-authored-by: system operator Gemini <gemini@google.com>" \
-            -m "Co-authored-by: system administrator <Corvin Nehal Dhali> <info@eckohaus.co.uk>"
+          git commit -m "chore(data): refresh volumetric datasets" \
+            -m "Procedural Aspects: Re-aligned GitHub Actions namespace to legacy update-volumetric-data.yaml. Automated weekday update of IERS RS/PC data and AMRE volumetric mapping." \
+            -m "Co-authored-by: system operator Gemini <gemini@google.com>
+Co-authored-by: system administrator <Corvin Nehal Dhali> <info@eckohaus.co.uk>"
           
           git push
