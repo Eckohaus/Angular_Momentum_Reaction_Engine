@@ -1,0 +1,101 @@
+name: Update Volumetric Data (IERS + AMRE Formulas)
+
+on:
+  schedule:
+    # Monday–Friday at 02:00 UTC
+    - cron: "0 2 * * 1-5"
+  workflow_dispatch:
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    env:
+      # --------------------------------------------------
+      # GitHub tokens (injected via Secrets)
+      # --------------------------------------------------
+      PAT_TOKEN: ${{ secrets.PAT_TOKEN_FORMULA_3D_PUBLIC }}
+      AMRE_TOKEN: ${{ secrets.AMRE_TOKEN }}
+
+      # --------------------------------------------------
+      # External sources
+      # --------------------------------------------------
+      IERS_SER7_URL: "https://maia.usno.navy.mil/ser7/ser7.dat"
+      IERS_DEBUG: "false"
+
+      # --------------------------------------------------
+      # AMRE API Endpoint (branch = master)
+      # Bypasses raw CDN caching to reliably fetch the JSON
+      # --------------------------------------------------
+      AMRE_PONG_URL: "https://api.github.com/repos/Eckohaus/Angular_Momentum_Reaction_Engine/contents/exports/formulas/pong_phase_overlap.json?ref=master"
+
+    steps:
+
+      # --------------------------------------------------
+      # Checkout Formula-to-3D main branch
+      # --------------------------------------------------
+      - name: Checkout main
+        uses: actions/checkout@v4
+
+      # --------------------------------------------------
+      # Python environment
+      # --------------------------------------------------
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas requests numpy plotly[kaleido]
+
+      # --------------------------------------------------
+      # Generate analytic datasets (IERS + AMRE)
+      # --------------------------------------------------
+      - name: Generate IERS + Formula datasets
+        env:
+          IERS_SER7_URL: ${{ env.IERS_SER7_URL }}
+          IERS_DEBUG: ${{ env.IERS_DEBUG }}
+          AMRE_PONG_URL: ${{ env.AMRE_PONG_URL }}
+        run: |
+          mkdir -p docs/volumetric
+
+          echo "Using AMRE_PONG_URL:"
+          echo "${AMRE_PONG_URL}"
+
+          # Fetch IERS → docs/volumetric/iers.json
+          python engine/fetch_iers_data.py docs/volumetric/iers.json
+
+          # Generate formula_a.json + formula_b.json (AMRE → 3D)
+          python engine/compute.py
+
+      # --------------------------------------------------
+      # Commit + Push changes to main
+      # --------------------------------------------------
+      - name: Commit & push changes
+        shell: bash
+        env:
+          PAT_TOKEN: ${{ env.PAT_TOKEN }}
+        run: |
+          git config --local user.email "github-actions@github.com"
+          git config --local user.name "GitHub Actions"
+
+          git add docs/volumetric/ || true
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git commit -m "chore(data): refresh volumetric datasets" \
+            -m "Automated weekday update of IERS RS/PC data + AMRE volumetric mapping." \
+            -m "Fix: Shifted AMRE ingestion to GitHub API endpoint to resolve CDN caching." \
+            -m "AMRE → Formula B now fully integrated and validated." \
+            -m "Co-authored-by: Gemini <gemini@google.com>" \
+            -m "Co-authored-by: system administrator <Corvin Nehal Dhali> <info@eckohaus.co.uk>"
+
+          git push "https://x-access-token:${PAT_TOKEN}@github.com/${{ github.repository }}.git" main
