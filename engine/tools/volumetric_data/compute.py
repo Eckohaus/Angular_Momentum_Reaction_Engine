@@ -60,7 +60,7 @@ def compute_formula_a() -> Dict[str, Any]:
 _AMRE_BRANCH = os.getenv("AMRE_PONG_BRANCH", "master")
 AMRE_PONG_URL = os.getenv(
     "AMRE_PONG_URL",
-    f"https://api.github.com/repos/Eckohaus/Angular_Momentum_Reaction_Engine/contents/exports/formulas/pong_phase_overlap.json?ref={_AMRE_BRANCH}"
+    f"https://api.github.com/repos/Eckohaus/Angular_Momentum_Reaction_Engine/contents/workspace/exports/formulas/pong_phase_overlap.json?ref={_AMRE_BRANCH}"
 )
 
 def fetch_amre_pong_payload() -> Dict[str, Any] | None:
