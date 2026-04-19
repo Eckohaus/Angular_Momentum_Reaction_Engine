@@ -1,0 +1,64 @@
+/* Terminal Base Layout */
+body {
+  background-color: #0c0c0c; 
+  color: #00ff41; 
+  font-family: 'Courier New', Courier, monospace;
+  line-height: 1.4;
+  padding: 3em;
+  border-top: 4px solid #00ff41;
+}
+
+h1 {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-bottom: 1px solid #00ff41;
+  display: inline-block;
+  padding-bottom: 5px;
+  margin-bottom: 2em;
+}
+
+summary {
+  color: #00ff41;
+  list-style: none;
+  cursor: pointer;
+  padding: 5px 0;
+}
+
+summary::-webkit-details-marker { display: none; }
+
+summary::before {
+  content: "[+] "; 
+  font-weight: bold;
+}
+
+details[open] > summary::before {
+  content: "[-] ";
+}
+
+details {
+  margin-left: 20px;
+  border-left: 1px dashed #003300;
+  padding-left: 10px;
+}
+
+.file a {
+  color: #008f11;
+  text-decoration: none;
+}
+
+.file a:hover {
+  background: #00ff41;
+  color: #0c0c0c;
+}
+
+/* Scanline Effect */
+body::after {
+  content: " ";
+  position: fixed;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
+              linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  background-size: 100% 2px, 3px 100%;
+  pointer-events: none;
+  z-index: 100;
+}

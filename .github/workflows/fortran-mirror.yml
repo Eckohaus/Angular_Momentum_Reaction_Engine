@@ -1,0 +1,55 @@
+name: Fortran Org Repository Mirror
+
+on:
+  push:
+    branches:
+      - main
+      - master
+      - release
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  mirror-to-org:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Personal Source
+        uses: actions/checkout@v4
+        with:
+          repository: Eckohaus/Ultralight-Fortran-stack
+          path: source-repo
+          token: ${{ secrets.ORG_MIRROR_TOKEN }}
+          fetch-depth: 1
+
+      - name: Checkout Org Destination
+        uses: actions/checkout@v4
+        with:
+          repository: Eckohaus-Indonesia/Ultralight-Fortran-stack-v2
+          path: dest-repo
+          token: ${{ secrets.ORG_MIRROR_TOKEN }}
+          fetch-depth: 1
+
+      - name: Mirror Repository and Inject CNAME
+        run: |
+          # 1. Sync all files, deleting destination files that no longer exist in source
+          rsync -av --delete --exclude='.git' --exclude='.github' source-repo/ dest-repo/
+          
+          # 2. Bulletproof Domain Injection
+          # Place CNAME in root to satisfy standard branch deployments
+          echo "eckohaus.com" > dest-repo/CNAME
+          
+          # Place CNAME in frontend to satisfy GitHub Actions payload deployments
+          mkdir -p dest-repo/frontend
+          echo "eckohaus.com" > dest-repo/frontend/CNAME
+
+      - name: Commit and Push to Org
+        run: |
+          cd dest-repo
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "build(fortran): mirror latest stack and bulletproof CNAME routing" || echo "No changes to sync"
+          
+          git push origin release
