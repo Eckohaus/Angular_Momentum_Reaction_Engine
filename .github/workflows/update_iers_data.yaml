@@ -35,9 +35,9 @@ jobs:
           IERS_DEBUG: ${{ env.IERS_DEBUG }}
         run: |
           # Fetch IERS and Compute AMRE 3D mappings
-          python engine/tools/volumetric_data/fetch_iers_data.py
+          python engine/tools/volumetric_data/fetch_iers_data.py research/docs/visual/volumetric/iers.json --images_dir research/docs/visual/volumetric/images
           if [ -f "engine/tools/volumetric_data/compute.py" ]; then python engine/tools/volumetric_data/compute.py; fi
-
+ 
       - name: Commit and Push Updated Arrays
         run: |
           git config --local user.name "github-actions[bot]"
