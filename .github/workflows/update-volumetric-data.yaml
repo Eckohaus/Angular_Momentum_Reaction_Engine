@@ -2,7 +2,7 @@
 
 on:
   schedule:
-    - cron: '0 3 * * 1-5' # Weekdays at 3:00 AM UTC (10:00 AM Jakarta)
+    - cron: '0 3 * * 1-5'
   workflow_dispatch:
 
 jobs:
@@ -34,10 +34,7 @@ jobs:
           IERS_SER7_URL: ${{ env.IERS_SER7_URL }}
           IERS_DEBUG: ${{ env.IERS_DEBUG }}
         run: |
-          # Fetch IERS directly into the AMRE visualizer directory
           python engine/tools/volumetric_data/fetch_iers_data.py research/docs/visual/volumetric/iers.json --images_dir research/docs/visual/volumetric/images
-          
-          # Generate formula_a.json and formula_b.json
           if [ -f "engine/tools/volumetric_data/compute.py" ]; then python engine/tools/volumetric_data/compute.py; fi
 
       - name: Commit & push changes
@@ -45,7 +42,6 @@ jobs:
           git config --local user.name "github-actions[bot]"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           
-          # Stage the volumetric arrays and images
           git add research/docs/visual/volumetric/*.json || true
           git add research/docs/visual/volumetric/volumetric/*.json || true
           git add research/docs/visual/volumetric/images/*.png || true
@@ -57,7 +53,7 @@ jobs:
 
           git commit -m "chore(data): refresh volumetric datasets" \
             -m "Procedural Aspects: Re-aligned GitHub Actions namespace to legacy update-volumetric-data.yaml. Automated weekday update of IERS RS/PC data and AMRE volumetric mapping." \
-            -m "Co-authored-by: system operator Gemini <gemini@google.com>
-Co-authored-by: system administrator <Corvin Nehal Dhali> <info@eckohaus.co.uk>"
+            -m "Co-authored-by: system operator Gemini <gemini@google.com>" \
+            -m "Co-authored-by: system administrator <Corvin Nehal Dhali> <info@eckohaus.co.uk>"
           
           git push
