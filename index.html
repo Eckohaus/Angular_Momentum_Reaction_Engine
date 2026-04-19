@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jupiter-IV-TERMINAL | AMRE Switchboard</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { 
+            margin: 0; 
+            font-family: 'Courier New', Courier, monospace; 
+            background-color: #0a0a0a; 
+            color: #d4d4d4; 
+            display: flex; 
+            height: 100vh; 
+            overflow: hidden; 
+        }
+        #sidebar { 
+            width: 280px; 
+            background-color: #111111; 
+            border-right: 1px solid #333; 
+            display: flex; 
+            flex-direction: column; 
+            padding: 20px; 
+            overflow-y: auto;
+        }
+        .brand {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 15px;
+        }
+        .nav-btn { 
+            background: transparent; 
+            color: #888; 
+            border: 1px solid #333; 
+            padding: 12px 15px; 
+            margin-bottom: 10px; 
+            text-align: left; 
+            font-family: inherit;
+            cursor: pointer; 
+            transition: all 0.2s ease;
+            border-radius: 4px;
+        }
+        .nav-btn:hover { background: #222; color: #fff; border-color: #555; }
+        .nav-btn.active { background: #e0e0e0; color: #000; border-color: #e0e0e0; font-weight: bold; }
+        
+        /* Special styling for the reference cabinet */
+        .cabinet-btn { border-color: #555; color: #bbb; margin-bottom: 25px; }
+
+        #viewport { flex-grow: 1; background-color: #000; display: flex; flex-direction: column; }
+        iframe { flex-grow: 1; border: none; width: 100%; height: 100%; }
+    </style>
+</head>
+<body>
+    <nav id="sidebar">
+        <div class="brand">JUPITER-IV-TERMINAL<br><span style="font-size: 0.8rem; color: #888;">AMRE Switchboard</span></div>
+        
+        <button class="nav-btn cabinet-btn" onclick="loadModule('research/docs/index.html', this)">
+            [00] Master Filing Cabinet
+        </button>
+
+        <button class="nav-btn active" onclick="loadModule('research/docs/modules/electrical_resistance/index.html', this)">
+            [01] Calculus Engine (Fortran)
+        </button>
+        <button class="nav-btn" onclick="loadModule('research/docs/visual/volumetric/index.html', this)">
+            [02] Volumetric Visualizer (3D)
+        </button>
+    </nav>
+    <main id="viewport">
+        <iframe id="module-frame" src="research/docs/modules/electrical_resistance/index.html" title="AMRE Active Module"></iframe>
+    </main>
+    <script>
+        function loadModule(path, buttonElement) {
+            document.getElementById('module-frame').src = path;
+            const buttons = document.querySelectorAll('.nav-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            buttonElement.classList.add('active');
+        }
+    </script>
+</body>
+</html>
