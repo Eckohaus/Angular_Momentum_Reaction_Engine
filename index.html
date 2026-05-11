@@ -4,79 +4,241 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jupiter-IV-TERMINAL | AMRE Switchboard</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
     <style>
-        * { box-sizing: border-box; }
+        /* Material Dark Theme Variables */
+        :root {
+            --mdc-theme-primary: #BB86FC; /* Material Purple */
+            --mdc-theme-secondary: #03DAC6; /* Material Teal */
+            --mdc-theme-surface: #121212;
+            --mdc-theme-background: #000000;
+            --mdc-theme-on-primary: #000000;
+            --mdc-theme-on-surface: #FFFFFF;
+            --surface-elevated: #1e1e1e;
+            --border-color: rgba(255, 255, 255, 0.12);
+            --hover-overlay: rgba(255, 255, 255, 0.08);
+            --active-overlay: rgba(187, 134, 252, 0.16);
+        }
+
+        * { 
+            box-sizing: border-box; 
+            margin: 0;
+            padding: 0;
+        }
+
         body { 
-            margin: 0; 
-            font-family: 'Courier New', Courier, monospace; 
-            background-color: #0a0a0a; 
-            color: #d4d4d4; 
+            font-family: 'Roboto', sans-serif; 
+            background-color: var(--mdc-theme-background); 
+            color: var(--mdc-theme-on-surface); 
             display: flex; 
             height: 100vh; 
             overflow: hidden; 
         }
+
+        /* Sidebar Styling (Material Navigation Drawer pattern) */
         #sidebar { 
-            width: 280px; 
-            background-color: #111111; 
-            border-right: 1px solid #333; 
+            width: 320px; 
+            background-color: var(--surface-elevated); 
+            border-right: 1px solid var(--border-color); 
             display: flex; 
             flex-direction: column; 
-            padding: 20px; 
+            box-shadow: 2px 0 8px rgba(0,0,0,0.5);
+            z-index: 2;
+        }
+
+        .brand-header {
+            padding: 24px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .brand-title {
+            font-size: 1.25rem;
+            font-weight: 500;
+            letter-spacing: 0.15px;
+            color: var(--mdc-theme-primary);
+            margin-bottom: 4px;
+        }
+
+        .brand-subtitle {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.6);
+            letter-spacing: 0.25px;
+        }
+
+        .nav-menu {
+            padding: 12px 8px;
+            flex-grow: 1;
             overflow-y: auto;
         }
-        .brand {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #ffffff;
-            margin-bottom: 30px;
-            letter-spacing: 1px;
-            border-bottom: 1px solid #333;
-            padding-bottom: 15px;
-        }
-        .nav-btn { 
-            background: transparent; 
-            color: #888; 
-            border: 1px solid #333; 
-            padding: 12px 15px; 
-            margin-bottom: 10px; 
-            text-align: left; 
-            font-family: inherit;
-            cursor: pointer; 
-            transition: all 0.2s ease;
-            border-radius: 4px;
-        }
-        .nav-btn:hover { background: #222; color: #fff; border-color: #555; }
-        .nav-btn.active { background: #e0e0e0; color: #000; border-color: #e0e0e0; font-weight: bold; }
-        
-        /* Special styling for the reference cabinet */
-        .cabinet-btn { border-color: #555; color: #bbb; margin-bottom: 25px; }
 
-        #viewport { flex-grow: 1; background-color: #000; display: flex; flex-direction: column; }
-        iframe { flex-grow: 1; border: none; width: 100%; height: 100%; }
+        .nav-category {
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.6);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 16px 16px 8px 16px;
+        }
+
+        /* Material List Item / Button */
+        .nav-item { 
+            display: flex;
+            align-items: center;
+            width: 100%;
+            background: transparent; 
+            color: var(--mdc-theme-on-surface); 
+            border: none; 
+            padding: 12px 16px; 
+            margin-bottom: 4px; 
+            text-align: left; 
+            font-family: 'Roboto', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 500;
+            letter-spacing: 0.25px;
+            cursor: pointer; 
+            border-radius: 4px; /* Material rounded corners */
+            text-decoration: none;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        .nav-item .material-icons {
+            margin-right: 24px;
+            color: rgba(255, 255, 255, 0.54);
+            font-size: 20px;
+        }
+
+        .nav-item:hover { 
+            background-color: var(--hover-overlay); 
+        }
+
+        .nav-item.active { 
+            background-color: var(--active-overlay); 
+            color: var(--mdc-theme-primary); 
+        }
+
+        .nav-item.active .material-icons {
+            color: var(--mdc-theme-primary);
+        }
+
+        /* Special Styling for the External Link */
+        .nav-item.external-btn {
+            color: var(--mdc-theme-secondary);
+        }
+        .nav-item.external-btn .material-icons {
+            color: var(--mdc-theme-secondary);
+        }
+        .nav-item.external-btn:hover {
+            background-color: rgba(3, 218, 198, 0.08);
+        }
+
+        /* Main Viewport */
+        #viewport { 
+            flex-grow: 1; 
+            background-color: var(--mdc-theme-surface); 
+            display: flex; 
+            flex-direction: column; 
+            position: relative;
+        }
+
+        /* Simulated Material Top App Bar */
+        #top-bar {
+            height: 64px;
+            background-color: var(--surface-elevated);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            padding: 0 24px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            z-index: 1;
+        }
+
+        #top-bar-title {
+            font-size: 1.25rem;
+            font-weight: 500;
+            letter-spacing: 0.15px;
+        }
+
+        iframe { 
+            flex-grow: 1; 
+            border: none; 
+            width: 100%; 
+            height: 100%; 
+            background-color: #ffffff; /* White background for iframe content unless it has its own dark theme */
+        }
+        
+        /* Utility class to keep internal framing clean */
+        .iframe-container {
+            flex-grow: 1;
+            padding: 16px; /* Adds a bit of padding around the loaded document like a Material Card */
+            overflow: hidden;
+        }
+        
+        .iframe-card {
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+
     </style>
 </head>
 <body>
-    <nav id="sidebar">
-        <div class="brand">JUPITER-IV-TERMINAL<br><span style="font-size: 0.8rem; color: #888;">AMRE Switchboard</span></div>
-        
-        <button class="nav-btn cabinet-btn" onclick="loadModule('research/docs/index.html', this)">
-            [00] Master Filing Cabinet
-        </button>
 
-        <button class="nav-btn active" onclick="loadModule('research/docs/modules/electrical_resistance/index.html', this)">
-            [01] Calculus Engine (Fortran)
-        </button>
-        <button class="nav-btn" onclick="loadModule('research/docs/visual/volumetric/index.html', this)">
-            [02] Volumetric Visualizer (3D)
-        </button>
+    <nav id="sidebar">
+        <div class="brand-header">
+            <div class="brand-title">JUPITER-IV-TERMINAL</div>
+            <div class="brand-subtitle">AMRE Switchboard</div>
+        </div>
+        
+        <div class="nav-menu">
+            <div class="nav-category">Internal Systems</div>
+            
+            <button class="nav-item active" onclick="loadModule('research/docs/index.html', 'Master Filing Cabinet', this)">
+                <span class="material-icons">folder_special</span>
+                Master Filing Cabinet
+            </button>
+
+            <button class="nav-item" onclick="loadModule('research/docs/visual/volumetric/index.html', 'Volumetric Visualizer (3D)', this)">
+                <span class="material-icons">view_in_ar</span>
+                Volumetric Visualizer
+            </button>
+
+            <div class="nav-category">Production Gateways</div>
+
+            <a href="https://kupu-home.com/terminal/amre-arcade-terminal" target="_blank" class="nav-item external-btn">
+                <span class="material-icons">terminal</span>
+                AMRE Arcade Terminal
+                <span class="material-icons" style="margin-left: auto; margin-right: 0; font-size: 16px;">open_in_new</span>
+            </a>
+        </div>
     </nav>
+
     <main id="viewport">
-        <iframe id="module-frame" src="research/docs/modules/electrical_resistance/index.html" title="AMRE Active Module"></iframe>
+        <header id="top-bar">
+            <div id="top-bar-title">Master Filing Cabinet</div>
+        </header>
+        <div class="iframe-container">
+            <div class="iframe-card">
+                <iframe id="module-frame" src="research/docs/index.html" title="AMRE Active Module"></iframe>
+            </div>
+        </div>
     </main>
+
     <script>
-        function loadModule(path, buttonElement) {
+        function loadModule(path, titleText, buttonElement) {
+            // Update iframe
             document.getElementById('module-frame').src = path;
-            const buttons = document.querySelectorAll('.nav-btn');
+            
+            // Update Top Bar Title
+            document.getElementById('top-bar-title').innerText = titleText;
+
+            // Handle Active States
+            const buttons = document.querySelectorAll('.nav-item:not(.external-btn)');
             buttons.forEach(btn => btn.classList.remove('active'));
             buttonElement.classList.add('active');
         }
