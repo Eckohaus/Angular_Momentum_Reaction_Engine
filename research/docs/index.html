@@ -3,118 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JUPITER-IV-TERMINAL // MASTER_INDEX</title>
+    <title>Master Filing Cabinet</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
     <style>
-        body { 
-            background-color: #050505; 
-            color: #00cc00; 
-            font-family: 'Courier New', Courier, monospace; 
-            padding: 2vw; 
-            display: flex; 
-            justify-content: center; 
+        :root {
+            --mdc-theme-primary: #BB86FC;
+            --mdc-theme-secondary: #03DAC6;
+            --mdc-theme-surface: #1e1e1e; 
+            --mdc-theme-on-surface: #E0E0E0;
+            --divider: rgba(255, 255, 255, 0.12);
         }
-        .terminal-container { 
-            border: 1px solid #005500; 
-            background: #0a0a0a; 
-            padding: 25px; 
-            width: 100%; 
-            max-width: 800px; 
-            box-shadow: 0 0 15px rgba(0,255,0,0.05); 
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--mdc-theme-surface);
+            color: var(--mdc-theme-on-surface);
+            margin: 0;
+            padding: 24px;
+            overflow-y: auto;
         }
-        h2 { 
-            color: #00ff00; 
-            font-size: 16px; 
-            text-transform: uppercase; 
-            letter-spacing: 2px; 
-            border-bottom: 1px dashed #005500; 
-            padding-bottom: 10px; 
-            margin-top: 0; 
+
+        .cabinet-header {
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--divider);
         }
-        .sys-text { 
-            color: #008800; 
-            font-size: 10px; 
-            display: block; 
-            margin-bottom: 25px; 
+
+        .cabinet-header h2 {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .category-card {
+            background: #252525;
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .category-title {
+            font-size: 0.85rem;
+            color: var(--mdc-theme-primary);
             text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 16px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
-        details { margin-bottom: 15px; margin-left: 10px; }
-        .sub-tree { margin-left: 15px; border-left: 1px dashed #003300; padding-left: 10px; }
-        summary { 
-            font-weight: bold; 
-            color: #00ff00; 
-            letter-spacing: 1px; 
-            margin-top: 10px; 
-            cursor: pointer; 
-            padding: 5px 0; 
-            outline: none;
+
+        .file-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
         }
-        summary:hover { 
-            color: #88ff88; 
-            text-shadow: 0 0 5px rgba(0,255,0,0.4); 
+
+        .file-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 16px;
+            border-radius: 4px;
+            transition: background 0.2s ease;
+            text-decoration: none;
+            color: var(--mdc-theme-on-surface);
+            font-size: 0.9rem;
+            margin-bottom: 4px;
         }
-        .group-header { 
-            font-size: 14px; 
-            border-bottom: 1px dashed #005500; 
-            padding-bottom: 5px; 
-            margin-bottom: 15px; 
-            color: #00ff00; 
-            text-transform: uppercase; 
+
+        .file-item:hover {
+            background: rgba(255, 255, 255, 0.08);
         }
-        .file { margin-left: 25px; margin-top: 5px; }
-        a { 
-            color: #00cc00; 
-            text-decoration: none; 
-            font-size: 13px; 
-            transition: 0.2s; 
+
+        .file-icon {
+            color: rgba(255, 255, 255, 0.54);
+            margin-right: 16px;
+            font-size: 20px;
         }
-        a:hover { 
-            color: #00ff00; 
-            text-decoration: underline; 
-            text-shadow: 0 0 5px rgba(0,255,0,0.4); 
+
+        .external-link {
+            color: var(--mdc-theme-secondary);
+            background: rgba(3, 218, 198, 0.05);
         }
-        .portal-link { 
-            margin-left: 25px; 
-            display: block; 
-            margin-top: 5px; 
-            font-weight: bold; 
-            color: #00ff00; 
+        
+        .external-link .file-icon {
+            color: var(--mdc-theme-secondary);
         }
-        .raw-link { color: #00aa00; } 
+
+        .external-link:hover {
+            background: rgba(3, 218, 198, 0.12);
+        }
     </style>
 </head>
 <body>
-    <div class="terminal-container">
-        <h2>AMRE SYSTEM ADMINISTRATION : MASTER_INDEX</h2>
-        <span class="sys-text">Node: JUPITER-IV-TERMINAL // Sector: Angular Momentum Reaction Engine</span>
 
-        <details>
-            <summary class="group-header">ENGINE</summary>
-            <a class="portal-link" href="https://eckohaus.github.io/Formula-to-3D-Prototype-Engine/" target="_blank">[↗] Formula to 3D Prototype Engine</a>
-        </details>
-
-        <details>
-            <summary class="group-header">RESEARCH</summary>
-            <a class="portal-link" href="https://eckohaus.github.io/Ultralight-Fortran-stack/" target="_blank">[↗] Ultralight Fortran Stack</a>
-        </details>
-
-        <br>
-
-        <details open>
-            <summary class="group-header">WORKSPACE [Html=Fortran Renders]</summary>
-
-            <details open>
-                <summary>ELECTRICAL_RESISTANCE</summary>
-                <div class="file"><a href="https://kupu-home.com/terminal/amre-arcade-terminal" target="_blank">[+] base_equation</a></div>
-            </details>
-        </details>
-
-        <details>
-            <summary class="group-header">WORKSPACE [Xlsx=Original Worksheets]</summary>
-            <details>
-                <summary>ELECTRICAL_RESISTANCE (Raw Downloads)</summary>
-                <div class="file"><a class="raw-link" href="https://github.com/Eckohaus/Angular_Momentum_Reaction_Engine/raw/refs/heads/master/workspace/data/spreadsheets/in_development/electrical_resistance/lambda_sequencer/base_equation.xlsx">[\_] base_equation.xlsx</a></div>
-            </details>
-        </details>
+    <div class="cabinet-header">
+        <h2><span class="material-icons">inventory_2</span> Archive Directory</h2>
     </div>
+
+    <div class="category-card">
+        <div class="category-title">
+            <span class="material-icons">bolt</span> Electrical Resistance (Active)
+        </div>
+        <ul class="file-list">
+            <li>
+                <a href="https://kupu-home.com/terminal/amre-arcade-terminal" target="_blank" class="file-item external-link">
+                    <span class="material-icons file-icon">terminal</span>
+                    [Production] AMRE Arcade Terminal ↗
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)" class="file-item">
+                    <span class="material-icons file-icon">table_view</span>
+                    deposition_decimalisation.xlsx
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)" class="file-item">
+                    <span class="material-icons file-icon">table_view</span>
+                    differential_inversions.xlsx
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="category-card">
+        <div class="category-title">
+            <span class="material-icons">science</span> Periodic Table Extrapolations
+        </div>
+        <ul class="file-list">
+            <li>
+                <a href="javascript:void(0)" class="file-item">
+                    <span class="material-icons file-icon">table_view</span>
+                    alkali/the_hydrogen_equation/
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)" class="file-item">
+                    <span class="material-icons file-icon">table_view</span>
+                    lanthanide_series/neodymium/
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="category-card">
+        <div class="category-title">
+            <span class="material-icons">show_chart</span> Financial Telemetry
+        </div>
+        <ul class="file-list">
+            <li>
+                <a href="javascript:void(0)" class="file-item">
+                    <span class="material-icons file-icon">table_view</span>
+                    index/ftse/baserate.xlsx
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)" class="file-item">
+                    <span class="material-icons file-icon">table_view</span>
+                    interest_rates/boe/historical_data.xlsx
+                </a>
+            </li>
+        </ul>
+    </div>
+
 </body>
 </html>
