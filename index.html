@@ -185,27 +185,35 @@
             box-shadow: 0 4px 6px rgba(0,0,0,0.3);
         }
         
-        /* Mobile Responsiveness */
+/* Mobile Responsiveness */
         @media (max-width: 768px) {
             body { 
                 flex-direction: column; 
-                overscroll-behavior: auto; /* Release the webkit scroll lock */
+                overflow: hidden; /* Hard lock the body */
             }
             #sidebar { 
                 width: 100%; 
-                height: auto; 
-                max-height: 35vh; 
+                height: 35vh; /* Fixed percentage */
+                flex-shrink: 0; /* CRITICAL: Prevents iframe from crushing the menu */
                 border-right: none;
                 border-bottom: 1px solid var(--border-color);
                 overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            #viewport {
+                flex-grow: 1;
+                min-height: 0; /* CRITICAL: Flex boundary lock */
+                display: flex;
+                flex-direction: column;
             }
             .brand-header {
                 padding: 16px;
                 text-align: center;
+                flex-shrink: 0;
             }
             .nav-menu {
                 display: flex;
-                flex-wrap: wrap;
+                flex-direction: column; /* Stack buttons vertically on mobile */
                 gap: 8px;
                 padding: 12px;
             }
@@ -215,28 +223,28 @@
                 padding: 8px;
             }
             .nav-item {
-                width: auto;
-                flex: 1 1 calc(50% - 8px); 
-                justify-content: center;
+                width: 100%;
+                min-width: 0; /* CRITICAL: Forces flexbox to allow text wrapping */
+                justify-content: flex-start;
                 margin-bottom: 0;
                 
                 /* The Long-Text Wrapper Fix */
                 white-space: normal;
-                word-break: break-word;
-                overflow-wrap: anywhere;
+                word-wrap: break-word;
+                overflow-wrap: break-word;
                 line-height: 1.4;
             }
             .nav-item .material-icons {
-                margin-right: 8px;
+                margin-right: 12px;
+                flex-shrink: 0; /* Prevents the icon from squashing */
             }
 
             /* The iFrame / Viewport Mobile Lock Fix */
             iframe, #content-frame {
                 width: 100% !important;
                 flex: 1 1 auto !important;
-                min-height: 0 !important; /* Critical flexbox boundary fix */
-                -webkit-overflow-scrolling: touch !important; /* iOS scroll release */
-                overflow-y: auto !important;
+                min-height: 0 !important; 
+                -webkit-overflow-scrolling: touch !important; 
             }
         }
     </style>
