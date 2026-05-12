@@ -185,35 +185,40 @@
             box-shadow: 0 4px 6px rgba(0,0,0,0.3);
         }
         
-/* Mobile Responsiveness */
+        /* Mobile Responsiveness - Absolute Pinning Method */
         @media (max-width: 768px) {
             body { 
+                position: fixed; /* Physically pins the app to the screen edges */
+                top: 0; left: 0; right: 0; bottom: 0;
+                width: 100vw;
+                height: 100vh;
                 flex-direction: column; 
-                overflow: hidden; /* Hard lock the body */
+                overflow: hidden; 
             }
             #sidebar { 
                 width: 100%; 
-                height: 35vh; /* Fixed percentage */
-                flex-shrink: 0; /* CRITICAL: Prevents iframe from crushing the menu */
+                flex: 0 0 40%; /* Strictly enforces 40% height, no shrinking/growing */
+                height: 40%; 
                 border-right: none;
                 border-bottom: 1px solid var(--border-color);
                 overflow-y: auto;
                 -webkit-overflow-scrolling: touch;
             }
             #viewport {
-                flex-grow: 1;
-                min-height: 0; /* CRITICAL: Flex boundary lock */
+                width: 100%;
+                flex: 0 0 60%; /* Strictly enforces 60% height */
+                height: 60%;
+                min-height: 0;
                 display: flex;
                 flex-direction: column;
             }
             .brand-header {
                 padding: 16px;
                 text-align: center;
-                flex-shrink: 0;
             }
             .nav-menu {
                 display: flex;
-                flex-direction: column; /* Stack buttons vertically on mobile */
+                flex-direction: column;
                 gap: 8px;
                 padding: 12px;
             }
@@ -222,29 +227,34 @@
                 text-align: center;
                 padding: 8px;
             }
+            
+            /* The Aggressive Text Wrap Fix */
             .nav-item {
                 width: 100%;
-                min-width: 0; /* CRITICAL: Forces flexbox to allow text wrapping */
+                max-width: 100%;
+                display: flex;
+                align-items: flex-start; /* Aligns multi-line text to the top */
                 justify-content: flex-start;
                 margin-bottom: 0;
                 
-                /* The Long-Text Wrapper Fix */
-                white-space: normal;
-                word-wrap: break-word;
-                overflow-wrap: break-word;
+                /* Nuclear option for overriding Safari button constraints */
+                white-space: normal !important;
+                word-break: break-all !important; 
+                overflow-wrap: anywhere !important;
                 line-height: 1.4;
             }
             .nav-item .material-icons {
                 margin-right: 12px;
-                flex-shrink: 0; /* Prevents the icon from squashing */
+                flex-shrink: 0; /* Protects the icon from being crushed */
+                margin-top: 2px; /* Aligns icon with top line of wrapped text */
             }
 
-            /* The iFrame / Viewport Mobile Lock Fix */
+            /* iFrame specific locks */
             iframe, #content-frame {
                 width: 100% !important;
+                height: 100% !important;
                 flex: 1 1 auto !important;
                 min-height: 0 !important; 
-                -webkit-overflow-scrolling: touch !important; 
             }
         }
     </style>
