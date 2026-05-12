@@ -184,17 +184,20 @@
             overflow: hidden;
             box-shadow: 0 4px 6px rgba(0,0,0,0.3);
         }
-/* Mobile Responsiveness */
+        
+        /* Mobile Responsiveness */
         @media (max-width: 768px) {
             body { 
                 flex-direction: column; 
+                overscroll-behavior: auto; /* Release the webkit scroll lock */
             }
             #sidebar { 
                 width: 100%; 
                 height: auto; 
-                max-height: 35vh; /* Prevents sidebar from eating the whole screen */
+                max-height: 35vh; 
                 border-right: none;
                 border-bottom: 1px solid var(--border-color);
+                overflow-y: auto;
             }
             .brand-header {
                 padding: 16px;
@@ -213,12 +216,21 @@
             }
             .nav-item {
                 width: auto;
-                flex: 1 1 calc(50% - 8px); /* Two buttons per row on mobile */
+                flex: 1 1 calc(50% - 8px); 
                 justify-content: center;
                 margin-bottom: 0;
             }
             .nav-item .material-icons {
                 margin-right: 8px;
+            }
+            
+            /* The iFrame / Viewport Mobile Lock Fix */
+            iframe, #content-frame {
+                width: 100% !important;
+                flex: 1 1 auto !important;
+                min-height: 0 !important; /* Critical flexbox boundary fix */
+                -webkit-overflow-scrolling: touch !important; /* iOS scroll release */
+                overflow-y: auto !important;
             }
         }
     </style>
