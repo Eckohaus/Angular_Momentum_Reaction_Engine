@@ -140,8 +140,9 @@
     <div class="plot-card">
         <div class="plot-container" id="formulaPlot"></div>
         <div class="card-footer" id="formulaFooter">
-            <strong>AMRE Output: Volumetric Data (Variant A)</strong>
-            Rendering trajectory computations derived from <code>E=mc²</code> via <code>formula_a.json</code>.        </div>
+            <strong>Comparative Baseline: E=mc² Waveform (Variant A)</strong>
+            Rendering visual representation of Einstein's mass-energy equivalence via <code>formula_a.json</code> for control-set parity.
+        </div>
     </div>
 
     <script>
@@ -184,10 +185,17 @@
             document.querySelectorAll('.tab').forEach(btn => btn.classList.remove('active'));
             btnElement.classList.add('active');
             
-            document.getElementById('formulaFooter').innerHTML = `
-                <strong>AMRE Output: Volumetric Data (Variant ${variant})</strong>
-                Rendering trajectory computations from <code>formula_${variant.toLowerCase()}.json</code>.
-            `;
+            if (variant === 'A') {
+                document.getElementById('formulaFooter').innerHTML = `
+                    <strong>Comparative Baseline: E=mc² Waveform (Variant A)</strong>
+                    Rendering visual representation of Einstein's mass-energy equivalence via <code>formula_a.json</code> for control-set parity.
+                `;
+            } else {
+                document.getElementById('formulaFooter').innerHTML = `
+                    <strong>AMRE Theoretical Output: Pong Algorithm Proxy (Variant B)</strong>
+                    Rendering trajectory computations and visual waveform derived from AMRE calculus via <code>formula_b.json</code>.
+                `;
+            }
             
             renderFormula(variant);
         }
