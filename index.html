@@ -219,11 +219,17 @@
                 flex: 1 1 calc(50% - 8px); 
                 justify-content: center;
                 margin-bottom: 0;
+                
+                /* The Long-Text Wrapper Fix */
+                white-space: normal;
+                word-break: break-word;
+                overflow-wrap: anywhere;
+                line-height: 1.4;
             }
             .nav-item .material-icons {
                 margin-right: 8px;
             }
-            
+
             /* The iFrame / Viewport Mobile Lock Fix */
             iframe, #content-frame {
                 width: 100% !important;
