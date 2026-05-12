@@ -1,237 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Formula-to-3D Prototype Engine | Jupiter-IV-TERMINAL</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volumetric Visualizer</title>
+    
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <style>
+        :root {
+            --mdc-theme-primary: #BB86FC;
+            --mdc-theme-secondary: #03DAC6;
+            --mdc-theme-surface: #1e1e1e;
+            --mdc-theme-on-surface: #E0E0E0;
+            --divider: rgba(255, 255, 255, 0.12);
+        }
 
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--mdc-theme-surface);
+            color: var(--mdc-theme-on-surface);
+            margin: 0;
+            padding: 24px;
+            overflow-y: auto;
+        }
 
-  <style>
-    :root {
-      --void-bg: #050505;
-      --panel-bg: #0a0a0a;
-      --accent-terminal: #00ff41; /* Kupu / Terminal Green */
-      --tech-border: #2a2a2a;
-      --text-dim: #888;
-      --text-bright: #e0e0e0;
-    }
+        /* Material Tab Navigation */
+        .tab-container {
+            display: flex;
+            border-bottom: 1px solid var(--divider);
+            margin-bottom: 24px;
+        }
 
-    body, html {
-      margin: 0; padding: 0; height: 100%;
-      background-color: var(--void-bg);
-      color: var(--text-bright);
-      font-family: 'Courier New', Courier, monospace;
-      overflow: hidden; /* Stops whole page from scrolling, delegates to main stage */
-    }
+        .tab {
+            padding: 12px 24px;
+            background: transparent;
+            border: none;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.875rem;
+            font-weight: 500;
+            letter-spacing: 1.25px;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s ease;
+        }
 
-    /* THE CHASSIS: CSS Grid Layout */
-    .terminal-chassis {
-      display: grid;
-      grid-template-columns: 280px 1fr; /* Sidebar width, remainder is stage */
-      height: 100vh;
-    }
+        .tab:hover {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--mdc-theme-on-surface);
+        }
 
-    /* THE SIDEBAR: Administrative Navigation */
-    .sidebar {
-      background: #000;
-      border-right: 1px solid var(--tech-border);
-      display: flex;
-      flex-direction: column;
-    }
+        .tab.active {
+            color: var(--mdc-theme-primary);
+            border-bottom: 2px solid var(--mdc-theme-primary);
+        }
 
-    .sidebar-header {
-      padding: 2rem 1.5rem;
-      border-bottom: 1px solid var(--tech-border);
-    }
+        /* Material Plot Cards */
+        .plot-card {
+            background: #252525;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            margin-bottom: 24px;
+        }
 
-    .sidebar-header h1 {
-      font-size: 1.1rem;
-      font-weight: normal;
-      margin: 0;
-      letter-spacing: 2px;
-      color: var(--accent-terminal);
-    }
+        .plot-container {
+            width: 100%;
+            height: 50vh;
+            min-height: 400px;
+            background: #121212;
+        }
 
-    .sidebar-header span {
-      font-size: 0.7rem;
-      color: var(--text-dim);
-      display: block;
-      margin-top: 5px;
-    }
+        .card-footer {
+            padding: 16px 20px;
+            background: #252525;
+            border-top: 1px solid var(--divider);
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
 
-    nav {
-      padding: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
+        .card-footer strong {
+            color: var(--mdc-theme-secondary);
+            display: block;
+            margin-bottom: 4px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+        }
 
-    nav a {
-      color: var(--text-dim);
-      text-decoration: none;
-      font-size: 0.85rem;
-      letter-spacing: 1px;
-      padding: 8px 12px;
-      border: 1px solid transparent;
-      transition: all 0.2s;
-    }
-
-    nav a:hover, nav a.active {
-      color: var(--accent-terminal);
-      border: 1px solid var(--tech-border);
-      background: var(--panel-bg);
-    }
-
-    /* THE MAIN STAGE: Fluid Data Viewport */
-    .main-stage {
-      display: flex;
-      flex-direction: column;
-      height: 100vh;
-      overflow-y: auto; /* Allows scrolling if multiple plots stack up */
-      padding: 2rem;
-      box-sizing: border-box;
-    }
-
-    section {
-      margin-bottom: 2rem;
-      background: var(--panel-bg);
-      border: 1px solid var(--tech-border);
-      display: flex;
-      flex-direction: column;
-    }
-
-    /* The Responsive Canvas Wrapper */
-    .plot-container {
-      width: 100%;
-      height: 50vh; /* Takes up half the vertical height dynamically */
-      min-height: 400px;
-      position: relative;
-    }
-
-    .description {
-      padding: 1rem 1.5rem;
-      font-size: 0.85rem;
-      color: var(--text-dim);
-      border-top: 1px solid var(--tech-border);
-      background: #000;
-    }
-
-    .description strong { color: var(--text-bright); letter-spacing: 1px; }
-    code { background: #1a1a1a; color: var(--accent-terminal); padding: 2px 6px; border-radius: 3px; }
-    a { color: var(--accent-terminal); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    /* Custom Scrollbar */
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: var(--void-bg); }
-    ::-webkit-scrollbar-thumb { background: var(--tech-border); }
-  </style>
+        @media (max-width: 768px) {
+            body { padding: 12px; }
+            .tab { padding: 12px 16px; font-size: 0.75rem; flex: 1; text-align: center; }
+            .plot-container { height: 40vh; min-height: 300px; }
+        }
+    </style>
 </head>
-
 <body>
 
-<div class="terminal-chassis">
-  <aside class="sidebar">
-    <div class="sidebar-header">
-      <h1>JUPITER-IV-TERMINAL</h1>
-      <span>STATUS: ENGINE_ACTIVE</span>
+    <div class="tab-container">
+        <button class="tab active" onclick="switchExperiment('A', this)">Engine Exp 01</button>
+        <button class="tab" onclick="switchExperiment('B', this)">Engine Exp 02</button>
     </div>
-    <nav>
-      <a href="./index.html" class="active">[00] ENGINE_EXP_01</a>
-      <a href="./page2.html">[01] ENGINE_EXP_02</a>
-    </nav>
-  </aside>
 
-  <main class="main-stage">
-    
-    <section>
-      <div class="plot-container" id="iersPlot"></div>
-      <div class="description">
-        <strong>DATA_INPUT: IERS Earth Orientation Parameters</strong><br>
-        Source: <a href="https://www.iers.org" target="_blank">International Earth Rotation Service</a> | Sequence: Combined RS/PC + Prediction
-      </div>
-    </section>
+    <div class="plot-card">
+        <div class="plot-container" id="iersPlot"></div>
+        <div class="card-footer">
+            <strong>Control Set: IERS Earth Orientation</strong>
+            Base orientation parameters tracking Combined RS/PC + Prediction sequences.
+        </div>
+    </div>
 
-    <section>
-      <div class="plot-container" id="formulaPlot"></div>
-      <div class="description">
-        <strong>MATH_VOLUMETRIC: Formula-Derived Data</strong><br>
-        Logic: <code>compute_formula_a()</code> via <code>compute.py</code> | Path: <code>volumetric/formula_a.json</code>
-      </div>
-    </section>
+    <div class="plot-card">
+        <div class="plot-container" id="formulaPlot"></div>
+        <div class="card-footer" id="formulaFooter">
+            <strong>AMRE Output: Volumetric Data (Variant A)</strong>
+            Rendering trajectory computations from <code>formula_a.json</code>.
+        </div>
+    </div>
 
-  </main>
-</div>
+    <script>
+        const darkLayout = {
+            margin: { l: 0, r: 0, b: 0, t: 0 },
+            paper_bgcolor: 'rgba(0,0,0,0)',
+            plot_bgcolor: 'rgba(0,0,0,0)',
+            scene: {
+                xaxis: { gridcolor: '#333', zerolinecolor: '#555', tickfont: { color: '#888' }},
+                yaxis: { gridcolor: '#333', zerolinecolor: '#555', tickfont: { color: '#888' }},
+                zaxis: { gridcolor: '#333', zerolinecolor: '#555', tickfont: { color: '#888' }}
+            }
+        };
 
-<script>
-  // Shared Dark Theme Configuration for Plotly
-  const darkLayout = {
-    margin: { l: 0, r: 0, b: 0, t: 0 },
-    paper_bgcolor: 'rgba(0,0,0,0)',
-    plot_bgcolor: 'rgba(0,0,0,0)',
-    scene: {
-      xaxis: { title: { text: 'X_AXIS', font: { family: 'Courier New', color: '#666' }}, gridcolor: '#222', zerolinecolor: '#444', tickfont: { color: '#444' } },
-      yaxis: { title: { text: 'Y_AXIS', font: { family: 'Courier New', color: '#666' }}, gridcolor: '#222', zerolinecolor: '#444', tickfont: { color: '#444' } },
-      zaxis: { title: { text: 'Z_AXIS', font: { family: 'Courier New', color: '#666' }}, gridcolor: '#222', zerolinecolor: '#444', tickfont: { color: '#444' } },
-      camera: { eye: { x: 1.5, y: 1.5, z: 1.5 } }
-    }
-  };
+        let currentFormulaData = null;
 
-  // The Magic Variable: This tells Plotly to respect our fluid CSS CSS Grid/Flexbox constraints
-  const responsiveConfig = { responsive: true };
+        // Initialize Engine
+        Promise.all([
+            fetch('iers.json').then(r => r.json()),
+            fetch('formula_a.json').then(r => r.json()),
+            fetch('formula_b.json').then(r => r.json())
+        ]).then(([iersData, formulaA, formulaB]) => {
+            
+            // Render Static IERS Data
+            const fullSeries = [...(iersData?.iers?.combined_eop || []), ...(iersData?.iers?.predictions || [])];
+            Plotly.newPlot('iersPlot', [{
+                x: fullSeries.map(p => p.x_arcsec), y: fullSeries.map(p => p.y_arcsec), z: fullSeries.map(p => p.mjd),
+                mode: 'markers', type: 'scatter3d',
+                marker: { size: 2, color: fullSeries.map(p => p.mjd), colorscale: 'Viridis', opacity: 0.7 }
+            }], darkLayout, { responsive: true });
 
-  Promise.all([
-    fetch('volumetric/iers.json').then(r => r.json()),
-    fetch('volumetric/formula_a.json').then(r => r.json())
-  ])
-  .then(([iersData, formulaA]) => {
+            // Store formulas for tab switching
+            currentFormulaData = { A: formulaA?.formula || [], B: formulaB?.formula || [] };
+            
+            // Render initial state (A)
+            renderFormula('A');
+        });
 
-    /* --- IERS Dataset Rendering --- */
-    const fullSeries = [
-      ...(iersData?.iers?.combined_eop || []),
-      ...(iersData?.iers?.predictions || [])
-    ];
+        function switchExperiment(variant, btnElement) {
+            document.querySelectorAll('.tab').forEach(btn => btn.classList.remove('active'));
+            btnElement.classList.add('active');
+            
+            document.getElementById('formulaFooter').innerHTML = `
+                <strong>AMRE Output: Volumetric Data (Variant ${variant})</strong>
+                Rendering trajectory computations from <code>formula_${variant.toLowerCase()}.json</code>.
+            `;
+            
+            renderFormula(variant);
+        }
 
-    if (fullSeries.length === 0) {
-      document.getElementById('iersPlot').innerHTML = `<div style="padding:2rem;text-align:center;color:#b00;">ERROR: DATA_NULL</div>`;
-    } else {
-      // NOTE: We pass responsiveConfig as the 4th parameter here
-      Plotly.newPlot('iersPlot', [{
-        x: fullSeries.map(p => p.x_arcsec),
-        y: fullSeries.map(p => p.y_arcsec),
-        z: fullSeries.map(p => p.mjd),
-        mode: 'markers',
-        type: 'scatter3d',
-        marker: { size: 2, color: fullSeries.map(p => p.mjd), colorscale: 'Viridis', opacity: 0.7 }
-      }], darkLayout, responsiveConfig); 
-    }
+        function renderFormula(variant) {
+            const data = currentFormulaData[variant];
+            const colorScale = variant === 'A' ? 'Plasma' : 'Inferno'; // Slight visual distinction between experiments
 
-    /* --- Formula A Rendering --- */
-    const points = formulaA?.formula || [];
-
-    if (points.length === 0) {
-      document.getElementById('formulaPlot').innerHTML = `<div style="padding:2rem;text-align:center;color:#b00;">ERROR: DATA_NULL</div>`;
-    } else {
-      // NOTE: We pass responsiveConfig as the 4th parameter here too
-      Plotly.newPlot('formulaPlot', [{
-        x: points.map(p => p.x),
-        y: points.map(p => p.y),
-        z: points.map(p => p.z),
-        mode: 'markers',
-        type: 'scatter3d',
-        marker: { size: 3, color: points.map(p => p.z), colorscale: 'Plasma', opacity: 0.8 }
-      }], darkLayout, responsiveConfig);
-    }
-
-  })
-  .catch(err => {
-    console.error("Critical Engine Error:", err);
-    document.querySelectorAll('.plot-container').forEach(el => {
-      el.innerHTML = `<div style="padding:2rem;text-align:center;color:#b00;">CRITICAL_FETCH_FAILURE: CHECK_NETWORK_PATHS</div>`;
-    });
-  });
-</script>
-
+            Plotly.react('formulaPlot', [{
+                x: data.map(p => p.x), y: data.map(p => p.y), z: data.map(p => p.z),
+                mode: 'markers', type: 'scatter3d',
+                marker: { size: 3, color: data.map(p => p.z), colorscale: colorScale, opacity: 0.8 }
+            }], darkLayout, { responsive: true });
+        }
+    </script>
 </body>
 </html>

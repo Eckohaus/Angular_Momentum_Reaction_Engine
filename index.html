@@ -183,7 +183,43 @@
             overflow: hidden;
             box-shadow: 0 4px 6px rgba(0,0,0,0.3);
         }
-
+/* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            body { 
+                flex-direction: column; 
+            }
+            #sidebar { 
+                width: 100%; 
+                height: auto; 
+                max-height: 35vh; /* Prevents sidebar from eating the whole screen */
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+            }
+            .brand-header {
+                padding: 16px;
+                text-align: center;
+            }
+            .nav-menu {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+                padding: 12px;
+            }
+            .nav-category {
+                width: 100%;
+                text-align: center;
+                padding: 8px;
+            }
+            .nav-item {
+                width: auto;
+                flex: 1 1 calc(50% - 8px); /* Two buttons per row on mobile */
+                justify-content: center;
+                margin-bottom: 0;
+            }
+            .nav-item .material-icons {
+                margin-right: 8px;
+            }
+        }
     </style>
 </head>
 <body>
